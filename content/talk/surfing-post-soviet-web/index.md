@@ -22,7 +22,7 @@ event_url = "http://www.crrccenters.org/209242/WiP-Surfing-the-post-Soviet-Web-A
 location = "Tbilisi, Georgia"
 
 # Is this a selected talk? (true/false)
-selected = false
+selected = true
 
 # Projects (optional).
 #   Associate this talk with one or more of your projects.
@@ -35,6 +35,9 @@ projects = ["de-facto-states"]
 #   Set `tags = []` for no tags, or use the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = ["de facto states", "text mining"]
 
+[image]
+  # Caption (optional)
+  caption = "Tbilisi. Photo by Giorgio Comai"
 
 +++
 

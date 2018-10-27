@@ -10,6 +10,10 @@ publication = "*Ethnopolitics*"
 tags = ["de facto states", "post-soviet", "small dependent jurisdictions"]
 url_pdf = "files/comai_conceptualising_2018.pdf"
 doi = "10.1080/17449057.2017.1393210"
+
+[image]
+  # Caption (optional)
+  caption = "Sukhumi. Photo by Giorgio Comai"
 +++
 
 Comai, Giorgio. 2018. ‘Conceptualising Post-Soviet de Facto States as Small Dependent Jurisdictions’. *Ethnopolitics* 17 (2): 181–200. https://doi.org/10.1080/17449057.2017.1393210.
