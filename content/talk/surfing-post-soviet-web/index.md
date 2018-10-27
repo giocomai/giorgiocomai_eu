@@ -15,7 +15,7 @@ abstract = "Scholars working on the post-Soviet space frequently refer to web co
 abstract_short = ""
 
 # Name of event and optional event URL.
-event = "CRRC Work-in-progress"
+event = "Tbilisi CRRC Work-in-progress"
 event_url = "http://www.crrccenters.org/209242/WiP-Surfing-the-post-Soviet-Web-April-6-Giorgio-Comai"
 
 # Location of event.
