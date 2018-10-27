@@ -15,7 +15,7 @@ title = "Giorgio Comai"
 # To display a copyright symbol, type `&copy;`.
 copyright = "CC-BY"
 
-theme = "hugo-academic"
+theme = "academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
