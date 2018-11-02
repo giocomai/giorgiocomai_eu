@@ -4,6 +4,7 @@ date = 2018-03-01
 authors = ["Giorgio Comai"]
 publication_types = ["2"]
 abstract = "De facto states, according to the most established elaborations of the concept, by definition strive towards full-fledged, internationally recognised independence. However, in many cases, independence may actually be perceived as a second best option. This article argues that in seeking further integration with a patron post-Soviet de facto states are behaving similarly to small-sized dependent jurisdictions in other parts of the world. Conceptualising post-Soviet de facto states as small dependent jurisdictions contributes to a more nuanced understanding of their state-building project, their relationship with the patron state, their political economy, as well as their long-term path of development."
+abstract_short = "This article argues that in seeking further integration with a patron post-Soviet de facto states are behaving similarly to small-sized dependent jurisdictions in other parts of the world. Conceptualising post-Soviet de facto states as small dependent jurisdictions contributes to a more nuanced understanding of their state-building project, their relationship with the patron state, their political economy, as well as their long-term path of development."
 selected = true
 projects = ["de-facto-states"]
 publication = "*Ethnopolitics*"
