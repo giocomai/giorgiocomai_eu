@@ -1,6 +1,6 @@
 +++
 title = "Victims of double standards: double victimhood and changing narratives in Azerbaijan’s public rhetoric"
-date = 2018-12-05  # Schedule page publish date.
+date = 2018-12-02  # Schedule page publish date.
 draft = false
 
 # Talk start and end times.
