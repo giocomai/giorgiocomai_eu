@@ -10,6 +10,7 @@ tags:
 subtitle: ''
 summary: ''
 authors: []
+lastmod: ''
 featured: no
 image:
   caption: ''
