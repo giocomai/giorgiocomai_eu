@@ -1,23 +1,16 @@
-+++
-title = "Ten Years After the War in South Ossetia, Time to Embrace Nuance"
-date = 2018-08-06T16:15:48+01:00
-draft = false
+---
+title: "Ten Years After the War in South Ossetia, Time to Embrace Nuance"
+date: "2018-08-06T16:15:48+01:00"
+draft: false
+featured: true
 
-# Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["de facto states", "engagement"]
-categories = []
+tags:
+- "de facto states"
+- "engagement"
 
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder. 
-[image]
-  # Caption (optional)
-  caption = "Tbilisi, 7th August 2009. During the first anniversary of the 2008 war in South Ossetia, photographs displayed in the central street of Tbilisi also recall the conflicts of the early 1990s. Photo by Giorgio Comai."
-
-  # Focal point (optional)
-  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
-  focal_point = ""
-+++
+image:
+  caption: "Tbilisi, 7th August 2009. During the first anniversary of the 2008 war in South Ossetia, photographs displayed in the central street of Tbilisi also recall the conflicts of the early 1990s. Photo by Giorgio Comai."
+---
 
 *Ten years after the war between Georgia and Russia in South Ossetia, in a context where grand bargains and comprehensive agreements are difficult to imagine, it is time to embrace a nuanced approach to conflicts in the post-Soviet space. Pragmatic and humane solutions that acknowledge local agency are the way forward*
 

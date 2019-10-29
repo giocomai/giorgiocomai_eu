@@ -16,7 +16,8 @@ education:
 email: "g@giorgiocomai.eu"
 interests:
 - Post-Soviet affairs and de facto states
-- data visualisation and data journalism
+- data crunching
+- data visualisation
 - R programming
 - structured analysis of web contents
 - digital commons

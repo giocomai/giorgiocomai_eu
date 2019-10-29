@@ -8,6 +8,7 @@ tags: ["de facto states", "transnistria"]
 header:
   caption: 'Tiraspol. Photo by Giorgio Comai'
   image: ''
+featured: true
 ---
 
 
