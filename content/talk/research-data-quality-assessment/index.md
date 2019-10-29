@@ -1,6 +1,6 @@
 +++
 title = "Roundtable: Research Data Quality Assessment for the Area-Studies on the post-Soviet region: New Approaches needed?"
-date = 2016-06-05  # Schedule page publish date.
+date = 2016-06-05T14:30:00
 draft = false
 
 # Talk start and end times.
