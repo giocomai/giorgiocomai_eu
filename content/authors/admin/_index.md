@@ -16,11 +16,10 @@ education:
 email: "g@giorgiocomai.eu"
 interests:
 - Post-Soviet affairs and de facto states
-- data crunching
-- data visualisation
+- data crunching, data visualisation and geocomputation
 - R programming
 - structured analysis of web contents
-- digital commons
+- digital humanities
 
 name: Giorgio Comai
 organizations:
@@ -60,4 +59,4 @@ user_groups:
 
 I am a researcher and data analyst at [OBCT/CCI](https://www.balcanicaucaso.org/). I am an expert on post-Soviet affairs, with research focusing in particular on de facto states and on different approaches for the bulk extraction and analysis of textual contents form the web in this context. I have been visiting regularly Russia and other post-Soviet countries since 2000, and I speak fluently Russian and Romanian.
 
-I have developed a package for the R programming language, [`castarter`](https://giocomai.github.io/castarter/) - content analysis starter toolkit for R, and I occasionally post on my data visualisation blog: [`the codebase`](https://codebase.giorgiocomai.eu/).
+I have developed a few packages for the R programming language, including [`castarter`](https://giocomai.github.io/castarter/) - content analysis starter toolkit for R, and I occasionally post on my data visualisation blog: [`the codebase`](https://codebase.giorgiocomai.eu/).

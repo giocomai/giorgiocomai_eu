@@ -28,7 +28,7 @@ location = "Columbia University, New York, USA"
 [image]
   # Caption (optional)
   caption = "A Transnistrian plastic coin. Photo by Giorgio Comai."
-  
-
 
 +++
+
+{{< tweet 860453939065610246 >}}

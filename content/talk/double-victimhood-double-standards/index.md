@@ -38,3 +38,6 @@ tags = ["double standards", "azerbaijan"]
 
 +++
 
+Here is a brief summary of key points in the form of a [Twitter thread](https://twitter.com/giocomai/status/1071069167699353600):
+
+{{< tweet 1071069167699353600 >}}
