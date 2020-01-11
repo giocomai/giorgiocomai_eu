@@ -3,7 +3,7 @@ title: 'The EU and De Facto States: Adjust Expectations, Support Small Steps'
 author: ''
 date: '2019-02-06'
 slug: the-eu-and-de-facto-states-adjust-expectations-support-small-steps
-categories: []
+categories: [Research notes, Analysis]
 tags:
   - de facto states
   - engagement
@@ -11,7 +11,7 @@ subtitle: ''
 summary: ''
 authors: []
 lastmod: ''
-featured: no
+featured: yes
 image:
   caption: ''
   focal_point: ''

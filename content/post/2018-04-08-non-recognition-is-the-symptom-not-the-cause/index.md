@@ -3,7 +3,7 @@ title: Non-recognition is the symptom, not the cause
 author: 'Giorgio Comai'
 date: '2018-04-08'
 slug: non-recognition-is-the-symptom-not-the-cause
-categories: []
+categories: [Research notes, Analysis]
 tags:
   - de facto states
 image:

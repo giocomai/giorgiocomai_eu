@@ -23,3 +23,4 @@ math = false
 I have developed a number of R packages while working on my research or contributing to data journalism projects. All of these packages are functional, but none of them is fully mature, largely due to lack of time and the fact that they have been developed as side activities.
 
 All of my R packages are available from [my GitHub pages](https://github.com/giocomai).
+
