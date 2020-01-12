@@ -12,7 +12,7 @@ subtitle: ''
 summary: 'Disinformation campaigns, dubious practices on social media, murkey financing of political campaigns and lobby groups, timed hacked and leaks: new structural vulnerabilities to our democracies are there for anyone to exploit. It’s time to focus our public conversation on new policies and practices that can mitigate these risks'
 authors: []
 lastmod: '2020-01-12T11:27:27+01:00'
-featured: no
+featured: yes
 image:
   caption: ''
   focal_point: ''

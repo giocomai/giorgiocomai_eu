@@ -5,7 +5,7 @@ date: '2020-01-12'
 slug: digital-archives-and-local-history
 categories: []
 tags: []
-summary: 'Digitalising local history'
+summary: 'Digitising local history'
 authors: []
 external_link: ''
 image:
