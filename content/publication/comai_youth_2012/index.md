@@ -7,5 +7,6 @@ abstract = "The organization of state-sponsored youth camps has emerged as a cen
 selected = "false"
 publication = "*Anthropology of East Europe Review*"
 url_pdf = "http://scholarworks.iu.edu/journals/index.php/aeer/article/view/1997"
+projects = ["youth-patriotism-politics-caucasus"]
 +++
 

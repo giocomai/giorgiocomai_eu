@@ -1,6 +1,6 @@
 +++
 # Date this page was created.
-date = 2020-01-07T00:00:00
+date = 2020-01-11T00:00:00
 
 # Project title.
 title = "R packages"
