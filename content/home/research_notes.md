@@ -5,9 +5,9 @@
 widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 50  # Order that this section will appear.
+weight = 60  # Order that this section will appear.
 
-title = "Data notes"
+title = "Research notes and analyses"
 subtitle = ""
 
 [content]
@@ -26,7 +26,7 @@ subtitle = ""
   # Filter posts by a taxonomy term.
   [content.filters]
     tag = ""
-    category = "Data notes"
+    category = "Research notes"
     publication_type = ""
     exclude_featured = false
   
@@ -65,4 +65,3 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-
