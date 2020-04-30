@@ -126,6 +126,103 @@ RUN service apache2 restart
 
 ## Step 2: Get your docker-compose up and running
 
+Here's a basic docker-compose.yml with Traefik that should get you up and running. Search for all instances of "example.com" and put your own domain. Make sure the relevant domain (or subdomain) points at your server. Also, make sure you set a random password for both database and wordpress host, and make sure they correspond (of course, e.g. the database name, user, and password you set up in the _db docker should be the same that Wordpress uses to access them). I also included a phpmyadmin Docker just in case, this can of course safely be removed. 
+
+
+```
+version: "3.3"
+
+services:
+
+  traefik:
+    image: "traefik:v2.1"
+    container_name: "traefik"
+    restart: always
+    command:
+      #- "--log.level=DEBUG"
+      - "--api"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.myhttpchallenge.acme.httpchallenge=true"
+      - "--certificatesresolvers.myhttpchallenge.acme.httpchallenge.entrypoint=web"
+      #- "--certificatesresolvers.myhttpchallenge.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.myhttpchallenge.acme.email=youremail@example.com"
+      - "--certificatesresolvers.myhttpchallenge.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "./letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    labels:
+      - "traefik.enable=true"
+      # global redirect to https
+      - "traefik.http.routers.redirs.rule=hostregexp(`{host:.+}`)"
+      - "traefik.http.routers.redirs.entrypoints=web"
+      - "traefik.http.routers.redirs.middlewares=redirect-to-https"
+      # middleware redirect
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      # dashboard
+      - "traefik.http.routers.traefik.rule=Host(`traefik.example.com`)"
+      - "traefik.http.routers.traefik.service=api@internal"
+      - "traefik.http.routers.traefik.tls.certresolver=myhttpchallenge"
+      - "traefik.http.routers.traefik.entrypoints=websecure"
+      - "traefik.http.routers.traefik.middlewares=authtraefik"
+
+
+  example_com_db:
+    image: mysql:5.7
+    volumes:
+      - example_com_db:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Ez2oogha5ogh4woh
+      MYSQL_DATABASE: ieseehahF0oo
+      MYSQL_USER: ii4eshaeZ9ta
+      MYSQL_PASSWORD: lae7gia4MohW
+
+  example_com:
+    depends_on:
+      - example_com_db
+    image: giocomai/php_7_4:latest
+    volumes:
+      - example_com:/var/www/html/
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: example_com_db:3306
+      WORDPRESS_DB_NAME: ieseehahF0oo
+      WORDPRESS_DB_USER: ii4eshaeZ9ta
+      WORDPRESS_DB_PASSWORD: lae7gia4MohW
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.example_com.rule=Host(`test.example.com`)"
+      - "traefik.http.routers.example_com.entrypoints=websecure"
+      - "traefik.http.routers.example_com.tls.certresolver=myhttpchallenge"
+
+  phpmyadmin:
+    depends_on:
+      - example_com_db
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    links:
+      - example_com_db:db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.example.com`)"
+      - "traefik.http.routers.phpmyadmin.entrypoints=websecure"
+      - "traefik.http.routers.phpmyadmin.tls.certresolver=myhttpchallenge"
+
+volumes:
+  example_com:
+  example_com_db:
+  
+```
+
 
 
 ## Step 3: Move your website with Wordpress Duplicator plugin
