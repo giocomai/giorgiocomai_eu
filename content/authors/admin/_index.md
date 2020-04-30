@@ -47,9 +47,6 @@ social:
 - icon: stack-overflow
   icon_pack: fab
   link: https://stackoverflow.com/users/4124601/giocomai
-- icon: cv
-  icon_pack: ai
-  link: files/giorgio_comai_cv.pdf
 superuser: true
 user_groups:
 - Researchers
