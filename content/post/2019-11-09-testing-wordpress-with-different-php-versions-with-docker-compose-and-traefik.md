@@ -31,7 +31,7 @@ __Warning__: not much of what you'll find here follows best practices in terms o
 
 The first step is to prepare a basic php Docker image with apache installed. I also installed some basic libraries such as zip and pdo which are used by a number of plugins. You may need to install others, keeping in mind that you need to take care of installing dependencies in the Dockerfile yourself.
 
-You can safely^[*Safely*, that is, keeping in mind you'll be using a php version with known vulnerabilities] use the Docker images I created, `giocomai/php_5_6_20` and `giocomai/php_7_3`
+You can safely^[*Safely*, that is, keeping in mind you'll be using a php version with known vulnerabilities] use the Docker images I created, `giocomai/php_5_6_20`. For more recent versions, you'll find `giocomai/php_7_3` and `giocomai/php_7_4`.
 
 
 ### Custom Dockerfile
@@ -100,6 +100,29 @@ RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
 
 ```
 
+Finally [updated on 2020-04-30], here's a Dockerfile for 7.4 that includes imagick and gd modules, and does not raise any flags with the latest Worpress site health check. 
+
+```
+FROM php:7.4-apache
+
+RUN apt-get update
+
+RUN apt-get install -y libzip-dev zlib1g-dev 
+
+#imagick
+RUN apt-get -y install gcc make autoconf libc-dev pkg-config
+RUN apt-get -y install libmagickwand-dev --no-install-recommends
+RUN pecl install imagick
+RUN docker-php-ext-enable imagick
+
+RUN docker-php-ext-install zip mysqli pdo pdo_mysql gd exif
+
+RUN rm -r /var/lib/apt/lists/*
+
+RUN a2enmod rewrite
+
+RUN service apache2 restart
+```
 
 ## Step 2: Get your docker-compose up and running
 
@@ -110,7 +133,10 @@ RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
 
 The installation will work fine, but as you'll move on to finalise your installation going to the admin part of your wordpress installation, it just won't work. 
 
-This is due the fact that we're using a reverse proxy (i.e. Traefik), so as described in the [Wordpress documentation](https://wordpress.org/support/article/administration-over-ssl/) we need to add the following chunk __at the beginning__ of our wp-config.php file.^[I can't stress enough the __at the beginning__ part, since this is not mentioned in the official Wordpress documentation, and you'll get only silly error messages if you paste this code at the bottom of the wp-config.php file.] 
+This is due the fact that we're using a reverse proxy (i.e. Traefik), so as described in the [Wordpress documentation](https://wordpress.org/support/article/administration-over-ssl/) we need to add the following chunk __at the beginning__ of our wp-config.php file. [^1]
+
+[^1]: I can't stress enough the __at the beginning__ part, since this is not mentioned in the official Wordpress documentation, and you'll get only silly error messages if you paste this code at the bottom of the wp-config.php file.
+
 
 ```
 define('FORCE_SSL_ADMIN', true);
