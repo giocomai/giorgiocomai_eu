@@ -18,4 +18,4 @@ autolink = true
 email_form = 0
 +++
 
-To get in touch, email is best: g@giorgiocomai.eu. To send an encrypted message use [my public PGP key](https://giorgiocomai.eu/publickey.g@giorgiocomai.eu.asc) or ProtonMail (g@giorgiocomai.eu is a ProtonMail address).
+To get in touch, email is best: g@giorgiocomai.eu. To send an encrypted message use [my public PGP key](/key/publickey.g@giorgiocomai.eu.asc) or ProtonMail (g@giorgiocomai.eu is a ProtonMail address).
