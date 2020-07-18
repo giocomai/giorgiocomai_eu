@@ -19,3 +19,5 @@ doi = "http://doi.org/10.30687/978-88-6969-340-3/017"
 
 
 Comai, Giorgio. 2019. ‘Il sostegno esterno ufficiale agli stati de facto nel Caucaso del sud ’. In *Armenia, Caucaso e Asia Centrale - Ricerche 2019*, edited by Giorgio Comai, Carlo Frappi, Giovanni Pedrini, and Elena Rova, 351–368. Venezia: Ca' Foscari.
+
+[The book is available in full in pdf format on the publisher's website.](https://edizionicafoscari.unive.it/en/edizioni4/libri/978-88-6969-341-0/chaptersList)
