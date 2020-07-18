@@ -16,9 +16,10 @@ education:
 email: "g@giorgiocomai.eu"
 interests:
 - data crunching, data visualisation and geocomputation
-- R programming
+- data collection methods and ethics in research
 - structured analysis of web contents
 - Post-Soviet affairs and de facto states
+- R programming
 - digital humanities
 
 name: Giorgio Comai
