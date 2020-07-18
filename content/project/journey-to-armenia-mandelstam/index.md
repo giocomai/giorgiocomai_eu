@@ -6,7 +6,7 @@ slug: journey-to-armenia-mandelstam
 categories: [videomaking]
 tags: [caucasus]
 summary: ""
-authors: ["Andrea Rossini"]
+authors: []
 external_link: ''
 image:
   caption: 'Photo by Giorgio Comai'
@@ -25,9 +25,9 @@ The project went through many stages and different concepts, but unfortunately w
 
 Least all the work we've done remains forgotten in a drawer, we've decided to publish some of the working materials. They're all available on *Osservatorio*'s website in [Italian](http://www.balcanicaucaso.org/Dossier/Viaggio-in-Armenia) and [English](http://www.balcanicaucaso.org/eng/Dossiers/Journey-to-Armenia).
 
-The most enjoable part of it all is probably the multimedia script, which includes photo and video materials mostly gathered by me as "visual notes" on the planned shooting locations. [Follow this link and enjoy the experience](https://giorgiocomai.eu/mandelstam/).
+The most enjoable part of it all is probably the multimedia script, which includes photo and video materials mostly gathered by me as "visual notes" on the planned shooting locations. [Follow this link and enjoy the experience](/mandelstam/01-intro/index.html).
 
-If you're not familiar with the story of Osip and Nadezhda Mandelstam, before heading to the [multimedia script](https://giorgiocomai.eu/mandelstam/) (or the [other materials published on the project's page](http://www.balcanicaucaso.org/eng/Dossiers/Journey-to-Armenia)), I warmly suggest reading this short note about them.
+If you're not familiar with the story of Osip and Nadezhda Mandelstam, before heading to the [multimedia script](/mandelstam/01-intro/index.html) (or the [other materials published on the project's page](http://www.balcanicaucaso.org/eng/Dossiers/Journey-to-Armenia)), I warmly suggest reading this short note about them.
 
 **"Osip Mandelstam**, considered by Nobel prize winner Joseph Brodsky "the greatest Russian poet of the twentieth century", was born in Warsaw in 1891 into a Jewish family. After a childhood and adolescence in Saint Petersburg, he completed his studies at the Sorbonne in Paris and at the University of Heidelberg. He was one of the founders of the avant-garde literary movement of acmeism which Anna Akhmatova and Nikolai Stepanovich Gumilev also belonged to.
 
