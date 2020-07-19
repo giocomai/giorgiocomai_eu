@@ -19,7 +19,7 @@ image:
   preview_only: no
 ---
 
-__[*Originally published on balcanicaucaso.org*](https://www.balcanicaucaso.org/eng/Areas/Abkhazia/*Abchazja*-and-other-untranslated-bits-of-Wojciech-Gorecki-s-Caucasus-trilogy-203078)__
+__[*Originally published on balcanicaucaso.org*](https://www.balcanicaucaso.org/eng/Areas/Abkhazia/Abchazja-and-other-untranslated-bits-of-Wojciech-Gorecki-s-Caucasus-trilogy-203078)__
 
 
 Wojciech Górecki's *Planeta Kaukaz* on the Northern Caucasus was first published in 2002. It reached Italian readers as “*Pianeta Caucaso*” (Bruno Mondadori Editore) one year later. His next book, *[Toast za przodków](https://czarne.com.pl/katalog/ksiazki/toast-za-przodkow)*, published in Poland in 2010, included stories from across the South Caucasus; Italian readers could dive into the chapters on Georgia as early as February 2009, when they were published as *La terra del vello d'oro. Viaggio in Georgia* (Bollati Boringhieri Editore, translated by Vera Verdiani), but they were never given the chance to read about Górecki's encounters in Azerbaijan and Armenia. Both of them have sold out, and it seems to be currently impossible to find them in bookshops or buy them from the publisher. His third book on the Caucasus, *Abchazja*, was published in Warsaw in 2013; it aptly closes the trilogy, even as its starts with the author's recollection of his first visits to the region in the early 1990s. So far, it has mostly remained unavailable to readers outside of Poland: no English edition has yet come out, nor has it been published in countries such as Italy where previous books have been positively received.

@@ -55,10 +55,12 @@ user_groups:
 --- 
 
 
-I am a researcher and data analyst at [OBCT/CCI](https://www.balcanicaucaso.org/). Here is some information about my (admittedly, non-contiguous) professional interests.
+I am a researcher and data analyst at [OBCT/CCI](https://www.balcanicaucaso.org/). Here is some information about my (not necessarily contiguous) professional interests.
 
-In recent years, I have been working as a data analyst and consultant, crunching data at the European Data Journalism Network ([EDJNet](https://europeandatajournalism.eu/)), writing code in the R programming language, and working on data visualisation and geographic data analysis.
+For a long time, I have been conducting research on post-Soviet affairs, focusing in particular on de facto states.  I have been visiting Russia and other post-Soviet countries since 2000, and I speak fluently Russian and Romanian. 
 
-For a long time, I have been conducting research on post-Soviet affairs, focusing in particular on de facto states. I have been visiting Russia and other post-Soviet countries since 2000, and I speak fluently Russian and Romanian.
+In recent years, I have increasingly been working on structured approaches for analysing online sources in conflict studies and international relations, data collections methods, and related ethical issues.
+
+I have also been working as a data analyst and consultant, crunching data at the European Data Journalism Network ([EDJNet](https://europeandatajournalism.eu/)), writing code and developing packages in the R programming language, and working on data visualisation and geographic data analysis.
 
 I occasionally post on my data visualisation blog: [`the codebase`](https://codebase.giorgiocomai.eu/).
