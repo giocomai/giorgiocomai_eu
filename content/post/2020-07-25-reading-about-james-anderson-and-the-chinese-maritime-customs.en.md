@@ -5,7 +5,8 @@ date: '2020-07-25'
 slug: reading-about-james-anderson-and-the-chinese-maritime-customs
 categories:
   - Readings
-tags: []
+tags:
+  - London Review of Books
 subtitle: ''
 summary: ''
 authors: []
