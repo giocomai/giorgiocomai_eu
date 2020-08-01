@@ -5,12 +5,7 @@ categories: ["Research notes"]
 tags: ["post-soviet", "youth", "russia"]
 subtitle: ''
 summary: ''
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+projects: ["youth-patriotism-politics-caucasus"]
 ---
 
 The basic idea of the forum is rather interesting... all participants come from the Federal District of the Northern Caucasus (Stavropolskij Kraj, Karachaj-Cherkessia, Kabardino-Balkaria, North Ossetia, Ingushetia, Chechnya, Dagestan) plus, at least in the original project, Abkhazia and South Ossetia.

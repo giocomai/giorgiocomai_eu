@@ -5,12 +5,12 @@ categories: ["Blog"]
 tags: ["post-soviet", "youth", "russia"]
 subtitle: ''
 summary: ''
+projects: ["youth-patriotism-politics-caucasus"]
 featured: no
 image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: []
 ---
 
 [My feature about the International Youth Forum Seliger 2010 is now online on balcanicaucaso.org](http://www.balcanicaucaso.org/eng/Regions-and-countries/Russia/Seliger-s-many-faces) (available in Italian [here](http://www.balcanicaucaso.org/ita/aree/Russia/Le-tante-facce-di-Seliger)).

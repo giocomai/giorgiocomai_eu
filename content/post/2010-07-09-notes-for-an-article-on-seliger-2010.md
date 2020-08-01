@@ -6,11 +6,7 @@ tags: ["post-soviet", "youth", "russia"]
 subtitle: ''
 summary: ''
 featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+projects: ["youth-patriotism-politics-caucasus"]
 ---
 
 

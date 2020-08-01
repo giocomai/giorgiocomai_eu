@@ -1,16 +1,12 @@
 ---
 title: Entrance to the headquarters of Molodaja Gvardija, youth branch of United Russia
 date: '2010-02-10'
-categories: ["Research notes"]
-tags: ["post-soviet", "youth"]
-subtitle: ''
-summary: ''
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+categories:
+  - Research notes
+tags:
+  - post-soviet
+  - youth
+projects: ["youth-patriotism-politics-caucasus"]
 ---
 
 Today I met Marija Kislicyna, “kommissar” of the Russian youth movement Nashi. She’s head of the project “Russia for everybody” (“Rossiya dlya vsekh”), and follows programmes meant to improve
