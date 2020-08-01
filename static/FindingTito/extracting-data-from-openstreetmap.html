@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Finding Tito - Streets and squares dedicated to Tito in the former Yugoslavia</title>
+  <meta name="description" content="Finding Tito - Streets and squares dedicated to Tito in the former Yugoslavia">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Finding Tito - Streets and squares dedicated to Tito in the former Yugoslavia" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Finding Tito - Streets and squares dedicated to Tito in the former Yugoslavia" />
+  
+  
+  
+
+<meta name="author" content="Giorgio Comai (OBC Transeuropa / Dublin City University, IICRR)">
+
+
+<meta name="date" content="2017-09-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="extracting-data-from-google-maps.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><b>Finding Tito</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-is-this-all-about"><i class="fa fa-check"></i><b>1.1</b> What is this all about?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#how-to-access-this-document"><i class="fa fa-check"></i><b>1.2</b> How to access this document</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html"><i class="fa fa-check"></i><b>2</b> Extracting data from OpenStreetMap</a><ul>
+<li class="chapter" data-level="2.1" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#installing-openstreetmap-packages"><i class="fa fa-check"></i><b>2.1</b> Installing OpenStreetMap packages</a></li>
+<li class="chapter" data-level="2.2" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#download-openstreetmap-data"><i class="fa fa-check"></i><b>2.2</b> Download OpenStreetMap data</a></li>
+<li class="chapter" data-level="2.3" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#keep-only-street-names"><i class="fa fa-check"></i><b>2.3</b> Keep only street names</a></li>
+<li class="chapter" data-level="2.4" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#keep-only-street-names-including-reference-to-tito"><i class="fa fa-check"></i><b>2.4</b> Keep only street names including reference to Tito</a></li>
+<li class="chapter" data-level="2.5" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#preliminary-results-based-on-openstreetmap"><i class="fa fa-check"></i><b>2.5</b> Preliminary results based on OpenStreetMap</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#number-of-streets-dedicated-to-tito"><i class="fa fa-check"></i><b>2.5.1</b> Number of streets dedicated to Tito</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#putting-streets-dedicated-to-tito-according-to-openstreetmap-on-a-map"><i class="fa fa-check"></i><b>2.6</b> Putting streets dedicated to Tito (according to OpenStreetMap) on a map</a></li>
+<li class="chapter" data-level="2.7" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#alternative-density-maps"><i class="fa fa-check"></i><b>2.7</b> Alternative density maps</a></li>
+<li class="chapter" data-level="2.8" data-path="extracting-data-from-openstreetmap.html"><a href="extracting-data-from-openstreetmap.html#summary-of-all-relevant-street-names-found-on-openstreetmap"><i class="fa fa-check"></i><b>2.8</b> Summary of all relevant street names found on OpenStreetMap</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="extracting-data-from-google-maps.html"><a href="extracting-data-from-google-maps.html"><i class="fa fa-check"></i><b>3</b> Extracting data from Google Maps</a><ul>
+<li class="chapter" data-level="3.1" data-path="extracting-data-from-google-maps.html"><a href="extracting-data-from-google-maps.html#extracting-all-places-openstreetmap"><i class="fa fa-check"></i><b>3.1</b> Extracting all places OpenStreetMap</a></li>
+<li class="chapter" data-level="3.2" data-path="extracting-data-from-google-maps.html"><a href="extracting-data-from-google-maps.html#what-are-potential-street-names-that-should-be-queried"><i class="fa fa-check"></i><b>3.2</b> What are potential street names that should be queried?</a></li>
+<li class="chapter" data-level="3.3" data-path="extracting-data-from-google-maps.html"><a href="extracting-data-from-google-maps.html#finding-titov-on-google-maps"><i class="fa fa-check"></i><b>3.3</b> Finding “titov”&quot; on Google Maps</a></li>
+<li class="chapter" data-level="3.4" data-path="extracting-data-from-google-maps.html"><a href="extracting-data-from-google-maps.html#querying-separately-for-marshal-tito--"><i class="fa fa-check"></i><b>3.4</b> Querying separately for ‘Marshal tito’ (‘Маршал Тито’)</a></li>
+<li class="chapter" data-level="3.5" data-path="extracting-data-from-google-maps.html"><a href="extracting-data-from-google-maps.html#polishing-the-results"><i class="fa fa-check"></i><b>3.5</b> Polishing the results</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="where-is-tito.html"><a href="where-is-tito.html"><i class="fa fa-check"></i><b>4</b> Where is Tito?</a><ul>
+<li class="chapter" data-level="4.1" data-path="where-is-tito.html"><a href="where-is-tito.html#see-the-results-on-a-map"><i class="fa fa-check"></i><b>4.1</b> See the results on a map</a></li>
+<li class="chapter" data-level="4.2" data-path="where-is-tito.html"><a href="where-is-tito.html#density-visualisations"><i class="fa fa-check"></i><b>4.2</b> Density visualisations</a></li>
+<li class="chapter" data-level="4.3" data-path="where-is-tito.html"><a href="where-is-tito.html#by-country-administrative-level"><i class="fa fa-check"></i><b>4.3</b> By country / Administrative level</a></li>
+<li class="chapter" data-level="4.4" data-path="where-is-tito.html"><a href="where-is-tito.html#by-street-name"><i class="fa fa-check"></i><b>4.4</b> By street name</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary-of-results.html"><a href="summary-of-results.html"><i class="fa fa-check"></i><b>5</b> Summary of results</a><ul>
+<li class="chapter" data-level="5.1" data-path="summary-of-results.html"><a href="summary-of-results.html#tito-streets-on-a-map"><i class="fa fa-check"></i><b>5.1</b> Tito streets on a map</a></li>
+<li class="chapter" data-level="5.2" data-path="summary-of-results.html"><a href="summary-of-results.html#density-of-tito-streets"><i class="fa fa-check"></i><b>5.2</b> Density of Tito streets</a></li>
+<li class="chapter" data-level="5.3" data-path="summary-of-results.html"><a href="summary-of-results.html#tito-streets-by-country"><i class="fa fa-check"></i><b>5.3</b> Tito streets by country</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://www.giorgiocomai.eu" target="blank">A project by Giorgio Comai</a><a href="https://twitter.com/giocomai" target="blank">@giocomai</a></li>
+<li></li>
+<li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Creative Commons (CC-BY-4.0)</a></li>
+<li><a href="https://github.com/giocomai/FindingTito" target="blank">Source code available on GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Finding Tito - Streets and squares dedicated to Tito in the former Yugoslavia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="extracting-data-from-openstreetmap" class="section level1">
+<h1><span class="header-section-number">2</span> Extracting data from OpenStreetMap</h1>
+<div id="installing-openstreetmap-packages" class="section level2">
+<h2><span class="header-section-number">2.1</span> Installing OpenStreetMap packages</h2>
+<p>Filtering and extracting contents from OpenStreetMap dump files is facilitated by dedicated utilities. In this project, <a href="http://wiki.openstreetmap.org/wiki/Osmconvert">Osmconvert</a> and <a href="http://wiki.openstreetmap.org/wiki/Osmfilter">Osmfilter</a> have been used to filter relevant data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install osmfilter</span>
+<span class="cf">if</span> (<span class="kw">file.exists</span>(<span class="st">&quot;osmfilter&quot;</span>)<span class="op">==</span><span class="ot">FALSE</span>) {
+  <span class="kw">system</span>(<span class="dt">command =</span> <span class="st">&quot;wget -O - http://m.m.i24.cc/osmfilter.c |cc -x c - -O3 -o osmfilter&quot;</span>)
+}
+
+<span class="co"># install osmconvert</span>
+<span class="cf">if</span> (<span class="kw">file.exists</span>(<span class="kw">file.path</span>(<span class="st">&quot;osmconvert64&quot;</span>))<span class="op">==</span><span class="ot">FALSE</span>) {
+  <span class="kw">download.file</span>(<span class="dt">url =</span> <span class="st">&quot;http://m.m.i24.cc/osmconvert64&quot;</span>, <span class="dt">destfile =</span> <span class="kw">file.path</span>(<span class="st">&quot;osmconvert64&quot;</span>))
+  <span class="kw">system</span>(<span class="dt">command =</span> <span class="st">&quot;chmod +x osmconvert64&quot;</span>)
+}</code></pre></div>
+</div>
+<div id="download-openstreetmap-data" class="section level2">
+<h2><span class="header-section-number">2.2</span> Download OpenStreetMap data</h2>
+<p>It is possible to download all available data for selected countries from <a href="http://download.geofabrik.de/europe.html">online repositories</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir.create</span>(<span class="dt">path =</span> <span class="st">&quot;data&quot;</span>, <span class="dt">showWarnings =</span> <span class="ot">FALSE</span>)
+<span class="kw">dir.create</span>(<span class="dt">path =</span> <span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;pbf&quot;</span>), <span class="dt">showWarnings =</span> <span class="ot">FALSE</span>)
+
+
+<span class="cf">for</span> (i <span class="cf">in</span> countries) {
+  <span class="cf">if</span> (<span class="kw">file.exists</span>(<span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;pbf&quot;</span>, <span class="kw">paste0</span>(i, <span class="st">&quot;-latest.osm.pbf&quot;</span>)))<span class="op">==</span><span class="ot">FALSE</span>) {
+    <span class="kw">download.file</span>(<span class="dt">url =</span> <span class="kw">paste0</span>(<span class="st">&quot;http://download.geofabrik.de/europe/&quot;</span>, i, <span class="st">&quot;-latest.osm.pbf&quot;</span>),
+                  <span class="dt">destfile =</span> <span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;pbf&quot;</span>, <span class="kw">paste0</span>(i, <span class="st">&quot;-latest.osm.pbf&quot;</span>)))
+  }
+}</code></pre></div>
+</div>
+<div id="keep-only-street-names" class="section level2">
+<h2><span class="header-section-number">2.3</span> Keep only street names</h2>
+<p>Through the above-mentioned utilities, all names of street found in the region have been extracted from the dump and converted to .cvs format. This has been accomplished by filtering only the names of objects recorded under the key <code>highway</code> in OpenStreetMap, which according to <a href="http://wiki.openstreetmap.org/wiki/Key:highway">OpenStreetMap’s wiki</a> and in spite of its name, “is the main key used for identifying any kind of road, street or path.”</p>
+<p>At this stage, only streets have been included in the filter, but other OpenStreetMap categories may include relevant data, e.g. <a href="http://wiki.openstreetmap.org/wiki/Tag:place%3Dsquare"><code>Tag:place=square</code></a>, or <a href="http://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark"><code>Tag:leisure=park</code></a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># convert to a format that can be read by osmfilter, and remove author data to reduce file size</span>
+<span class="kw">dir.create</span>(<span class="dt">path =</span> <span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;o5m&quot;</span>), <span class="dt">showWarnings =</span> <span class="ot">FALSE</span>)
+
+<span class="cf">for</span> (i <span class="cf">in</span> countries) {
+  <span class="cf">if</span> (<span class="kw">file.exists</span>(<span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;o5m&quot;</span>, <span class="kw">paste0</span>(i, <span class="st">&quot;-latest.o5m&quot;</span>)))<span class="op">==</span><span class="ot">FALSE</span>) {
+    <span class="kw">system</span>(<span class="kw">paste0</span>(<span class="st">&#39;./osmconvert64 data/pbf/&#39;</span>, i, 
+                  <span class="st">&#39;-latest.osm.pbf --drop-version --out-o5m -o=data/o5m/&#39;</span>, i,
+                  <span class="st">&#39;-latest.o5m&#39;</span>))
+  }
+}
+
+<span class="co"># filter only streets</span>
+<span class="kw">dir.create</span>(<span class="dt">path =</span> <span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;o5m-streets&quot;</span>), <span class="dt">showWarnings =</span> <span class="ot">FALSE</span>)
+
+<span class="cf">for</span> (i <span class="cf">in</span> countries) {
+  <span class="cf">if</span> (<span class="kw">file.exists</span>(<span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;o5m-streets&quot;</span>, <span class="kw">paste0</span>(i, <span class="st">&quot;-streets.o5m&quot;</span>)))<span class="op">==</span><span class="ot">FALSE</span>) {
+    <span class="kw">system</span>(<span class="kw">paste0</span>(<span class="st">&#39;./osmfilter data/o5m/&#39;</span>, i, <span class="st">&#39;-latest.o5m --keep=&quot;highway=*&quot; --drop-version &gt; &#39;</span>, <span class="st">&#39;data/o5m-streets/&#39;</span>, i, <span class="st">&#39;-streets.o5m&#39;</span>))
+  }
+}
+
+<span class="co"># export to csv only street type, name, and lon/lat</span>
+
+<span class="kw">dir.create</span>(<span class="dt">path =</span> <span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;csv-streets&quot;</span>), <span class="dt">showWarnings =</span> <span class="ot">FALSE</span>)
+
+<span class="cf">for</span> (i <span class="cf">in</span> countries) {
+  <span class="cf">if</span> (<span class="kw">file.exists</span>(<span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;csv-streets&quot;</span>, <span class="kw">paste0</span>(i, <span class="st">&quot;-streets.csv&quot;</span>)))<span class="op">==</span><span class="ot">FALSE</span>) {
+    <span class="kw">system</span>(<span class="kw">paste0</span>(<span class="st">&#39;./osmconvert64 data/o5m-streets/&#39;</span>, i,
+                  <span class="st">&#39;-streets.o5m --all-to-nodes --csv=&quot;@id @lat @lon highway name&quot; &gt; data/csv-streets/&#39;</span>, i,
+                  <span class="st">&#39;-streets.csv&#39;</span>, <span class="st">&quot; --csv-separator=&#39;; &#39;&quot;</span>))
+  }
+}</code></pre></div>
+</div>
+<div id="keep-only-street-names-including-reference-to-tito" class="section level2">
+<h2><span class="header-section-number">2.4</span> Keep only street names including reference to Tito</h2>
+<p>Once all street names have been extracted, only street names inlcuding reference to Tito have been kept for further analysis.</p>
+<p>Criteria for filters:</p>
+<ul>
+<li>ends with ‘Tito’</li>
+<li>ends with ‘Tita’</li>
+<li>includes ‘Titov’</li>
+<li>includes ‘Тито’ (and accordingly, also all ‘Титов’ etc., but excluding “Ктито*’)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">StreetsSummary &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">Country =</span> countries, <span class="dt">TotalStreets =</span> <span class="kw">as.integer</span>(<span class="ot">NA</span>), <span class="dt">TitoStreets =</span> <span class="kw">as.integer</span>(<span class="ot">NA</span>))
+
+FindTito &lt;-<span class="st"> &quot;Tito$|Tita$|Titov|Титов|(?&lt;!К)Тито&quot;</span>
+tito_all &lt;-<span class="st"> </span><span class="kw">data_frame</span>()
+
+<span class="cf">for</span> (i <span class="cf">in</span> countries) {
+  <span class="co"># Import from csv</span>
+  temp_streets &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span class="dt">file =</span> <span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;csv-streets&quot;</span>, <span class="kw">paste0</span>(i, <span class="st">&quot;-streets.csv&quot;</span>)),
+                             <span class="dt">delim =</span> <span class="st">&quot;; &quot;</span>,
+                             <span class="dt">col_names =</span> <span class="ot">FALSE</span>, 
+                             <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">decimal_mark =</span> <span class="st">&quot;.&quot;</span>),
+                             <span class="dt">trim_ws =</span> <span class="ot">TRUE</span>)
+  <span class="co"># Store total number of streets for each country</span>
+  StreetsSummary<span class="op">$</span>TotalStreets[StreetsSummary<span class="op">$</span>Country<span class="op">==</span>i] &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp_streets)
+  <span class="co"># Filter only Tito&#39;s streets</span>
+  temp_tito &lt;-<span class="st"> </span>temp_streets <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(<span class="kw">is.na</span>(X5)<span class="op">==</span><span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(stringr<span class="op">::</span><span class="kw">str_detect</span>(<span class="dt">string =</span> X5, <span class="dt">pattern =</span> stringr<span class="op">::</span><span class="kw">regex</span>(<span class="dt">pattern =</span> FindTito, <span class="dt">ignore_case =</span> <span class="ot">TRUE</span>))) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">transmute</span>(<span class="dt">lat =</span> X2, <span class="dt">lon =</span> X3, <span class="dt">streetname =</span> X5)  <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="co"># remove duplicate location with which have similar coordinates (same first decimal)</span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">lonShort =</span> <span class="kw">format</span>(lon, <span class="dt">digit =</span> <span class="dv">3</span>), <span class="dt">latShort =</span> <span class="kw">format</span>(lat, <span class="dt">digit =</span> <span class="dv">3</span>)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">distinct</span>(lonShort, latShort, <span class="dt">.keep_all =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">select</span>(<span class="op">-</span>lonShort, <span class="op">-</span>latShort) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">country =</span> i)
+  <span class="co"># Store number of Tito&#39;s streets in given country</span>
+  StreetsSummary<span class="op">$</span>TitoStreets[StreetsSummary<span class="op">$</span>Country<span class="op">==</span>i] &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp_tito)
+  <span class="co"># Merge table for each country</span>
+  tito_all &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(tito_all, temp_tito)
+}
+
+tito_all &lt;-<span class="st"> </span>tito_all <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">distinct</span>()
+
+<span class="co"># tito_all &lt;- tito_all %&gt;% </span>
+<span class="co">#   mutate(lonShort = format(lon, digit = 4), latShort = format(lat, digit = 4)) %&gt;%</span>
+<span class="co">#   distinct(lonShort, latShort, .keep_all = TRUE) %&gt;% </span>
+<span class="co">#   select(-lonShort, -latShort)</span>
+
+<span class="kw">ExportData</span>(<span class="dt">data =</span> tito_all, <span class="dt">filename =</span> <span class="st">&quot;OSM_tito_all&quot;</span>)</code></pre></div>
+<p>The data are available as a spreadsheet in <a href="data/OSM_tito_all.csv">.csv</a>, <a href="data/OSM_tito_all.xlsx">.xlsx</a>, and as a data frame in R’s <a href="data/OSM_tito_all.rds">.rds format</a>.</p>
+</div>
+<div id="preliminary-results-based-on-openstreetmap" class="section level2">
+<h2><span class="header-section-number">2.5</span> Preliminary results based on OpenStreetMap</h2>
+<p><strong>As appears from the following sections, these data include substantial inaccuracies. They are reported here as preliminary results based on OpenStreetMap. See the following sections for more accurate data.</strong></p>
+<div id="number-of-streets-dedicated-to-tito" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Number of streets dedicated to Tito</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">StreetsSummary <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(TitoStreets) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Country =</span> <span class="kw">toupper</span>(Country)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Country =</span> forcats<span class="op">::</span><span class="kw">fct_inorder</span>(Country)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Country, <span class="dt">y =</span> TitoStreets, <span class="dt">label =</span> TitoStreets)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;&quot;</span>, <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">hjust =</span> <span class="op">-</span><span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Number of streets dedicated to Tito&quot;</span>,
+       <span class="dt">subtitle =</span> <span class="st">&quot;Based on OpenStreetMaps data&quot;</span>)</code></pre></div>
+<p><img src="02-OpenStreetMap_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ShowTable</span>(<span class="dt">data =</span> StreetsSummary <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(TitoStreets)))</code></pre></div>
+<table style="width:71%;">
+<colgroup>
+<col width="29%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Country</th>
+<th align="center">TotalStreets</th>
+<th align="center">TitoStreets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">3873902</td>
+<td align="center">25</td>
+</tr>
+<tr class="even">
+<td align="center">macedonia</td>
+<td align="center">739505</td>
+<td align="center">24</td>
+</tr>
+<tr class="odd">
+<td align="center">bosnia-herzegovina</td>
+<td align="center">2077207</td>
+<td align="center">19</td>
+</tr>
+<tr class="even">
+<td align="center">slovenia</td>
+<td align="center">3231464</td>
+<td align="center">14</td>
+</tr>
+<tr class="odd">
+<td align="center">serbia</td>
+<td align="center">2423391</td>
+<td align="center">14</td>
+</tr>
+<tr class="even">
+<td align="center">montenegro</td>
+<td align="center">713605</td>
+<td align="center">7</td>
+</tr>
+<tr class="odd">
+<td align="center">kosovo</td>
+<td align="center">672647</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="putting-streets-dedicated-to-tito-according-to-openstreetmap-on-a-map" class="section level2">
+<h2><span class="header-section-number">2.6</span> Putting streets dedicated to Tito (according to OpenStreetMap) on a map</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Setting the coordinates</span>
+wb &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">left =</span> <span class="dv">12</span>, <span class="dt">bottom =</span> <span class="dv">40</span>, <span class="dt">right =</span> <span class="dv">26</span>, <span class="dt">top =</span> <span class="dv">48</span>)
+
+<span class="co"># Preparing the canvas, and forcing cache</span>
+<span class="cf">if</span> (<span class="kw">file.exists</span>(<span class="kw">file.path</span>(<span class="st">&quot;temp&quot;</span>, <span class="st">&quot;mapTonerLite.rds&quot;</span>))<span class="op">==</span><span class="ot">FALSE</span>) {
+  <span class="kw">saveRDS</span>(<span class="dt">object =</span> ggmap<span class="op">::</span><span class="kw">get_stamenmap</span>(<span class="dt">bbox =</span> wb, <span class="dt">zoom =</span> <span class="dv">6</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner-lite&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggmap</span>(), <span class="dt">file =</span> <span class="kw">file.path</span>(<span class="st">&quot;temp&quot;</span>, <span class="st">&quot;mapTonerLite.rds&quot;</span>))
+}
+
+mapTonerLite &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="dt">file =</span> <span class="kw">file.path</span>(<span class="st">&quot;temp&quot;</span>, <span class="st">&quot;mapTonerLite.rds&quot;</span>))
+
+OSM_TitoTonerLight &lt;-<span class="st">  </span>mapTonerLite <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">data=</span>tito_all, <span class="kw">aes</span>(<span class="dt">x=</span>lon, <span class="dt">y=</span>lat), <span class="dt">color=</span><span class="st">&quot;red&quot;</span>, <span class="dt">size=</span><span class="dv">2</span>, <span class="dt">alpha=</span><span class="fl">0.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;&#39;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Streets and squares dedicated to Tito&quot;</span>, 
+       <span class="dt">subtitle =</span> <span class="kw">paste</span>(<span class="st">&quot;based on OpenStreetMap&quot;</span>))
+
+OSM_TitoTonerLight</code></pre></div>
+<p><img src="02-OpenStreetMap_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ExportGraph</span>(<span class="dt">graph =</span> OSM_TitoTonerLight, <span class="dt">filename =</span> <span class="st">&quot;OSM_TitoTonerLight&quot;</span>)  </code></pre></div>
+<p>This image is available for download in <a href="graphs/OSM_TitoTonerLight.png">.png</a>, <a href="graphs/OSM_TitoTonerLight.svg">.svg</a>, and as an object in R’s <a href="graphs/OSM_TitoTonerLight.rds">.rds format</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Preparing the canvas  </span>
+<span class="kw">dir.create</span>(<span class="dt">path =</span> <span class="st">&quot;temp&quot;</span>, <span class="dt">showWarnings =</span> <span class="ot">FALSE</span>)
+
+## forcing cache to prevent reloading map from Google Maps each time
+<span class="cf">if</span> (<span class="kw">file.exists</span>(<span class="kw">file.path</span>(<span class="st">&quot;temp&quot;</span>, <span class="st">&quot;mapG.rds&quot;</span>))<span class="op">==</span><span class="ot">FALSE</span>) {
+  <span class="kw">saveRDS</span>(<span class="dt">object =</span> <span class="kw">get_googlemap</span>(<span class="st">&quot;Sarajevo&quot;</span>, <span class="dt">scale =</span> <span class="dv">2</span>, <span class="dt">zoom =</span> <span class="dv">6</span>), <span class="dt">file =</span> <span class="kw">file.path</span>(<span class="st">&quot;temp&quot;</span>, <span class="st">&quot;mapG.rds&quot;</span>))
+}
+
+mapG &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="dt">file =</span> <span class="kw">file.path</span>(<span class="st">&quot;temp&quot;</span>, <span class="st">&quot;mapG.rds&quot;</span>))
+
+<span class="kw">ggmap</span>(mapG) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data=</span>tito_all, <span class="kw">aes</span>(<span class="dt">x=</span>lon, <span class="dt">y=</span>lat), <span class="dt">color=</span><span class="st">&quot;red&quot;</span>, <span class="dt">size=</span><span class="dv">2</span>, <span class="dt">alpha=</span><span class="fl">0.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;&#39;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Streets and squares dedicated to Tito&quot;</span>, 
+       <span class="dt">subtitle =</span> <span class="kw">paste</span>(<span class="st">&quot;Based on OpenStreetMap data&quot;</span>))</code></pre></div>
+<p><img src="02-OpenStreetMap_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ExportGraph</span>(<span class="dt">filename =</span> <span class="st">&quot;OSM_TitoGmaps&quot;</span>)  </code></pre></div>
+<p>This image is available for download in <a href="graphs/OSM_TitoGmaps.png">.png</a>, <a href="graphs/OSM_TitoGmaps.svg">.svg</a>, and as an object in R’s <a href="graphs/OSM_TitoGmaps.rds">.rds format</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># # Preparing the canvas</span>
+<span class="co"># mapWatercolor &lt;- get_stamenmap(bbox = wb, zoom = 7, maptype = &quot;watercolor&quot;) %&gt;% ggmap()</span>
+<span class="co"># # Adding the dots</span>
+<span class="co"># mapWatercolor + geom_point(data=tito_all, aes(x=lon, y=lat), color=&quot;red&quot;, size=2, alpha=0.5) +</span>
+<span class="co">#   labs(x = &#39;&#39;, y = &#39;&#39;) + ggtitle(&quot;Streets dedicated to Tito&quot;)</span>
+<span class="co"># ggsave(&quot;TitoWatercolor.png&quot;)</span></code></pre></div>
+</div>
+<div id="alternative-density-maps" class="section level2">
+<h2><span class="header-section-number">2.7</span> Alternative density maps</h2>
+<p>Testing alternative visualisations.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mapTonerLite <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">stat_density2d</span>(
+    <span class="kw">aes</span>(<span class="dt">x =</span> lon, <span class="dt">y =</span> lat, <span class="dt">fill =</span> ..level..,  <span class="dt">alpha =</span> ..level..),
+    <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">bins =</span> <span class="dv">4</span>, <span class="dt">data =</span> tito_all,
+    <span class="dt">geom =</span> <span class="st">&quot;polygon&quot;</span>
+)</code></pre></div>
+<p><img src="02-OpenStreetMap_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="summary-of-all-relevant-street-names-found-on-openstreetmap" class="section level2">
+<h2><span class="header-section-number">2.8</span> Summary of all relevant street names found on OpenStreetMap</h2>
+<p>The following table presents all versions of street names including reference to Tito found in each of the countries included in the analysis.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tito_all_streetname &lt;-<span class="st"> </span>tito_all <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(country, streetname) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(country, streetname) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(country, <span class="kw">desc</span>(n), streetname)
+
+<span class="kw">ShowTable</span>(<span class="dt">data =</span> tito_all_streetname)</code></pre></div>
+<table style="width:81%;">
+<colgroup>
+<col width="29%" />
+<col width="45%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">country</th>
+<th align="center">streetname</th>
+<th align="center">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">bosnia-herzegovina</td>
+<td align="center">Maršala Tita</td>
+<td align="center">11</td>
+</tr>
+<tr class="even">
+<td align="center">bosnia-herzegovina</td>
+<td align="center">Titova</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">bosnia-herzegovina</td>
+<td align="center">Titova ili Put Oficirske Škole</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">bosnia-herzegovina</td>
+<td align="center">Trg maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">bosnia-herzegovina</td>
+<td align="center">Ul Maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">bosnia-herzegovina</td>
+<td align="center">ul. Maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">Maršala Tita</td>
+<td align="center">6</td>
+</tr>
+<tr class="even">
+<td align="center">croatia</td>
+<td align="center">Ulica Maršala Tita</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">Obala Maršala Tita</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">croatia</td>
+<td align="center">Titov trg</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">Hodaliste marsala tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">croatia</td>
+<td align="center">Josipa Broza Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">Obala Josipa Broza Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">croatia</td>
+<td align="center">Obala m. Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">Poljana maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">croatia</td>
+<td align="center">Trg J. B. Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">Trg Josipa Broza Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">croatia</td>
+<td align="center">Trg maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">Trg Maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">croatia</td>
+<td align="center">Ulica Josipa Broza Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">croatia</td>
+<td align="center">Ulica Josipa Broza-Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">macedonia</td>
+<td align="center">Маршал Тито</td>
+<td align="center">14</td>
+</tr>
+<tr class="odd">
+<td align="center">macedonia</td>
+<td align="center">bul. Marsal Tito</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">macedonia</td>
+<td align="center">Marsal Tito</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">macedonia</td>
+<td align="center">Marshal Tito</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">macedonia</td>
+<td align="center">ul. Marshal Tito</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">macedonia</td>
+<td align="center">Кеј Маршал Тито</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">macedonia</td>
+<td align="center">Титова Митровачка</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">macedonia</td>
+<td align="center">Титовелешка</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">macedonia</td>
+<td align="center">Титово Ужице</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">macedonia</td>
+<td align="center">ул. Маршал Тито</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">macedonia</td>
+<td align="center">Улица Маршал Тито</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">montenegro</td>
+<td align="center">Marsala Tita</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">montenegro</td>
+<td align="center">Gjergj Kastrioti - Skënderbeu / Maršal Tito</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">montenegro</td>
+<td align="center">Josipa Broza Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">montenegro</td>
+<td align="center">Maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">montenegro</td>
+<td align="center">Titove Korenice</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">montenegro</td>
+<td align="center">trg Maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">serbia</td>
+<td align="center">Maršala Tita</td>
+<td align="center">5</td>
+</tr>
+<tr class="even">
+<td align="center">serbia</td>
+<td align="center">Титоградска</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">serbia</td>
+<td align="center">Aleja Maršala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">serbia</td>
+<td align="center">Marsala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">serbia</td>
+<td align="center">Ulica Marsala Tita</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">serbia</td>
+<td align="center">Тито Маршал</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">serbia</td>
+<td align="center">Титова</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">slovenia</td>
+<td align="center">Titova ulica</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">slovenia</td>
+<td align="center">Cesta maršala Tita</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">slovenia</td>
+<td align="center">Titova cesta</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">slovenia</td>
+<td align="center">Trg maršala Tita</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">slovenia</td>
+<td align="center">Titov most</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">slovenia</td>
+<td align="center">Titov trg</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">slovenia</td>
+<td align="center">Titov trg / Piazza Tito</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">slovenia</td>
+<td align="center">Titova - Nasipna</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">slovenia</td>
+<td align="center">Ulica Josipa Broza-Tita</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ExportData</span>(<span class="dt">data =</span> tito_all_streetname, <span class="dt">filename =</span> <span class="st">&quot;tito_all_streetname&quot;</span>)</code></pre></div>
+<p>The data are available as a spreadsheet in <a href="data/tito_all_streetname.csv">.csv</a>, <a href="data/tito_all_streetname.xlsx">.xlsx</a>, and as a data frame in R’s <a href="data/tito_all_streetname.rds">.rds format</a>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="extracting-data-from-google-maps.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/giocomai/FindingTito/edit/master/02-OpenStreetMap.Rmd",
+"text": "Edit"
+},
+"download": ["FindingTito.pdf"],
+"toc": {
+"collapse": "section",
+"depth": 4
+}
+});
+});
+</script>
+
+</body>
+
+</html>
