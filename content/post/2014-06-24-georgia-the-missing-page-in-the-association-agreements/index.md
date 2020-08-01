@@ -1,0 +1,69 @@
+---
+title: The missing page in the Association Agreements
+date: '2014-06-24'
+categories:
+  - Articles
+tags: ["social issues"]
+subtitle: ''
+summary: 'It might be one page, one paragraph, or just two lines. But the importance of including child protection in EU’s Association Agreements cannot be overestimated'
+authors: ["Giorgio Comai", "Mirela Oprea"]
+projects: []
+---
+
+*Published simultaneously by* [Osservatorio Balcani e Caucaso](http://www.balcanicaucaso.org/eng/Regions-and-countries/Moldova/The-missing-page-in-the-Association-Agreements-153663), [Eastbook.eu](http://eastbook.eu/) and [**DFwatch.net**](http://dfwatch.net/)
+
+*It might be one page, one paragraph, or just two lines. But the importance of including child protection in EU’s Association Agreements cannot be overestimated*
+
+On June 27, Georgia and Moldova will sign in Brussels the Association Agreements with the European Union that were initialled last year in Vilnius (Ukraine's new authorities are expected to sign only the economic part of the Agreements on the same day). After a high level meeting that took place last month between president of the European Commission José Manuel Barroso and Georgian Prime Minister Irakli Garibashvili, both sides [officially welcomed](http://europa.eu/rapid/press-release_MEMO-14-372_en.htm) "the finalisation of the Association Agenda as a set of jointly agreed priorities for the period 2014-2016 that will help prepare Georgia for the successful implementation of the Agreement."
+
+The Association Agenda with Georgia and Moldova have not (yet) been made public. But if, as expected, they will reflect the contents of the Association Agreements, they will differ in at least one key aspect.
+
+Looking inside the Agreements
+-----------------------------
+
+The Association agreements signed last November in Vilnius by Moldova and Georgia are similar, almost identical in some parts, [but not quite the same](http://www.balcanicaucaso.org/eng/Regions-and-countries/Georgia/The-Vilnius-puzzler-145329). After the summit, the coalition uniting child-focussed NGOs in Moldova [could welcome](http://www.childpact.org/2013/12/03/child-protection-key-element-in-newly-signed-association-agreement-between-eu-and-moldova/) the presence of a whole chapter dedicated to child protection in the new Agreement with the EU. On the contrary, its Georgian counterpart [had to point out](http://www.childpact.org/2014/01/10/why-is-child-protection-missing-from-the-newly-signed-association-agreement-between-the-eu-and-georgia/) in a press release the absence of a similar section in the Association Agreement signed by the Georgian government. At a recent press conference in Chișinău, [an EU representative stated](http://www.europalibera.org/content/article/25415619.html) that the Agreement means "investments, trade, new businesses opportunities, development of the economy, but is also certainly good news for the children, because the European Union is a protector of the children." He went ahead listing various forms of child vulnerability that EU-Moldova cooperation will tackle, adding that "this will not remain only on paper in the Agreement, but will turn into concrete actions." EU officials in Tbilisi would not be in the position to make similar statements, since child rights have not been included in the EU-Georgia Agreement.
+
+The chapter on "Cooperation in the protection and promotion of the rights of the child" is just one page in the 984-pages-long [EU-Moldova agreement](http://eeas.europa.eu/moldova/assoagreement/assoagreement-2013_en.htm). Can it possibly be so important? The short answer is "yes". As recent history shows, child protection is one of those fields where EU neighbourhood and enlargement policies can bring real change to the lives of thousands of people.
+
+Child protection reforms in Romania
+-----------------------------------
+
+In the early 1990s, after the fall of Ceaușescu's regime, the terrible condition of the 100,000 children that lived in Romania's orphanages hit the headlines, attracted strong emotional responses and significant international support. Yet, as of 1996, the number of institutionalized children did not decrease and Law 3/1970, that put institutionalization as the [second best child protection option](http://link.springer.com/article/10.1007/s11558-009-9052-y) (after adoption), was still in force.
+
+As recognized by child protection experts, things started to change in 1997, when child welfare came up clearly in the dialogue between Romania and the European Union. There is now a strong consensus on the fact that it was the European Union pressure that pushed the Romanian government to speed up its action and start a sweeping reform of the child protection system.
+
+The importance of children's welfare was expressed at high level meetings, but in order to become an official policy of the EU, had to be included in formal documents.
+
+In 1997, the European commission published its [opinion on Romania's application for membership](http://ec.europa.eu/enlargement/archives/pdf/dwn/opinions/romania/ro-op_en.pdf). It was a 114 pages document, talking about all possible aspects of reform, from the establishment of democracy to fishing regulations. In the whole document, there is effectively one single paragraph dedicated to child protection issues. In the [1999 official document](http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:1999:335:0015:0021:EN:PDF) "on the principles, priorities, intermediate objectives and conditions contained in the Accession Partnership with Romania", there are two bare lines that highlight the need to "undertake a full reform of the childcare system."
+
+Obviously, it is not that single paragraph or those two lines alone that brought reforms to the system in Romania. But it is crucial that they were there, because they made clear that child protection must be a priority in the reform process and put pressure on the Romanian government to actually deal with this issue.
+
+If those few lines on child protection were not in included in EU-Romania negotiations, it is easy to imagine that the Romanian government wouldn't have felt the urge to proceed immediately with sweeping reforms. And if this didn't happen, tens of thousands of children would have needlessly suffered, be deprived of the possibility of growing up in a family, and suffer the consequences of life in institutions (according to a well-known research, including [harm to their brain development](http://www.hup.harvard.edu/catalog.php?isbn=9780674724709)). Of course, politicians would have paid lip service to the importance of children, saying they are "the future of the nation", etc. But in practice the situation of vulnerable children could have easily been ignored: they don't vote, they don't protest and, if left by themselves, they do not have any lobbying power.
+
+Why not Georgia?
+----------------
+
+Back to the present. As mentioned above, the association agreement with Moldova includes a whole chapter on "cooperation in the protection and promotion of the rights of the child" (Title IV, Chapter 27). It makes clear that "such cooperation shall include, in particular: (a) the prevention and combating of all forms of exploitation (including child labour), abuse, negligence and violence against children, including by developing and strengthening the legal and institutional framework as well as awareness-raising campaigns in this domain; [...] (c) exchange of information and best practice on the alleviation of poverty among children [...] (d) the implementation of measures aimed at promoting children's rights within the family and institutions, and strengthening the capacity of parents and carers in order to ensure child development; [...]." It concludes stating that "a regular dialogue will take place on the issues covered by this Chapter."
+
+The Association Agreement with Georgia has none of the above. The absence of any significant reference to child protection is all the more striking, given the fact that the European Parliament previously [recommended](http://www.europarl.europa.eu/sides/getDoc.do?type=TA&language=EN&reference=P7-TA-2011-0514) explicitly to "include in the Agreement a section on the protection of the rights of the child."
+
+A few months ago, then Georgian Prime Minister [Bidzina Ivanishvili stated](http://www.youtube.com/watch?v=-DP0kVgKV2k) that children and the protection of child rights are "the most important issue in the world"; he later [stressed](http://youtu.be/3zncKXfcjAg?t=2m47s) Georgia's commitment to the UN Convention on the Rights of the Child and expressed the hope that the international community would offer its support in this field. EU ambassador to Georgia [Philip Dimitrov stated](http://dfwatch.net/new-eu-effort-to-save-street-children-in-georgia-35000) that the "EU is focused on the rights of highly vulnerable children", and that the EU is substantially contributing to projects in this field.
+
+The commitment of the Georgian authorities and the EU is of course to be welcomed. But if both are so committed to child protection in Georgia and acknowledge the importance of mutual cooperation, why didn't they include any substantial reference to it in a 900-pages-long document that is expected to be at the base of their relations?
+
+Since 2005, Georgia went through a period of important reforms. The [process of de-institutionalization](http://www.civilin.org/welfareeng/deinstitutionalization.php) brought positive results, and the number of institutionalized children has been substantially reduced. Yet, as highlighted by recent studies, important problems remain. Georgia has one of the highest [early childhood (0-5) mortality](http://www.childinfo.org/files/Child_Mortality_Report_2012.pdf) rates among Council of Europe countries, 4 to 5 times higher than most western European countries. The phenomenon of street children, discussed in a [Unicef report](http://www.unicef.org/georgia/Street_children_survey.eng%281%29.pdf) and documented by an ongoing [project by photojournalist Onnik Krikorian](http://onnik-krikorian.com/projects/street-kids-of-tbilisi/), is a clear example of child vulnerability and can be one of the most negative "side effects" of the process of deinstitutionalization, if not addressed by adequate measures. Disabled children are still often institutionalized, and until now have largely been left out of the reform process, as pointed out by a [recent report](http://www.disabilityrightsintl.org/wordpress/wp-content/uploads/Left-Behind-final-report.pdf) and [a BBC feature](http://www.bbc.co.uk/news/world-europe-25575094). Child poverty represents a big challenge; it is of course the result of the overall economic situation in the country, but there are serious proposals [brought forward by Unicef Georgia](http://www.unicef.org/georgia/UNICEF_Child_PovertyENG_web_with_names%281%29.pdf) that would help to significantly alleviate the phenomenon.
+
+Taking action
+-------------
+
+There are many child protection issues that must and can be dealt with in Georgia. It is positive that Georgia is a country where different international organizations are active in this field. It is fundamental that Georgia's government has shown sensibility towards this issue, has promoted important reforms, has [involved different Ministries](http://www.messenger.com.ge/issues/2954_september_25_2013/2954_gvanca.html) in the process, and recognised the need of more work to be done. It is very important that the EU is already [supporting](http://eeas.europa.eu/delegations/georgia/projects/list_of_projects/299085_en.htm) [initiatives](http://www.unicef.org/ceecis/Booklet_ENG_HQ_2mm_bleed.pdf) in this field, in cooperation with local government and international NGOs. But it is regrettable that child protection has not become part of the Association Agreement, the main official document establishing the relations between EU and Georgia and their main sectors of cooperation for the next years.
+
+Yet, current agreements and cooperation procedures do leave space for increased engagement in child protection. The EU and Georgia, both acknowledging the primary importance of cooperation in this field, should take this opportunity and make child protection in Georgia a clear example and beneficiary of the "[more for more](http://www.eeas.europa.eu/top_stories/2011/250511_en.htm)" policy ("the more and the faster a country progresses in its internal reforms, the more support it will get from the EU"). In the long term, this could provide encouragement to other countries of the region and give arguments to promote the drive for reforms in their own child protection system.
+
+This could also be part of the process of increased [regional cooperation](http://www.youtube.com/watch?v=hlOsqSc7ZWo) supported by ChildPact -- the Regional Coalition for Child Protection in the Wider Black Sea Area -- according to which best child protection practices are horizontally shared among the countries of the region, with the input and support of the EU.
+
+More directly, enhanced cooperation in this field could fundamentally contribute to establish a child welfare system able to break the [cycle of poverty and vulnerability](http://www.youtube.com/watch?v=__uE0uViaLs) and improve the lives and future of thousands of vulnerable children in Georgia.
+
+*Mirela Oprea is secretary general of* [*ChildPact*](http://www.childpact.org/)*, the Regional Coalition for Child Protection in the Wider Black Sea Area*
+
+*Giorgio Comai is former Caucasus editor at "*[*Osservatorio Balcani e Caucaso*](http://www.balcanicaucaso.org/)*" and is currently doing research at Dublin City University.*
