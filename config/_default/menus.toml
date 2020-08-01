@@ -5,29 +5,35 @@
 
 
 [[main]]
-  name = "Talks"
-  url = "#talks"
-  weight = 10
+  name = "Articles"
+  url = "#articles"
+  weight = 5
+
 
 [[main]]
   name = "Publications"
-  url = "#featured"
+  url = "#publications"
+  weight = 10
+
+[[main]]
+  name = "Talks"
+  url = "#talks"
   weight = 20
 
-[[main]]
-  name = "R packages"
-  url = "#rpackages"
-  weight = 30
-
-[[main]]
-  name = "Posts"
-  url = "#posts"
-  weight = 40
-
-[[main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 50
+#[[main]]
+#  name = "R packages"
+#  url = "#rpackages"
+#  weight = 30
+#
+#[[main]]
+#  name = "Posts"
+#  url = "#posts"
+#  weight = 40
+#
+#[[main]]
+#  name = "Projects"
+#  url = "#projects"
+#  weight = 50
 
 [[main]]
   name = "Contact"

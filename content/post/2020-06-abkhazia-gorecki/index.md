@@ -3,9 +3,8 @@ title: “Abchazja” and other untranslated bits of Wojciech Górecki's Caucasu
 author: Giorgio Comai
 date: '2020-06-26'
 categories:
-  - articles
-  - book reviews
-  - Research notes
+  - Articles
+  - Book reviews
 tags:
   - caucasus
   - readings

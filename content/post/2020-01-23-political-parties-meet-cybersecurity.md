@@ -3,7 +3,7 @@ title: 'Political parties, please meet cybersecurity'
 author: ''
 date: '2020-01-23'
 slug: political-parties-meet-cybersecurity
-categories: [Research notes, Analysis]
+categories: [Articles]
 tags:
   - cybersecurity
 subtitle: ''

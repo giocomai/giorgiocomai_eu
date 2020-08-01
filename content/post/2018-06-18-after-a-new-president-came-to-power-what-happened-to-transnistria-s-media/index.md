@@ -3,7 +3,7 @@ title: After a new president came to power, what happened to Transnistria’s me
 author: Giorgio Comai
 date: '2018-06-18'
 slug: after-a-new-president-came-to-power-what-happened-to-transnistria-s-media
-categories: [Research notes, Analysis, Data visualisations]
+categories: [Articles]
 tags: ["de facto states", "transnistria"]
 header:
   caption: 'Tiraspol. Photo by Giorgio Comai'

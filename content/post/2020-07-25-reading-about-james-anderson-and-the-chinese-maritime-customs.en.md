@@ -2,20 +2,14 @@
 title: Reading about James Anderson and the Chinese Maritime Customs
 author: ''
 date: '2020-07-25'
-slug: reading-about-james-anderson-and-the-chinese-maritime-customs
 categories:
   - Readings
+  - Blog
 tags:
   - London Review of Books
 subtitle: ''
 summary: ''
-authors: []
-lastmod: '2020-07-25T14:07:57+02:00'
 featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
 projects: []
 ---
 

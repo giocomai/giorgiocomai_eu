@@ -5,17 +5,11 @@ date: '2019-10-13'
 slug: lessons-on-democracy-from-ancient-athens
 categories:
   - Readings
+  - Blog
 tags:
   - London Review of Books
 subtitle: ''
 summary: ''
-authors: []
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
 ---
 
 I happened to read recently [this review of a book on democracy in ancient Athens](https://www.lrb.co.uk/v39/n08/peter-green/class-war) and the class of civil servants that used to run it. As I read it, I felt an urge to draw some sort of lesson... without being able to find them.

@@ -2,8 +2,7 @@
 title: "Dealing with Russia's brazenness in cyber space"
 author: ''
 date: '2020-04-22'
-slug: russia-brazenness-cyber-space
-categories: [Research notes, Analysis]
+categories: [Articles]
 tags:
   - cybersecurity
 subtitle: ''

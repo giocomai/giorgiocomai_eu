@@ -2,7 +2,7 @@
 title: 'How to find the population-weighted centre of local administrative units'
 author: Giorgio Comai
 date: '2020-03-25'
-slug: population-weighted-centre
+summary: 'A structured approach and a new R package to deal with a recurrent question'
 categories:
   - Data notes
 tags:
@@ -23,15 +23,15 @@ featured:
 <h1>The problem</h1>
 <p>In principle, this looks like a reasonably straightforward problem. <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/lau">Eurostat conveniently distributes geographic data</a> on all local administrative units in Europe. The easy solution is to let software calculate the centroid for each of them, and <em>presto</em>, mission accomplished.</p>
 <p>This would be alright if all municipalities were roundly shaped. Unfortunately, this is rarely the case. Even towns which are as satisfyingly regularly-shaped as possible, often have irregular administrative boundaries. Palmanova, in Italy, has an unmistakable centre, but the administrative boundaries of its municipality are not as regularly shaped: the centroid of those boundaries clearly does not correspond to the town centre.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>In many cases, the difference is hardly noticeable especially if the zoom on the map is not too close. However, there is a full range of more complicated and not so uncommon cases.</p>
 <p>In the European context, things get more complicated and problematic in particular with island archipelagos (obviously), sparsely populated areas, and mountain regions where large uninhabited areas are by necessity attributed to a given municipality: the inhabited centre of the municipality is often at the margins of the administrative boundaries.</p>
 <p>In the case of Pinzolo, for example, in Italian Alps, the centre of the municipality is at the utmost South of its administrative boundaries.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Besides, it is not uncommon for mountain municipalities to have non-contiguous territory, as mountain pastures and forests were attributed to different communities. In some cases, the non-inhabited part of the municipality in the mountains has a larger surface than the inhabited part, making it problematic to apply the easy solution of picking the centroid of the largest contiguous area: it would just pick a spot close to some mountain peak. This is the case, for example, of Tre Ville, not far from Pinzolo.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>In the case of island archipelagos, this approach would likely just pick a spot in the middle of the sea. This is not an issue only of tiny villages, but also for regional centres, such as Aosta, in Italy’s North-West.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="why-is-this-a-problem" class="section level1">
 <h1>Why is this a problem?</h1>
@@ -44,20 +44,20 @@ featured:
 <h1>The solution: towns are where people are</h1>
 <p>Ultimately, towns are where people are. So the best way to find the centre of a municipality could well be to find the population-weighted centre. Given that Eurostat distributes a <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/population-distribution-demography/geostat">population grid</a> with data on the number of residents in each square kilometer of the continent, it should be possible to consistently apply this approach for all municipalities in the European Union.</p>
 <p>How does this look in practice? Let’s start from an easy case: a relatively big town with large non-inhabited areas within its municipal border. If the town centre is where people are, and through the population grid we know where people live, we can just make a weighted average of the coordinates of the centroids of each cell of the population grid. Et voilà, we have a point that can reasonably be understood as a central location of the town.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Let’s move on to more complicated scenarios, e.g. a municipality that has its centre close to its administrative boundaries. A weighted average performs better than the centroid, but sets a point that is still far from where most people live.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Since we are interested in locations where most people live, it probably makes sense to give much more proportional weight to cells where a lot of people live. So let’s raise population per cell to the power of 2 to give disproportionate weight to highly inhabited locations. Much better.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>This works well also with one of the cases mentioned by Andrea Borruso in his post, Bitonto, in Puglia.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Let’s move on to more complicated scenarios: municipalities with non-contiguous territory. Having the centre outside of the borders is obviously not ideal. The most straightforward solution would be to pick the centroid of the part with the largest area, but in this case, for example, this would not work. In most cases, the better solution is probably to calculate the population-weighted centre of the most populous contiguous area, and then add a check to ensure that the final point actually falls into the administrative borders.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Again, this gives a meaningful answer also for some of the island and coastal municipalities mentioned in Borruso’s post.
-<img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Even in Palmanova the population-weighted centre falls reasonably close to where we would expect it to be. I would not win a darts tournament with this shot, but it definitely would not be a miss.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <div id="all-local-administrative-units-all-of-the-eu" class="section level2">
 <h2>All local administrative units, all of the EU?</h2>
 <p>Sure, why not? You can download the resulting datasets with the coordinates of the centre of municipalities of local administrative units calculated as detailed in this post from this link [coming soon-ish: on my laptop, it should take a couple of days to process the more than 100.000 local administrative units included in the dataset].</p>
@@ -70,11 +70,12 @@ featured:
 <p>This approach could be further improved by having more detailed data. And as it turns out, they exist. Facebook (yes, Facebook) distributes with a permissive Creative Commons license high resolution population maps: “these high-resolution maps estimate the number of people living within 30-meter grid tiles in nearly every country around the world.” The <a href="https://dataforgood.fb.com/docs/methodology-high-resolution-population-density-maps-demographic-estimates/">full methodology is detailed on their website</a>, but in brief, they take available data and adjust them using satellite imagery and machine learning. As of this writing, these population grids have last been updated in March 2020, with most recent data referring to 2019. <a href="https://data.humdata.org/organization/facebook">They can be downloaded freely</a>, yet they seem to be little used, with their own download stats recording only a few dozen hits per month for most country-level data.</p>
 <p>Using such granular data, do we get more accurate centres?</p>
 <p>Apparently, not always: in the case of Pinzolo, Facebook’s machine learning based on satellite imagery seemingly mistaked facilities for ski-goers with residential housing, moving the population-weighted centre further away from the actual village.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Further increasing the disbalance in favour of highly populated areas, by raising the residents of each cell by the power of 5, reduces the impact of such (probably uncommon) distortions in the data.</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>But perhaps most importantly, re-calculating the population-weighted centre with these parameters and increased detail, here is what I get:</p>
-<p><img src="/post/2020-03-population-weighted-centre/2020-03-population-weighted-centre_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="/post/2020-03-population-weighted-centre/index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>Bingo! Top score!!! 🎯🎉🍾🏆</p>
 <p><strong>P.S.</strong>: while writing this post, as I was slowed down by some of the tedious aspects that often accompany geocomputation with data released by the EU, I made a package for the R programming language that eases some of the pain. It’s an early release, and will become more feature-rich in the coming month, but you may still give it a spin. The package is <a href="https://github.com/giocomai/latlon2map">available on GitHub</a>, and already has a preliminary <a href="https://giorgiocomai.eu/latlon2map/articles/removing_the_boring.html">vignette outlining some of its features</a>.</p>
+<p><strong><a href="https://medium.com/european-data-journalism-network/how-to-find-the-population-weighted-centre-of-local-administrative-units-a0d198fc91f7">This is post was originally published by EDJNet</a></strong></p>
 </div>

@@ -5,9 +5,9 @@
 widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 22  # Order that this section will appear.
+weight = 16  # Order that this section will appear.
 
-title = "Data notes"
+title = "Articles, features, and analyses"
 subtitle = ""
 
 [content]
@@ -15,7 +15,7 @@ subtitle = ""
   page_type = "post"
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 5
+  count = 3
   
   # Choose how many pages you would like to offset by
   offset = 0
@@ -26,7 +26,7 @@ subtitle = ""
   # Filter posts by a taxonomy term.
   [content.filters]
     tag = ""
-    category = "Data notes"
+    category = "Articles"
     publication_type = ""
     exclude_featured = false
   
@@ -65,4 +65,3 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-
