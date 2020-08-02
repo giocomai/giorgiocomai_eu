@@ -62,3 +62,11 @@
   font-family: 'Font Awesome 5 Brands';
   font-weight: 400; }
 
+#navbar-main {
+  position: absolute; 
+}
+
+.home-section {
+  padding: 50px 0 50px 0;
+}
+
