@@ -15,7 +15,7 @@ image:
   preview_only: no
 ---
 
-In the first days of post-electoral protests in Belaurs, state news were largely in denial: no mention of the protests or tiny segments suggesting not much was going on, with routine coverage of Lukashenko doing routine visits and such.
+In the first days of post-electoral protests in Belarus, state news were largely in denial: no mention of the protests or tiny segments suggesting not much was going on, with routine coverage of Lukashenko doing routine visits and such.
 
 After more than 10 days of protests, things have changed considerably. 
 
@@ -23,7 +23,7 @@ After more than 10 days of protests, things have changed considerably.
 
 The news programme used all possible approaches to get through to the audience the understanding that incoming president Lukashenko is here to stay, that any other outcome is implausible, and would anyway be disastrous.
 
-This post inlcudes a brief description on the news segments of "Panorama" broadcast on Friday, 21 August 2020 on Belarus 24. As the full broadcast is (apparently) not available online, links are mostly to my own recordings of it (they are unfortunately sometimes intermittent). Links to the corresponding segments on the official YouTube channel are also included when available.
+This post includes a brief description on the news segments of "Panorama" broadcast on Friday, 21 August 2020 on Belarus 24. As the full broadcast is (apparently) not available online, links are mostly to my own recordings of it (they are unfortunately sometimes intermittent). Links to the corresponding segments on the official YouTube channel are also included when available.
 
 ## News segments from Friday, 21 August
 
@@ -38,7 +38,7 @@ Parts of the segments looked like advertisement for the company and its products
 
 The director of the company tells Lukashenko that [not a single worker is striking](https://youtu.be/yq-Uz_pEzN0?t=279). 
 
-The voice-over both aknowledges and dismisses the presence of different points of views among workers:
+The voice-over both acknowledges and dismisses the presence of different points of views among workers:
 
 > "There were different emotions among workers about recent events, but, from a purely human perspective, common sense and kind words is exactly what we so much need in our society at this time" [[Link](https://youtu.be/yq-Uz_pEzN0?t=461)]
 
@@ -57,11 +57,11 @@ He reassures workers the everything will be fine, and that things will be back t
 
 Another 20 minutes of Lukashenko replying to workers follows, insisting on foreign pressures and on the risks that the current situation entails. Some comments relate to specific issues. 
 
-Lukashenko, for example, [confirms](https://youtu.be/yq-Uz_pEzN0?t=1166) that Russian staff (6-9 individuals) has come to take the place of people from state television who went on strike. He higlights that this has not cost him anything, as friends in Russia took care of all related costs. He insists that if people do not want to come to work, they may stay at home, as there will always be someone willing to take their place given the current situation with unemployment, including from Ukraine and Russia. 
+Lukashenko, for example, [confirms](https://youtu.be/yq-Uz_pEzN0?t=1166) that Russian staff (6-9 individuals) has come to take the place of people from state television who went on strike. He highlights that this has not cost him anything, as friends in Russia took care of all related costs. He insists that if people do not want to come to work, they may stay at home, as there will always be someone willing to take their place given the current situation with unemployment, including from Ukraine and Russia. 
 
 In reference to the [performers of the state theatre going on strike](https://youtu.be/yq-Uz_pEzN0?t=1626), Lukashenko claims that he is happy to give them all the freedom they want: they want freedom and free market, this is what they will get... if they earn money, good for them. 
 
-Such references are, in classic Lukashenko style, between the reassuring, the matter-of-factly, and the threatening, as he is basically saying in front of a group of workers that if they go on strike they may soon be without a job. Yet, in the contest, those workers have little to do but nod approvingly.
+Such references are, in classic Lukashenko style, between the reassuring, the matter-of-factly, and the threatening, as he is basically saying in front of a group of workers that if they go on strike they may soon be without a job. Yet, in the context, those workers have little to do but nod approvingly.
 
 [Links from official YouTube: [1](https://www.youtube.com/watch?v=VZwNAi5ZS5U), [2](https://www.youtube.com/watch?v=YzHrQfZTkA0), [3](https://www.youtube.com/watch?v=fvGNyGzFUJE)]
 
@@ -110,12 +110,12 @@ Scenes of disorders and violence follow.
 
 ### External military aggression
 
-[Long segments](https://youtu.be/yq-Uz_pEzN0?t=3298) detail how there are ongoing preparations for military aggression from the West, and how Belarus is getting ready to contrast it. Lukahsenko is due to inspect these efforts on the following day (August 22).
+[Long segments](https://youtu.be/yq-Uz_pEzN0?t=3298) detail how there are ongoing preparations for military aggression from the West, and how Belarus is getting ready to contrast it. Lukashenko is due to inspect these efforts on the following day (August 22).
 
 
 ### Illegal demonstrations in Minsk
 
-A [representative of the Minsk administration](https://youtu.be/yq-Uz_pEzN0?t=3791) points out that no requests for demonstrations have been received, and that taking part to aunauthorised demonstrations may be illegal and have consequences. The general procuror insists on this point ([Official YouTube](https://www.youtube.com/watch?v=t-FntWcJ7qE)). 
+A [representative of the Minsk administration](https://youtu.be/yq-Uz_pEzN0?t=3791) points out that no requests for demonstrations have been received, and that taking part to unauthorised demonstrations may be illegal and have consequences. The general procuror insists on this point ([Official YouTube](https://www.youtube.com/watch?v=t-FntWcJ7qE)). 
 
 In a previous part of the broadcast, reference was also made about how it is illegal to pressure people into taking part in strikes, which I suppose will be used against workers who have been active in organising events. 
 
