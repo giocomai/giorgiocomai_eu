@@ -81,6 +81,8 @@ In [a separate segment](https://youtu.be/yq-Uz_pEzN0?t=2101), the deputy prime m
 
 [Kolesnikova is met "by actual workers"](https://youtu.be/yq-Uz_pEzN0?t=2287) who shout at her "go away!" (the same "ukhadi!" that demonstrators dedicate to Lukashenko), and she has to flee in a black car.
 
+__Update__: it appears that this segment was doctored by adding chants of "ukhadi, ukhadi" on the original video, while in reality everything worked out as expected for Kolesnikova and people were chanting against Lukashenko. See [video comparison on Twitter](https://twitter.com/felix_light/status/1297155990354370560). 
+
 
 ### Belarus and Maidan
 
