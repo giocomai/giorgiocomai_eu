@@ -8,6 +8,7 @@ tags:
   - double standards
   - content analysis
   - castarter
+  - media analysis
 ---
 
 Just more than a month has passed since Russia started its military intervention in Syria. There has been a lot of talking about the motivations behind the Kremlin's decision to take an active military role in the Middle East, and a number of competing explanations have been proposed. However, one element that has been frequently quoted is the Kremlin's desire to shift attention in Russia's media from Ukraine to something else, while maintaining the focus on foreign affairs rather than domestic issues. For example, [Timothy Snyder](https://twitter.com/timothydsnyder) [claimed that](http://time.com/4054941/putin-russia-syria/) "the more important factor is domestic public opinion", that "Russia is a television culture", and that "Russian television has completely changed the subject: from Ukraine to Syria."

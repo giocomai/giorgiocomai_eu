@@ -1,21 +1,19 @@
 ---
 title: 'Russian media: more Trump than Putin'
-author: ''
+author: Giorgio Comai
 date: '2017-03-03'
-slug: russian-media-more-trump-than-putin
 categories:
   - Research notes
 tags:
   - content analysis
   - russia
-subtitle: ''
-summary: ''
+  - media analysis
+slug: russian-media-more-trump-than-putin
 featured: no
 image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: []
 ---
 
 
