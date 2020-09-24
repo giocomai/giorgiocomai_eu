@@ -47,7 +47,7 @@ However, it is Putin's own policies as expressed in a document presented at a Ru
 What about Crimea?
 ------------------
 
-None of the authors mentions even passingly Crimea, war with Georgia, or the possibility of open warfare in Eastern Ukraine. Should we have known?[^2](http://localhost/2014/08/12/russia-2004-the-next-ten-years/#footnote_1_74677819 "In a way, it should be stressed, we did know. Maybe not in 2004, but as early as 2009 and 2010 we were told by various authors  that Crimea's sovereignty would be increasingly contested and that if no action was taken Crimea might well become the "next flashpoint in the European neighbourhood."")
+None of the authors mentions even passingly Crimea, war with Georgia, or the possibility of open warfare in Eastern Ukraine. Should we have known?[^2]
 
 In a recent [op-ed in the New York Times](http://www.nytimes.com/2014/07/20/opinion/sunday/protecting-russians-in-ukraine-has-deadly-consequences.html), Timothy Garton Ash recollected a 1994 conference he attended, when a young Vladimir Putin intervened. Here's an extended quote from the [full transcript](http://www.koerber-stiftung.de/internationale-politik/bergedorfer-gespraechskreis/protokolle/protokoll-detail/BG/russland-und-der-westenbrinternationale-sicherheit-und-reformpolitik.html) of the event published by the Körber Foundation of Hamburg (originally in German, my translation):
 
