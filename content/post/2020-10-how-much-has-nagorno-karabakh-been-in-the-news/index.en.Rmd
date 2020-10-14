@@ -262,7 +262,7 @@ bind_rows(Karabakh = karabakh_df,
 These graphs show the long-term dynamics, but do not illustrate what specifically happens in the early days of war. 
 To do this, in the following graph Day 1 corresponds to 7 August 2008 for "Ossetia" (even if a full-scale attack started only late at night) and to 27 September 2020 for "Karabakh".
 
-In the case of the 2020 war in Nagorno Karabakh, the NYT published at most two articles per day mentioning "Karabakh" during the first week of war. Please keep in mind that this is updated to 6 October due limitations in the API offered by the NYT (I may update this graph in the coming days).
+In the case of the 2020 war in Nagorno Karabakh, the NYT published at most two articles per day mentioning "Karabakh" during the first ten days of war.
 
 ```{r karabakh_nyt_base}
 
@@ -285,7 +285,7 @@ karabakh_df_base %>%
   ggplot(mapping = aes(x = date, y = n)) +
   geom_col() +
   scale_x_date(name = "", breaks = scales::pretty_breaks(20)) +
-  scale_y_continuous(name = "", breaks = scales::pretty_breaks(2)) +
+  scale_y_continuous(name = "", breaks = scales::pretty_breaks(3)) +
   labs(title = paste("Number of articles per year mentioning", sQuote("Karabakh"), "on *The New York Times*"),
        subtitle = paste0("Based on all articles published within ", (karabakh_df %>% pull(date) %>% max())-base_date_karabakh, " days of start of the war on 27 September 2020"),
        caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai")) +
@@ -594,7 +594,7 @@ karabakh_df_base %>%
   geom_col() +
   scale_x_date(name = "", breaks = scales::pretty_breaks(15), expand = c(0,0)) +
   scale_y_continuous(name = "",
-                     breaks = scales::pretty_breaks(2)) +
+                     breaks = scales::pretty_breaks(3)) +
   labs(title = paste("Number of articles per year mentioning", sQuote("Karabakh"), "on *The Guardian*"),
        subtitle = paste0("Based on all articles published within two weeks since the start of the war on 27 September 2020"),
        caption = paste("Data collected using The Guardian's's own APIs;\nData processing: Giorgio Comai")) +
