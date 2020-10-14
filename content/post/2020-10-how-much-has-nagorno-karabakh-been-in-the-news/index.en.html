@@ -1,0 +1,104 @@
+---
+title: How much has the 2020 war in Nagorno Karabakh been in the news? A comparison with August 2008 war in South Ossetia
+author: Giorgio Comai
+date: '2020-10-14'
+slug: []
+categories:
+  - Research notes
+tags:
+  - armenia
+  - azerbaijan
+  - nagorno karabakh
+subtitle: ''
+summary: ''
+authors: []
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>On Sunday, 27 September 2020, a new war started in Nagorno Karabakh. It immediately appeared that this was a wide-scale military operation, as it involved the whole line of contact. It did not take long to understand that this was going to be worse than the deadly clashes in April 2016, and thus the largest escalation in more than two decades.</p>
+<p>Within the first ten days, there where tens of thousands civilians displaced by war, many hundreds of military casualties, thousands of injured, dozens of civilian casualties… this was, by any understanding of the term, a war. A sizable war taking place in the European Union’s neighbourhood may be expected to feature prominently in international news reporting. However, many observers (including myself), felt that it did not receive significant media attention.</p>
+<p>This impression raises two questions:</p>
+<ol style="list-style-type: decimal">
+<li>Did the war taking place in Nagorno Karabakh in Autumn 2020 receive unusually little attention from Western media?</li>
+<li>If so, why?</li>
+</ol>
+<p>In this post, I will try to answer the first question, based on a basic quantitative analysis of the number of articles making reference to Nagorno Karabakh on two major English-language publications that extensively cover international affairs: <em>The New York Times</em> and <em>The Guardian</em>. I will not, however, approach the second question.</p>
+<p>In order to have a term of comparison to gauge to what extent coverage of the ongoing war is above or below expectations, I present also data related to the war in South Ossetia in August 2008. I acknowledge this is not an ideal term of comparison, but I still believe it provides a useful point of reference. I will not discuss here similarities and differences between the two cases and the overall context, as I expect the reader to be familiar with them.</p>
+<p><strong>N.B. This is a research note. I use research notes to share preliminary analyses and offer a glimpse into such provisional data. In some instances in this post I present the exact same data with different graphs to allow the reader to see more fully different aspects of the data being presented. I welcome feedback.</strong></p>
+<div id="methodological-considerations" class="section level2">
+<h2>Methodological considerations</h2>
+<p>In order to gauge the relative attention dedicated to the two conflicts, I look for the number of articles that mention either the word “Karabakh” or the word “Ossetia” anywhere in the text. This is based on the understanding that any article that discusses to any meaningful extent one of these two conflicts will mention this exact words, and that these specific words would almost never appear in texts that are unrelated to the conflict.</p>
+<p>I have chosen <em>The New York Times</em> (hence, NYT) and <em>The Guardian</em> both for their obvious prominence among Western media, as well as for pragmatic considerations: both of them allow to search through their archive programmatically through dedicated APIs which are free for non-commercial use. For more details, check out the documentation for the <a href="https://developers.nytimes.com/">NYT Article Search API</a> and of <a href="https://open-platform.theguardian.com/">The Guadian’s Open Platform</a>.</p>
+<p>In practice, this means that with a few of lines of code, I can get a nicely formatted record of relevant articles, and that this post is fully reproducible (<a href="https://github.com/giocomai/giorgiocomai_eu/tree/master/content/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news">see source code</a>). Here are the two characteristics of these data sources that have a most direct impact on the data presented below:</p>
+<ul>
+<li>the NYT offers access also to its older articles, but only until 7 days before the present date</li>
+<li>the Guardian’s archive offers full access to all its contents published starting only with 1999, but with no restrictions on recent publications.</li>
+</ul>
+<p>This is a screenshot showing, for example, the earliest results mentioning “Karabakh” in NYT’s archive (I do not include here the full spreadsheet to comply with terms of use; the same dataset can easily be retrieved from the source).</p>
+<div class="figure">
+<img src="spreadsheet_example.png" alt="" />
+<p class="caption"><em>Example output from the NYT’s API of articles mentioning “Karabakh”</em></p>
+</div>
+<p>As the NYT offers access to earlier articles, I will first present a few graphs on the NYT to provide more long-term context, and then reproduce the same graphs for <em>The Guardian</em>.</p>
+</div>
+<div id="exploring-the-nyt-archive" class="section level2">
+<h2>Exploring the NYT archive</h2>
+<p>The following graph shows how many articles per year mentioned “Karabakh” on the NYT starting from 1988 and until 6 October 2020.</p>
+<p>It immediately appears how the year with most articles mentioning “Karabakh” is 1988, perhaps because the dynamics that unfolded then were understood to be of wider relevance for the destiny of the Soviet Union. Even the war years in the early 1990s had less articles mentioning “Karabakh” than in 1988.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_nyt_longterm-1.png" width="768" /></p>
+<p>The correspondent graph for “Ossetia” shows a very different distribution. Not a single article before 1991 or after 2018, but a total of more than 700 articles in 2008. This figure seems exceptionally high, but basic checks of the article titles suggests they all are actual pieces published by the NYT.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/ossetia_nyt_longterm-1.png" width="768" /></p>
+<p>The next graph facilitates a direct comparison.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_ossetia_nyt_comparison_barchart-1.png" width="768" /></p>
+<p>The following graph also allows to see even when just a few units were published: each square represents an article, each line is made of ten articles. Consider zooming-in for clarity.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_ossetia_nyt_comparison_waffle-1.png" width="768" /></p>
+<p>These graphs show the long-term dynamics, but do not illustrate what specifically happens in the early days of war.
+To do this, in the following graph Day 1 corresponds to 7 August 2008 for “Ossetia” (even if a full-scale attack started only late at night) and to 27 September 2020 for “Karabakh”.</p>
+<p>In the case of the 2020 war in Nagorno Karabakh, the NYT published at most two articles per day mentioning “Karabakh” during the first week of war. Please keep in mind that this is updated to 6 October due limitations in the API offered by the NYT (I may update this graph in the coming days).</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_nyt_base-1.png" width="768" /></p>
+<p>In the case of the war in South Ossetia in August 2008, there has been only two articles on 7 August (again, important to keep in mind that war started in the night between 7 and 8), but more than 10 in the following three days, and about 25-30 per day until 15 August.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/ossetia_nyt_base-1.png" width="768" /></p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_ossetia_nyt_base_comparison_barchart-1.png" width="768" /></p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_ossetia_nyt_base_comparison_waffle-1.png" width="768" /></p>
+<p>The difference between the two cases is very significant.</p>
+</div>
+<div id="exploring-the-guardians-archive" class="section level2">
+<h2>Exploring The Guardian’s archive</h2>
+<p>This section recreates the same graphs as above, but based on <em>The Guardian</em>. The main difference in data availability compared with the NYT regards:</p>
+<ul>
+<li>data are available only starting with 1999</li>
+<li>data are available up to the current day.</li>
+</ul>
+<p>This means that it is expected to find a higher number of articles published in 2020 compared to the NYT, as some recent NYT articles are likely missing.</p>
+<p><em>The Guardian</em> has somewhat regularly covered Nagorno Karabakh, but even spikes of violence such as 2016 led to only about a dozen articles published in the whole year that even mention the word “Karabakh”. The ongoing hostilities distinctly emerge as the most significant period of coverage of the last two decades.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_guardian_longterm-1.png" width="768" /></p>
+<p>Similiarly to the NYT, also in the case of <em>The Guardian</em> there have been literally hundreds of articles mentioning “Ossetia” in 2008.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/ossetia_guardian_longterm-1.png" width="768" /></p>
+<p>Here is the number of articles per year mentioning either of the keywords.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_ossetia_guardian_comparison_barchart-1.png" width="768" /></p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_ossetia_guardian_comparison_waffle-1.png" width="768" /></p>
+<p>It may be more pertinent to look at the coverage during the first days of war, again taking 27 September 2020 and 7 August 2008 respectively as starting dates.</p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_guardian_base-1.png" width="768" /></p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/ossetia_guardian_base-1.png" width="768" /></p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_ossetia_guardian_base_comparison_barchart-1.png" width="768" /></p>
+<p><img src="/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news/index.en_files/figure-html/karabakh_ossetia_guardian_base_comparison_waffle-1.png" width="768" /></p>
+<p>Again, there is a striking difference. Between day 5 and 7 since the beginning of open warfare, <em>The Guardian</em> had about 20 articles per day mentioning Ossetia. In the case of Karabakh, that figure has never been more than four.</p>
+</div>
+<div id="conclusions" class="section level2">
+<h2>Conclusions</h2>
+<p>To conclude, it is firstly important to highlight again the main shortcomings of this preliminary analysis.</p>
+<ul>
+<li>it is based on only two, albeit significant, English-language media</li>
+<li>it is based exclusively on a raw binary measure: if an article mentions at least once the given keyword, it is counted, otherwise it is not counted. This means that a long feature story and a short dispatch re-published from a news agency are equally counted as one.</li>
+<li>it is partly based on a comparison with another recent war in the same region; the two cases may be superficially quite similar, but there are a number of reasons why the August 2008 war directly involving Russia and Georgia had significant international resonance at that moment in time, in particular in the US (read <a href="https://global.oup.com/academic/product/near-abroad-9780190069513">Gerard Toal’s <em>Near Abroad</em></a> for some of the reasons why this was the case). Ultimately, however, I suppose this already relates to the ‘why’ question: why does the current war in Nagorno Karabakh not have comparable resonance?</li>
+</ul>
+<p>Overall, I still think this preliminary analysis is based on a meaningful indicator for media attention in Western media.</p>
+<p>To summarise, this post preliminarily confirms the widely-held impression that the ongoing war in Nagorno Karabakh has been receiving relatively little attention in Western media.</p>
+</div>

@@ -1,0 +1,706 @@
+---
+title: How much has the 2020 war in Nagorno Karabakh been in the news? A comparison with August 2008 war in South Ossetia
+author: Giorgio Comai
+date: '2020-10-14'
+slug: []
+categories:
+  - Research notes
+tags:
+  - armenia
+  - azerbaijan
+  - nagorno karabakh
+subtitle: ''
+summary: ''
+authors: []
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+```{r setup, include=FALSE}
+# https://github.com/news-r/nytimes
+library("tidyverse")
+library("lubridate")
+library("extrafont")
+library("tidyr")
+library("tsibble")
+library("ggtext")
+library("waffle")
+
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      fig.width=8,
+                      fig.height=4.5)
+
+```
+
+
+```{r setup_nytimes}
+#remotes::install_github("news-r/nytimes")
+library(nytimes)
+
+nytimes_key(readr::read_rds(path = "nytimes_key.rds"))
+
+fs::dir_create(path = "nytimes_com")
+
+karabakh_path <- fs::path("nytimes_com", "karabakh_list.rds")
+
+if (fs::file_exists(karabakh_path)==FALSE) {
+  karabakh_list <- ny_search(q = '"karabakh"', pages = Inf)
+  saveRDS(object = karabakh_list,
+          file = karabakh_path)
+} else {
+  karabakh_list <- readRDS(file = karabakh_path)
+}
+
+
+ossetia_path <- fs::path("nytimes_com", "ossetia_list.rds")
+
+if (fs::file_exists(ossetia_path)==FALSE) {
+  ossetia_list <- ny_search(q = '"ossetia"', pages = Inf)
+  saveRDS(object = ossetia_list,
+          file = ossetia_path)
+} else {
+  ossetia_list <- readRDS(file = ossetia_path)
+}
+
+ny_df <- function(x) {
+  x %>% 
+    tibble::as_tibble() %>% 
+    unnest_longer(docs) %>% 
+    tidyr::hoist(1,
+                 date = "pub_date",
+                 url = "web_url", 
+                 headline = "headline") %>% 
+    tidyr::hoist(.col = headline, title = "main") %>% 
+    dplyr::select(date, title, url)
+}
+
+
+
+
+```
+
+
+On Sunday, 27 September 2020, a new war started in Nagorno Karabakh. It immediately appeared that this was a wide-scale military operation, as it involved the whole line of contact. It did not take long to understand that this was going to be worse than the deadly clashes in April 2016, and thus the largest escalation in more than two decades.
+
+Within the first ten days, there where tens of thousands civilians displaced by war, many hundreds of military casualties, thousands of injured, dozens of civilian casualties... this was, by any understanding of the term, a war. A sizable war taking place in the European Union's neighbourhood may be expected to feature prominently in international news reporting. However, many observers (including myself), felt that it did not receive significant media attention.
+
+This impression raises two questions:
+
+1. Did the war taking place in Nagorno Karabakh in Autumn 2020 receive unusually little attention from Western media?
+1. If so, why?
+
+In this post, I will try to answer the first question, based on a basic quantitative analysis of the number of articles making reference to Nagorno Karabakh on two major English-language publications that extensively cover international affairs: *The New York Times* and *The Guardian*. I will not, however, approach the second question. 
+
+In order to have a term of comparison to gauge to what extent coverage of the ongoing war is above or below expectations, I present also data related to the war in South Ossetia in August 2008. I acknowledge this is not an ideal term of comparison, but I still believe it provides a useful point of reference. I will not discuss here similarities and differences between the two cases and the overall context, as I expect the reader to be familiar with them.
+
+__N.B. This is a research note. I use research notes to share preliminary analyses and offer a glimpse into such provisional data. In some instances in this post I present the exact same data with different graphs to allow the reader to see more fully different aspects of the data being presented. I welcome feedback.__
+
+
+## Methodological considerations
+
+In order to gauge the relative attention dedicated to the two conflicts, I look for the number of articles that mention either the word "Karabakh" or the word "Ossetia" anywhere in the text. This is based on the understanding that any article that discusses to any meaningful extent one of these two conflicts will mention this exact words, and that these specific words would almost never appear in texts that are unrelated to the conflict.
+
+I have chosen *The New York Times* (hence, NYT) and *The Guardian* both for their obvious prominence among Western media, as well as for pragmatic considerations: both of them allow to search through their archive programmatically through dedicated APIs which are free for non-commercial use. For more details, check out the documentation for the [NYT Article Search API](https://developers.nytimes.com/) and of [The Guadian's Open Platform](https://open-platform.theguardian.com/).
+
+
+In practice, this means that with a few of lines of code, I can get a nicely formatted record of relevant articles, and that this post is fully reproducible ([see source code](https://github.com/giocomai/giorgiocomai_eu/tree/master/content/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news)). Here are the two characteristics of these data sources that have a most direct impact on the data presented below:
+
+- the NYT offers access also to its older articles, but only until 7 days before the present date
+- the Guardian's archive offers full access to all its contents published starting only with 1999, but with no restrictions on recent publications.
+
+This is a screenshot showing, for example, the earliest results mentioning "Karabakh" in NYT's archive (I do not include here the full spreadsheet to comply with terms of use; the same dataset can easily be retrieved from the source).
+
+![*Example output from the NYT's API of articles mentioning "Karabakh"*](spreadsheet_example.png)
+
+As the NYT offers access to earlier articles, I will first present a few graphs on the NYT to provide more long-term context, and then reproduce the same graphs for *The Guardian*. 
+
+## Exploring the NYT archive
+
+The following graph shows how many articles per year mentioned "Karabakh" on the NYT starting from 1988 and until 6 October 2020.
+
+It immediately appears how the year with most articles mentioning "Karabakh" is 1988, perhaps because the dynamics that unfolded then were understood to be of wider relevance for the destiny of the Soviet Union. Even the war years in the early 1990s had less articles mentioning "Karabakh" than in 1988.
+
+```{r karabakh_nyt_longterm, fig.width=8, fig.height=4.5}
+karabakh_df <- ny_df(karabakh_list) %>%
+  mutate(date = as.Date(date)) %>% 
+  tidyr::drop_na() %>% 
+  mutate(title_lower = tolower(title)) %>% 
+  distinct(title_lower, date, .keep_all = TRUE) %>% 
+  distinct(url, .keep_all = TRUE) 
+
+karabakh_df %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(year) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  filter(year>1980) %>% 
+  as_tsibble(index = year) %>% 
+  fill_gaps(n = 0) %>% 
+  ggplot(mapping = aes(x = year, y = n)) +
+  geom_col() +
+  scale_x_continuous(name = "",
+                     breaks =seq(1988, 2020, 2)) +
+  scale_y_continuous(name = "", breaks = scales::pretty_breaks(10)) +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Karabakh"), "on *The New York Times*"),
+       subtitle = paste0("Based on all articles published between 1988 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y"), "\nTotal articles: ", nrow(karabakh_df)),
+       caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai")) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+
+```
+
+The correspondent graph for "Ossetia" shows a very different distribution. Not a single article before 1991 or after 2018, but a total of more than 700 articles in 2008. This figure seems exceptionally high, but basic checks of the article titles suggests they all are actual pieces published by the NYT.
+
+```{r ossetia_nyt_longterm, fig.width=8, fig.height=4.5}
+
+ossetia_df <- ny_df(ossetia_list) %>% 
+  mutate(date = as.Date(date)) %>% 
+  tidyr::drop_na() %>% 
+  mutate(title_lower = tolower(title)) %>% 
+  distinct(title_lower, date, .keep_all = TRUE) %>% 
+  distinct(url, .keep_all = TRUE) 
+
+## Long-term Ossetia
+
+ossetia_df %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(year) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  filter(year>1980) %>% 
+  as_tsibble(index = year) %>% 
+  fill_gaps(n = 0) %>% 
+  ggplot(mapping = aes(x = year, y = n)) +
+  geom_col() +
+  scale_x_continuous(name = "",
+                     breaks = seq(1988, 2020, 2), limits = c(1988, 2020)) +
+  scale_y_continuous(name = "", breaks = scales::pretty_breaks(10)) +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Ossetia"), "on *The New York Times*"),
+       subtitle = paste0("Based on all articles published between 1988 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y"), "\nTotal articles: ", nrow(ossetia_df)),
+       caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai")) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+```
+
+
+The next graph facilitates a direct comparison.
+
+
+
+```{r karabakh_ossetia_nyt_comparison_barchart}
+bind_rows(Karabakh = karabakh_df, 
+          Ossetia = ossetia_df, .id = "keyword") %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(keyword, year) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  filter(year>1980) %>% 
+  tidyr::complete(year, keyword, fill = list(n = 0)) %>% 
+  as_tsibble(index = year, key = keyword) %>% 
+  
+  fill_gaps(n = 0) %>% 
+  ggplot(mapping = aes(x = year,
+                       y = n, fill = keyword)) +
+  geom_col(position = position_dodge()) +
+  scale_x_continuous(name = "",
+                     breaks = seq(1988, 2020, 2), limits = c(1988, 2020)) +
+  scale_y_continuous(name = "", breaks = scales::pretty_breaks(10)) +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Ossetia"), "or", sQuote("Ossetia"), "<br />on *The New York Times*"),
+       subtitle = paste0("Based on all articles published between 1988 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y"), "\nTotal articles: ", nrow(ossetia_df)),
+       caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai")) +
+  ggthemes::scale_fill_tableau(name=NULL) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18), 
+        legend.position = "bottom")
+```
+
+The following graph also allows to see even when just a few units were published: each square represents an article, each line is made of ten articles. Consider zooming-in for clarity.
+
+```{r karabakh_ossetia_nyt_comparison_waffle, fig.width=8, fig.height=8}
+bind_rows(Karabakh = karabakh_df,
+          Ossetia = ossetia_df, .id = "keyword")   %>% 
+  arrange(date) %>% 
+  filter(date>as.Date("1987-12-31")) %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(year, keyword, .drop = TRUE)  %>% 
+  summarise(n = n()) %>% 
+  arrange(year, keyword) %>% 
+  ggplot(aes(fill = keyword, values = n)) +
+  geom_waffle(color = "white", size = .25, n_rows = 10, flip = TRUE) +
+  facet_wrap(~year,
+             nrow = 2,
+             strip.position = "bottom") +
+  scale_x_discrete() + 
+  scale_y_continuous(labels = function(x) x * 10, # make this multiplyer the same as n_rows
+                     expand = c(0,0),
+                     breaks = scales::pretty_breaks(10)) +
+  ggthemes::scale_fill_tableau(name=NULL) +
+  coord_equal() +
+  labs(
+    title = "Number of articles mentioning either 'Karabakh' or 'Ossetia'<br />on *The New York Times*",
+    subtitle = paste0("Based on all articles published between 1988 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y")),
+    caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai"),
+    x = "",
+    y = ""
+  ) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(panel.grid = element_blank(),
+        axis.ticks.y = element_line(),
+        legend.position = "bottom",
+        text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18)) +
+  guides(fill = guide_legend(reverse = TRUE))
+```
+
+These graphs show the long-term dynamics, but do not illustrate what specifically happens in the early days of war. 
+To do this, in the following graph Day 1 corresponds to 7 August 2008 for "Ossetia" (even if a full-scale attack started only late at night) and to 27 September 2020 for "Karabakh".
+
+In the case of the 2020 war in Nagorno Karabakh, the NYT published at most two articles per day mentioning "Karabakh" during the first week of war. Please keep in mind that this is updated to 6 October due limitations in the API offered by the NYT (I may update this graph in the coming days).
+
+```{r karabakh_nyt_base}
+
+number_of_days_post <- 12
+
+base_date_karabakh <- as.Date("2020-09-26")
+
+karabakh_df_base <- karabakh_df %>% 
+  filter(date>base_date_karabakh, date<(base_date_karabakh+number_of_days_post)) %>% 
+  group_by(date) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  arrange(date) %>% 
+  as_tsibble(index = date) %>% 
+  fill_gaps(n = 0) %>% 
+  mutate(label = paste("Day", row_number()),
+         day_number = row_number()) %>% 
+  as_tibble()
+
+karabakh_df_base %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_col() +
+  scale_x_date(name = "", breaks = scales::pretty_breaks(20)) +
+  scale_y_continuous(name = "", breaks = scales::pretty_breaks(2)) +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Karabakh"), "on *The New York Times*"),
+       subtitle = paste0("Based on all articles published within ", (karabakh_df %>% pull(date) %>% max())-base_date_karabakh, " days of start of the war on 27 September 2020"),
+       caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai")) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+```
+
+In the case of the war in South Ossetia in August 2008, there has been only two articles on 7 August (again, important to keep in mind that war started in the night between 7 and 8), but more than 10 in the following three days, and about 25-30 per day until 15 August. 
+
+
+```{r ossetia_nyt_base}
+base_date_ossetia <- as.Date("2008-08-06")
+
+ossetia_df_base <- ossetia_df %>% 
+  filter(date>base_date_ossetia, date<(base_date_ossetia+11)) %>% 
+  group_by(date) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  as_tsibble(index = date) %>% 
+  fill_gaps(n = 0) %>% 
+  mutate(label = paste("Day", row_number()),
+         day_number = row_number()) %>% 
+  as_tibble()
+
+ossetia_df_base %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_col() +
+  scale_x_date(name = "",
+               date_breaks = "1 day",
+               date_labels = "%-d %b",
+               expand = c(0,0)) +
+  scale_y_continuous(name = "") +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Ossetia"), "on *The New York Times*"),
+       subtitle = "Based on all articles published within ten days of the start of the war on 7 August 2008",
+       caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai")) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+```
+
+
+
+```{r karabakh_ossetia_nyt_base_comparison_barchart}
+bind_rows(Karabakh = karabakh_df_base,
+          Ossetia = ossetia_df_base, .id = "keyword")   %>% 
+ filter(is.na(label)==FALSE) %>% 
+  arrange(day_number, keyword) %>% 
+  mutate(label = as_factor(label)) %>% 
+  complete(label, keyword, fill = list(n = 0)) %>% 
+  ggplot(aes(fill = keyword, x = label, y = n)) +
+  geom_col(position = position_dodge()) +
+  ggthemes::scale_fill_tableau(name=NULL) +
+    theme_minimal(base_family = "Roboto Condensed") +
+  labs(
+    title = "Number of articles mentioning either 'Karabakh' or 'Ossetia'<br />on *The New York Times*",
+    subtitle = paste0("Based on all articles published during the first ten days of war\n(starting from 7 August 2008 for 'Ossetia' and from 27 September 2020 for 'Karabakh')"),
+    caption = paste("Data collected using The New York Times' own APIs;\nData processing: Giorgio Comai"),
+    x = "",
+    y = ""
+  ) +
+          theme(legend.position = "bottom",
+        text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+  
+```
+
+
+```{r karabakh_ossetia_nyt_base_comparison_waffle, fig.width=8, fig.height=4, eval = TRUE}
+bind_rows(Karabakh = karabakh_df_base,
+          Ossetia = ossetia_df_base, .id = "keyword")   %>% 
+  arrange(day_number, keyword) %>% 
+  mutate(label = as_factor(label)) %>% 
+  ggplot(aes(fill = keyword, values = n)) +
+  geom_waffle(color = "white", size = .25, n_rows = 10, flip = TRUE) +
+  facet_wrap(~label,
+             nrow = 2,
+             strip.position = "bottom") +
+  scale_x_discrete() + 
+  scale_y_continuous(labels = function(x) x * 10,
+                     expand = c(0,0),
+                     breaks = scales::pretty_breaks(2)) +
+  ggthemes::scale_fill_tableau(name=NULL) +
+  coord_equal() +
+  labs(
+    title = "Number of articles mentioning either 'Karabakh' or 'Ossetia'<br />on *The New York Times*",
+    subtitle = paste0("Based on all articles published during the first ten days of war\n(starting from 7 August 2008 for 'Ossetia' and from 27 September 2020 for 'Karabakh')"),
+    caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai"),
+    x = "",
+    y = ""
+  ) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(panel.grid = element_blank(),
+        axis.ticks.y = element_line(),
+        legend.position = "bottom",
+        text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18)) +
+  guides(fill = guide_legend(reverse = TRUE))
+```
+
+
+The difference between the two cases is very significant.
+
+
+## Exploring The Guardian's archive
+
+This section recreates the same graphs as above, but based on *The Guardian*. The main difference in data availability compared with the NYT regards:
+
+- data are available only starting with 1999
+- data are available up to the current day.
+
+This means that it is expected to find a higher number of articles published in 2020 compared to the NYT, as some recent NYT articles are likely missing.
+
+
+```{r guardian_setup}
+
+### guardian
+
+#remotes::install_github("news-r/guardian")
+library("guardian")
+
+# start_date <- as.Date("2000-01-01")
+# end_date <- as.Date("2020-10-13")
+# rolling_days <- 31
+
+guardian_key(read_rds("guardian_key.rds"))
+
+fs::dir_create("guardian_com_karabakh")
+karabakh_path <- fs::path("guardian_com_karabakh", "karabakh_df.rds")
+
+if (fs::file_exists(karabakh_path)==FALSE) {
+  karabakh_df <- gd_call(gd_search('"karabakh"', pages = 100))
+  saveRDS(object = karabakh_df,
+          file = karabakh_path)
+} else {
+  karabakh_df <- readRDS(karabakh_path)
+}
+
+karabakh_df <- karabakh_df %>% 
+  mutate(date = as.Date(webPublicationDate)) %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  filter(year>1998) %>% 
+  tidyr::drop_na() %>% 
+  distinct(webTitle, date, .keep_all = TRUE) %>% 
+  distinct(webUrl, .keep_all = TRUE)
+
+
+ossetia_path <- fs::path("guardian_com_karabakh", "ossetia_df.rds")
+
+if (fs::file_exists(ossetia_path)==FALSE) {
+  ossetia_df <- gd_call(gd_search('"ossetia"', pages = 100))
+  saveRDS(object = ossetia_df,
+          file = ossetia_path)
+} else {
+  ossetia_df <- readRDS(ossetia_path)
+}
+
+
+ossetia_df <- ossetia_df %>% 
+  mutate(date = as.Date(webPublicationDate)) %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  tidyr::drop_na() %>% 
+  filter(year>1998) %>% 
+  distinct(webTitle, date, .keep_all = TRUE) %>% 
+  distinct(webUrl, .keep_all = TRUE)
+```
+
+
+*The Guardian* has somewhat regularly covered Nagorno Karabakh, but even spikes of violence such as 2016 led to only about a dozen articles published in the whole year that even mention the word "Karabakh". The ongoing hostilities distinctly emerge as the most significant period of coverage of the last two decades.
+
+```{r karabakh_guardian_longterm}
+karabakh_df %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(year) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  filter(year>1980) %>% 
+  as_tsibble(index = year) %>% 
+  fill_gaps(n = 0) %>% 
+  ggplot(mapping = aes(x = year, y = n)) +
+  geom_col() +
+  scale_x_continuous(name = "",
+                     breaks =seq(2000, 2020, 2)) +
+  scale_y_continuous(name = "", breaks = scales::pretty_breaks(10)) +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Karabakh"), "on *The Guardian*"),
+       subtitle = paste0("Based on all articles published between 1999 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y"), "\nTotal articles: ", nrow(karabakh_df)),
+       caption = paste("Data collected using The Guardian's's own APIs;\nData processing: Giorgio Comai")) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+```
+
+Similiarly to the NYT, also in the case of *The Guardian* there have been literally hundreds of articles mentioning "Ossetia" in 2008.
+
+
+```{r ossetia_guardian_longterm}
+
+ossetia_df %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(year) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  filter(year>1980) %>% 
+  as_tsibble(index = year) %>% 
+  fill_gaps(n = 0) %>% 
+  ggplot(mapping = aes(x = year, y = n)) +
+  geom_col() +
+  scale_x_continuous(name = "",
+                     breaks = seq(2000, 2020, 2), expand = c(0, 0)) +
+  scale_y_continuous(name = "", breaks = scales::pretty_breaks(10)) +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Ossetia"), "on *The Guardian*"),
+       subtitle = paste0("Based on all articles published between 1999 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y"), "\nTotal articles: ", nrow(ossetia_df)),
+       caption = paste("Data collected using The Guardian's's own APIs;\nData processing: Giorgio Comai")) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.caption = ggtext::element_markdown(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+```
+
+Here is the number of articles per year mentioning either of the keywords. 
+
+
+```{r karabakh_ossetia_guardian_comparison_barchart}
+bind_rows(Karabakh = karabakh_df, 
+          Ossetia = ossetia_df, .id = "keyword") %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(keyword, year) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  filter(year>1980) %>% 
+  tidyr::complete(year, keyword, fill = list(n = 0)) %>% 
+  as_tsibble(index = year, key = keyword) %>% 
+  
+  fill_gaps(n = 0) %>% 
+  ggplot(mapping = aes(x = year,
+                       y = n, fill = keyword)) +
+  geom_col(position = position_dodge()) +
+  scale_x_continuous(name = "",
+                     breaks = seq(1988, 2020, 2), limits = c(1988, 2020)) +
+  scale_y_continuous(name = "", breaks = scales::pretty_breaks(10)) +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Ossetia"), "or", sQuote("Ossetia"), "<br />on *TheGuarrdian*"),
+       subtitle = paste0("Based on all articles published between 1999 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y"), "\nTotal articles: ", nrow(ossetia_df)),
+       caption = paste("Data collected using The Guardian's own APIs;\nData processing: Giorgio Comai")) +
+  ggthemes::scale_fill_tableau(name=NULL) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18), 
+        legend.position = "bottom")
+```
+
+
+```{r karabakh_ossetia_guardian_comparison_waffle, fig.width=8, fig.height=8}
+bind_rows(Karabakh = karabakh_df,
+          Ossetia = ossetia_df, .id = "keyword")   %>% 
+  arrange(date) %>% 
+  filter(date>as.Date("1987-12-31")) %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(year, keyword, .drop = TRUE)  %>% 
+  summarise(n = n()) %>% 
+  arrange(year, keyword) %>% 
+  ggplot(aes(fill = keyword, values = n)) +
+  geom_waffle(color = "white", size = .25, n_rows = 10, flip = TRUE) +
+  facet_wrap(~year,
+             nrow = 2,
+             strip.position = "bottom") +
+  scale_x_discrete() + 
+  scale_y_continuous(labels = function(x) x * 10, # make this multiplyer the same as n_rows
+                     expand = c(0,0),
+                     breaks = scales::pretty_breaks(10)) +
+  ggthemes::scale_fill_tableau(name=NULL) +
+  coord_equal() +
+  labs(
+    title = "Number of articles mentioning either 'Karabakh' or 'Ossetia'<br />on *The Guardian*",
+    subtitle = paste0("Based on all articles published between 1999 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y")),
+    caption = paste("Data collected using The Guardian's's own APIs;\nData processing: Giorgio Comai"),
+    x = "",
+    y = ""
+  ) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(panel.grid = element_blank(),
+        axis.ticks.y = element_line(),
+        legend.position = "bottom",
+        text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18)) +
+  guides(fill = guide_legend(reverse = TRUE))
+```
+
+
+It may be more pertinent to look at the coverage during the first days of war, again taking 27 September 2020 and 7 August 2008 respectively as starting dates.
+
+```{r karabakh_guardian_base}
+
+number_of_days_post <- 15
+
+base_date_karabakh <- as.Date("2020-09-26")
+
+karabakh_df_base <- karabakh_df %>% 
+  filter(date>base_date_karabakh, date<(base_date_karabakh+number_of_days_post)) %>% 
+  group_by(date) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  arrange(date) %>% 
+  as_tsibble(index = date) %>% 
+  fill_gaps(n = 0) %>% 
+  mutate(label = paste("Day", row_number()),
+         day_number = row_number()) %>% 
+  as_tibble()
+
+karabakh_df_base %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_col() +
+  scale_x_date(name = "", breaks = scales::pretty_breaks(15), expand = c(0,0)) +
+  scale_y_continuous(name = "",
+                     breaks = scales::pretty_breaks(2)) +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Karabakh"), "on *The Guardian*"),
+       subtitle = paste0("Based on all articles published within two weeks since the start of the war on 27 September 2020"),
+       caption = paste("Data collected using The Guardian's's own APIs;\nData processing: Giorgio Comai")) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+```
+
+
+
+```{r ossetia_guardian_base}
+base_date_ossetia <- as.Date("2008-08-06")
+
+ossetia_df_base <- ossetia_df %>% 
+  filter(date>base_date_ossetia, date<(base_date_ossetia+15)) %>% 
+  group_by(date) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  as_tsibble(index = date) %>% 
+  fill_gaps(n = 0) %>% 
+  mutate(label = paste("Day", row_number()),
+         day_number = row_number()) %>% 
+  as_tibble()
+
+ossetia_df_base %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_col() +
+  scale_x_date(name = "",
+               date_breaks = "1 day",
+               date_labels = "%-d %b",
+               expand = c(0,0)) +
+  scale_y_continuous(name = "") +
+  labs(title = paste("Number of articles per year mentioning", sQuote("Ossetia"), "on *The Guardian*"),
+       subtitle = "Based on all articles published within two weeks of the start of the war on 7 August 2008",
+       caption = paste("Data collected using The Guardian's's own APIs;\nData processing: Giorgio Comai")) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+```
+
+
+```{r karabakh_ossetia_guardian_base_comparison_barchart}
+bind_rows(Karabakh = karabakh_df_base,
+          Ossetia = ossetia_df_base, .id = "keyword")   %>% 
+  arrange(day_number, keyword) %>% 
+  mutate(label = as_factor(label)) %>% 
+  ggplot(aes(fill = keyword, x = label, y = n)) +
+  geom_col(position = position_dodge()) +
+  ggthemes::scale_fill_tableau(name=NULL) +
+    theme_minimal(base_family = "Roboto Condensed") +
+  labs(
+    title = "Number of articles mentioning either 'Karabakh' or 'Ossetia'<br />on *The Guardian*",
+    subtitle = paste0("Based on all articles published during the first two weeks of war\n(starting from 7 August 2008 for 'Ossetia' and from 27 September 2020 for 'Karabakh')"),
+    caption = paste("Data collected using The Guardian's's own APIs;\nData processing: Giorgio Comai"),
+    x = "",
+    y = ""
+  ) +
+          theme(legend.position = "bottom",
+        text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18))
+  
+```
+
+
+
+```{r karabakh_ossetia_guardian_base_comparison_waffle, fig.width=8, fig.height=4, eval = TRUE}
+bind_rows(Karabakh = karabakh_df_base,
+          Ossetia = ossetia_df_base, .id = "keyword")   %>% 
+  arrange(day_number, keyword) %>% 
+  mutate(label = as_factor(label)) %>% 
+  ggplot(aes(fill = keyword, values = n)) +
+  geom_waffle(color = "white", size = .25, n_rows = 10, flip = TRUE) +
+  facet_wrap(~label,
+             nrow = 2,
+             strip.position = "bottom") +
+  scale_x_discrete() + 
+  scale_y_continuous(labels = function(x) x * 10,
+                     expand = c(0,0),
+                     breaks = scales::pretty_breaks(2)) +
+  ggthemes::scale_fill_tableau(name=NULL) +
+  coord_equal() +
+  labs(
+    title = "Number of articles mentioning either 'Karabakh' or 'Ossetia'<br />on *The Guardian*",
+    subtitle = paste0("Based on all articles published during the first two weeks of war\n(starting from 7 August 2008 for 'Ossetia' and from 27 September 2020 for 'Karabakh')"),
+    caption = paste("Data collected using The Guardian's's own APIs;\nData processing: Giorgio Comai"),
+    x = "",
+    y = ""
+  ) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(panel.grid = element_blank(),
+        axis.ticks.y = element_line(),
+        legend.position = "bottom",
+        text = element_text(size = 14),
+        plot.title = ggtext::element_markdown(size = 18)) +
+  guides(fill = guide_legend(reverse = TRUE))
+```
+
+Again, there is a striking difference. Between day 5 and 7 since the beginning of open warfare, *The Guardian* had about 20 articles per day mentioning Ossetia. In the case of Karabakh, that figure has never been more than four. 
+
+## Conclusions
+
+To conclude, it is firstly important to highlight again the main shortcomings of this preliminary analysis.
+
+- it is based on only two, albeit significant, English-language media
+- it is based exclusively on a raw binary measure: if an article mentions at least once the given keyword, it is counted, otherwise it is not counted. This means that a long feature story and a short dispatch re-published from a news agency are equally counted as one.
+- it is partly based on a comparison with another recent war in the same region; the two cases may be superficially quite similar, but there are a number of reasons why the August 2008 war directly involving Russia and Georgia had significant international resonance at that moment in time, in particular in the US (read [Gerard Toal's *Near Abroad*](https://global.oup.com/academic/product/near-abroad-9780190069513) for some of the reasons why this was the case). Ultimately, however, I suppose this already relates to the 'why' question: why does the current war in Nagorno Karabakh not have comparable resonance?
+
+Overall, I still think this preliminary analysis is based on a meaningful indicator for media attention in Western media.
+
+To summarise, this post preliminarily confirms the widely-held impression that the ongoing war in Nagorno Karabakh has been receiving relatively little attention in Western media.
