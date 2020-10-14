@@ -156,7 +156,7 @@ karabakh_df %>%
 
 ```
 
-The correspondent graph for "Ossetia" shows a very different distribution. Not a single article before 1991 or after 2018, but a total of more than 700 articles in 2008. This figure seems exceptionally high, but basic checks of the article titles suggests they all are actual pieces published by the NYT.
+The correspondent graph for "Ossetia" shows a very different distribution. Not a single article before 1990 or after 2018, but a total of more than 700 articles in 2008. This figure seems exceptionally high, but basic checks of the article titles suggests they all are actual pieces published by the NYT.
 
 ```{r ossetia_nyt_longterm, fig.width=8, fig.height=4.5}
 
