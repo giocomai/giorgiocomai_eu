@@ -211,7 +211,7 @@ bind_rows(Karabakh = karabakh_df,
   scale_x_continuous(name = "",
                      breaks = seq(1988, 2020, 2), limits = c(1988, 2020)) +
   scale_y_continuous(name = "", breaks = scales::pretty_breaks(10)) +
-  labs(title = paste("Number of articles per year mentioning", sQuote("Ossetia"), "or", sQuote("Ossetia"), "<br />on *The New York Times*"),
+  labs(title = paste("Number of articles per year mentioning either", sQuote("Karabakh"), "or", sQuote("Ossetia"), "<br />on *The New York Times*"),
        subtitle = paste0("Based on all articles published between 1988 and ", karabakh_df %>% pull(date) %>% max() %>% format("%-d %B %Y"), "\nTotal articles: ", nrow(ossetia_df)),
        caption = paste("Data collected using the New York Times' own APIs;\nData processing: Giorgio Comai")) +
   ggthemes::scale_fill_tableau(name=NULL) +
