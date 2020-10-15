@@ -107,7 +107,7 @@ __N.B. This is a research note. I use research notes to share preliminary analys
 
 In order to gauge the relative attention dedicated to the two conflicts, I look for the number of articles that mention either the word "Karabakh" or the word "Ossetia" anywhere in the text. This is based on the understanding that any article that discusses to any meaningful extent one of these two conflicts will mention this exact words, and that these specific words would almost never appear in texts that are unrelated to the conflict.
 
-I have chosen *The New York Times* (hence, NYT) and *The Guardian* both for their obvious prominence among Western media, as well as for pragmatic considerations: both of them allow to search through their archive programmatically through dedicated APIs which are free for non-commercial use. For more details, check out the documentation for the [NYT Article Search API](https://developers.nytimes.com/) and of [The Guadian's Open Platform](https://open-platform.theguardian.com/).
+I have chosen *The New York Times* (hence, NYT) and *The Guardian* both for their obvious prominence among Western media, as well as for pragmatic considerations: both of them allow to search through their archive programmatically through dedicated APIs which are free for non-commercial use. For more details, check out the documentation for the [NYT Article Search API](https://developers.nytimes.com/) and of [The Guardian's Open Platform](https://open-platform.theguardian.com/).
 
 
 In practice, this means that with a few of lines of code, I can get a nicely formatted record of relevant articles, and that this post is fully reproducible ([see source code](https://github.com/giocomai/giorgiocomai_eu/tree/master/content/post/2020-10-how-much-has-nagorno-karabakh-been-in-the-news)). Here are the two characteristics of these data sources that have a most direct impact on the data presented below:
@@ -255,8 +255,7 @@ bind_rows(Karabakh = karabakh_df,
         axis.ticks.y = element_line(),
         legend.position = "bottom",
         text = element_text(size = 14),
-        plot.title = ggtext::element_markdown(size = 18)) +
-  guides(fill = guide_legend(reverse = TRUE))
+        plot.title = ggtext::element_markdown(size = 18))
 ```
 
 These graphs show the long-term dynamics, but do not illustrate what specifically happens in the early days of war. 
@@ -381,8 +380,7 @@ bind_rows(Karabakh = karabakh_df_base,
         axis.ticks.y = element_line(),
         legend.position = "bottom",
         text = element_text(size = 14),
-        plot.title = ggtext::element_markdown(size = 18)) +
-  guides(fill = guide_legend(reverse = TRUE))
+        plot.title = ggtext::element_markdown(size = 18))
 ```
 
 
@@ -565,8 +563,7 @@ bind_rows(Karabakh = karabakh_df,
         axis.ticks.y = element_line(),
         legend.position = "bottom",
         text = element_text(size = 14),
-        plot.title = ggtext::element_markdown(size = 18)) +
-  guides(fill = guide_legend(reverse = TRUE))
+        plot.title = ggtext::element_markdown(size = 18)) 
 ```
 
 
@@ -687,8 +684,7 @@ bind_rows(Karabakh = karabakh_df_base,
         axis.ticks.y = element_line(),
         legend.position = "bottom",
         text = element_text(size = 14),
-        plot.title = ggtext::element_markdown(size = 18)) +
-  guides(fill = guide_legend(reverse = TRUE))
+        plot.title = ggtext::element_markdown(size = 18))
 ```
 
 Again, there is a striking difference. Between day 5 and 7 since the beginning of open warfare, *The Guardian* had about 20 articles per day mentioning Ossetia. In the case of Karabakh, that figure has never been more than four. 
