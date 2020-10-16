@@ -1,0 +1,43 @@
+---
+title: Associating latitude/longitude coordinates with administrative units
+date: '2020-10-16'
+categories:
+  - Data notes
+tags:
+  - dataviz
+  - maps
+featured: no
+---
+
+
+
+<p>Scientists across different disciplines are increasingly taking up the nice habit of publishing the datasets that emerge from their research, and these often include geolocated data. The same is true with open data distributed by public administrations: more and more, such datasets include geocoded information.</p>
+<p>All of this sounds like a great starting point for data journalists. If the data is available for a large area, for example, it will surely take just a minute to extract the data for a given region or municipality, and use them to write a story for a local media. Right?</p>
+<p><img src="wrong.gif" /></p>
+<p>I feel that every single person that has worked with open data to any meaningful extent went through such moments of naive optimism at least once when finding out about the availability of a given data source. In particular when the dataset is the result of scientific research, excitement quickly turns into despair, as accessing such open data often requires using different programming languages, having familiarity with coding and at least the basics of geocomputation.</p>
+<p>In some instances, the complexity of the data may make this inevitable. In other cases, the issue may simply be that data formats that seem perfectly readable for a given target audience need to be translated into something that can be understood by non-professionals.</p>
+<div id="latitude-longitude-and-data" class="section level2">
+<h2>Latitude, longitude, and data</h2>
+<p>Geo-located data are distributed in a variety of formats. For many of them, just double-clicking on the downloaded file will bring-up… well, nothing. But sometimes the relevant dataset is distributed as a spreadsheet. And data journalists love spreadsheets.</p>
+<p>In the roller coaster of hope and despair that characterizes data journalism endeavours, a spreadsheet is a good sign, but often not quite enough. For example, let’s take a nicely formatted spreadsheets with three columns: latitude, longitude, and a value. Journalists need to report on places, locations, administrative units, anything that will make sense to their readers, and then often aggregate data. So, how do we go from here?</p>
+<p>In this post, I will go through this relatively common case, and introduce a tool that will hopefully make it much easier to overcome the initial difficulties.</p>
+</div>
+<div id="i-like-birds" class="section level2">
+<h2>I like birds</h2>
+<p>To showcase this scenario, I will use an openly-licensed ornithological dataset of bird sightings. This is mainly to keep things simple, without giving too much thought to substantive analysis. Also, <a href="https://www.ft.com/content/51f9520b-2677-4c2e-aa45-fa16cc6bf3b2">the pandemic pushed more people to look out for birds</a> and care about them. As their <a href="https://www.europeandatajournalism.eu/eng/News/Data-news/Birds-collateral-victims-of-intensive-agriculture">numbers are decreasing so rapidly</a>, more of us should care about birds, really. Also, <a href="https://www.youtube.com/watch?v=JwJr9Rniofc">I like birds</a>.</p>
+<p><img src="birds.gif" /></p>
+<p>Let’s move on to data analysis.</p>
+<p>I have this dataset with all sightings of <em>Alcedo atthis</em> (better known as kingfisher) and of <em>Phoenicopterus roseus</em> (the flamingo) recorded <a href="https://ebird.org/">on the eBird platform</a> in the last two weeks in and around Europe.</p>
+<p>I open the spreadsheet, and it looks like this:</p>
+<div class="figure">
+<img src="ebirds_screenshot.png" alt="" />
+<p class="caption">Well, at least it’s a spreadsheet!</p>
+</div>
+<p>There is a location column, but it is not consistent. How do I know in which countries or areas there have been more kingfisher sightings? Or maybe I only need to pass the data to a colleague who is working on bird sightings in my local newsroom, but we are only interested about sightings in a given region, or even municipality, and don’t care much about an international dataset. There is latitude and longitude column there, but… still no easy way out, apparently.</p>
+<p>So here is when our latest tool comes to the rescue. It allows to associate data points with latitude and longitude coordinates to different types of administrative units (all the way from country to municipality), preview the data on an interactive map, and export the result as a spreadsheet or as a map. This can be useful both for exploratory data analysis as well as for further processing.</p>
+<p>The tool is available through an interactive online interface, or you can install it on your local computer (via R or Docker) for comfort if you want to process larger datasets.</p>
+<p>Future versions may support other input formats (e.g. shapefiles), and more options for aggregating data.</p>
+<p>Check out this screencast about some of the functionalities offered by this interface, and then check this out with your own data.</p>
+<p>Looking for a dataset for testing? Here’s <a href="flamingo_kingfisher_october_2019.csv">a slightly different dataset</a> (a simplified version of the original available <a href="https://doi.org/10.15468/dl.grnr5d">here</a>), on flamingo and kingfisher sightings recorded on eBird during the month of October 2019. You can <a href="flamingo_kingfisher_october_2019.csv">download it from here</a>. And check out <a href="https://ebird.org/">eBird’s website</a> for all things birds!</p>
+<p>{{<youtube KeMnlkIKLD4>}}</p>
+</div>
