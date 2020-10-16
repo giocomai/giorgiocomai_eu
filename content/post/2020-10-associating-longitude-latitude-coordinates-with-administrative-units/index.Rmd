@@ -56,6 +56,15 @@ Check out this screencast about some of the functionalities offered by this inte
 
 Looking for a dataset for testing? Here's [a slightly different dataset](flamingo_kingfisher_october_2019.csv) (a simplified version of the original available [here](https://doi.org/10.15468/dl.grnr5d)), on flamingo and kingfisher sightings recorded on eBird during the month of October 2019. You can [download it from here](flamingo_kingfisher_october_2019.csv). And check out [eBird's website](https://ebird.org/) for all things birds! 
 
+If you are an R user, and want to run this on your own computer, you just need to run these two commands to find it open in your local browser:
+
+```{r eval = FALSE}
+remotes::install_github(repo = "giocomai/latlon2map")
+latlon2map::ll_app()
+```
+
+Base maps for administrative units will be cached locally, and will be automatically downloaded at first run.
+
 {{<youtube KeMnlkIKLD4>}}
 
 ```{r, include= FALSE, echo=FALSE, message=FALSE}

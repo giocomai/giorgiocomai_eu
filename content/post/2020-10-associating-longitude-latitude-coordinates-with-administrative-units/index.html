@@ -39,5 +39,9 @@ featured: no
 <p>Future versions may support other input formats (e.g. shapefiles), and more options for aggregating data.</p>
 <p>Check out this screencast about some of the functionalities offered by this interface, and then check this out with your own data.</p>
 <p>Looking for a dataset for testing? Here’s <a href="flamingo_kingfisher_october_2019.csv">a slightly different dataset</a> (a simplified version of the original available <a href="https://doi.org/10.15468/dl.grnr5d">here</a>), on flamingo and kingfisher sightings recorded on eBird during the month of October 2019. You can <a href="flamingo_kingfisher_october_2019.csv">download it from here</a>. And check out <a href="https://ebird.org/">eBird’s website</a> for all things birds!</p>
+<p>If you are an R user, and want to run this on your own computer, you just need to run these two commands to find it open in your local browser:</p>
+<pre class="r"><code>remotes::install_github(repo = &quot;giocomai/latlon2map&quot;)
+latlon2map::ll_app()</code></pre>
+<p>Base maps for administrative units will be cached locally, and will be automatically downloaded at first run.</p>
 <p>{{<youtube KeMnlkIKLD4>}}</p>
 </div>
