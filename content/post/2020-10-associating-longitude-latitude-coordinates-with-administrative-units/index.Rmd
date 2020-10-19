@@ -28,7 +28,7 @@ In the roller coaster of hope and despair that characterizes data journalism end
 In this post, I will go through this relatively common case, and introduce a tool that will hopefully make it much easier to overcome the initial difficulties. 
 
 
-## I like birds
+## What about some ornithology?
 
 To showcase this scenario, I will use an openly-licensed ornithological dataset of bird sightings. This is mainly to keep things simple, without giving too much thought to substantive analysis. Also, [the pandemic pushed more people to look out for birds](https://www.ft.com/content/51f9520b-2677-4c2e-aa45-fa16cc6bf3b2) and care about them. As their [numbers are decreasing so rapidly](https://www.europeandatajournalism.eu/eng/News/Data-news/Birds-collateral-victims-of-intensive-agriculture), more of us should care about birds, really. Also, [I like birds](https://www.youtube.com/watch?v=JwJr9Rniofc). 
 
@@ -48,7 +48,7 @@ There is a location column, but it is not consistent. How do I know in which cou
 
 So here is when our latest tool comes to the rescue. It allows to associate data points with latitude and longitude coordinates to different types of administrative units (all the way from country to municipality), preview the data on an interactive map, and export the result as a spreadsheet or as a map. This can be useful both for exploratory data analysis as well as for further processing.
 
-The tool is available through an interactive online interface, or you can install it on your local computer (via R or Docker) for comfort if you want to process larger datasets.
+The tool is available through [an interactive online interface](https://apps.europeandatajournalism.eu/app/latlon2map), or you can install it on your local computer (via R or Docker) for comfort if you want to process larger datasets.
 
 Future versions may support other input formats (e.g. shapefiles), and more options for aggregating data.
 
@@ -63,7 +63,16 @@ remotes::install_github(repo = "giocomai/latlon2map")
 latlon2map::ll_app()
 ```
 
+If you are not an R user, but have Docker installed on your computer, this is all you will need to run in a terminal to find this interface in your local browser. 
+
+```{bash, eval = FALSE}
+docker run -p 3838:3838 giocomai/latlon2map
+```
+
+
 Base maps for administrative units will be cached locally, and will be automatically downloaded at first run.
+
+Again, [here is the link to the online version](https://apps.europeandatajournalism.eu/app/latlon2map) if you want to try this out.
 
 {{<youtube KeMnlkIKLD4>}}
 
