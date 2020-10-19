@@ -85,6 +85,8 @@ ll_set_folder("~/R/")
 
 
 ```{r, include= FALSE, echo=FALSE, message=FALSE}
+# scripts for generating more datasets using ebird API
+
 library("rebird")
 
 fs::dir_create("ebird_cache")
