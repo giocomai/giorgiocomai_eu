@@ -1,6 +1,6 @@
 ---
-title: Associating latitude/longitude coordinates with administrative units
-date: '2020-10-16'
+title: An online interface for associating latitude/longitude coordinates with administrative units
+date: '2020-10-23'
 categories:
   - Data notes
 tags:
@@ -9,7 +9,9 @@ tags:
 featured: no
 ---
 
-Scientists across different disciplines are increasingly taking up the nice habit of publishing the datasets that emerge from their research, and these often include geolocated data. The same is true with open data distributed by public administrations: more and more, such datasets include geocoded information. 
+*This post presents a data exploration tool developed by EDJNet. If you have a spreadsheet with longitude and latitude columns and would like to have a look at those data on a map or associate them with administrative units across Europe, you may well find this tool useful. You can [try this online](https://apps.europeandatajournalism.eu/app/latlon2map), or  check out [this screencast](https://www.youtube.com/watch?v=KeMnlkIKLD4) for an overview of its main features. The interface is available also through the R package [`latlon2map`](https://giocomai.github.io/latlon2map/).*
+
+Scientists across different disciplines are increasingly taking up the nice habit of publishing the datasets that emerge from their research, and these often include geolocated data. The same is true with open data distributed by public administrations: more and more, such datasets include geocoded information.
 
 All of this sounds like a great starting point for data journalists. If the data is available for a large area, for example, it will surely take just a minute to extract the data for a given region or municipality, and use them to write a story for a local media. Right?
 
