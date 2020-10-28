@@ -1,0 +1,349 @@
+speciesCode,comName,sciName,locId,locName,obsDt,howMany,lat,lng,obsValid,obsReviewed,locationPrivate,subId
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2785357,Parque Urbano da Póvoa de Santa Iria,2020-10-15 07:15,14,38.8589384,-9.0590322,TRUE,FALSE,FALSE,S74836713
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1104921,Estuário do Mondego--Ilha da Murraceira,2020-10-14 18:30,200,40.1322973,-8.8281155,TRUE,FALSE,FALSE,S74827709
+grefla3,Greater Flamingo,Phoenicopterus roseus,L964943,PN Ria Formosa--Ludo--esteiros do Ancão e da Maria Nova (percurso sul),2020-10-14 16:00,224,37.0181794,-7.999506,TRUE,FALSE,FALSE,S74822154
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1368090,Arrozal da Nossa Senhora do Rosário,2020-10-14 14:26,1,37.168799,-8.4856715,TRUE,FALSE,FALSE,S74809729
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1459558,Salinas do Forte do Rato,2020-10-14 12:05,5,37.1251003,-7.6215544,TRUE,FALSE,FALSE,S74828498
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5748946,Bom Retiro,2020-10-14 09:38,150,37.1487513,-8.5214686,TRUE,TRUE,FALSE,S74800841
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12492800,"The Ria Formosa Natural Park, Tavira PT-Faro 37.13704, -7.61838",2020-10-14 09:38,40,37.13704,-7.618385,TRUE,FALSE,TRUE,S74799192
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1764210,Parque do Tejo,2020-10-14 08:00,NA,38.7833131,-9.0920265,TRUE,FALSE,FALSE,S74814577
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2065182,Montenegro,2020-10-13 18:25,40,37.0309251,-7.9585218,TRUE,FALSE,FALSE,S74774400
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1099654,Quinta do Ludo--área geral,2020-10-13 16:00,NA,37.025529,-7.997092,TRUE,FALSE,FALSE,S74789778
+grefla3,Greater Flamingo,Phoenicopterus roseus,L963093,Parque Ambiental de Vilamoura,2020-10-13 15:50,2,37.0893497,-8.1423175,TRUE,FALSE,FALSE,S74826985
+grefla3,Greater Flamingo,Phoenicopterus roseus,L978778,Foz do Rio Trancão,2020-10-13 13:20,31,38.7962394,-9.0906286,TRUE,FALSE,FALSE,S74774326
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12489412,Esteiro da Ilha da Lebre,2020-10-13 12:30,7,37.0175312,-7.8577518,TRUE,FALSE,TRUE,S74781001
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10458384,RN Estuário do Sado--salinas das Praias do Sado,2020-10-13 12:01,1,38.5144265,-8.8195884,TRUE,FALSE,FALSE,S74786218
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1327040,Salgados do Fialho (ETAR de Faro),2020-10-13 07:48,8,37.0211415,-7.8988771,TRUE,FALSE,FALSE,S74768990
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4199306,Sítio das Fontes,2020-10-12 17:00,2,37.1617872,-8.4857851,TRUE,FALSE,FALSE,S74748723
+grefla3,Greater Flamingo,Phoenicopterus roseus,L962500,Lagoa dos Salgados,2020-10-12 15:53,5,37.09469,-8.3313704,TRUE,FALSE,FALSE,S74738855
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2771214,Salinas de Olhão,2020-10-12 10:04,10,37.0240728,-7.8534651,TRUE,FALSE,FALSE,S74737449
+grefla3,Greater Flamingo,Phoenicopterus roseus,L927102,Lezíria Grande de Vila Franca de Xira--área geral (acesso condicionado),2020-10-12 08:00,NA,38.8915673,-8.9387512,TRUE,FALSE,FALSE,S74783567
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3279874,Ria de Aveiro--Canal de Mira--troço Vagueira-Costa Nova/Gafanha da Encarnação,2020-10-11 18:15,70,40.5954158,-8.7488079,TRUE,FALSE,FALSE,S74706032
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1767054,Salinas de Alverca e Forte da Casa--ETAR de Alverca,2020-10-11 17:30,4,38.8831368,-9.0363129,TRUE,FALSE,FALSE,S74725606
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2697067,Estuário do Sado--Herdade do Zambujal,2020-10-11 16:53,1800,38.5644083,-8.6877608,TRUE,TRUE,FALSE,S74695768
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1417651,Ludo--salinas e ribeira de São Lourenço (percurso norte),2020-10-11 16:16,80,37.0316,-7.9948,TRUE,FALSE,FALSE,S74693063
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4436368,Marinha do Grelha,2020-10-11 15:15,9,37.0247907,-7.870009,TRUE,FALSE,FALSE,S74711489
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12478921,"Auto selected 38.72280, -9.12931",2020-10-11 14:52,NA,38.722803999999996,-9.129313,TRUE,FALSE,TRUE,S74714356
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1447920,PN Ria Formosa--Praia de Faro,2020-10-11 13:25,1,37.0081325,-7.9949029,TRUE,FALSE,FALSE,S74680443
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5711080,PN Ria Formosa--canal de Olhão (percurso fluvial),2020-10-11 13:22,50,37.0057057,-7.8597307,TRUE,FALSE,FALSE,S74684456
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3133644,PN Ria Formosa--canal de Faro (percurso fluvial),2020-10-11 13:22,50,36.9959035,-7.912302,TRUE,FALSE,FALSE,S74683692
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4237220,Estuário do Arade--Parchal,2020-10-11 13:00,2,37.1421877,-8.5167968,TRUE,FALSE,FALSE,S74730158
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1253957,RN Estuário do Tejo--EVOA--área geral (acesso condicionado),2020-10-11 11:45,12,38.8489117,-8.9714313,TRUE,FALSE,FALSE,S74725569
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1215801,RN Estuário do Sado--Zambujal,2020-10-11 08:30,500,38.5686172,-8.7342453,TRUE,FALSE,FALSE,S74677037
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2065184,PN Ria Formosa--salinas do Ramalhete,2020-10-10 18:20,4,37.0107776,-7.9732418,TRUE,FALSE,FALSE,S74737174
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5123985,Seixalinho,2020-10-10 17:21,40,38.70281,-9.0067399,TRUE,FALSE,FALSE,S74650641
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5585702,Quinta do Saldanha (Observatório),2020-10-10 16:36,266,38.7022993,-8.9867467,TRUE,FALSE,FALSE,S74650732
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1177578,RN Estuário do Tejo--Ponta da Erva (acesso condicionado),2020-10-10 15:32,100,38.8338666,-8.9674516,TRUE,FALSE,FALSE,S74662605
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12471836,Caminho das Salinas-ALVOR,2020-10-10 14:30,42,37.1441168,-8.591222,TRUE,FALSE,TRUE,S74675574
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2684518,Ria de Aveiro--frente ribeirinha e campos da Murtosa,2020-10-10 14:10,6,40.7393885,-8.6599302,TRUE,FALSE,FALSE,S74687500
+grefla3,Greater Flamingo,Phoenicopterus roseus,L972527,RN Estuário do Tejo--Sítio das Hortas,2020-10-10 13:50,NA,38.760768,-8.9384186,TRUE,FALSE,FALSE,S74644753
+grefla3,Greater Flamingo,Phoenicopterus roseus,L9039451,Marinha da Garganta,2020-10-10 13:28,NA,37.0188258,-7.9064518,TRUE,FALSE,FALSE,S74632671
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8479003,PN Ria Formosa--Praia dos Cavacos,2020-10-10 12:12,25,37.0373878,-7.7969885,TRUE,FALSE,FALSE,S74631453
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12485952,"EM544, Santiago do Cacém, Setúbal, PT (38,112, -8,798)",2020-10-10 11:30,5,38.1121639,-8.7975172,TRUE,FALSE,TRUE,S74756493
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2163926,Sapal de Corroios--Moinho de Maré,2020-10-10 11:28,88,38.64359,-9.144702,TRUE,FALSE,FALSE,S74631172
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2680333,Ria de Aveiro--Marinhas de São Roque,2020-10-10 11:02,60,40.6486223,-8.6580849,TRUE,FALSE,FALSE,S74631433
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2289415,Ria de Aveiro--complexo de salinas do Canal das Pirâmides (Salina da Troncalhada e outras),2020-10-10 09:59,1,40.6417709,-8.6631972,TRUE,FALSE,FALSE,S74631378
+grefla3,Greater Flamingo,Phoenicopterus roseus,L927095,Paul da Barroca (Barroca d'Alva),2020-10-10 09:28,1,38.7319581,-8.8970804,TRUE,FALSE,FALSE,S74662383
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1670947,RN Sapal Castro Marim e VRSA--salinas Cerro do Bufo (acesso condicionado),2020-10-10 09:09,NA,37.2002013,-7.4579358,TRUE,FALSE,FALSE,S74629322
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8722765,Quinta dos Ingleses,2020-10-10 09:00,200,38.6817868,-8.9933975,TRUE,FALSE,FALSE,S74631498
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4322039,PN Ria Formosa--Marinha do Baeta,2020-10-10 07:23,2,37.01943,-7.8843534,TRUE,FALSE,FALSE,S74639498
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1471835,Sapal de Corroios--Ponta dos Corvos,2020-10-09 16:38,60,38.6496508,-9.1165668,TRUE,FALSE,FALSE,S74602372
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1099675,Quinta do Lago--lagos da avenida Ayrton Senna,2020-10-09 16:30,4,37.0355842,-8.0275726,TRUE,FALSE,FALSE,S74621354
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12460753,Rio Trancão,2020-10-09 16:00,NA,38.7957266,-9.0914868,TRUE,FALSE,TRUE,S74615708
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1929582,RN Estuário do Sado--Monte Novo da Palma,2020-10-09 15:07,2,38.424008,-8.6350822,TRUE,FALSE,FALSE,S74602389
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1874087,RN Estuário do Tejo--EVOA--Lagoa Rasa (acesso condicionado),2020-10-09 12:19,8,38.8442409,-8.9736136,TRUE,FALSE,FALSE,S74592744
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1543666,RN Estuário do Tejo--EVOA--Lagoa Principal (acesso condicionado),2020-10-09 10:57,8,38.8472122,-8.9736411,TRUE,FALSE,FALSE,S74591956
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1397857,Salinas de Tavira (Quatro Águas),2020-10-09 09:30,26,37.121009,-7.6358628,TRUE,FALSE,FALSE,S74592214
+grefla3,Greater Flamingo,Phoenicopterus roseus,L975199,RN Sapal Castro Marim e VRSA--sapal de Venta Moinhos,2020-10-08 12:00,20,37.2297902,-7.4265164,TRUE,FALSE,FALSE,S74565156
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12450993,Parque do Tejo,2020-10-08 11:00,100,38.7866837,-9.0913614,TRUE,FALSE,TRUE,S74567312
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1877087,Salinas do Samouco (acesso condicionado),2020-10-07 18:39,20,38.7346553,-8.992377,TRUE,FALSE,FALSE,S74534354
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2084822,Ribeira do Almargem,2020-10-07 18:03,100,37.136714,-7.6150703,TRUE,FALSE,FALSE,S74536104
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3534346,Lagoa de Óbidos--Foz do Rio Real,2020-10-07 13:34,37,39.397071,-9.2049122,TRUE,FALSE,FALSE,S74541414
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3133650,PN Ria Formosa--Ilha da Barreta (Ilha Deserta),2020-10-07 10:29,70,36.9641234,-7.8853083,TRUE,FALSE,FALSE,S74521291
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1368094,PN Ria Formosa--Quinta do Lago--área geral,2020-10-07 09:36,3,37.0246316,-8.0118258,TRUE,FALSE,FALSE,S74520985
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2065200,ETAR de Vilamoura,2020-10-07 07:47,3,37.0952034,-8.1441736,TRUE,FALSE,FALSE,S74519395
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2142778,PN Ria Formosa--Cacela Velha,2020-10-07 07:15,1,37.1562721,-7.5458586,TRUE,FALSE,FALSE,S74577057
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1320309,Ria de Alvor--Abicada,2020-10-06 18:18,85,37.1475059,-8.5947418,TRUE,FALSE,FALSE,S74554985
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3523193,Cais da Matinha,2020-10-06 12:20,1,38.750089,-9.094934,TRUE,FALSE,FALSE,S74485535
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12437668,"06/10/2020 13:28
+37,189, -8,471",2020-10-06 10:37,77,37.1886659,-8.4708165,TRUE,FALSE,TRUE,S74485980
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4890533,Praia do Bom Sucesso,2020-10-05 17:50,19,39.4244753,-9.2339122,TRUE,FALSE,TRUE,S74468800
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2870280,Lagoa de Óbidos--braço do Bom Sucesso,2020-10-05 13:30,11,39.3901063,-9.2231727,TRUE,FALSE,FALSE,S74468442
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2369169,Barrinha de Esmoriz,2020-10-05 11:24,1,40.965369,-8.6425066,TRUE,FALSE,FALSE,S74451020
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12424128,"Silves, Faro, PT (37,189, -8,47)",2020-10-04 15:42,110,37.1889202,-8.4704794,TRUE,FALSE,TRUE,S74404862
+grefla3,Greater Flamingo,Phoenicopterus roseus,L977968,Ribeira das Enguias,2020-10-04 15:15,200,38.7478581,-8.9222717,TRUE,FALSE,FALSE,S74406374
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1323358,ETAR da Atouguia da Baleia,2020-10-04 10:38,2,39.3480835,-9.3364048,TRUE,TRUE,FALSE,S74394286
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10352893,Salinas Simeão,2020-10-04 09:48,25,37.1217708,-7.6420414,TRUE,FALSE,TRUE,S74393526
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12367842,"Passeio do Tejo, Sacavém, Lisboa, PT (38,787, -9,091)",2020-10-04 09:26,12,38.7871232,-9.091229,TRUE,FALSE,TRUE,S74396312
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12422299,"1 EM527, Faro, Faro, PT (37,016, -7,988)",2020-10-04 08:15,NA,37.015857,-7.988178,TRUE,FALSE,TRUE,S74394334
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3782468,Morgado do Reguengo,2020-10-04,18,37.1885616,-8.548007,TRUE,FALSE,FALSE,S74505139
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12415279,"Olhão, Faro, PT (37,025, -7,869)",2020-10-03 16:03,21,37.0252958,-7.8689722,TRUE,FALSE,TRUE,S74356493
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3160224,Ria de Aveiro--frente ribeirinha da Costa Nova,2020-10-03 11:38,27,40.6140753,-8.7486577,TRUE,FALSE,FALSE,S74345792
+grefla3,Greater Flamingo,Phoenicopterus roseus,L980669,Sapal de Alhos Vedros,2020-10-03 09:00,200,38.6646535,-9.0214062,TRUE,FALSE,FALSE,S74346457
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2455841,RN Estuário do Sado--Península da Carrasqueira,2020-10-02 16:30,30,38.4202269,-8.7889338,TRUE,FALSE,FALSE,S74410306
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4665596,Parque Ribeirinho de Faro,2020-10-02 16:00,16,37.0238062,-7.946417,TRUE,FALSE,FALSE,S74319408
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2514026,ZPE Évora--Herdade da Camoeira,2020-10-02 12:12,6,38.4404134,-7.974937,TRUE,FALSE,FALSE,S74357610
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2357920,Lagoa de Melides,2020-10-02 10:30,12,38.1338139,-8.7829256,TRUE,FALSE,FALSE,S74331078
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1852633,RN Lagoas de Santo André e da Sancha--Costa de Santo André,2020-10-02 10:30,50,38.1136867,-8.7964635,TRUE,FALSE,FALSE,S74316639
+grefla3,Greater Flamingo,Phoenicopterus roseus,L973582,RN Lagoas de Santo André e da Sancha--Lagoa de Santo André,2020-10-02 08:30,200,38.0995774,-8.789835,TRUE,FALSE,FALSE,S74316398
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4447071,ETAR Olhão,2020-10-01 14:20,1,37.0219827,-7.8605676,TRUE,FALSE,FALSE,S74273769
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8226239,Parque ribeirinho da Baixa da Banheira,2020-10-01 11:00,59,38.66257,-9.0412419,TRUE,FALSE,FALSE,S74277395
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1266460,Salinas da Fuseta (oeste),2020-10-01 09:45,18,37.0480203,-7.7582225,TRUE,FALSE,FALSE,S74608925
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12466755,"Auto selected 39.77453, 19.99096",2020-10-15 07:42,5,39.774532,19.990956,TRUE,FALSE,TRUE,S74835866
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3811665,Narta Lagoon,2020-10-11 06:25,19,40.5263265,19.4272614,TRUE,FALSE,FALSE,S74676004
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10292727,Narte Lagoon--Monastery,2020-10-10 07:05,22,40.5243451,19.4115073,TRUE,FALSE,FALSE,S74628866
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12493699,"Burgas, Burgas, BG (42.572, 27.472)",2020-10-14 13:12,300,42.5715778,27.4723328,TRUE,FALSE,TRUE,S74804966
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2205561,Atanasovsko Lake--Southwest,2020-10-08 09:11,NA,42.5312106,27.4724132,TRUE,FALSE,FALSE,S74568624
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2687928,Atanasovsko Lake--Northeast,2020-10-07 08:50,20,42.5902469,27.476635,TRUE,FALSE,FALSE,S74535490
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10064672,Atanasovsko Lake--South,2020-10-05 08:56,158,42.5125198,27.4809256,TRUE,FALSE,FALSE,S74455148
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3924266,Atanasovsko Lake--Migration Observation Point,2020-10-03 21:51,NA,42.5590708,27.4882114,TRUE,FALSE,FALSE,S74368132
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3505325,Laguna del Rincón,2020-10-15 10:52,1,37.4598144,-4.6278995,TRUE,FALSE,FALSE,S74837000
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6443288,Marisma de Cetina,2020-10-15 09:10,150,36.5665022,-6.1508179,TRUE,FALSE,FALSE,S74836905
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5139156,Embalse de Los Canchales--General,2020-10-15 08:20,2,38.973819,-6.5141952,TRUE,FALSE,FALSE,S74836192
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4075842,Laguna de Navaseca,2020-10-14 17:37,NA,39.1014798,-3.6180005,TRUE,FALSE,FALSE,S74824842
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4135809,Charca de Suárez—Motril,2020-10-14 17:00,5,36.7247808,-3.5408163,TRUE,FALSE,FALSE,S74822179
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5705345,El Hondo PNat--Observatorio El Calamon,2020-10-14 16:17,200,38.1907057,-0.7545616,TRUE,FALSE,FALSE,S74806138
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4136062,Villacañas--Laguna Larga,2020-10-14 14:31,173,39.603009900000004,-3.3176351,TRUE,FALSE,FALSE,S74824752
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4898221,PN Doñana--Laguna de Santa Olalla,2020-10-14 12:15,285,36.977387,-6.474816,TRUE,FALSE,TRUE,S74813217
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5578500,Clot de Galvany--Charca Limícolas,2020-10-14 10:14,4,38.2429622,-0.5287144,TRUE,FALSE,FALSE,S74800260
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2490116,Salar de los Canos,2020-10-14 09:39,10,37.2219222,-1.8118644,TRUE,FALSE,FALSE,S74800138
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7159847,La Guardia--Lagunas del arroyo Cedrón,2020-10-14 08:35,2,39.8133736,-3.4631214,TRUE,FALSE,FALSE,S74797949
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3481440,Lagunas de Campillos--Laguna Dulce,2020-10-14 08:30,85,37.0515466,-4.8342419,TRUE,FALSE,FALSE,S74811629
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4146814,Salinas de Santa Pola PNat--Torre del Tamarit,2020-10-14 08:19,90,38.1843084,-0.6148524,TRUE,FALSE,FALSE,S74798283
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12495038,cristalizador nº 1,2020-10-14 07:00,15,36.7541866,-2.2131014,TRUE,FALSE,TRUE,S74813058
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4830102,Tablas de Alarcos,2020-10-13 19:26,3,38.9849661,-4.0268326,TRUE,FALSE,FALSE,S74777642
+grefla3,Greater Flamingo,Phoenicopterus roseus,L977607,Desembocadura del Guadalhorce--Área General,2020-10-13 18:15,6,36.6728249,-4.4560289,TRUE,FALSE,FALSE,S74780406
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4309680,Embalse de Los Canchales--Cola del Lácara,2020-10-13 18:00,1,38.9820305,-6.4973831,TRUE,FALSE,FALSE,S74779275
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3983544,Salinas de San Pedro del Pinatar,2020-10-13 12:37,NA,37.8340132,-0.7742357,TRUE,FALSE,FALSE,S74768697
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4842221,Embalse del Cubillas,2020-10-13 12:05,1,37.2738479,-3.6711502,TRUE,FALSE,FALSE,S74780032
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4803910,Embalse del Ebro RNat--Cabañas de Virtus,2020-10-13 11:55,2,43.0035173,-3.8879585,TRUE,TRUE,FALSE,S74768741
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4237887,Embalse de Alcollarín--General,2020-10-13 11:50,1,39.2569806,-5.7489824,TRUE,FALSE,FALSE,S74768108
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5123876,Urdaibai Reserva de la Biosfera--Ozollo,2020-10-13 11:14,3,43.356639,-2.6588416,TRUE,TRUE,FALSE,S74768173
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5998478,Laguna de Baños de San Jose,2020-10-13 11:00,NA,38.7872749,-1.4216137,TRUE,FALSE,FALSE,S74775533
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5287538,Puerto de Los Urrutias,2020-10-13 10:26,9,37.677675,-0.8266167,TRUE,FALSE,FALSE,S74767435
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4146872,Salinas de Santa Pola PNat--Cuadratet,2020-10-13 10:23,NA,38.1799722,-0.61869,TRUE,FALSE,FALSE,S74767766
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12487689,"Auto selected 40.76986, 0.72935",2020-10-13 10:10,NA,40.769855,0.729346,TRUE,FALSE,TRUE,S74767303
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2779555,Urdaibai RB--bird center y laguna de Orueta,2020-10-13 09:42,3,43.3468523,-2.657007,TRUE,TRUE,FALSE,S74767452
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3879826,Marjal dels Moros,2020-10-13 09:41,12,39.6209621,-0.2569342,TRUE,FALSE,FALSE,S74769515
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5724588,Salinas de Santa Pola PNat--Els Xiprerets,2020-10-13 09:34,34,38.198883,-0.576256,TRUE,FALSE,FALSE,S74767278
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6877658,Hoya del Pozo,2020-10-13 09:00,NA,38.838259,-1.4561391,TRUE,FALSE,FALSE,S74775263
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5171766,Marina del Carmolí,2020-10-13 08:55,3,37.7016827,-0.854702,TRUE,FALSE,FALSE,S74767123
+grefla3,Greater Flamingo,Phoenicopterus roseus,L11345934,Lo Vaquero,2020-10-13 08:54,55,38.196257,-0.773772,TRUE,FALSE,FALSE,S74766699
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4843879,Salinas de Santa Pola PNat--Salinas de Bon Matí,2020-10-13 08:44,131,38.1701601,-0.6264782,TRUE,FALSE,FALSE,S74766796
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2360554,Laguna de Gallocanta--Área general,2020-10-13 08:34,29,40.9702383,-1.5044403,TRUE,TRUE,FALSE,S74771268
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6362852,El Hondo PNat--Observatorio El Saladar,2020-10-12 17:56,30,38.1859259,-0.7860377,TRUE,FALSE,FALSE,S74821592
+grefla3,Greater Flamingo,Phoenicopterus roseus,L11361267,El Hondo PNat--La Raja,2020-10-12 17:47,4,38.1750228,-0.767374,TRUE,FALSE,FALSE,S74738634
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10249318,"Riet Vell - 9 Partida Eucaliptus, Amposta, Catalunya, ES (40,661, 0,776)",2020-10-12 17:15,1,40.661117,0.7755074,TRUE,FALSE,TRUE,S74738143
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4389108,Embalse de Campos del Paraíso,2020-10-12 17:12,24,39.9786986,-2.7355313,TRUE,FALSE,FALSE,S74738383
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12017545,El Hondo PNat --Torre El Rincón,2020-10-12 17:06,596,38.1821284,-0.7759174,TRUE,FALSE,FALSE,S74737121
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5074654,El Hondo PNat--El Rincón/Observatorio CAM,2020-10-12 16:45,46,38.1850934,-0.784526,TRUE,FALSE,FALSE,S74735136
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1122006,Doñana PNat--Salinas de Bonanza,2020-10-12 16:37,470,36.8367255,-6.3432097,TRUE,FALSE,FALSE,S74747821
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12482208,"Unnamed Road, Sant Jaume d'Enveja, Catalunya, ES (40,695, 0,804)",2020-10-12 16:11,NA,40.6952658,0.8044798,TRUE,FALSE,TRUE,S74733590
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5139167,Embalse de Los Canchales--Colas oeste,2020-10-12 15:58,2,38.97623,-6.538295,TRUE,FALSE,FALSE,S74737918
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2068919,Doñana PNat--Laguna del Tarelo,2020-10-12 15:24,12,36.8470536,-6.32025,TRUE,FALSE,FALSE,S74732787
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5925467,Clot De Galvany,2020-10-12 14:39,4,38.243249,-0.5298627,TRUE,FALSE,TRUE,S74798486
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4152925,Lagunas de Corral-Rubio,2020-10-12 14:23,NA,38.8370869,-1.4580059,TRUE,FALSE,FALSE,S74730396
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4804037,Moheda Alta--Balsa,2020-10-12 14:00,6,39.1700758,-5.4862761,TRUE,FALSE,FALSE,S74799092
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4548723,Salinas de Marchamalo,2020-10-12 13:45,20,37.6359578,-0.7192612,TRUE,FALSE,FALSE,S74816866
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5170203,Arenal de Los Nietos-Lo Poyo,2020-10-12 13:10,7,37.6571376,-0.8027744,TRUE,FALSE,FALSE,S74730229
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4054816,Laguna del Pueblo,2020-10-12 12:57,2,39.4138554,-2.9432716,TRUE,FALSE,FALSE,S74727634
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5227363,Las Cuerlas--Observatorio de La Reguera,2020-10-12 12:49,49,40.9671556,-1.5239668,TRUE,TRUE,FALSE,S74743718
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5401838,Les Salines de Calpe,2020-10-12 12:30,71,38.6441765,0.06639,TRUE,FALSE,FALSE,S74731086
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4789694,Aiguamolls de l'Empordà PNat--Aguait de les Gantes,2020-10-12 11:21,NA,42.2215541,3.095362,TRUE,FALSE,FALSE,S74726627
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2364235,Basses de Can Dimoni,2020-10-12 11:06,1,41.3099296,2.0474946,TRUE,FALSE,FALSE,S74727045
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12480945,"Polígono Industrial Carretera Nacional 340, Chiclana de la Frontera ES-Andalucía 36.43144, -6.14332",2020-10-12 10:56,10,36.431445,-6.14332,TRUE,FALSE,TRUE,S74726408
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4527342,Reserva Natural de l'Albufereta,2020-10-12 10:30,4,39.8588006,3.0930966,TRUE,FALSE,FALSE,S74730688
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12481038,"Siderúrgica del Mediterráneo, Sagunto ES-Comunidad Valenciana 39.63537, -0.23926",2020-10-12 09:58,10,39.635365,-0.239262,TRUE,FALSE,TRUE,S74727042
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4483525,Delta de l'Ebre PNat--Lo Goleró,2020-10-12 09:38,456,40.778421,0.7209742,TRUE,FALSE,FALSE,S74726078
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5223274,Sal Rossa (P.N. ses Salines d'Eivissa),2020-10-12 09:37,NA,38.8743021,1.3926725,TRUE,FALSE,FALSE,S74727041
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12463968,"3 Calle Dinamarca, Calpe, Comunidad Valenciana, ES (38,643, 0,056)",2020-10-12 08:32,NA,38.6428811,0.0557354,TRUE,FALSE,TRUE,S74726071
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3905205,El Hondo PNat--Área General,2020-10-12 08:30,240,38.1858471,-0.7809734,TRUE,FALSE,FALSE,S74732691
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5005230,El Hondo PNat--Centro de Visitantes,2020-10-12 08:23,177,38.1865765,-0.7879096,TRUE,FALSE,FALSE,S74725692
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7142708,Cabo Gata PNat--Salinas-Observatorio 2,2020-10-11 19:15,NA,36.7629756,-2.2243693,TRUE,FALSE,FALSE,S74696922
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5227448,Gallocanta--Ermita del Buen Acuerdo,2020-10-11 18:45,50,40.9885054,-1.5302485,TRUE,TRUE,FALSE,S74698261
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1962214,L'Albufera PNat--Marjales de Alfalfar,2020-10-11 17:51,2,39.3802219,-0.3431511,TRUE,FALSE,FALSE,S74692716
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2723786,Delta del Llobregat PNat--Remolar-Filipines,2020-10-11 17:10,1,41.2816604,2.0648503,TRUE,FALSE,FALSE,S74695592
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6642688,Punta Entinas ParNat--El Hornillo,2020-10-11 11:47,15,36.72328,-2.645446,TRUE,FALSE,FALSE,S74677796
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8288188,Puerto de Mazarrón,2020-10-11 10:50,3,37.5620234,-1.2987708,TRUE,FALSE,FALSE,S74801610
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4789724,Aiguamolls de l'Empordà PNat--El Matà,2020-10-11 10:45,3,42.2094363,3.1007027,TRUE,FALSE,FALSE,S74696498
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12472105,"Unnamed Road, Níjar, Andalucía, ES (36,76, -2,213)",2020-10-11 10:31,100,36.7603022,-2.2126374,TRUE,FALSE,TRUE,S74676570
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4406771,Cap de ses Salines,2020-10-11 10:30,2,39.2659522,3.0536842,TRUE,FALSE,FALSE,S74690195
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4853551,Delta del Llobregat PNat--Platja de l'Arana,2020-10-11 10:15,1,41.2975997,2.1304867,TRUE,FALSE,FALSE,S74676618
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12472068,"Unnamed Road, Níjar, Andalucía, ES (36,752, -2,208)",2020-10-11 10:11,8,36.752451,-2.2084367,TRUE,FALSE,TRUE,S74676356
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3905073,Clot de Galvany--Área general,2020-10-11 10:10,4,38.2388206,-0.5204666,TRUE,FALSE,FALSE,S74677681
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4792800,Aiguamolls de l'Empordà PNat--Estany d'Europa,2020-10-11 09:30,19,42.2419479,3.1031291,TRUE,FALSE,FALSE,S74676401
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5645995,Ses Salines / Toromar,2020-10-11 09:30,NA,38.8706542,1.3871996,TRUE,FALSE,FALSE,S74677346
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4964791,Embalse de Portaje--General,2020-10-11 09:22,3,39.8788968,-6.5276599,TRUE,FALSE,FALSE,S74725360
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4147527,Salinas de Santa Pola PNat--Salinas de Pinet,2020-10-11 09:14,30,38.1589494,-0.626426,TRUE,FALSE,FALSE,S74676178
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4872445,Es Salobrar (P.N. des Salobrar),2020-10-11 08:00,NA,39.3518213,3.0069065,TRUE,FALSE,FALSE,S74689788
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6350942,Cabo Gata PNat--Salinas-Observatorio 3,2020-10-10 19:00,NA,36.7592409,-2.2217274,TRUE,FALSE,FALSE,S74652153
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12466374,"30 Calle Guadalhorce, Málaga, Andalucía, ES (36.671, -4.457)",2020-10-10 18:54,16,36.6707198,-4.4571695,TRUE,FALSE,TRUE,S74646000
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6125444,Embalse de Alarcón--Cola de Valverde,2020-10-10 18:25,5,39.7059321,-2.2069216,TRUE,FALSE,FALSE,S74646135
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12467018,La Norieta - Estero de la Parihuela,2020-10-10 18:11,200,37.2184249,-7.0222859,TRUE,FALSE,TRUE,S74649631
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12467890,"Unnamed Road, Sagunt, Comunidad Valenciana, ES (39,622, -0,259)",2020-10-10 18:00,9,39.6217958,-0.2591919,TRUE,FALSE,TRUE,S74654400
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12063858,"Carretera de la Isla Cristina Huelva, 84–86, Isla Cristina ES-Andalucía 37.20977, -7.32582",2020-10-10 17:48,NA,37.209774,-7.325822,TRUE,FALSE,TRUE,S74647715
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6125441,Embalse de Alarcón--Graveras de Villaverde y embalse,2020-10-10 17:07,26,39.7611461,-2.2907138,TRUE,FALSE,FALSE,S74646131
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4381708,Parc Natural  de s'Albufera des Grau,2020-10-10 16:15,3,39.9476129,4.2639077,TRUE,FALSE,FALSE,S74641830
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12464837,"21 Lugar Saez de Tarquinales, Región de Murcia, ES (37,78, -0,756)",2020-10-10 15:55,8,37.7803245,-0.7559223,TRUE,FALSE,TRUE,S74637857
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5170186,Rambla del Albujón--desembocadura,2020-10-10 13:16,3,37.7160867,-0.8596158,TRUE,FALSE,FALSE,S74631464
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12463509,"4 Diseminado Salinas, San Pedro del Pinatar, Región de Murcia, ES (37,825, -0,761)",2020-10-10 12:35,29,37.825178,-0.7613993,TRUE,FALSE,TRUE,S74630797
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6106041,Embalse del Vicario--Cuerpo del embalse,2020-10-10 12:17,14,39.0644882,-3.9614296,TRUE,FALSE,FALSE,S74631080
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5186542,Salinas y Arenales de San Pedro PReg--Las Encañizadas,2020-10-10 12:10,NA,37.7832653,-0.7499027,TRUE,FALSE,FALSE,S74630870
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4792799,Aiguamolls de l'Empordà PNat--Estany d'en Pericos,2020-10-10 11:45,38,42.2701544,3.12231,TRUE,FALSE,FALSE,S74630418
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5575828,Clot de Galvany--Charca Anátidas,2020-10-10 11:30,4,38.2423345,-0.5268717,TRUE,FALSE,FALSE,S74653597
+grefla3,Greater Flamingo,Phoenicopterus roseus,L11053406,Lagunas de Campillos--Laguna del Cerero,2020-10-10 11:00,20,37.039347,-4.814154,TRUE,FALSE,FALSE,S74643424
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7918375,Marismas del Odiel PNat--Salinas de Astur,2020-10-10 08:50,8,37.2083043,-7.0071427,TRUE,FALSE,FALSE,S74631030
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12463529,Marismas del Odiel PNat—Gravera de Puntales,2020-10-10 07:58,NA,37.254237,-7.001502,TRUE,FALSE,TRUE,S74630886
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5542943,Embalse del Vicario--Cola de Peralvillo,2020-10-10 07:25,14,39.0760693,-3.9145919,TRUE,FALSE,FALSE,S74630178
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5876461,Revolcadores,2020-10-10,1,38.0432919,-2.2967541,TRUE,FALSE,TRUE,S74677486
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6350759,Cabo Gata PNat--Salinas-Observatorio 0,2020-10-09 18:22,100,36.7789908,-2.2330785,TRUE,FALSE,FALSE,S74661681
+grefla3,Greater Flamingo,Phoenicopterus roseus,L919671,Parc Natural de s'Albufera de Mallorca,2020-10-09 17:35,3,39.7968483,3.1054401,TRUE,FALSE,FALSE,S74603515
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10260995,"PN Fondo, Observatorio 2, Elche, Comunidad Valenciana, ES (38,167, -0,723)",2020-10-09 17:12,104,38.1674951,-0.7229163,TRUE,FALSE,TRUE,S74611599
+grefla3,Greater Flamingo,Phoenicopterus roseus,L11361420,El Hondo PNat--Reserva Puente del Niño,2020-10-09 12:29,4,38.1685711,-0.7156074,TRUE,FALSE,FALSE,S74611749
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5641820,El Hondo PNat - Observatorio Pardillas,2020-10-09 10:00,25,38.1858639,-0.7859516,TRUE,FALSE,TRUE,S74611031
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12457505,"Dehesa De Monreal, Dosbarrios, Castilla-La Mancha, ES (39,811, -3,565)",2020-10-09 08:21,74,39.8114793,-3.565137,TRUE,FALSE,TRUE,S74596594
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2397474,Desembocadura Guadalfeo,2020-10-09 08:15,1,36.72495,-3.57798,TRUE,FALSE,TRUE,S74599841
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8997765,Brazo del Este- Muro de los portugueses,2020-10-08 19:10,6,37.1109811,-6.0365625,TRUE,FALSE,TRUE,S74569179
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5070427,Conde Chico,2020-10-08 17:18,1300,37.2031717,-6.0550265,TRUE,FALSE,TRUE,S74564401
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4909981,Delta del Llobregat PNat--Espais Naturals del Riu (Area General),2020-10-08 17:00,2,41.3058594,2.120254,TRUE,FALSE,FALSE,S74591707
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12452323,"40.691575, 0.798063 Sant Jaume d'Enveja",2020-10-08 12:25,NA,40.6922311,0.7974307,TRUE,FALSE,TRUE,S74574361
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7810171,La Breña y Marismas de Barbate PNat--El Cañillo,2020-10-08 11:00,NA,36.1752685,-5.8914422,TRUE,FALSE,FALSE,S74563738
+grefla3,Greater Flamingo,Phoenicopterus roseus,L9049858,Delta de l'Ebre PNat--El Violí,2020-10-08 09:45,1,40.6907996,0.8389258,TRUE,FALSE,FALSE,S74573068
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3176023,Laguna de El Portil,2020-10-08 09:31,5,37.2124897,-7.04494,TRUE,FALSE,FALSE,S74559322
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2068358,Brazo del Este--Área General,2020-10-08 09:30,65,37.1159786,-6.037674,TRUE,FALSE,FALSE,S74678609
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5136028,Rota--Costa Ballena,2020-10-08 09:04,2,36.6960115,-6.4106787,TRUE,FALSE,FALSE,S74555048
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7004320,Jaraíz de la Vera--Charcas de Cleto y Tortabrevas,2020-10-08,1,40.0106799,-5.744189,TRUE,FALSE,FALSE,S74769361
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7261627,Salina de La Tapa--Área General,2020-10-07 18:14,NA,36.5946084,-6.2118983,TRUE,FALSE,FALSE,S74536496
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6723720,"11510, Puerto Real ES-Salina la Esperanza",2020-10-07 17:55,27,36.518148,-6.160865,TRUE,FALSE,TRUE,S74554296
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4789610,Aiguamolls de l'Empordà PNat--Aguait Quim Franch,2020-10-07 14:56,2,42.2244914,3.0937658,TRUE,FALSE,FALSE,S74523515
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3467100,Doñana PN--Marisma de El Rocío,2020-10-07 10:38,6,37.1262444,-6.4857101,TRUE,FALSE,FALSE,S74554444
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5342659,Bahía de Cádiz PNat--Salina de Carboneros,2020-10-07 08:39,53,36.3894928,-6.182937,TRUE,FALSE,FALSE,S74519611
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4963107,Embalse de Valdecañas--El Gordo,2020-10-07 08:28,1,39.8651496,-5.3566527,TRUE,FALSE,FALSE,S74554010
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4069457,Punta y Observatorio de Calaburras,2020-10-07 08:00,13,36.5063118,-4.6444246,TRUE,FALSE,FALSE,S74520626
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8355140,Embalse de Cordobilla,2020-10-06 19:56,NA,37.358265,-4.7215278,TRUE,FALSE,FALSE,S74498998
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5062629,El Hondo PNat--Observatorio Catral,2020-10-06 19:01,18,38.1735339,-0.7767275,TRUE,FALSE,FALSE,S74498059
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6712248,Urbanización Costa Ballena--Estanque,2020-10-06 18:46,1,36.6925622,-6.4202627,TRUE,FALSE,FALSE,S74496589
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3926470,Ses Salines (P.N. ses Salines d'Eivissa),2020-10-06 17:01,232,38.8611421,1.3749218,TRUE,FALSE,FALSE,S74498187
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1122057,Delta de l'Ebre PNat--Area general,2020-10-06 14:40,NA,40.688367,0.8268499,TRUE,FALSE,FALSE,S74499189
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8813420,Lagunas de Campillos--Laguna de Cerero,2020-10-06 12:00,5,37.0393703,-4.8142364,TRUE,FALSE,TRUE,S74520644
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3906629,Lagunas de la Mata y Torrevieja PNat--Área General,2020-10-06 10:45,6,38.0238218,-0.6834269,TRUE,FALSE,FALSE,S74484644
+grefla3,Greater Flamingo,Phoenicopterus roseus,L918143,Delta del Llobregat PNat--Area general,2020-10-06 10:30,4,41.2849015,2.059164,TRUE,FALSE,FALSE,S74485351
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2708631,Embalse de la Cancelada del Taraje,2020-10-06 08:40,1,36.4699757,-5.0537217,TRUE,FALSE,FALSE,S74481536
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4054782,Miguel Esteban--Balsas,2020-10-05 19:00,2,39.5160789,-3.0525684,TRUE,FALSE,FALSE,S74530681
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4792659,Delta de l'Ebre PNat--Pont del Través,2020-10-05 09:16,NA,40.6535795,0.6859185,TRUE,FALSE,FALSE,S74442637
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7469355,Salina Nuestra Señora de los Desamparados,2020-10-05 08:52,24,36.5708573,-6.2077236,TRUE,FALSE,FALSE,S74442915
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5431226,Alcañiz--Salada Pequeña,2020-10-05 08:07,6,41.0433038,-0.2179456,TRUE,TRUE,FALSE,S74442203
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12428103,"40°42'48.5""N 0°40'08.6""E Balada",2020-10-04 17:40,NA,40.7111754,0.6640658,TRUE,FALSE,TRUE,S74426419
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4790906,Delta de l'Ebre PNat--Badia del Fangar area general,2020-10-04 17:30,1,40.7725717,0.7562945,TRUE,FALSE,FALSE,S74406817
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4003421,Delta de l'Ebre PNat--Salines de Sant Antoni,2020-10-04 15:45,1500,40.6406868,0.742135,TRUE,FALSE,FALSE,S74400812
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4792661,Delta de l'Ebre PNat--Torre de l'Alfacada,2020-10-04 14:45,10,40.6869333,0.8497768,TRUE,FALSE,FALSE,S74413673
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4793459,Delta de l'Ebre PNat--Finca DACSA,2020-10-04 13:00,30,40.6928088,0.8230519,TRUE,FALSE,FALSE,S74397188
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4793587,Delta de l'Ebre PNat--Illa de Riu,2020-10-04 11:50,500,40.686718,0.816722,TRUE,FALSE,FALSE,S74442787
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12422362,"Delta de l'Ebre, Amposta ES-Cataluña 40.71090, 0.66757",2020-10-04 11:38,200,40.710904,0.667572,TRUE,FALSE,TRUE,S74394777
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10315868,Salinas de Santa Pola PNat -- camino del vertedero,2020-10-04 11:33,NA,38.199591,-0.579484,TRUE,FALSE,TRUE,S74463551
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2528489,Txingudi--Plaiaundi,2020-10-04 11:23,1,43.3489603,-1.7925982,TRUE,TRUE,FALSE,S74396508
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4064630,Doñana PNat--Codo de la Esparraguera,2020-10-04 11:04,85,36.8890945,-6.2474442,TRUE,FALSE,FALSE,S74415886
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10777237,Txingudi--Osinbiribil,2020-10-04 10:58,1,43.3430856,-1.7835238,TRUE,TRUE,FALSE,S74400562
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4838658,Delta de l'Ebre PNat--Illa de Sapinya,2020-10-04 10:57,150,40.7164518,0.6542444,TRUE,FALSE,FALSE,S74394892
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7206679,"114 Carrer Eucaliptus, L'Eucaliptus, Catalunya, ES (40,66, 0,786)",2020-10-04 10:24,280,40.659772,0.7858576,TRUE,FALSE,TRUE,S74393520
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12422542,"Punta Umbría, Andalucía, ES (37,192, -6,965)",2020-10-04 10:13,1,37.1921529,-6.9653857,TRUE,FALSE,TRUE,S74395974
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12444794,Irun,2020-10-04 09:45,1,43.3394683,-1.7902515,TRUE,TRUE,FALSE,S74530604
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10780468,Marisma de Adventus,2020-10-04 09:24,28,36.8922323,-6.2297986,TRUE,FALSE,FALSE,S74415618
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1961806,L'Albufera PNat--El Raco de l'Olla,2020-10-04 09:19,41,39.3345962,-0.3174877,TRUE,FALSE,FALSE,S74393112
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4919805,Marjal d'Almardà,2020-10-04 09:16,13,39.7104012,-0.2046633,TRUE,FALSE,FALSE,S74397406
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6313861,El Hondo PNat--Ruta Roja,2020-10-04 09:05,61,38.2003368,-0.7611551,TRUE,FALSE,FALSE,S74395002
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6234855,Delta de l'Ebre PNat--Hemidelta Sud Area General,2020-10-04 09:00,NA,40.6776438,0.6885338,TRUE,FALSE,FALSE,S74472044
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12427159,"Parque Natural del El Fond d'Elx-Crevillent, todo el área.",2020-10-04 09:00,300,38.1901867,-0.753862,TRUE,FALSE,TRUE,S74421684
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6874479,Mora -- cola del Embalse de Finisterre,2020-10-04 08:11,5,39.6164001,-3.698101,TRUE,FALSE,FALSE,S74393709
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4937715,Delta de l'Ebre PNat--l'Encanyissada--Observatori oest,2020-10-04 07:30,200,40.6429717,0.6399429,TRUE,FALSE,FALSE,S74392228
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12424551,"Unnamed Road, Crevillent, Comunidad Valenciana, ES (38,201, -0,758)",2020-10-03 17:30,25,38.2014741,-0.758285,TRUE,FALSE,TRUE,S74406886
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6296988,"Río Guadaira, Dos Hermanas-Coria del Rio",2020-10-03 17:10,350,37.2936354,-5.9997817,TRUE,FALSE,TRUE,S74357516
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8561088,Urdaibai Reserva de la Biosfera--Sendero Forua-Kortezubi-Urdaibai Bird Center,2020-10-03 17:00,3,43.3355948,-2.6664575,TRUE,TRUE,FALSE,S74368886
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2521421,Txingudi--Jaizubia,2020-10-03 15:17,1,43.3467571,-1.8145623,TRUE,TRUE,FALSE,S74351113
+grefla3,Greater Flamingo,Phoenicopterus roseus,L7488698,Veta La Palma--Area general,2020-10-03 11:21,NA,36.9642644,-6.2323044,TRUE,FALSE,FALSE,S74344951
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6103508,Tablas de Daimiel PN--Pasarelas e Isla del Pan,2020-10-03 09:58,8,39.1368406,-3.7064159,TRUE,FALSE,FALSE,S74349279
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3270741,Marismas del Odiel PNat--General,2020-10-03 09:15,227,37.2391436,-6.96486,TRUE,FALSE,FALSE,S74346474
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6667971,Punta Entinas ParNat--Cerrillos,2020-10-03 09:00,NA,36.7066736,-2.6667509,TRUE,FALSE,FALSE,S74346729
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8662908,Embalse de la Colada--Área general,2020-10-03 08:39,1,38.5012181,-5.0075929,TRUE,FALSE,FALSE,S74345857
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12409517,"Autovía Huelva-Punta Umbría, Punta Umbría ES-Andalucía 37.22577, -7.02233",2020-10-02 19:43,200,37.225768,-7.022325,TRUE,FALSE,TRUE,S74322223
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4793282,Delta de l'Ebre PNat--Plataforma del Trabucador,2020-10-02 13:49,NA,40.6295879,0.741781,TRUE,FALSE,FALSE,S74314826
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1354806,EDAR Garrucha-Mojacar-Turre,2020-10-02 12:27,1,37.170248,-1.8570521,TRUE,FALSE,FALSE,S74308935
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2066221,Cabo Gata PNat--Salinas,2020-10-02 12:00,300,36.764673,-2.2199078,TRUE,FALSE,FALSE,S74309909
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3978499,Aiguamolls de l'Empordà PNat--Aguait del Bruel,2020-10-02 11:30,NA,42.2081796,3.1042922,TRUE,FALSE,FALSE,S74311493
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3978507,Aiguamolls de l'Empordà PNat--Aguait del Gall Marí,2020-10-02 10:00,NA,42.2109133,3.1019425,TRUE,FALSE,FALSE,S74311404
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3608836,Doñana PN--Centro de Visitantes La Rocina,2020-10-02 09:23,1,37.1262104,-6.4988154,TRUE,FALSE,FALSE,S74306771
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8128635,"Camino a las Encañizadas, San Pedro Del Pinatar",2020-10-02 08:45,62,37.8193562,-0.775597,TRUE,FALSE,TRUE,S74314407
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6683834,El Carmolí,2020-10-02 08:17,2,37.705153,-0.849697,TRUE,FALSE,TRUE,S74305601
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6177434,Laguna de La Mata PNat--Centro de Interpretación,2020-10-02 07:51,4,38.0258502,-0.6665611,TRUE,FALSE,FALSE,S74312594
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4838637,Delta de l'Ebre PNat--Filtre verd del Clot,2020-10-01 18:55,18,40.6626827,0.7006145,TRUE,FALSE,FALSE,S74286563
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4894664,El Hondo PNat--Campos de Vistabella,2020-10-01 16:58,NA,38.1579792,-0.7270718,TRUE,FALSE,FALSE,S74283363
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3024159,Bahía de Cádiz PNat--Isla del Trocadero,2020-10-01 16:00,NA,36.5148445,-6.2104297,TRUE,FALSE,FALSE,S74307421
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4937765,Aiguamolls de l'Empordà PNat--Depuradora d'Empuriabrava,2020-10-01 15:09,NA,42.2440229,3.1041956,TRUE,FALSE,FALSE,S74272649
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12401883,"Parc Natural del Delta de l'Ebre, L'Ampolla ES-Catalonia 40.77946, 0.71285",2020-10-01 11:54,NA,40.779461,0.712851,TRUE,FALSE,TRUE,S74272953
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2347053,El Estrecho PNat--Isla de Las Palomas,2020-10-01 10:23,3,36.0015697,-5.6100569,TRUE,FALSE,FALSE,S74271411
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12498805,Observatoire des paluns,2020-10-14 10:00,1,43.4035122,5.1862954,TRUE,FALSE,TRUE,S74836576
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6121878,RNN des Marais du Vigueirat (RNN175),2020-10-14 08:26,16,43.5360739,4.7534323,TRUE,FALSE,FALSE,S74798917
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2460551,"FRA-34-LR-Montpellier, Etang de l'Arnel N/E",2020-10-13 09:05,150,43.5379822,3.8961929,TRUE,FALSE,TRUE,S74767951
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3827074,Le Lez--Les Quatre Canaux,2020-10-13 08:50,50,43.5341294,3.9178276,TRUE,FALSE,FALSE,S74767932
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2393328,Poussan--Étang de Bouzigues,2020-10-13 07:42,127,43.461589,3.6682224,TRUE,FALSE,FALSE,S74766705
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8251659,"FRA-34-Palavas, route de Mag 2",2020-10-13 07:30,150,43.51658,3.9048798,TRUE,FALSE,TRUE,S74767919
+grefla3,Greater Flamingo,Phoenicopterus roseus,L5935786,"FRA-34-Vic-la-Gardiole, Palusette",2020-10-11 16:30,40,43.4939036,3.7970102,TRUE,FALSE,TRUE,S74690111
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3163837,Plage des Aresquiés,2020-10-11 15:30,5,43.4527248,3.8103032,TRUE,FALSE,FALSE,S74690396
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1067998,Camargue--Parc ornithologique du Pont de Gau,2020-10-09 14:22,350,43.4889737,4.4041711,TRUE,FALSE,FALSE,S74597825
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12456590,"Route de Méjanes, Saintes-Maries-de-la-Mer FR-Provence-Alpes-Côte d'Azur 43.55550, 4.48759",2020-10-09 09:43,400,43.555497,4.487595,TRUE,FALSE,TRUE,S74591172
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2201986,Réserve du Méjean,2020-10-09 08:45,500,43.5491505,3.9038157,TRUE,FALSE,FALSE,S74599406
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10341028,Camargue--Marais du Mas d'Agon,2020-10-09 07:54,150,43.5923871,4.5479592,TRUE,FALSE,FALSE,S74590174
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12449178,"D986, Villeneuve-lès-Maguelone, Occitanie, FR (43,539, 3,899)",2020-10-08 10:21,NA,43.5388054,3.8986397,TRUE,FALSE,TRUE,S74555045
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1483239,"France11, Sigean, étang Ferrand, le Recobre et Salin Grimaud",2020-10-08 07:30,12,43.0351566,3.0048199,TRUE,FALSE,TRUE,S74564197
+grefla3,Greater Flamingo,Phoenicopterus roseus,L11756672,FRA-34-Chemin de Mireval À l'Étang,2020-10-06 09:35,503,43.5042933,3.8089628,TRUE,FALSE,TRUE,S74482154
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12437264,"FRA-34-Frontignan, salines W",2020-10-06 09:00,120,43.4488503,3.7623563,TRUE,FALSE,TRUE,S74482112
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12431187,FRA-34-Salaison Bridge,2020-10-05 09:35,2,43.5954697,4.0181074,TRUE,FALSE,TRUE,S74443762
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3247479,Cabanes du Salaison / Pointe du Salaison,2020-10-05 07:50,120,43.5881137,4.0198623,TRUE,FALSE,FALSE,S74443746
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12422928,"Le Salin, La Palme FR-Languedoc 42.97933, 3.02049",2020-10-04 14:02,250,42.979334,3.020492,TRUE,FALSE,TRUE,S74398310
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12422062,"Chemin des Coussoules, Leucate FR-Languedoc 42.94407, 3.02832",2020-10-04 08:32,1,42.944065,3.028323,TRUE,FALSE,TRUE,S74393186
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12414567,"66420, Le Barcarès FR-Languedoc 42.79564, 3.02343",2020-10-03 14:45,10,42.795638,3.023435,TRUE,FALSE,TRUE,S74352707
+grefla3,Greater Flamingo,Phoenicopterus roseus,L10282766,"FRA-34-D62E2, aire Observ",2020-10-03 13:50,250,43.5385632,3.9521371,TRUE,FALSE,TRUE,S74363857
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12413432,"66140, Canet-en-Roussillon FR-Languedoc 42.64872, 3.02973",2020-10-03 12:57,150,42.648721,3.029725,TRUE,FALSE,TRUE,S74346267
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12413213,"Etang de Canet et de Saint-Nazaire, Canet-en-Roussillon FR-Languedoc 42.66495, 3.02880",2020-10-03 09:40,350,42.664954,3.028796,TRUE,FALSE,TRUE,S74345038
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2462120,Cathédrale de Maguelone,2020-10-02 07:40,100,43.5124637,3.8835838,TRUE,FALSE,FALSE,S74305281
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1180089,Lido di Spina,2020-10-14 09:00,100,44.6283515,12.2528458,TRUE,FALSE,FALSE,S74800185
+grefla3,Greater Flamingo,Phoenicopterus roseus,L982534,Stagno di San Teodoro,2020-10-13 11:39,200,40.7868779,9.6623468,TRUE,FALSE,FALSE,S74807406
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3659149,Lago di Fogliano,2020-10-13 10:45,1,41.4013424,12.8973055,TRUE,FALSE,FALSE,S74768747
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12483716,Wetlands near farm,2020-10-12 17:05,15,40.9655384,14.0090872,TRUE,FALSE,TRUE,S74742600
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3074200,Saline di Tarquinia,2020-10-12 15:23,7,42.2024621,11.7170447,TRUE,FALSE,FALSE,S74731443
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1287246,Vasche di Maccarese,2020-10-11 08:46,7,41.8670841,12.2232985,TRUE,FALSE,FALSE,S74677981
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1793945,Valli di Comacchio--Saline,2020-10-10 17:45,300,44.6570294,12.2051239,TRUE,FALSE,FALSE,S74655809
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3074232,Oasi di Manzolino-Tivoli,2020-10-10 15:14,4,44.6103137,11.1282472,TRUE,FALSE,FALSE,S74638365
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1253483,"Laguna di Orbetello, Oasi WWF (9:30-13:30, wkends only, 1 Sept.-1 May)",2020-10-10 10:21,15,42.4860463,11.2051696,TRUE,FALSE,FALSE,S74655478
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2440590,Palude di Torre Flavia,2020-10-06 07:30,1,41.9615197,12.0469379,TRUE,FALSE,FALSE,S74488137
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2059764,Po di Levante,2020-10-05 11:21,2000,45.045389,12.3225403,TRUE,FALSE,FALSE,S74443561
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3661314,Bonifica di Vecchiano,2020-10-05 08:58,1,43.8096944,10.3403234,TRUE,FALSE,FALSE,S74443073
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12423020,"Riserva Naturale Salina di Tarquinia, Tarquinia IT-Lazio 42.21048, 11.71189",2020-10-04 08:06,37,42.210483,11.711893,TRUE,FALSE,TRUE,S74398873
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3504079,Padule Orti Bottagone,2020-10-03 14:30,NA,42.9658023,10.5943153,TRUE,FALSE,FALSE,S74594915
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12401349,"Riserva Naturale Oasi Faunistica Vendicari, Noto IT-Sicily 36.79849, 15.09310",2020-10-01 10:27,54,36.798491,15.0931,TRUE,FALSE,TRUE,S74269399
+grefla3,Greater Flamingo,Phoenicopterus roseus,L9205154,"Işıklı Gölü, Güney Doğu Sedde üzeri",2020-10-11 16:56,240,38.1980544,29.923417,TRUE,FALSE,FALSE,S74687068
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1930248,Mogan Gölü Genel,2020-10-11 08:00,4,39.7645912,32.7896976,TRUE,FALSE,FALSE,S74724069
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12471538,"Yüreğil, Afyonkarahisar, TR (37,888, 29,913)",2020-10-11 07:32,1350,37.8881147,29.9125598,TRUE,FALSE,TRUE,S74674139
+grefla3,Greater Flamingo,Phoenicopterus roseus,L9199228,Akpınar Köyü - Su pınarı,2020-10-10 16:44,NA,37.8170618,29.9267542,TRUE,FALSE,FALSE,S74638217
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2403765,Büyükçekmece Gölü--Ahmediye sahili,2020-10-10 14:15,NA,41.0959077,28.5207438,TRUE,FALSE,FALSE,S74732214
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1384615,Kocaçay Deltası - Genel,2020-10-10 11:30,4,40.3831667,28.5011667,TRUE,FALSE,FALSE,S74653934
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1260703,IBA Bafa Gölü--Bafa Gölü Milli Parki--bati,2020-10-10 11:20,300,37.5099131,27.3735201,TRUE,FALSE,FALSE,S74733071
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6224596,Gölbaşı Sel kapanı,2020-10-10 07:14,9,39.6518017,32.771822,TRUE,FALSE,FALSE,S74628960
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6855648,Gediz Deltası-Sasalı Kuş Cenneti yolu,2020-10-09 18:59,NA,38.5159373,26.9214821,TRUE,FALSE,FALSE,S74602775
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12458370,"35674, Menemen TR-İzmir 38.59013, 26.84387",2020-10-09 18:30,NA,38.590128,26.843866,TRUE,FALSE,TRUE,S74601234
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4585765,Alaçatı,2020-10-09 07:45,22,38.2807741,26.3797188,TRUE,FALSE,FALSE,S74639059
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2409199,Hancağız Barajı,2020-10-09 07:20,3,36.9497409,37.8667402,TRUE,FALSE,FALSE,S74589113
+grefla3,Greater Flamingo,Phoenicopterus roseus,L8236901,Çiğli - Kuş Cenneti Dış Kanallar,2020-10-08 17:00,NA,38.5348062,26.9001476,TRUE,FALSE,TRUE,S74563664
+grefla3,Greater Flamingo,Phoenicopterus roseus,L12466911,Hancağız barajı,2020-10-08 16:10,3,36.9496758,37.839711,TRUE,FALSE,TRUE,S74649921
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4817329,Karina dalyanı,2020-10-08 13:30,30,37.6191265,27.1523666,TRUE,FALSE,FALSE,S74567137
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6781347,"Çiğli pompa istasyonu etrafı, Güney Gediz Delta IBA",2020-10-07 12:07,NA,38.4725073,27.0584464,TRUE,FALSE,FALSE,S74520073
+grefla3,Greater Flamingo,Phoenicopterus roseus,L4190980,Hersek Lagünü,2020-10-06 09:30,456,40.7169397,29.5160379,TRUE,FALSE,FALSE,S74591055
+grefla3,Greater Flamingo,Phoenicopterus roseus,L3872550,Lagünler,2020-10-05 10:30,NA,40.7084908,26.0618448,TRUE,FALSE,FALSE,S74464025
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2363004,Manyas Gölü--Kuşcenneti Köyü,2020-10-04 17:00,10,40.2295273,28.0461216,TRUE,FALSE,FALSE,S74422816
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6142578,balıkesir-manyas gölü-kosks 2-köy,2020-10-04 15:55,2,40.224512,28.0539751,TRUE,FALSE,FALSE,S74443383
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6142683,balıkesir-manyas gölü-kosks 9-bereketli,2020-10-04 15:00,2,40.2442674,27.9557848,TRUE,FALSE,FALSE,S74443327
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1908359,Kavak Deltası,2020-10-04 14:30,5,40.63,26.83,TRUE,FALSE,FALSE,S74418463
+grefla3,Greater Flamingo,Phoenicopterus roseus,L2164524,IBA Göksu Deltası--genel area,2020-10-03 06:40,30,36.3010152,33.96492,TRUE,FALSE,FALSE,S74344505
+grefla3,Greater Flamingo,Phoenicopterus roseus,L11742016,Amik Baraj Gölü,2020-10-03 06:20,6,36.34815,36.5624754,TRUE,FALSE,FALSE,S74345532
+grefla3,Greater Flamingo,Phoenicopterus roseus,L1412015,Tuzla Gölü,2020-10-02 17:23,20,36.690464,35.0712169,TRUE,FALSE,FALSE,S74314642
+grefla3,Greater Flamingo,Phoenicopterus roseus,L6471784,Sarayköy Kokarhamam Bataklığı,2020-10-01 11:00,14,37.9216881,28.8299918,TRUE,FALSE,FALSE,S74344939
