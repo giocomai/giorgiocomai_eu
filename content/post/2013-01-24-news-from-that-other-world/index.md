@@ -15,7 +15,7 @@ featured: no
 
 Some time ago I found at home an old book I bought in a second-hand bookshop in Cracow at the time when I was student in Poland. I ignored it for all these years, but I finally made up my mind and decided to read it.
 
-[![Wiadomosci-z-tamtego-swiata](http://localhost/wp-content/uploads/2013/09/Wiadomosci-z-tamtego-swiata-221x300.jpg)](http://localhost/wp-content/uploads/2013/09/Wiadomosci-z-tamtego-swiata.jpg)The book was published in Warsaw in 1973 at the time when Gierek was ruling in Poland and Brezhnev in the Soviet Union. I got caught by its curiously-designed cover and its peculiar title, "News from that world". What could "that world" be, "that other world", as was immediately made clear in the introduction, for the Polish readers of those years?
+![Wiadomosci z tamtego swiata](featured.jpg)The book was published in Warsaw in 1973 at the time when Gierek was ruling in Poland and Brezhnev in the Soviet Union. I got caught by its curiously-designed cover and its peculiar title, "News from that world". What could "that world" be, "that other world", as was immediately made clear in the introduction, for the Polish readers of those years?
 
 That world was the United States of America. The whole book was based on a journey of Krzysztof Teodor Topelitz, a Polish journalist that for six weeks, between April and June 1971, traveled through the United States together with a group of journalists from Europe.
 
