@@ -9,7 +9,7 @@ featured = true
 projects = ["esvei"]
 publication = "*Forward to the Past? New/Old Theatres of Russia’s International Projection*"
 tags = ["russia", "cybersecuirity"]
-url_pdf = "https://www.ispionline.it/sites/default/files/pubblicazioni/ispi_report_russia_2020_2.pdf#page=68"
+url_pdf = "https://www.ispionline.it/sites/default/files/pubblicazioni/ispi_report_russia_2020_final.pdf#page=68"
 doi = ""
 
 [image]
