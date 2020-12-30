@@ -1,7 +1,7 @@
 ---
 title: Building a digital archive for the preservation of local memories (with Omeka S), at the intersection of public history and digital history
 author: Giorgio Comai
-date: '2020-12-31'
+date: '2020-12-30'
 slug: []
 categories: ["Blog"]
 tags: ["omeka"]
