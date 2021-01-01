@@ -4,7 +4,7 @@ author: Giorgio Comai
 date: '2020-12-31'
 slug: []
 categories: ["Blog"]
-tags: ["omeka", "public history", "digital archives"]
+tags: ["omeka", "public history", "digital archives", "digital history"]
 subtitle: ''
 summary: ''
 authors: []
