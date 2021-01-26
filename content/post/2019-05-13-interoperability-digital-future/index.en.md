@@ -2,14 +2,12 @@
 title: 'The conditions for a pluralistic digital future: interoperability, transparency, and control over data'
 author: Giorgio Comai
 date: '2019-05-13'
-slug: []
 categories:
   - Articles
 tags:
   - online regulation
   - interoperability
-subtitle: ''
-summary: 'A reflection on the necessary conditions to be not only "users", but also "citizens" of the digital spaces in which we live: owners of rights, owners of one's own personal data, free to choose which services to use, which suppliers to turn to, and free to know what criteria determine what appears on our screens'
+summary: "A reflection on the necessary conditions to be not only *users*, but also *citizens* of the digital spaces in which we live: owners of rights, owners of one's own personal data, free to choose which services to use, which suppliers to turn to, and free to know what criteria determine what appears on our screens"
 authors: []
 featured: no
 image:
