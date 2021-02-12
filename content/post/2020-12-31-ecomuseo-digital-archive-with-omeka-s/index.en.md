@@ -59,7 +59,7 @@ This is enabled in Omeka S by "resource templates", and we ended up having about
 
 This is one of the aspects that took some work in the early stages, but we are quite happy with the current setup. Archivists have usually a much more defined idea of how an item in their archive looks like, and they often have a pre-defined hierarchy... none of this applied to our case.
 
-## Encouracing exploration of the digital archive
+## Encouraging exploration of the digital archive
 
 Some digital archives tend to resemble search engines: you open the home page and you have little more than a search box. If you are not looking for something specific, but are instead just curious about what kind of materials are available in the archive, this can be frustrating, as random searches may bring only mildly interesting results and mostly do not reveal particularly eye-catching contents.
 
