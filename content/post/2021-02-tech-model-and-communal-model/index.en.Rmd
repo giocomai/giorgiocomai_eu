@@ -17,17 +17,17 @@ I have recently been involved in a number of conversations on internet regulatio
 
 I often have the feeling that there is some expectation that there is a solution, and that once that is implemented, things will be solved. As people, for example, advocate for interoperability ([as I do](/post/2019-05-13-interoperability-digital-future/)), then there is some expectation that "interoperability" will "solve" fundamental issues about the digital public sphere. There is a an expectation that there is a technological or political solution that will solve the problem once and for all.
 
-But this is not the way it works, and the collective difficulty in accepting anything that is not a one-off solution is one of the reasons (please bear with me) why across the West the response to Covid-19 has been throughly abysmal.
+But this is not the way it works, and the collective difficulty in accepting anything that is not a one-off solution is one of the reasons (please bear with me) why across the West the response to Covid-19 has been thoroughly abysmal.
 
 I think the distinction between the tech and the communal model outlined by James Meek [in his article for the LRB about the World Health Organisation](https://www.lrb.co.uk/the-paper/v42/n13/james-meek/the-health-transformation-army) may be of use.
 
 > [The WHO] alternates between two ideals of healthcare: **the tech model**, in which health is seen as a set of individual problems to be fixed by intensive, preferably one-time scientific interventions (wipe out malaria with genetically modified mosquitoes!), and **the communal model**, in which health is deemed a rolling project of social reform, endless and universal, low-tech and labour-intensive, inseparable from questions of housing, poverty, sanitation, education, inequality, diet and work. -- [@meek_health_2020]
 
-We have seen it with Covid-19, with early hopes that a smartphone app will solve the issue, eventually abandoned for another, one-off technological solution: the vaccine. In all likelihood, the vaccine will indeed work, but our collective reluctance to even consider anything different from one-off solutions, "one-time scientific interventions", has been one of the reasons why we struggled so much in getting this right. In Europe, we have not been able to find the capacity to commit to the many "low-tech and labour-intensive" actions we really needed to limit the worst consequences of Covid-19.
+We have seen it with Covid-19, with early hopes that a smartphone app will solve the issue, eventually abandoned for another one-off technological solution: the vaccine. In all likelihood, the vaccine will indeed work, but our collective reluctance to even consider anything different from one-off solutions, "one-time scientific interventions", has been one of the reasons why we struggled so much in getting this right. In Europe, we have not been able to find a political consensus to commit to the many "low-tech and labour-intensive" actions we really needed to limit the worst consequences of Covid-19.
 
 I feel the same is happening with the regulation of big tech and its impact on the digital public sphere... the question "what is the solution?" often comes with the implicit expectation that there is a "one-time intervention" that will make things right. But there is no vaccine in this case, and certainly it won't be an app that will solve these issues.
 
-The point I want to make is that also in this case the answer is to be found in something akin to the above-described "communal model". Until we don't accept this, we will continue failing to respond meaningfully to the big challenges of our times, including climate breakdown, and yes, ensuring an open digital public sphere.
+The point I want to make is that also in this case the answer is to be found in something akin to the above-described "communal model". Until we accept this, we will continue failing to respond meaningfully to the big challenges of our times, including climate breakdown, and yes, ensuring an open digital public sphere.
 
 References
 ==========
