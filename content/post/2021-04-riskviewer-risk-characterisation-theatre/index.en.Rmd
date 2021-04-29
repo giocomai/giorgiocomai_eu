@@ -40,7 +40,7 @@ Let's start from one of the examples Rifin and Bouwer outline in their book: [th
 
 There are many ways to present these data, and many data points that outline, for example, the relative benefits for those who quit smoking earlier. But let's just look at one of the most blunt data points: the number of men who lived from age 35 through age 80. Among smokers, 74 per cent died before reaching the age of 80, compared to 41 per cent of the non-smokers (figures relate to people born in the first decade of the last century).
 
-```{r fig.width=12, fig.height=14, fig.align='center', echo = TRUE}
+```{r smokers, fig.width=12, fig.height=14, fig.align='center', eval = FALSE, echo = TRUE}
 # remotes::install_github("EDJNet/riskviewer")
 library("riskviewer")
 library("patchwork")
@@ -70,6 +70,8 @@ plane_1 + plane_2 + plot_annotation(
 )
 ```
 
+![](img/smokers-1.png)
+
 For men born in the early 20th century, it was not uncommon to die before reaching the age of 80, as it appears by looking at the "non-smokers" airplane. There are also quite a few men who smoked all their life and happily reached the age of 80, as appears from looking at the "smokers" flight. But the difference among the two airplanes is still striking, and the metaphor here is perfectly fitting: by smoking (or not smoking) you choose which plane you board on. 
 
 ## *The Economist*'s covid-19 risk estimator
@@ -82,7 +84,7 @@ What is the risk, for example, for a healthy man and a healthy woman aged 65 dia
 
 
 
-```{r fig.width=12, fig.height=14, fig.align='center', echo = TRUE}
+```{r covid65, fig.width=12, fig.height=14, fig.align='center', eval = FALSE, echo = TRUE}
 
 plane_1 <- tibble::tribble(~Risk, ~Ratio,
                            "Hospitalisation", 0.122,
@@ -118,6 +120,8 @@ plane_1 + plane_2 +
 
 ```
 
+![](img/covid65-1.png)
+
 Notice that in this graph there is no number: there is no easy way to say an exact percentage for the relative risk. Does it matter? Does knowing an exact number make my personal risk estimation more or less meaningful than just by looking at this graph? In a risk estimate such as this one there is a lot of uncertainty involved: does knowing that the risk of death for males aged 65 diagnosed with covid-19 according to this approach is estimated at 2.8 per cent make me any wiser about my personal understanding of actual risk? This is a key way in which uncertainty is implicitly embedded in this type of graph. 
 
 The graph shows clearly that men are noticeably more at risk than women, that most people in this group will pass covid-19 without need for hospitalisation, but also that the risk of hospitalisation is not so rare. The more you phyisically imagine the actual situation of how many people there are on an airplane, the more you will have internalised how risky this situation is. Not in the abstract, but in real terms.
@@ -133,7 +137,7 @@ In our case, we will stick to planes, but make them more compact.
 
 Let's present the same type of information shown in the graph above, but for people who are 20 years younger: aged 45, diagnosed with covid-19 in the United States, with no recorded underlying conditions.
 
-```{r fig.width=12, fig.height=14, fig.align='center', echo = TRUE}
+```{r covid45, fig.width=12, fig.height=14, fig.align='center', echo = TRUE, eval = FALSE}
 tibble::tribble(~Risk, ~Ratio,
                            "Hospitalisation", 0.048,
                            "Death", 0.002) %>% 
@@ -157,6 +161,8 @@ title = paste("Estimated covid-19 risk if diagnosed in the United States\nfor a 
                  legend.text = ggplot2::element_text(size = 16))
 ```
 
+![](img/covid45-1.png)
+
 As appears from the graph, the personal risk of otherwise healthy males aged 45 diagnosed with covid-19 is certainly less scary, but still not quite reassuring. In a crowd corresponding to the number of people fitting on an airplane, the vast majority would not have severe consequences, but we would always have someone who will need to be hospitalised. Every couple of "flights", we would have one dead. With comorbidities, the graph becomes soon less reassuring.
 
 If as a healthy 45-years old male you want to assess your personal risk, you can picture yourself buying 10 plane tickets with a randomly assigned seat in one of the flights above. How does it feel? The risk will feel different to different people. But again, notice that not knowing the exact percentage associated with a risk does not hinder our capacity to properly assess risk. If anything, this visualisation pushes us to rely on our "natural" risk assessment instincts, reducing the distraction and illusion of certainty that would be associated with something like "there's a 0.2 per cent risk". 
@@ -171,7 +177,7 @@ Would it be possible to present risks of the scale of one in a thousand or even 
 
 Here is an attempt based on an imaginary arena with about 10&nbsp;000 places. This may be similar in size to some concert venues, and depicts a crowd that many of us have seen gathered together in real life.
 
-```{r echo = TRUE}
+```{r arena, eval = FALSE, echo = TRUE}
 graphs <- list(rv_create_arena(ratio = 0.001,
                                title = "Scenario A",
                                ggplot = TRUE),
@@ -182,6 +188,8 @@ graphs <- list(rv_create_arena(ratio = 0.001,
 
 rv_img(plot = graphs, stack = TRUE)
 ```
+
+![](img/arena-1.png)
 
 Scenario A represents a risk of one in a thousand, scenario B a risk of 5 in a thousand. The difference is clear, and perhaps we could still show this to people who are less familiar with numbers and help them understand relative risk. You could conceivably use this to illustrate even a risk of one in a million: "imagine an arena with 10&nbsp;000 people; now, imagine 100 such arenas: one single person in this one hundred arenas will suffer this adverse effect". Perhaps this kind of narrated data visualisation could be of use in the doctor-patient situation imagined by Rifkin and Bouwer when they first conceived the risk characterisation theatre.
 
