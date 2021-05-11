@@ -8,9 +8,11 @@ tags:
 featured: no
 ---
 
+*[This post has originally been published on Medium by EDJNet](https://medium.com/european-data-journalism-network/visualising-risk-a-modern-implementation-of-the-risk-characterization-theatre-2ea860fe08e7)*
+
 *A different visual approach to associate likelihood of occurrence of a given event to the lived experience of people viewing the graph.*
 
-[This post has originally been published on Medium by EDJNet](https://medium.com/european-data-journalism-network/visualising-risk-a-modern-implementation-of-the-risk-characterization-theatre-2ea860fe08e7)
+
 
 In their 2007 book "[The illusion of certainty: Health Benefits and Risks](https://link.springer.com/book/10.1007/978-0-387-48572-0)", authors Erik Rifkin and Edward Bouwer addressed a number of aspects related to the communication of risk to individuals and broad audiences, arguing that adequate communication of risk, including on the uncertainty embedded in risk assessments, is fundamental to personal and collective deliberations.
 
