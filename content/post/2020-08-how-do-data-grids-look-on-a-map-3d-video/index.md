@@ -23,10 +23,16 @@ In the video, I mention how gridded data can be generated via satellite imagery 
 
 ## References
 
-This video is based on the data used for this article:
+This video is based on the data used for in this interactive web interface, presenting municipality-level data for most European countries:
+
+[https://climatechange.europeandatajournalism.eu/](https://climatechange.europeandatajournalism.eu/)
+
+Municipality-level data for Italy can also be accessed through this interactive interface: [In marcia con il clima](https://datavis.europeandatajournalism.eu/obct/marciaclima/)
+
+More details in this article:
+
 [Climate warming in Europe, municipality by municipality](https://www.europeandatajournalism.eu/eng/News/Data-news/Climate-warming-in-Europe-municipality-by-municipality)
 
-Municipality-level data for Italy can be accessed through this interactive interface: [In marcia con il clima](https://datavis.europeandatajournalism.eu/obct/marciaclima/)
 
 For more details on the methodology, check out the following notes:
 
