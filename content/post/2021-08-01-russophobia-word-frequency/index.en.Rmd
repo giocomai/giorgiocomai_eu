@@ -1,0 +1,724 @@
+---
+title: Russophobia in Russian official statements and media. A word frequency analysis
+author: Giorgio Comai
+date: '2021-08-01'
+slug: []
+categories:
+  - Research notes
+  - Data notes
+tags: [russia, word frequency, rstats]
+subtitle: ''
+summary: ''
+authors: []
+featured: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: [castarter]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.path = "static-")
+
+
+
+library("castarter2")
+library("dplyr")
+library("ggplot2")
+library("readr")
+
+end_date <- as.Date("2021-07-01")
+
+```
+
+
+__N.B. For a better formatted version of this post, consider [following this link](https://testzone.giorgiocomai.eu/2021-08-01-russophobia/)__
+
+
+References to ‘anti-Russian sentiments’ or ‘Russophobia’ - have a long history that dates back to the 19th century (Feklyunina 2012; Darczewska and Żochowski 2015). However, in recent years references to the alleged spread of ‘Russophobia’ in the West have apparently become more common and more politically consequential, in particular after Russia’s annexation of Crimea and the war in the Donbas (Darczewska and Żochowski 2015). A quantitative analysis of references to ‘Russophobia’ in statements by Russia’s Ministry of foreign affairs has confirmed that the expression was barely used before 2012, but featured much more often in official statements in particular since 2014 (Robinson 2019).
+
+In this post, I will provide a brief overview of the frequency of references to 'Russophobia' or 'anti-Russian' sentiments in official statements and press releases issues by the Kremlin, the Russian Ministry of Foreign Affairs, as well as in the textual version of news segments published by Russia's first channel (*Pervy Kanal*).
+
+In order to let the reader gauge the tone of such references in context, I will also include tables with the five words preceding and following the reference to 'Russophobia' as well as a link to the specific occasion where the reference was found. 
+
+I have published the textual dataset based on the Kremlin's website on [Discuss Data](https://doi.org/10.48320/5EB1481E-AE89-45BF-9C88-03574910730A). You can download the full dataset in different formats from there, and find [a detailed note](https://castarter.giorgiocomai.eu/kremlin_en-about/) on how it was created. I have previously discussed the usefulness of this approach in a dedicated article (Comai 2017).
+
+
+The graphs included in this post are based on the absolute number of matches of relevant keywords, not their relative frequency as a share of total word count, even if the number of publications is not constant throughout the period under analysis.  Additional graphs with the average number of publications per day for each source are included for reference. Analytically, relative word-count would not lead to significantly different conclusions.
+
+Preliminary quality checks have not raised major inconsistencies or problems in the data collection process. Some issues possibly due to the way contents are archived by the sources (e.g. occasional duplicate posts) are cannot however be completely excluded until more thorough checks are conducted. 
+
+Finally, here are links to a fully interactive version of the datasets mentioned in this post, allowing researchers to test the frequency of alternative expressions that may be used to express similar meaning. I have not yet finalised building the interface, so it may be slow to respond, some functions may not work at all, and there may be inconsistencies in the reported data. I still decided to share it publicly, as they may be of some use even in their current state, but use with caution.
+
+- [Kremlin, Russian version](https://castarter.giorgiocomai.eu/kremlin_ru/)
+- [Kremlin, English version](https://castarter.giorgiocomai.eu/kremlin_en/)
+- [Russian MFA, Russian version](https://castarter.giorgiocomai.eu/mfa_ru_russia/)
+- [Russian MFA, English version](https://castarter.giorgiocomai.eu/mfa_en_russia/)
+
+## Preliminary observations
+
+There are only occasional references to "anti-Russian" sentiments and "Russophobia" in official statements and in news segments aired by *Pervy Kanal* before 2014. Such references however have become much more common starting with 2014 and until 2019. The frequency of such references has decreased in 2020, but provisional data for the first half 2021 may hint at a new increase. 
+
+## The Kremlin
+
+```{r load kremlin dataset}
+kremlin_ru <- read_rds("datasets/2021-07-31-presidents_ru-russia-dataset.rds") %>% 
+  dplyr::filter(date<end_date) %>% 
+  dplyr::mutate(text = stringr::str_replace_all(string = text, pattern = "\n", replacement = " ")) %>% 
+    dplyr::mutate(text = stringr::str_replace_all(string = text,
+                                                  pattern = stringr::fixed("."),
+                                                  replacement = ". "))
+
+#nrow(kremlin_ru)
+
+```
+
+
+
+References to "Russophobia" were basically not to be found before 2014, and their sudden appearance corresponds to events in Ukraine.
+
+
+```{r}
+
+kremlin_ru %>% 
+  cas_count(string = "русофоб") %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+    mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+ ggplot(mapping = aes(x = date, y = n, fill = NULL, alpha = alpha)) +
+  geom_col() +
+  scale_alpha_continuous(range = c(0.6, 1)) +
+  scale_x_continuous(name = "", breaks = seq(1999, 2021,2),
+                     limits = c(1998, 2022)) +
+  scale_y_continuous(name = "") +
+  labs(title = "Yearly references to 'russophob*' ('русофоб*') in items published on kremlin.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(kremlin_ru)),
+                        "items published on the Russian-language version of kremlin.ru\nbetween",
+                        min(kremlin_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(kremlin_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "\nN.B. Data for 2021 are provisional and incomplete"),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "none")
+```
+
+
+
+However, references to "anti-Russian" started to appear earlier, in 2009. The reader should keep in mind that between 2008 and 2012 Dmitri Medvedev, not Vladimir Putin, was president of the Russian Federation, which likely had an impact on word choices. 
+
+```{r}
+
+kremlin_ru %>% 
+  cas_count(string = "антироссийск") %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+  mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+  ggplot(mapping = aes(x = date, y = n, fill = NULL, alpha = alpha)) +
+  geom_col() +
+  scale_alpha_continuous(range = c(0.6, 1)) +
+  scale_y_continuous(name = "", labels = function(x) scales::number(x = x,accuracy = 1), breaks = scales::pretty_breaks()) +
+  scale_x_continuous(name = "", breaks = seq(1999, 2021,2),
+                     limits = c(1998, 2022)) +
+  labs(title = "Yearly references to 'anti-Russian*' ('антироссийск*') in items published on kremlin.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(kremlin_ru)),
+                        "items published on the Russian-language version of kremlin.ru\nbetween",
+                        min(kremlin_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(kremlin_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "\nN.B. Data for 2021 are provisional and incomplete"),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "none")
+```
+
+
+The following graph shows both "anti-russian" and "Russophobia" with the same scale.
+
+
+```{r}
+
+kremlin_ru %>% 
+  cas_count(string = c("антироссийск", "русофоб")) %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+  mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+ ggplot(mapping = aes(x = date, y = n, fill = string, alpha = alpha)) +
+  geom_col(position = position_dodge()) +
+  scale_y_continuous(name = "", labels = function(x) scales::number(x = x,accuracy = 1), breaks = scales::pretty_breaks()) +
+    scale_alpha_continuous(range = c(0.6, 1), guide = NULL) +
+  scale_x_continuous(name = "", breaks = seq(1999, 2021,2),
+                     limits = c(1998, 2022)) +
+  scale_fill_manual(values = wesanderson::wes_palette("Darjeeling1")) +
+  labs(title = "Yearly references to 'anti-Russian*' ('антироссийск*') and 'russophob*' ('русофоб*')\nin items published on kremlin.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(kremlin_ru)),
+                        "items published on the Russian-language version of kremlin.ru\nbetween",
+                        min(kremlin_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(kremlin_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish()),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "bottom", legend.title = element_blank())
+
+```
+
+
+
+```{r kwic for kremlin_ru}
+kremlin_ru_kwic <- cas_kwic(corpus = kremlin_ru,
+         string = c("антироссийск", "русофоб"), same_sentence = TRUE) %>% 
+  dplyr::select(date, title, before, string, after, link) %>% 
+  dplyr::mutate(title = stringr::str_c("<a href='", link, "'>", title, "</a>")) %>% 
+  dplyr::select(-link) %>% 
+  dplyr::arrange(date) 
+
+
+kremlin_ru_kwic %>% 
+  reactable::reactable(filterable = TRUE,
+                       highlight = TRUE, 
+                       resizable = TRUE,
+                       defaultPageSize = 5,
+                       columns = list(
+                         date = reactable::colDef(maxWidth = 120),
+                         title = reactable::colDef(html = TRUE),
+                         before = reactable::colDef(align = "right",
+                                                    minWidth = 100),
+                         string = reactable::colDef(maxWidth = 180),
+                         after = reactable::colDef(minWidth = 100)
+                       ))
+
+```
+
+
+### Kremlin.ru, English version
+
+I include for reference a version of the same graph, based on the English language version of Kremlin.ru, which has fewer contents available. This dataset is updated only to 31 December 2020, and is exactly the same I made available on [Discuss Data](https://doi.org/10.48320/5EB1481E-AE89-45BF-9C88-03574910730A) and as a [data package for the R programming language](https://github.com/giocomai/tifkremlinen)
+
+
+```{r}
+tifkremlinen::kremlin_en %>% 
+  cas_count(string = c("anti-russian", "russophob")) %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+  mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+ ggplot(mapping = aes(x = date, y = n, fill = string, alpha = alpha)) +
+  geom_col(position = position_dodge()) +
+  scale_y_continuous(name = "", labels = function(x) scales::number(x = x,accuracy = 1), breaks = scales::pretty_breaks()) +
+    scale_alpha_continuous(range = c(0.6, 1), guide = NULL) +
+  scale_x_continuous(name = "", breaks = seq(2000, 2020,2),
+                     limits = c(1998, 2020)) +
+  scale_fill_manual(values = wesanderson::wes_palette("Darjeeling1")) +
+  labs(title = "Yearly references to 'anti-Russian*'and 'russophob*' in items published on kremlin.ru",
+       subtitle = paste("Based on the",
+                        scales::number(nrow(tifkremlinen::kremlin_en)),
+                        "items published on the English-language version of kremlin.ru\nbetween",
+                        min(tifkremlinen::kremlin_en$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(tifkremlinen::kremlin_en$date) %>% format("%e %B %Y")  %>% stringr::str_squish())) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "bottom", legend.title = element_blank())
+```
+
+
+
+```{r kwic for kremlin_en}
+
+kremlin_en_kwic <- cas_kwic(corpus = tifkremlinen::kremlin_en,
+         string = c("anti-russian", "russophob"), same_sentence = FALSE) %>% 
+  dplyr::select(date, title, before, string, after, link) %>% 
+  dplyr::mutate(title = stringr::str_c("<a href='", link, "'>", title, "</a>")) %>% 
+  dplyr::select(-link) %>% 
+  dplyr::arrange(date) 
+
+
+kremlin_en_kwic %>% 
+  reactable::reactable(filterable = TRUE,
+                       highlight = TRUE, 
+                       resizable = TRUE,
+                       defaultPageSize = 5,
+                       columns = list(
+                         date = reactable::colDef(maxWidth = 120),
+                         title = reactable::colDef(html = TRUE),
+                         before = reactable::colDef(align = "right",
+                                                    minWidth = 100),
+                         string = reactable::colDef(maxWidth = 180),
+                         after = reactable::colDef(minWidth = 100)
+                       ))
+
+```
+
+
+
+## The Russian Ministry of foreign affairs
+
+```{r load mfa_ru dataset}
+mfa_ru <- read_rds("datasets/2021-08-01-mfa_ru-mfa_ru_russia-dataset.rds") %>% 
+  dplyr::filter(date<end_date) %>% 
+  dplyr::mutate(text = stringr::str_replace_all(string = text, pattern = "\n", replacement = " ")) %>% 
+    dplyr::mutate(text = stringr::str_replace_all(string = text,
+                                                  pattern = stringr::fixed("."),
+                                                  replacement = ". "))
+
+#nrow(kremlin_ru)
+
+```
+
+
+
+This section presents the same graphs as above, first for the Russian language version of mid.ru, then for the English language version. 
+
+
+
+```{r}
+
+mfa_ru %>% 
+  cas_count(string = "русофоб") %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+    mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+ ggplot(mapping = aes(x = date, y = n, fill = NULL, alpha = alpha)) +
+  geom_col() +
+  scale_alpha_continuous(range = c(0.6, 1)) +
+  scale_x_continuous(name = "", breaks = seq(2003, 2021,2),
+                     limits = c(2002, 2022)) +
+  scale_y_continuous(name = "") +
+  labs(title = "Yearly references to 'russophob*' ('русофоб*') in items published on mid.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(mfa_ru)),
+                        "items published on the Russian-language version of mid.ru\nbetween",
+                        min(mfa_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(mfa_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "\nN.B. Data for 2021 are provisional and incomplete"),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "none")
+```
+
+ 
+
+```{r}
+
+mfa_ru %>% 
+  cas_count(string = "антироссийск") %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+  mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+  ggplot(mapping = aes(x = date, y = n, fill = NULL, alpha = alpha)) +
+  geom_col() +
+  scale_alpha_continuous(range = c(0.6, 1)) +
+  scale_y_continuous(name = "", labels = function(x) scales::number(x = x,accuracy = 1), breaks = scales::pretty_breaks()) +
+  scale_x_continuous(name = "", breaks = seq(2003, 2021,2),
+                     limits = c(2002, 2022)) +
+  labs(title = "Yearly references to 'anti-Russian*' ('антироссийск*') in items published on mid.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(mfa_ru)),
+                        "items published on the Russian-language version of mid.ru\nbetween",
+                        min(mfa_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(mfa_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "\nN.B. Data for 2021 are provisional and incomplete"),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "none")
+```
+
+
+
+
+```{r}
+
+mfa_ru %>% 
+  cas_count(string = c("антироссийск", "русофоб")) %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+  mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+ ggplot(mapping = aes(x = date, y = n, fill = string, alpha = alpha)) +
+  geom_col(position = position_dodge()) +
+  scale_y_continuous(name = "", labels = function(x) scales::number(x = x,accuracy = 1), breaks = scales::pretty_breaks()) +
+    scale_alpha_continuous(range = c(0.6, 1), guide = NULL) +
+  scale_x_continuous(name = "", breaks = seq(2003, 2021,2),
+                     limits = c(2002, 2022)) +
+  scale_fill_manual(values = wesanderson::wes_palette("Darjeeling1")) +
+  labs(title = "Yearly references to 'anti-Russian*' ('антироссийск*') and 'russophob*' ('русофоб*')\nin items published on mid.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(mfa_ru)),
+                        "items published on the Russian-language version of mid.ru\nbetween",
+                        min(mfa_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(mfa_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish()),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "bottom", legend.title = element_blank())
+
+```
+
+
+
+```{r kwic for mfa_ru}
+mfa_ru_kwic <- cas_kwic(corpus = mfa_ru,
+         string = c("антироссийск", "русофоб"), same_sentence = TRUE) %>% 
+  dplyr::select(date, title, before, string, after, link) %>% 
+  dplyr::mutate(title = stringr::str_c("<a href='", link, "'>", title, "</a>")) %>% 
+  dplyr::select(-link) %>% 
+  dplyr::arrange(date) 
+
+
+mfa_ru_kwic %>% 
+  reactable::reactable(filterable = TRUE,
+                       highlight = TRUE, 
+                       resizable = TRUE,
+                       defaultPageSize = 5,
+                       columns = list(
+                         date = reactable::colDef(maxWidth = 120),
+                         title = reactable::colDef(html = TRUE),
+                         before = reactable::colDef(align = "right",
+                                                    minWidth = 100),
+                         string = reactable::colDef(maxWidth = 180),
+                         after = reactable::colDef(minWidth = 100)
+                       ))
+
+```
+
+
+
+### Russian MFA, English version
+
+```{r load mfa_en dataset}
+mfa_en <- read_rds("datasets/2021-08-01-mfa_en-mfa_en_russia-dataset.rds") %>% 
+  dplyr::filter(date<end_date) %>% 
+  dplyr::mutate(text = stringr::str_replace_all(string = text, pattern = "\n", replacement = " ")) %>% 
+    dplyr::mutate(text = stringr::str_replace_all(string = text,
+                                                  pattern = stringr::fixed("."),
+                                                  replacement = ". "))
+
+#nrow(kremlin_ru)
+
+```
+
+
+
+
+```{r  mfa_en-combo}
+mfa_en %>% 
+  cas_count(string = c("anti-russian", "russophob")) %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+  mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+ ggplot(mapping = aes(x = date, y = n, fill = string, alpha = alpha)) +
+  geom_col(position = position_dodge()) +
+  scale_y_continuous(name = "", labels = function(x) scales::number(x = x,accuracy = 1), breaks = scales::pretty_breaks()) +
+    scale_alpha_continuous(range = c(0.6, 1), guide = NULL) +
+  scale_x_continuous(name = "", breaks = seq(2003, 2021,2),
+                     limits = c(2002, 2022)) +
+  scale_fill_manual(values = wesanderson::wes_palette("Darjeeling1")) +
+  labs(title = "Yearly references to 'anti-Russian*'and 'russophob*' in items published on Russia's MFA",
+       subtitle = paste("Based on the",
+                        scales::number(nrow(mfa_en)),
+                        "items published on the English-language version of mid.ru\nbetween",
+                        min(mfa_en$date) %>% format("%e %B %Y") %>% stringr::str_squish(),
+                        "and",
+                        max(mfa_en$date) %>% format("%e %B %Y") %>% stringr::str_squish())) +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "bottom", legend.title = element_blank())
+```
+
+
+
+
+```{r kwic for mfa_en}
+
+mfa_en_kwic <- cas_kwic(corpus = mfa_en,
+         string = c("anti-russian", "russophob"), same_sentence = TRUE) %>% 
+  dplyr::select(date, title, before, string, after, link) %>% 
+  dplyr::mutate(title = stringr::str_c("<a href='", link, "'>", title, "</a>")) %>% 
+  dplyr::select(-link) %>% 
+  dplyr::arrange(date) 
+
+
+mfa_en_kwic %>% 
+  reactable::reactable(filterable = TRUE,
+                       highlight = TRUE, 
+                       resizable = TRUE,
+                       defaultPageSize = 5,
+                       columns = list(
+                         date = reactable::colDef(maxWidth = 120),
+                         title = reactable::colDef(html = TRUE),
+                         before = reactable::colDef(align = "right",
+                                                    minWidth = 100),
+                         string = reactable::colDef(maxWidth = 180),
+                         after = reactable::colDef(minWidth = 100)
+                       ))
+
+```
+
+
+
+## Russia's First Channel - Pervy Kanal
+
+
+```{r load pervy dataset}
+pervy_ru <- read_rds("datasets/2021-08-01-news_ru-pervy-dataset.rds") %>% 
+  dplyr::filter(date<end_date) %>% 
+  dplyr::mutate(text = stringr::str_replace_all(string = text, pattern = "\n", replacement = " ")) %>% 
+    dplyr::mutate(text = stringr::str_replace_all(string = text,
+                                                  pattern = stringr::fixed("."),
+                                                  replacement = ". "))
+
+#nrow(kremlin_ru)
+
+```
+
+
+This dataset is based on all news items published on the websites of Russia's first channel: [Pervy Kanal](https://www.1tv.ru/). It is a much larger dataset, including `r scales::number(nrow(pervy_ru))` items published between `r min(pervy_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish()` and `r max(pervy_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish()`. It mostly does not include full transcripts of talk shows, but rather transcripts of news segments. 
+
+
+```{r}
+
+pervy_ru %>% 
+  cas_count(string = "русофоб") %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+    mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+ ggplot(mapping = aes(x = date, y = n, fill = NULL, alpha = alpha)) +
+  geom_col() +
+  scale_alpha_continuous(range = c(0.6, 1)) +
+  scale_x_continuous(name = "", breaks = seq(1999, 2021,2),
+                     limits = c(1998, 2022)) +
+  scale_y_continuous(name = "") +
+  labs(title = "Yearly references to 'russophob*' ('русофоб*') in items published on 1tv.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(pervy_ru)),
+                        "items published on the Russian-language version of 1tv.ru\nbetween",
+                        min(pervy_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(pervy_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "\nN.B. Data for 2021 are provisional and incomplete"),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "none")
+```
+
+
+
+```{r}
+
+pervy_ru %>% 
+  cas_count(string = "антироссийск") %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+  mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+  ggplot(mapping = aes(x = date, y = n, fill = NULL, alpha = alpha)) +
+  geom_col() +
+  scale_alpha_continuous(range = c(0.6, 1)) +
+  scale_y_continuous(name = "", labels = function(x) scales::number(x = x,accuracy = 1), breaks = scales::pretty_breaks()) +
+  scale_x_continuous(name = "", breaks = seq(1999, 2021,2),
+                     limits = c(1998, 2022)) +
+  labs(title = "Yearly references to 'anti-Russian*' ('антироссийск*') in items published on 1tv.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(pervy_ru)),
+                        "items published on the Russian-language version of 1tv.ru\nbetween",
+                        min(pervy_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(pervy_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "\nN.B. Data for 2021 are provisional and incomplete"),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "none")
+```
+
+
+
+
+```{r}
+
+pervy_ru %>% 
+  cas_count(string = c("антироссийск", "русофоб")) %>% 
+  cas_summarise(period = "year", auto_convert = TRUE) %>% 
+  mutate(alpha = if_else(date==2021, 0.7, 1)) %>% 
+ ggplot(mapping = aes(x = date, y = n, fill = string, alpha = alpha)) +
+  geom_col(position = position_dodge()) +
+  scale_y_continuous(name = "", labels = function(x) scales::number(x = x,accuracy = 1), breaks = scales::pretty_breaks()) +
+    scale_alpha_continuous(range = c(0.6, 1), guide = NULL) +
+  scale_x_continuous(name = "", breaks = seq(1999, 2021,2),
+                     limits = c(1998, 2022)) +
+  scale_fill_manual(values = wesanderson::wes_palette("Darjeeling1")) +
+  labs(title = "Yearly references to 'anti-Russian*' ('антироссийск*') and 'russophob*' ('русофоб*')\nin items published on 1tv.ru",
+       subtitle = paste("Based on the ",
+                        scales::number(nrow(pervy_ru)),
+                        "items published on the Russian-language version of 1tv.ru\nbetween",
+                        min(pervy_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish(),
+                        "and",
+                        max(pervy_ru$date) %>% format("%e %B %Y")  %>% stringr::str_squish()),
+       caption = "Data processing: Giorgio Comai / giorgiocomai.eu") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(legend.position = "bottom", legend.title = element_blank())
+
+```
+
+
+
+
+```{r kwic for pervy_ru}
+pervy_ru_kwic <- cas_kwic(corpus = pervy_ru,
+         string = c("антироссийск", "русофоб"), same_sentence = TRUE) %>% 
+  dplyr::select(date, title, before, string, after, link) %>% 
+  dplyr::mutate(title = stringr::str_c("<a href='", link, "'>", title, "</a>")) %>% 
+  dplyr::select(-link) %>% 
+  dplyr::arrange(date) 
+
+
+pervy_ru_kwic %>% 
+  reactable::reactable(filterable = TRUE,
+                       highlight = TRUE, 
+                       resizable = TRUE,
+                       defaultPageSize = 5,
+                       columns = list(
+                         date = reactable::colDef(maxWidth = 120),
+                         title = reactable::colDef(html = TRUE),
+                         before = reactable::colDef(align = "right",
+                                                    minWidth = 100),
+                         string = reactable::colDef(maxWidth = 180),
+                         after = reactable::colDef(minWidth = 100)
+                       ))
+
+```
+
+
+
+## Frequency of publications in each of the sources
+
+```{r}
+n_days <- 90
+```
+
+
+
+```{r kremlin_en_publications}
+
+kremlin_ru %>% 
+  dplyr::filter(is.na(date)==FALSE) %>% 
+  group_by(date) %>% 
+  count(name = "n") %>% 
+  ungroup() %>% 
+  mutate(n = slider::slide_period_dbl(.x = n,
+                                      .i = date,
+                                      .period = "day",
+                                      .f = mean,
+                                      .before = n_days/2,
+                                      .after = n_days/2)) %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_line() +
+  scale_x_date(name = "") +
+  scale_y_continuous(name = "", limits = c(0, NA)) +
+  labs(title = "Number of publications per day on the Russian language version of Kremlin.ru",
+       caption = paste("* Calculated on a rolling mean of", sum(n_days, 1), "days")) + 
+  theme_minimal(base_family = "Roboto Condensed") 
+```
+
+
+
+```{r kremlin_ru_publications}
+
+
+
+kremlin_ru %>% 
+  dplyr::filter(is.na(date)==FALSE) %>% 
+  group_by(date) %>% 
+  count(name = "n") %>% 
+  ungroup() %>% 
+  mutate(n = slider::slide_period_dbl(.x = n,
+                                      .i = date,
+                                      .period = "day",
+                                      .f = mean,
+                                      .before = n_days/2,
+                                      .after = n_days/2)) %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_line() +
+  scale_x_date(name = "") +
+  scale_y_continuous(name = "", limits = c(0, NA)) +
+  labs(title = "Number of publications per day on the Russian language version of Kremlin.ru",
+       caption = paste("* Calculated on a rolling mean of", sum(n_days, 1), "days")) + 
+  theme_minimal(base_family = "Roboto Condensed") 
+
+```
+
+
+
+```{r mfa_en_publications}
+
+mfa_en %>% 
+  dplyr::filter(is.na(date)==FALSE) %>% 
+  group_by(date) %>% 
+  count(name = "n") %>% 
+  ungroup() %>% 
+  mutate(n = slider::slide_period_dbl(.x = n,
+                                      .i = date,
+                                      .period = "day",
+                                      .f = mean,
+                                      .before = n_days/2,
+                                      .after = n_days/2)) %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_line() +
+  scale_x_date(name = "") +
+  scale_y_continuous(name = "", limits = c(0, NA)) +
+  labs(title = "Number of publications per day on the English language version of mid.ru",
+       caption = paste("* Calculated on a rolling mean of", sum(n_days, 1), "days")) + 
+  theme_minimal(base_family = "Roboto Condensed") 
+```
+
+
+
+
+```{r mfa_ru_publications}
+
+mfa_ru %>% 
+  dplyr::filter(is.na(date)==FALSE) %>% 
+  group_by(date) %>% 
+  count(name = "n") %>% 
+  ungroup() %>% 
+  mutate(n = slider::slide_period_dbl(.x = n,
+                                      .i = date,
+                                      .period = "day",
+                                      .f = mean,
+                                      .before = n_days/2,
+                                      .after = n_days/2)) %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_line() +
+  scale_x_date(name = "") +
+  scale_y_continuous(name = "", limits = c(0, NA)) +
+  labs(title = "Number of publications per day on the Russian language version of mid.ru",
+       caption = paste("* Calculated on a rolling mean of", sum(n_days, 1), "days")) + 
+  theme_minimal(base_family = "Roboto Condensed") 
+```
+
+
+```{r pervy_ru_publications}
+
+pervy_ru %>% 
+  dplyr::filter(is.na(date)==FALSE) %>% 
+  group_by(date) %>% 
+  count(name = "n") %>% 
+  ungroup() %>% 
+  mutate(n = slider::slide_period_dbl(.x = n,
+                                      .i = date,
+                                      .period = "day",
+                                      .f = mean,
+                                      .before = n_days/2,
+                                      .after = n_days/2)) %>% 
+  ggplot(mapping = aes(x = date, y = n)) +
+  geom_line() +
+  scale_x_date(name = "") +
+  scale_y_continuous(name = "", limits = c(0, NA)) +
+  labs(title = "Number of publications per day on 1tv.ru",
+       caption = paste("* Calculated on a rolling mean of", sum(n_days, 1), "days")) + 
+  theme_minimal(base_family = "Roboto Condensed") 
+```
+
+
+## References
+
+
+
+Comai, Giorgio. 2017. “Quantitative Analysis of Web Content in Support of Qualitative Research. Examples from the Study of Post-Soviet de Facto States.” *Studies of Transition States and Societies* 9 (1).
+
+Darczewska, Jolanta, and Piotr Żochowski. 2015. *Russophobia in the Kremlin’s Strategy. A Weapon of Mass Destruction*. Punkt Widzenia, Numer 56, październik 2015. Warszawa: Ośrodek Studiów Wschodnich im. Marka Karpia.
+
+Feklyunina, Valentina. 2012. “Constructing Russophobia.” In *Russia’s Identity in International Relations*, edited by Ray Taras, 91–109. London; New York: Routledge.
+
+Robinson, Neil. 2019. “Russophobia in Official Russian Political Discourse.” *De Europa* 2 (2): 61–77.
+
