@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.path = "static-")
 ```
 
 
-When everybody's moved by contagious joy of two athletes making history by agreeing to share an Olympic golden medal, the data analyst thinks: "is this going to break my dashboard?"
+When everybody's moved by contagious joy of two athletes making history by agreeing to share an Olympic golden medal, the data analyst thinks: "two golden medals for the same competition? is this going to break my dashboard?"
 
 `r htmltools::HTML("{{< tweet 1421929781159989249 >}}")`
 
