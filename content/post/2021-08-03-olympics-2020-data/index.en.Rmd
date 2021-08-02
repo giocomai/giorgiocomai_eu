@@ -1,7 +1,7 @@
 ---
 title: The data you need to win the Olympics if you go NUTS
 author: Giorgio Comai
-date: '2021-08-01'
+date: '2021-08-02'
 slug: []
 categories:
   - Data notes
@@ -14,7 +14,6 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: [castarter]
 ---
 
 ```{r setup, include=FALSE}
@@ -25,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.path = "static-")
 
 When everybody's moved by contagious joy of two athletes making history by agreeing to share an Olympic golden medal, the data analyst thinks: "is this going to break my dashboard?"
 
-{{< tweet 1421854621186809857 > }}
+`r htmltools::HTML("{{< tweet 1421929781159989249 >}}")`
 
 In my case, I was worried it would break my parsing script. Fortunately, it didn't, so after a quick check I could share their joy with relief. And then go back to my hobby. 
 
@@ -67,14 +66,24 @@ You can find the code and all details about data parsing in this repository.
 
 You can download the table with all the data as a csv file, and play with it as you like. 
 
-If you want to have a quick look at the data based on place of birth, why not head on to our online tool, [`latlon2map`](https://latlon2map.europeandatajournalism.eu/), that makes it easy to explore quickly all tabular data that have a longitude and latitude column. 
+If you want to have a quick look at the data based on place of birth, why not head on to our online tool, [`latlon2map`](https://latlon2map.europeandatajournalism.eu/), that makes it easy to explore quickly all tabular data that have a longitude and latitude column.
+
+![Screenshot of the web interface of latlon2map](screenshot_latlon2map.png)
 
 As for me, tired with all the data processing, I took a lazy if controversial approach. I decided that I will count each medal and each medalist the same. Bronze and gold look just as shiny to me. The official table counts just one medal for a team win, but I think that each piece of metal is a piece of joy for the person who brings it home: if eight people row together to get a medal and each takes a medal, then that's eight medals for me. And then... let's see how things go by focusing only on NUTS regions in Europe. 
 
-So... here's my medal table:
+So... here's my medal table for NUTS2:
 
-```{r}
+```{r echo = FALSE, warning = FALSE, message = FALSE}
+library("dplyr", warn.conflicts = FALSE)
+all_medalists_wd_nuts_df <- readr::read_csv(file = "all_medalists_wd_nuts.csv", show_col_types = FALSE) 
 
+all_medalists_wd_nuts_df %>% 
+  dplyr::filter(is.na(nuts2_name)==FALSE) %>% 
+  dplyr::group_by(nuts2_name) %>% 
+  dplyr::count(name = "Total medals", sort = TRUE) %>% 
+  head(20) %>% 
+  knitr::kable(caption = "Total medals by place of birth of medalist at the 2020 Summer Olympics / NUTS2")
 ```
 
 
@@ -82,6 +91,14 @@ So... here's my medal table:
 
 
 
+```{r}
+all_medalists_wd_nuts_df %>% 
+  dplyr::filter(is.na(nuts3_name)==FALSE) %>% 
+  dplyr::group_by(nuts3_name) %>% 
+  dplyr::count(name = "Total medals", sort = TRUE) %>% 
+  head(20) %>% 
+  knitr::kable(caption = "Total medals by place of birth of medalist at the 2020 Summer Olympics / NUTS3")
+```
 
 
 
