@@ -19,7 +19,7 @@ projects: [castarter]
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, fig.path = "static-")
+knitr::opts_chunk$set(echo = FALSE, fig.path = "static-", warning = FALSE)
 
 
 
