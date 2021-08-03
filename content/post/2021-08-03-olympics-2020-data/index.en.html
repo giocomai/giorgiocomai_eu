@@ -19,32 +19,33 @@ image:
 <script src="{{< blogdown/postref >}}index.en_files/header-attrs/header-attrs.js"></script>
 
 
-<p>When everybody’s moved by contagious joy of two athletes making history by agreeing to share an Olympic golden medal, the data analyst thinks: “two golden medals for the same competition? is this going to break my dashboard?”</p>
+<p>When everybody’s moved by the contagious joy of two athletes making history by agreeing to share an Olympic golden medal, the data analyst thinks: “two golden medals for the same competition? is this going to break my dashboard?”</p>
 <p>{{< tweet 1421929781159989249 >}}</p>
-<p>In my case, I was worried it would break my parsing script. Fortunately, it didn’t, so after a quick check I could share their joy with relief. And then go back to my hobby.</p>
-<p>Armchair sports fans like to peddle with the <a href="https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm">Olympic medal table</a>, and I idly asked myself the customary questions… is it fair that the ranking is usually based on who gets the most gold? What if the ranking was instead based on some sort of weighted average of the medals? If - say - a gold medal is worth twice as much as a silver, and a silver twice as much as bronze, then would my favourite flag shine at the top of the ranking?</p>
-<p>But just changing the value of medals brings you only so far… not fun enough to turn this into a hobby.</p>
-<p>So I thought it was time to up my game. Being mildly annoyed by the excessive flag waving, I decided it would be nice to set up a medal table based on the number of medals won by regions, not by countries.</p>
-<p>So… there we go. Here’s how you can join the fun.</p>
+<p>In my case, I was worried it would break my parsing script. Fortunately, it didn’t, so after a quick check I could share their joy with relief. And then go back to wondering about the fairness of the Olympic medal table.</p>
+<p>Armchair sports fans traditionally like to peddle with the <a href="https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm">Olympic medal table</a>, asking themselves the customary questions… is it fair that the ranking is usually based on who gets the most golden medals? What if the ranking was instead based on some sort of weighted average of the medals? If - say - a gold medal is worth twice as much as a silver, and a silver twice as much as bronze, then would my favourite flag wave at the top of the ranking?</p>
+<p>But just changing the value of medals brings you only so far, and the medal table may still look disagreeable. What else can be done to shake it up a bit further?</p>
+<p>Being mildly annoyed by the excessive waving of national flags, I decided it would be nice to set up a medal table based on the number of medals won by regions, not by countries.</p>
+<p>So… there we go.</p>
 <div id="going-nuts-and-beyond" class="section level2">
 <h2>Going NUTS, and beyond</h2>
-<p>How do we attribute a medal to a region? There’s no completely right approach, but place of birth should be meaningful enough in most cases. So all that is needed is find the place of birth of all medalists, geocode it, associate it with administrative entities of reasonable size, et… voilà!</p>
-<p>So here’s how I went it about it, considering that I wanted to have data unencumbered by copyright to share the fun.</p>
+<p>How do we attribute a medal to a region? There’s no completely right approach, but place of birth of athletes should be meaningful enough in most cases. So all that is needed is find the place of birth of all medalists, geocode it, associate it with administrative entities of reasonable size, et… voilà!</p>
+<p>So here’s how I went about it, considering that I wanted to have data unencumbered by copyright to share the fun.</p>
 <ol style="list-style-type: decimal">
 <li>get all the Olympic medalist by country, sport, and event from the <a href="https://en.wikipedia.org/wiki/List_of_2020_Summer_Olympics_medal_winners">List of 2020 Summer Olympics medal winners</a> available on Wikipedia</li>
 <li>parse all the tables on that page to extract the relevant information, including links to the Wikipedia page of each medalist (ultimately, this proved to be the most painful part)</li>
 <li>query the Wikipedia API to get the Wikidata ID of each medalist</li>
 <li>proceed in the much more data-friendly Wikidata, and get the place of birth of each medalist</li>
 <li>get from Wikidata the coordinates of the place of birth of each medalist</li>
-<li>match the coordinates to the administrative units where they are located. In principle, this could be achieved remaining within Wikidata by retrieving the relevant property for the place of birth (<a href="https://www.wikidata.org/wiki/Property:P131">located in the administrative territorial entity</a>), but, depending on the place of birth, this may lead to inconsistent results. I included the relevant data in the dataset, but I also did the geo-matching with NUTS regions - a standardised classification of administrative entities defined by the European Union (here’s a list of <a href="https://ec.europa.eu/eurostat/web/nuts/nuts-maps">countries covered by NUTS</a>, and here’s the <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/countries">geographic dataset for download</a>)</li>
+<li>match the coordinates to the administrative units where they are located. In principle, this could be achieved remaining within Wikidata by retrieving the <a href="https://www.wikidata.org/wiki/Property:P131">relevant property</a> for the place of birth this may lead to inconsistent results. I included the relevant data in the dataset, but I also did the geo-matching with NUTS regions - a standardised classification of administrative entities defined by the European Union (here’s a list of <a href="https://ec.europa.eu/eurostat/web/nuts/nuts-maps">countries covered by NUTS</a>, and here’s the <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/countries">geographic dataset for download</a>)</li>
 <li>(optional) get from Wikidata all other sorts of data about the medalists or the place where they were born</li>
 </ol>
 </div>
 <div id="the-dataset" class="section level2">
 <h2>The dataset</h2>
+<p>The resulting dataset is now <a href="https://github.com/EDJNet/olympics2020nuts">available on GitHub</a>. Here’s <a href="https://github.com/EDJNet/olympics2020nuts/blob/main/all_medalists_wd_nuts.csv">the csv file</a>, and here’s <a href="https://edjnet.github.io/olympics2020nuts/">the script used to retrieve the data</a>.</p>
 <p>How’s the quality of the dataset? Not too bad for Europe, as the place of birth of only a handful of medalists is missing. Probably more work to do to turn this into something more meaningful at the global level.</p>
 <p>The good news is that you can join the fun! :-)</p>
-<p>Of course, you can contribute add to Wikidata the missing information, which is often available online.</p>
+<p>Of course, you can contribute by adding to Wikidata the missing information, which is often available online.</p>
 <p>And then… see who <em>you</em> can place at the top of the medal table by playing around with the data.</p>
 <p>You can find the code and all details about data parsing in this repository.</p>
 <p>You can download the table with all the data as a csv file, and play with it as you like.</p>
@@ -66,38 +67,62 @@ image:
 <tbody>
 <tr class="odd">
 <td align="left">Ile-de-France</td>
-<td align="right">21</td>
+<td align="right">22</td>
+</tr>
+<tr class="even">
+<td align="left">Lombardia</td>
+<td align="right">13</td>
+</tr>
+<tr class="odd">
+<td align="left">Greater Manchester</td>
+<td align="right">8</td>
 </tr>
 <tr class="even">
 <td align="left">Nord-Est</td>
 <td align="right">8</td>
 </tr>
 <tr class="odd">
-<td align="left">Lombardia</td>
-<td align="right">7</td>
-</tr>
-<tr class="even">
 <td align="left">Rhône-Alpes</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="left">Budapest</td>
 <td align="right">7</td>
 </tr>
 <tr class="odd">
-<td align="left">Jadranska Hrvatska</td>
-<td align="right">5</td>
+<td align="left">Düsseldorf</td>
+<td align="right">6</td>
 </tr>
 <tr class="even">
-<td align="left">Jihovýchod</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">Provence-Alpes-Côte d’Azur</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="left">Bretagne</td>
-<td align="right">4</td>
+<td align="left">Zuid-Holland</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td align="left">Campania</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">Jadranska Hrvatska</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">Jihovýchod</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">Provence-Alpes-Côte d’Azur</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">West Central Scotland</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">Berlin</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Bretagne</td>
 <td align="right">4</td>
 </tr>
 <tr class="even">
@@ -109,40 +134,16 @@ image:
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td align="left">Greater Manchester</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
 <td align="left">Guadeloupe</td>
 <td align="right">4</td>
 </tr>
-<tr class="even">
-<td align="left">West Yorkshire</td>
-<td align="right">4</td>
-</tr>
 <tr class="odd">
-<td align="left">Zuid-Holland</td>
+<td align="left">Sicilia</td>
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td align="left">Berlin</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">Budapest</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">Grad Zagreb</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">Inner London — East</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">Latvija</td>
-<td align="right">3</td>
+<td align="left">Veneto</td>
+<td align="right">4</td>
 </tr>
 </tbody>
 </table>
@@ -156,23 +157,47 @@ image:
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">Budapest</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
 <td align="left">Hauts-de-Seine</td>
 <td align="right">7</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Suceava</td>
 <td align="right">7</td>
 </tr>
+<tr class="even">
+<td align="left">Glasgow City</td>
+<td align="right">5</td>
+</tr>
 <tr class="odd">
-<td align="left">Seine-Saint-Denis</td>
+<td align="left">Napoli</td>
 <td align="right">5</td>
 </tr>
 <tr class="even">
-<td align="left">Splitsko-dalmatinska županija</td>
+<td align="left">Seine-Saint-Denis</td>
 <td align="right">5</td>
 </tr>
 <tr class="odd">
+<td align="left">Splitsko-dalmatinska županija</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">Agglomeratie Leiden en Bollenstreek</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Berlin</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
 <td align="left">City of Belgrade</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Greater Manchester North East</td>
 <td align="right">4</td>
 </tr>
 <tr class="even">
@@ -188,7 +213,7 @@ image:
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td align="left">Napoli</td>
+<td align="left">Rhône</td>
 <td align="right">4</td>
 </tr>
 <tr class="even">
@@ -196,43 +221,19 @@ image:
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td align="left">Berlin</td>
-<td align="right">3</td>
+<td align="left">Varese</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td align="left">Bouches-du-Rhône</td>
 <td align="right">3</td>
 </tr>
 <tr class="odd">
-<td align="left">Budapest</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
 <td align="left">Catania</td>
 <td align="right">3</td>
 </tr>
-<tr class="odd">
-<td align="left">Grad Zagreb</td>
-<td align="right">3</td>
-</tr>
 <tr class="even">
-<td align="left">Lewisham and Southwark</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">Manchester</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">Paris</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">Rhône</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">St. Gallen</td>
+<td align="left">Cheshire East</td>
 <td align="right">3</td>
 </tr>
 </tbody>
