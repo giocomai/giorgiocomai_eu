@@ -18,17 +18,16 @@ image:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, fig.path = "static-")
-
 ```
 
 
-When everybody's moved by the contagious joy of two athletes making history by agreeing to share an Olympic golden medal, the data analyst thinks: "two golden medals for the same competition? is this going to break my dashboard?"
+When everybody's moved by the contagious joy of two athletes making history by agreeing to share an Olympic gold medal, the data analyst thinks: "two gold medals for the same competition? is this going to break my dashboard?"
 
 `r htmltools::HTML("{{< tweet 1421929781159989249 >}}")`
 
 In my case, I was worried it would break my parsing script. Fortunately, it didn't, so after a quick check I could share their joy with relief. And then go back to wondering about the fairness of the Olympic medal table.
 
-Armchair sports fans traditionally like to peddle with the [Olympic medal table](https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm), asking themselves the customary questions... is it fair that the ranking is usually based on who gets the most golden medals? What if the ranking was instead based on some sort of weighted average of the medals? If - say - a gold medal is worth twice as much as a silver, and a silver twice as much as bronze, then would my favourite flag wave at the top of the ranking?
+Armchair sports fans traditionally like to peddle with the [Olympic medal table](https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm), asking themselves the customary questions... is it fair that the ranking is usually based on who gets the most gold medals? What if the ranking was instead based on some sort of weighted average of the medals? If - say - a gold medal is worth twice as much as a silver, and a silver twice as much as bronze, then would my favourite flag wave at the top of the ranking?
 
 But just changing the value of medals brings you only so far, and the medal table may still look disagreeable. What else can be done to shake it up a bit further?
 
@@ -38,7 +37,7 @@ So... there we go.
 
 ## Going NUTS, and beyond
 
-How do we attribute a medal to a region? There's no completely right approach, but place of birth of athletes should be meaningful enough in most cases. So all that is needed is find the place of birth of all medalists, geocode it, associate it with administrative entities of reasonable size, et... voilà!
+How do we attribute a medal to a region? There's no perfect approach, but place of birth of athletes should be meaningful enough in most cases. So all that is needed is find the place of birth of all medalists, geocode it, associate it with administrative entities of reasonable size, et... voilà!
 
 So here's how I went about it, considering that I wanted to have data unencumbered by copyright to share the fun. 
 
@@ -47,15 +46,15 @@ So here's how I went about it, considering that I wanted to have data unencumber
 3. query the Wikipedia API to get the Wikidata ID of each medalist
 4. proceed in the much more data-friendly Wikidata, and get the place of birth of each medalist
 5. get from Wikidata the coordinates of the place of birth of each medalist
-6. match the coordinates to the administrative units where they are located. In principle, this could be achieved remaining within Wikidata by retrieving the [relevant property](https://www.wikidata.org/wiki/Property:P131) for the place of birth this may lead to inconsistent results. I included the relevant data in the dataset, but I also did the geo-matching with NUTS regions - a standardised classification of administrative entities defined by the European Union (here's a list of [countries covered by NUTS](https://ec.europa.eu/eurostat/web/nuts/nuts-maps), and here's the [geographic dataset for download](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/countries))
+6. match the coordinates to the administrative units where they are located. Data from Wikidata may have some inconsistencies due to different administrative subdivisions around the world, so on top of the ones included in Wikiata I did the geo-matching with NUTS regions - a standardised classification of administrative entities defined by the European Union (here's a list of [countries covered by NUTS](https://ec.europa.eu/eurostat/web/nuts/nuts-maps), and here's the [geographic dataset for download](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/countries))
 7. (optional) get from Wikidata all other sorts of data about the medalists or the place where they were born
 
 
 ## The dataset
 
-The resulting dataset is now [available on GitHub](https://github.com/EDJNet/olympics2020nuts). Here's [the csv file](https://github.com/EDJNet/olympics2020nuts/blob/main/all_medalists_wd_nuts.csv), and here's [the script used to retrieve the data](https://edjnet.github.io/olympics2020nuts/).  
+The resulting dataset is now [available on GitHub](https://github.com/EDJNet/olympics2020nuts). You can also check out [the script used to retrieve the data](https://edjnet.github.io/olympics2020nuts/).  
 
-How's the quality of the dataset? Not too bad for Europe, as the place of birth of only a handful of medalists is missing. Probably more work to do to turn this into something more meaningful at the global level. 
+How's the quality of the dataset? Not too bad, in particular, for Europe, as the place of birth of most medalists is recorded in Wikidata. Globally, Wikidata has recorded the place of birth for about 80 per cent of medalists. It's a good starting point.
 
 The good news is that you can join the fun! :-)
 
@@ -63,50 +62,80 @@ Of course, you can contribute by adding to Wikidata the missing information, whi
 
 And then... see who *you* can place at the top of the medal table by playing around with the data. 
 
-You can find the code and all details about data parsing in this repository.
+You can find the dataset, the code and all details about data parsing in [this repository](https://github.com/EDJNet/olympics2020nuts).
 
-You can download the table with all the data as a csv file, and play with it as you like. 
-
-If you want to have a quick look at the data based on place of birth, why not head on to our online tool, [`latlon2map`](https://latlon2map.europeandatajournalism.eu/), that makes it easy to explore quickly all tabular data that have a longitude and latitude column.
+If you want to have a quick look at the data based on place of birth, why not head on to our online tool, [`latlon2map`](https://latlon2map.europeandatajournalism.eu/), that makes it easy to explore quickly all tabular data that have a longitude and latitude column. Upload the csv file there, set the right latitude and longitude columns, and you're good to go.
 
 ![Screenshot of the web interface of latlon2map](screenshot_latlon2map.png)
 
-As for me, tired with all the data processing, I took a lazy if controversial approach. I decided that I will count each medal and each medalist the same. Bronze and gold look just as shiny to me. The official table counts just one medal for a team win, but I think that each piece of metal is a piece of joy for the person who brings it home: if eight people row together to get a medal and each takes a medal, then that's eight medals for me. And then... let's see how things go by focusing only on NUTS regions in Europe. 
+As for me, tired with all the data processing, I took a lazy if controversial approach. I decided that I will count each medal and each medalist the same. Bronze and gold look just as shiny to me. The official table counts just one medal for a team win, but I think that each piece of metal is a piece of joy for the person who brings it home: if eight people row together to get a medal and each can place a medal around their neck, then that's eight medals for me. And then... let's see how things go by focusing only on NUTS regions in Europe. 
 
 So... here's my medal table for NUTS2:
 
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
 library("dplyr", warn.conflicts = FALSE)
-all_medalists_wd_nuts_df <- readr::read_csv(file = "all_medalists_wd_nuts.csv", show_col_types = FALSE) 
+all_medalists_wd_nuts_df <- readr::read_csv(file = "medalists_nuts_only.csv", show_col_types = FALSE) 
 
 all_medalists_wd_nuts_df %>% 
   dplyr::filter(is.na(nuts2_name)==FALSE) %>% 
-  dplyr::group_by(nuts2_name) %>% 
+  dplyr::group_by(nuts2_name, nuts0_name) %>% 
   dplyr::count(name = "Total medals", sort = TRUE) %>% 
   head(20) %>% 
+  dplyr::rename(`NUTS 2` = nuts2_name, Country = nuts0_name) %>% 
   knitr::kable(caption = "Total medals by place of birth of medalist at the 2020 Summer Olympics / NUTS2")
 ```
 
 
+So what sport is it that folks in Ile-de-France are so good at? Mostly judo and fencing, it appears. 
 
+```{r}
+all_medalists_wd_nuts_df %>% 
+  dplyr::filter(is.na(nuts2_name)==FALSE) %>% 
+  dplyr::filter(nuts2_name == "Ile-de-France") %>%
+  group_by(event_part_of) %>% 
+  count(sort = TRUE) %>% 
+  dplyr::rename(Sport = event_part_of, `Total medals` = n) %>% 
+  knitr::kable(caption = "Medals by sport for medalists born in Ile-de-France")
+
+```
+
+
+And what if we adjust by population... would the ranking change significantly?
 
 
 
 ```{r}
 all_medalists_wd_nuts_df %>% 
-  dplyr::filter(is.na(nuts3_name)==FALSE) %>% 
-  dplyr::group_by(nuts3_name) %>% 
+  dplyr::filter(is.na(nuts2_name)==FALSE) %>% 
+  dplyr::group_by(nuts2_name) %>% 
   dplyr::count(name = "Total medals", sort = TRUE) %>% 
-  head(20) %>% 
-  knitr::kable(caption = "Total medals by place of birth of medalist at the 2020 Summer Olympics / NUTS3")
+dplyr::ungroup() %>% 
+  dplyr::left_join(y = all_medalists_wd_nuts_df %>% 
+  dplyr::distinct(nuts2_name, nuts2_population, nuts0_name), by = "nuts2_name") %>% 
+  dplyr::mutate(`Medals per million residents` = 1e06/(nuts2_population/`Total medals`)) %>% 
+  dplyr::arrange(desc(`Medals per million residents`)) %>% 
+  dplyr::rename(`NUTS 2` = nuts2_name,
+                Population = nuts2_population) %>% 
+  dplyr::mutate(Population = scales::number(Population), 
+                `Medals per million residents` = scales::number(`Medals per million residents`, accuracy = 0.01)) %>% 
+  knitr::kable(caption = "Medals per million residents of the NUTS2 region where each medalist at the 2020 Summer Olympics was born / NUTS2")
+  
+  
 ```
 
 
 
+I like this one. I like lazy summer afternoons. 
 
 
+If you want to play around with this dataset or expand on it, you can download it as a .csv file [from this repository](https://github.com/EDJNet/olympics2020nuts), where you find also a detailed description of the procedure used to generate it. 
+
+```{r}
+
+```
 
 
+P.S. The data in this post have been last updated on: `r fs::file_info("medalists_nuts_only.csv") %>% dplyr::pull(birth_time)`.
 
 
 
