@@ -118,7 +118,8 @@ dplyr::ungroup() %>%
                 Population = nuts2_population,
                 Country = nuts0_name) %>% 
   dplyr::mutate(Population = scales::number(Population), 
-                `Medals per million residents` = scales::number(`Medals per million residents`, accuracy = 0.01)) %>% 
+                `Medals per million residents` = scales::number(`Medals per million residents`, accuracy = 0.01)) %>%  
+  head(20) %>% 
   knitr::kable(caption = "Medals per million residents of the NUTS2 region where each medalist at the 2020 Summer Olympics was born / NUTS2")
   
   
