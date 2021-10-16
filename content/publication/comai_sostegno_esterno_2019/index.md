@@ -1,5 +1,5 @@
 +++
-title = "Il sostegno esterno ufficiale agli stati de facto nel Caucaso del sud” [“Official external support to de facto states in the South Caucasus”]"
+title = "Official external support to de facto states in the South Caucasus [published in Italian]"
 date = 2019-10-17
 authors = ["Giorgio Comai"]
 publication_types = ["6"]
