@@ -7,6 +7,6 @@ options(
   blogdown.ext = ".md",
   blogdown.subdir = "post",
   blogdown.yaml.empty = TRUE,
-  blogdown.new_bundle = TRUE
+  blogdown.new_bundle = TRUE,
+  blogdown.hugo.version = "0.70.0"
 )
-
