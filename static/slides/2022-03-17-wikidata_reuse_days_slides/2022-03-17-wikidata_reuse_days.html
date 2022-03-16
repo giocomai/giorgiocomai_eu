@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Wikidata for data journalism</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Giorgio Comai" />
+    <meta name="date" content="2022-03-17" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom_wikidata.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Wikidata for data journalism
+## (with R and ‘tidywikidatar’)
+<a href="https://diff.wikimedia.org/event/%e2%99%bb%ef%b8%8f-wikidata-for-data-journalism-with-r/">Wikidata Data Reuse Days 2022</a>
+### Giorgio Comai
+### (OBCT/CCI - EDJNet)
+### 17 March 2022
+
+---
+
+# Contents
+
+- who am I?
+- why I felt the need for a new package for interacting with Wikidata?
+- `tidywikidatar` - a new(ish) R package
+- how it solves these problems
+- how `tidywikidatar` works
+- actual use cases
+- an interactive web interface for checking manually what automatic approaches may not get right
+- what next?
+
+
+
+
+---
+
+# Hi, I'm Giorgio Comai
+
+- researcher and data analyst working for OBCT/CCI
+- we coordinate the [European Data Journalism Network](https://www.europeandatajournalism.eu/)
+
+
+&lt;img src="img/EDJNet-logo.svg" style="display: block; margin: auto;" /&gt;
+
+- one of our goals is to create tools for data journalists
+- I am the author of the R package `tidywikidatar` - an R package that facilitates exploring 'Wikidata' through tidy data frames
+- online mostly as *@giocomai* e.g. on [GitHub](https://github.com/giocomai/), [Twitter](https://twitter.com/giocomai), [Wikidata](https://www.wikidata.org/wiki/User:Giocomai)
+- I have a website, [giorgiocomai.eu](https://giorgiocomai.eu/)
+
+---
+# Why a new package for R? 
+
+- there are other Wikidata packages for R, in particular:
+  - `WikidataQueryServiceR` - SPARQL queries!
+  - `WikidataR` - all of Wikidata's complexity, which in R translates into nested lists that differ depending on the content
+- R has quickly grown to prominence in data journalism largely thanks to the `tidyverse`, a suite of packages based on a consistent grammar that has data frames at its core. There was not an easy way to use Wikidata in a way that is consistent with this logic
+
+---
+# What's the matter?
+
+- R users mostly hate nested lists
+- some probably also hate SPARQL, but even more simply don't know much about SPARQL
+- if you don't know what to expect, it's a pain to process data
+- existing tools are not fit for the iterative data analysis process that is at the core of data journalism
+- re-running an analysis with minor changes is a very common part of the workflow... without built-in caching, this can be painfully slow
+
+---
+
+# `tidywikidatar`
+
+&lt;div style ="float: right;" &gt;&lt;img src="img/tidywikidatar_logo.png" style = "width:256px;"&gt;&lt;/img&gt;&lt;/div&gt;
+
+Check out website with documentation and examples:
+https://edjnet.github.io/tidywikidatar/
+
+[![CRAN status](https://www.r-pkg.org/badges/version/tidywikidatar)](https://cran.r-project.org/package=tidywikidatar)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/last-month/tidywikidatar?color=blue)](https://r-pkg.org/pkg/tidywikidatar)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/tidywikidatar?color=blue)](https://r-pkg.org/pkg/tidywikidatar)
+
+- everything in tabular format
+- one row, one piece of information
+- easy local caching
+- easy integration with `dplyr` piped routines
+- get image credits from WikiMedia commons
+- include Wikipedia in the exploration, or use it as a starting point
+
+---
+class: middle, center
+background-image: url(img/DRD_background_lower.png)
+background-size: contain
+
+# A couple of examples of practical use cases
+
+---
+### Olympics 2020 medalists by place of birth
+
+https://github.com/EDJNet/olympics2020nuts
+
+&lt;iframe src="https://edjnet.github.io/olympics2020nuts/medalists_map.html" width="100%" height="400px" data-external="1"&gt;&lt;/iframe&gt;
+---
+### Main air routes that could be travelled by train
+
+Wikidata used for: defining city hubs for airports, getting coordinates of airports (for excluding those on islands), use unique identifiers for merging with train dataset
+[https://edjnet.github.io/european_routes/](https://edjnet.github.io/european_routes/)
+
+&lt;img src="img/air_train_routes_germany.png" width="720px" /&gt;
+
+
+
+---
+### Mapping diversity
+
+https://medium.com/european-data-journalism-network/finding-gendered-street-names-a-step-by-step-walkthrough-with-r-7608c2d36a77
+
+&lt;iframe src="https://mappingdiversity.eu/italy/bologna/" width="100%" height="400px" data-external="1"&gt;&lt;/iframe&gt;
+
+
+
+---
+class: middle, center
+background-image: url(img/DRD_background_lower.png)
+background-size: contain
+
+# `tidywikidatar`
+# The basics
+
+---
+# Enable local caching
+
+
+```r
+library(dplyr, warn.conflicts = FALSE)
+library("tidywikidatar")
+
+tw_enable_cache()
+tw_set_cache_folder(
+  path = fs::path(fs::path_home_r(),
+                  "R",
+                  "tw_data"))
+tw_set_language(language = "en")
+tw_create_cache_folder(ask = FALSE)
+```
+
+---
+# Or e.g. MySQL
+
+
+```r
+library(dplyr, warn.conflicts = FALSE)
+library("tidywikidatar")
+
+tw_enable_cache(SQLite = FALSE)
+tw_set_cache_db(driver = "MySQL",
+                host = "localhost",
+                port = 3306,
+                database = "tidywikidatar",
+                user = "secret_username",
+                pwd = "secret_password")
+```
+
+---
+# Search
+
+
+```r
+tw_search("European Union")
+```
+
+```
+## # A tibble: 10 × 3
+##    id       label                                           description         
+##    &lt;chr&gt;    &lt;chr&gt;                                           &lt;chr&gt;               
+##  1 Q458     European Union                                  economic and politi…
+##  2 Q319328  European Union                                  antifascist resista…
+##  3 Q326124  directive of the European Union                 legislative act of …
+##  4 Q185441  Member state of the European Union              state that is party…
+##  5 Q208202  European Union law                              body of treaties an…
+##  6 Q392918  European Union agency                           distinct body of th…
+##  7 Q1126192 European Union Prize for Literature             award               
+##  8 Q308905  presidency of the Council of the European Union rotating presidency 
+##  9 Q207203  Europol                                         police agency of th…
+## 10 Q276255  European Union Aviation Safety Agency           European Union civi…
+```
+
+---
+# Get an item
+
+
+```r
+tw_search("European Union") %&gt;% 
+  slice(1) %&gt;% 
+  tw_get() 
+```
+
+```
+## # A tibble: 557 × 4
+##    id    property value                rank  
+##    &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;                &lt;chr&gt; 
+##  1 Q458  label_en European Union       &lt;NA&gt;  
+##  2 Q458  alias_en EU                   &lt;NA&gt;  
+##  3 Q458  alias_en E.U.                 &lt;NA&gt;  
+##  4 Q458  alias_en eu                   &lt;NA&gt;  
+##  5 Q458  alias_en 🇪🇺                   &lt;NA&gt;  
+##  6 Q458  alias_en Europe               &lt;NA&gt;  
+##  7 Q458  P1448    Европейски съюз      normal
+##  8 Q458  P1448    Evropská unie        normal
+##  9 Q458  P1448    Den Europæiske Union normal
+## 10 Q458  P1448    Europäische Union    normal
+## # … with 547 more rows
+```
+
+---
+# Get a specific property
+
+
+```r
+tw_search("European Union") %&gt;% 
+  slice(1) %&gt;% 
+  tw_get_property(p = "P31") 
+```
+
+```
+## # A tibble: 6 × 4
+##   id    property value    rank  
+##   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; 
+## 1 Q458  P31      Q4120211 normal
+## 2 Q458  P31      Q3623811 normal
+## 3 Q458  P31      Q1335818 normal
+## 4 Q458  P31      Q7210356 normal
+## 5 Q458  P31      Q1048835 normal
+## 6 Q458  P31      Q170156  normal
+```
+
+---
+# Get a specific property
+
+
+```r
+tw_search("European Union") %&gt;% 
+  slice(1) %&gt;% 
+  tw_get_property(p = "P31") %&gt;% 
+  tw_label()
+```
+
+```
+## # A tibble: 6 × 4
+##   id             property    value                        rank  
+##   &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;                        &lt;chr&gt; 
+## 1 European Union instance of regional organization        normal
+## 2 European Union instance of economic union               normal
+## 3 European Union instance of supranational union          normal
+## 4 European Union instance of political organization       normal
+## 5 European Union instance of political territorial entity normal
+## 6 European Union instance of confederation                normal
+```
+
+---
+# What about qualifiers?
+
+e.g. when did member states join the EU?
+
+
+
+```r
+tw_get_qualifiers(id = "Q458", # European Union
+                  p = "P150") # contains administrative territorial entity
+```
+
+```
+## # A tibble: 37 × 8
+##    id    property qualifier_id qualifier_prope… qualifier_value qualifier_value…
+##    &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;           &lt;chr&gt;           
+##  1 Q458  P150     Q31          P580             +1958-01-01T00… time            
+##  2 Q458  P150     Q183         P580             +1958-01-01T00… time            
+##  3 Q458  P150     Q142         P580             +1958-01-01T00… time            
+##  4 Q458  P150     Q142         P1012            Q3769           wikibase-entity…
+##  5 Q458  P150     Q142         P1012            Q17012          wikibase-entity…
+##  6 Q458  P150     Q142         P1012            Q17054          wikibase-entity…
+##  7 Q458  P150     Q142         P1012            Q17063          wikibase-entity…
+##  8 Q458  P150     Q142         P1012            Q17070          wikibase-entity…
+##  9 Q458  P150     Q142         P1012            Q126125         wikibase-entity…
+## 10 Q458  P150     Q38          P580             +1958-01-01T00… time            
+## # … with 27 more rows, and 2 more variables: rank &lt;chr&gt;, set &lt;dbl&gt;
+```
+
+
+---
+# What about qualifiers?
+
+
+```r
+tw_get_qualifiers(id = "Q458", # European Union
+                  p = "P150") %&gt;% # contains administrative territorial entity 
+  filter(qualifier_property == "P580") %&gt;% # keep only "start time"
+* transmute(country = tw_get_label(qualifier_id),
+*           start_time = qualifier_value)
+```
+
+```
+## # A tibble: 28 × 2
+##    country                    start_time           
+##    &lt;chr&gt;                      &lt;chr&gt;                
+##  1 Belgium                    +1958-01-01T00:00:00Z
+##  2 Germany                    +1958-01-01T00:00:00Z
+##  3 France                     +1958-01-01T00:00:00Z
+##  4 Italy                      +1958-01-01T00:00:00Z
+##  5 Luxembourg                 +1958-01-01T00:00:00Z
+##  6 Kingdom of the Netherlands +1958-01-01T00:00:00Z
+##  7 Denmark                    +1973-01-01T00:00:00Z
+##  8 Republic of Ireland        +1973-01-01T00:00:00Z
+##  9 Greece                     +1981-01-01T00:00:00Z
+## 10 Portugal                   +1986-01-01T00:00:00Z
+## # … with 18 more rows
+```
+
+- for more, check `tw_get_property_with_details()`
+
+---
+### Dealing with multiple results when only one is needed
+
+Easy questions can be difficult: in which country is London?
+
+
+```r
+tibble::tibble(city_qid = c("Q84")) %&gt;% 
+  dplyr::mutate(city_label = tw_get_label(city_qid), 
+                country_qid = tw_get_p(id = city_qid,
+                                       p = "P17")) %&gt;% 
+  tidyr::unnest(country_qid) %&gt;% 
+  mutate(country = tw_get_label(country_qid))
+```
+
+```
+## # A tibble: 8 × 4
+##   city_qid city_label country_qid country                                    
+##   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;                                      
+## 1 Q84      London     Q2277       Roman Empire                               
+## 2 Q84      London     Q110888     Kingdom of Essex                           
+## 3 Q84      London     Q105092     Kingdom of Mercia                          
+## 4 Q84      London     Q105313     Kingdom of Wessex                          
+## 5 Q84      London     Q179876     Kingdom of England                         
+## 6 Q84      London     Q161885     Great Britain                              
+## 7 Q84      London     Q174193     United Kingdom of Great Britain and Ireland
+## 8 Q84      London     Q145        United Kingdom
+```
+
+---
+### Dealing with multiple results when only one is needed
+
+- keeping first result is tricky
+- keeping only preferred may still give more than one result
+- people who love tabular data often want just one result, that needs to be "good enough"
+
+
+
+```r
+tibble::tibble(city_qid = c("Q84", "Q220")) %&gt;% 
+  dplyr::mutate(city_label = tw_get_label(city_qid), 
+                country_qid = tw_get_p(id = city_qid,
+                                       p = "P17",
+*                                      preferred = TRUE,
+*                                      latest_start_time = TRUE,
+*                                      only_first = TRUE)) %&gt;%
+  dplyr::mutate(country_label = tw_get_label(country_qid))
+```
+
+```
+## # A tibble: 2 × 4
+##   city_qid city_label country_qid country_label 
+##   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;         
+## 1 Q84      London     Q145        United Kingdom
+## 2 Q220     Rome       Q38         Italy
+```
+
+
+
+
+---
+class: middle, center
+background-image: url(img/DRD_background_lower.png)
+background-size: contain
+
+# Different entry points
+
+---
+### Search
+
+- `tw_search()` - search strings
+
+### Query
+
+- `tw_query()` - simple queries based on property/value couples
+- `tw_get_all_with_p()` - get all items that have a given property, irrespective of their value
+
+### Based on Wikipedia
+
+- `tw_get_wikipedia_page_links()` - Get all Wikidata Q identifiers of all Wikipedia pages linked to input
+- `tw_get_wikipedia_page_section_links()` - All identifiers found in a specific section of a Wikipedia page
+
+
+---
+class: middle, center
+background-image: url(img/DRD_background_lower.png)
+background-size: contain
+
+# An example starting from Wikipedia
+
+---
+# Election of the President of the Republic in Italy
+
+&lt;div style ="float: right;" &gt;&lt;img src="img/IV_scrutinio.png" style = "width:256px;"&gt;&lt;/img&gt;&lt;/div&gt;
+
+
+- [Election of the President of the Republic in Italy](https://it.wikipedia.org/wiki/Elezione_del_Presidente_della_Repubblica_Italiana_del_2022)
+- the electoral college can vote literally for whoever they like
+- the list ends up including very different candidates, from respected intellectuals to football players and porn actors
+- almost all of them with one thing in common: they are on Wikidata, but Wikidata does not know they have something in common.
+
+---
+## Wikidata identifiers
+
+.pull-left[
+Take a single section:
+
+
+```r
+df &lt;- tw_get_wikipedia_page_section_links(
+  title = "Elezione del Presidente della Repubblica Italiana del 2022",
+  section_title = "IV scrutinio",
+  language = "it")
+
+df %&gt;% select(wikipedia_title, qid)
+```
+]
+
+.pull-right[
+
+
+|wikipedia_title      |qid       |
+|:--------------------|:---------|
+|Adnkronos            |Q359875   |
+|Alberto Airola       |Q14636378 |
+|Aldo Giannuli        |Q3609233  |
+|Alessandro Altobelli |Q346945   |
+|Alessandro Barbero   |Q960451   |
+|Carlo Nordio         |Q19357364 |
+|Dino Zoff            |Q180661   |
+|Domenico De Masi     |Q3713005  |
+]
+
+---
+# Find out more
+
+
+```r
+pob_df &lt;- df %&gt;% 
+  select(qid) %&gt;% 
+  mutate(name = tw_get_label(qid)) %&gt;%
+  mutate(place_of_birth_id = tw_get_p(id = qid, p = "P19",only_first = TRUE)) %&gt;%
+  mutate(place_of_birth = tw_get_label(place_of_birth_id)) %&gt;%
+  mutate(place_of_birth_coordinates = tw_get_p(id = place_of_birth_id,
+                                               p = "P625",
+                                               only_first = TRUE))
+pob_df
+```
+
+```
+## # A tibble: 36 × 5
+##    qid       name               place_of_birth_… place_of_birth place_of_birth_…
+##    &lt;chr&gt;     &lt;chr&gt;              &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;           
+##  1 Q359875   Adnkronos          &lt;NA&gt;             &lt;NA&gt;           &lt;NA&gt;            
+##  2 Q14636378 Alberto Airola     Q9474            Moncalieri     45,7.683333     
+##  3 Q3609233  Aldo Giannuli      Q3519            Bari           41.125277777778…
+##  4 Q346945   Alessandro Altobe… Q128211          Sonnino        41.414458333333…
+##  5 Q960451   Alessandro Barbero Q495             Turin          45.066666666667…
+##  6 Q19357364 Carlo Nordio       Q5475            Treviso        45.672219444444…
+##  7 Q180661   Dino Zoff          Q53131           Mariano del F… 45.916666666667…
+##  8 Q3713005  Domenico de Masi   Q277969          Rotello        41.7475,15.0041…
+##  9 Q3723207  Elisabetta Belloni Q220             Rome           41.893055555556…
+## 10 Q726247   Franco Grillini    Q94979           Pianoro        44.383333333333…
+## # … with 26 more rows
+```
+---
+### Here they are on a map
+.pull-left[
+
+```r
+pob_sf &lt;- pob_df  %&gt;%
+  tidyr::separate(
+    col = place_of_birth_coordinates,
+    into = c("pob_latitude","pob_longitude"),
+    sep = ",",
+    remove = TRUE,
+    convert = TRUE) %&gt;%
+  filter(is.na(pob_latitude)==FALSE) %&gt;% 
+  sf::st_as_sf(coords = c("pob_longitude", "pob_latitude"), crs = 4326)
+
+library("ggplot2")
+pop_gg &lt;- ggplot() +
+  geom_sf(data = ll_get_nuts_it(level = 3, no_check_certificate = TRUE)) +
+  geom_sf(data = pob_sf, colour = "deeppink4") +
+  theme_minimal()
+```
+
+```
+## ℹ Source: https://www.istat.it/it/archivio/222527
+## ℹ Istat (CC-BY)
+```
+]
+
+.pull-right[
+![](2022-03-17-wikidata_reuse_days_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+
+]
+
+---
+### All the usual things we expect from Wikidata
+.pull-left[
+
+```r
+occupation_df &lt;- df %&gt;% 
+  pull(qid) %&gt;% 
+  tw_get_property(p = "P31") %&gt;% # get "instance of"
+  filter(value == "Q5") %&gt;% # keep only humans
+  tw_get_property(p = "P106") %&gt;% # get occupation
+ # filter(value!="Q82955") %&gt;% # exclude politicians
+  group_by(value) %&gt;% 
+  count(sort = TRUE) %&gt;% 
+  ungroup() %&gt;% 
+  transmute(occupation = tw_get_label(value), n)
+```
+]
+
+.pull-right[
+
+|occupation                   |  n|
+|:----------------------------|--:|
+|politician                   | 18|
+|university teacher           |  5|
+|judge                        |  5|
+|association football player  |  5|
+|jurist                       |  4|
+|journalist                   |  4|
+|lawyer                       |  3|
+|association football manager |  3|
+|historian                    |  2|
+|sociologist                  |  2|
+|writer                       |  2|
+|high civil servant           |  1|
+|deputy chairperson           |  1|
+|essayist                     |  1|
+|music director               |  1|
+|professor                    |  1|
+|entrepreneur                 |  1|
+|media proprietor             |  1|
+|conductor                    |  1|
+|economist                    |  1|
+|diplomat                     |  1|
+|psychologist                 |  1|
+|film director                |  1|
+|sports executive             |  1|
+|radio personality            |  1|
+|medievalist                  |  1|
+|theatrical director          |  1|
+|academic                     |  1|
+|basketball player            |  1|
+|physician                    |  1|
+|film critic                  |  1|
+|magistrate                   |  1|
+|musician                     |  1|
+|clerk                        |  1|
+|banker                       |  1|
+|television presenter         |  1|
+
+]
+---
+### And other things useful for data visualisation and interactive interfaces, e.g. quick access to images...
+
+
+```r
+president_df &lt;- tw_search("Sergio Mattarella") %&gt;% 
+  tw_filter_first(p = "P31", q = "Q5") 
+
+president_df %&gt;% tw_get_image() 
+```
+
+```
+## # A tibble: 1 × 2
+##   id       image                    
+##   &lt;chr&gt;    &lt;chr&gt;                    
+## 1 Q3956186 Presidente Mattarella.jpg
+```
+
+
+
+```r
+president_df %&gt;%  tw_get_image(format = "embed", width = 300) %&gt;% pull(image)
+```
+
+```
+## [1] "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Presidente Mattarella.jpg&amp;width=300"
+```
+---
+### ...with metadata and credits line
+
+
+```r
+president_df %&gt;% tw_get_image_metadata() %&gt;% 
+  tidyr::pivot_longer(cols = -1, names_to = "property", values_transform = as.character)
+```
+
+```
+## # A tibble: 18 × 3
+##    id       property                   value                                    
+##    &lt;chr&gt;    &lt;chr&gt;                      &lt;chr&gt;                                    
+##  1 Q3956186 image_filename             "Presidente Mattarella.jpg"              
+##  2 Q3956186 object_name                "Presidente Mattarella"                  
+##  3 Q3956186 image_description          "&lt;a href=\"https://en.wikipedia.org/wiki…
+##  4 Q3956186 categories                 "Attribution only license|Images from th…
+##  5 Q3956186 assessments                ""                                       
+##  6 Q3956186 credit                     "&lt;a rel=\"nofollow\" class=\"external te…
+##  7 Q3956186 artist                     "Unknown author&lt;span style=\"display: no…
+##  8 Q3956186 permission                  &lt;NA&gt;                                    
+##  9 Q3956186 license_short_name         "Attribution"                            
+## 10 Q3956186 license_url                 &lt;NA&gt;                                    
+## 11 Q3956186 license                     &lt;NA&gt;                                    
+## 12 Q3956186 usage_terms                 &lt;NA&gt;                                    
+## 13 Q3956186 attribution_required        &lt;NA&gt;                                    
+## 14 Q3956186 copyrighted                 &lt;NA&gt;                                    
+## 15 Q3956186 restrictions               "personality"                            
+## 16 Q3956186 date_time                  "2020-04-14 18:33:11"                    
+## 17 Q3956186 date_time_original         "4 March 2015"                           
+## 18 Q3956186 commons_metadata_extension "1.2"
+```
+
+---
+### Back and forth between Wikidata and Wikipedia
+
+This gets the Q identifier of all pages linked from a the Wikipedia page of a given Q identifier. Easy peasy :-)
+
+
+```r
+president_df %&gt;% 
+  tw_get_wikipedia(language = "it") %&gt;% # gets url of Wikipedia page from QID
+  tw_get_wikipedia_page_links(language = "it") %&gt;% 
+  select(wikipedia_title, qid) 
+```
+
+```
+## # A tibble: 489 × 2
+##    wikipedia_title                             qid  
+##    &lt;chr&gt;                                       &lt;chr&gt;
+##  1 Fabio Vander                                &lt;NA&gt; 
+##  2 Ordine per Meriti Eccezionali               &lt;NA&gt; 
+##  3 Discussioni template:Capi di Stato d'Europa &lt;NA&gt; 
+##  4 1941                                        Q5231
+##  5 1987                                        Q2429
+##  6 1989                                        Q2425
+##  7 1990                                        Q2064
+##  8 1998                                        Q2089
+##  9 1999                                        Q2091
+## 10 2001                                        Q1988
+## # … with 479 more rows
+```
+
+---
+class: middle, center
+background-image: url(img/DRD_background_lower.png)
+background-size: contain
+
+# Integration with interactive interfaces
+
+---
+class: middle, center
+background-image: url(img/screenshot_mapping_diversity_01.png)
+background-size: contain
+
+---
+class: middle, center
+background-image: url(img/screenshot_mapping_diversity_02.png)
+background-size: contain
+
+
+---
+class: middle, center
+background-image: url(img/DRD_background_lower.png)
+background-size: contain
+
+# Issues and next steps
+
+---
+# General issues
+
+- if you are processing many thousands of items, the current approach can be very slow when run for the first time (near instant thanks to caching later)
+  - no obvious long term solution, but a future version will allow for an easier way to share the cache to make sure others can also run the script instantly
+- no easy way to "give back" to Wikidata
+  - I'm considering some sort of integration with [QuickStatements](quickstatements.toolforge.org/), and welcome recommendations on best practices (not so much on the technical implementation, but rather, what kind of instructions or warnings I should expose to users)
+
+
+---
+# Issues related to the web interface and mapping
+
+
+- finalise the web interface, hopefully it will be out and public by the summer
+- make it more generic, for easier checks of arbitrary sets of strings
+- consider data issues, in particular the fact that many streets have an own item on Wikidata
+- consider ways to "give back" newly gathered data to Wikidata (the data generated via the web interface will anyway be public)
+- consider what to do with indirect outputs, e.g. lists of people who have street dedicated to them, but who apparently are not on Wikidata (also considering the inherent biases)
+
+---
+
+# `tidywikidatar`
+
+&lt;div style ="float: right;" &gt;&lt;img src="img/tidywikidatar_logo.png" style = "width:256px;"&gt;&lt;/img&gt;&lt;/div&gt;
+
+Check out website with documentation and examples:
+https://edjnet.github.io/tidywikidatar/
+
+[![CRAN status](https://www.r-pkg.org/badges/version/tidywikidatar)](https://cran.r-project.org/package=tidywikidatar)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/last-month/tidywikidatar?color=blue)](https://r-pkg.org/pkg/tidywikidatar)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/tidywikidatar?color=blue)](https://r-pkg.org/pkg/tidywikidatar)
+
+- everything in tabular format
+- one row, one piece of information
+- easy local caching
+- easy integration with `dplyr` piped routines
+- get image credits from WikiMedia commons
+- include Wikipedia in the exploration, or use it as a starting point
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
