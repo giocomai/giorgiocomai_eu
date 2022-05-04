@@ -32,7 +32,7 @@ Overall, this brief analysis shows that:
 - indeed, Syria has become a common topic in the news on Russia's First Channel, with almost one quarter of news items making reference to Syria in the month of October 2015;
 - in October 2015, Syria has been mentioned much more often than either Crimea or Ukraine (up to three times as much);
 - Syria has never reached the level of attention that was dedicated to Ukraine for a considerable part of the last two years;
-- Ukraine has dominated the news cycle in Russia for much of 2014 and 2015, with more than one quarter of news stories published on the website of Russia's First Chanell making reference to Ukraine for each month from March 2014 until April 2015;
+- Ukraine has dominated the news cycle in Russia for much of 2014 and 2015, with more than one quarter of news stories published on the website of Russia's First Channel making reference to Ukraine for each month from March 2014 until April 2015;
 - in a few months, almost half of all news items made reference to Ukraine (in particular,  the months of March 2014, July 2014 and February 2015).
 
 In brief, while Syria has been receiving a lot of attention in recent weeks, and, indeed, it has replaced Ukraine as the main focus of attention in terms of foreign affairs on Russia's First Channel, the truly astonishing data emerging from these graphs is the consistently high level of attention dedicated to events in Ukraine for a lengthy period of time, from early 2014 to September 2015.
