@@ -36,3 +36,13 @@ How difficult is it really to cross the border? Even for local residents who do 
 Throughout the documentary, such considerations remain, however, in the background. Politics and policies are not discussed explicitly: the apparent focus remains on an administrative decision to allow or not allow the border crossing, which could seemingly go either way. And even this key aspect slowly drifts into the background as personal stories and painful recollections take centre stage. 
 
 We are then left with the majesty of the dam and the machinery that controls it, and water, with its brutal and natural force.
+
+## Recommended to...
+
+For people who are very familiar with the context, this documentary is unlikely to offer new insights. Some of the protagonist's experiences will also feel very familiar to those who travelled to the region. The documentary focuses on the life of local Georgians, and the dialogues are almost completely in Georgian (even if a characteristic switch to Russian expressions appears repeatedly in dialogues involving elderly women working at the dam). Experiences from other communities living on "the other side" of the border remain - understandably, given the focus of the documentary on the area around the Inguri e and the broader circumstances - out of reach.
+
+For viewers who are less familiar with the context, the personal experiences that form the core of the film will open new questions about local dynamics; certainly, they won't offer explanations about the situation. The underlying feeling of suffering caused by the war, and specifically by the border, is certainly a big and important part of the story. 
+
+Both kinds of viewers will appreciate the beautiful and powerful images of the dam, and the personal touch stemming from the interaction with people working there. Minute after minute, what might have started as as a journalistic feature about the dam, turns into more intimate dialogues and recollection of stories of the people who live across the border. The dam, its impressive size, and the power of water, are a constant presence.
+
+The film is nicely shot, with quality images, colour, and audio recordings. 
