@@ -103,7 +103,7 @@ tw_set_language(language = "en")
 tw_create_cache_folder(ask = FALSE)
 ```
 
-```{r include = FALSE, eval = TRUE}
+```{r include = FALSE, eval = FALSE}
 tw_enable_cache(SQLite = FALSE)
 tidywikidatar::tw_set_cache_db(driver = "MySQL",
                                database = "tidywikidatar",

@@ -9,7 +9,7 @@ tags:
   - data journalism
   - R packages
 subtitle: ''
-summary: 'An online event part of the Wikidata Data Reuse Days 2022.'
+summary: 'Session for Dataharvest 2022, hold in Mechelen, Belgium.'
 authors: []
 featured: no
 image:
