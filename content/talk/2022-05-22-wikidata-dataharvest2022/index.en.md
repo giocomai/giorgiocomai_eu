@@ -9,7 +9,7 @@ tags:
   - data journalism
   - R packages
 subtitle: ''
-summary: 'Session for Dataharvest 2022, hold in Mechelen, Belgium.'
+summary: 'Session for Dataharvest 2022 (Mechelen, Belgium).'
 authors: []
 featured: no
 image:
