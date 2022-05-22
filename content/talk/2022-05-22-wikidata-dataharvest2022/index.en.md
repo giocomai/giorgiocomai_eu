@@ -40,4 +40,4 @@ Use cases, pitfalls, and practical examples of including Wikidata in your data j
 [Source code for the slides](/slides/2022-05-22-Wikidata_dataharvest_slides/2022-05-22-dataharvest_wikidata.Rmd)
 
 
-[Package documentation](https://edjnet.github.io/tidywikidatar/), including more extensive example of workflow that takes [Wikipedia as a starting point](https://edjnet.github.io/tidywikidatar/articles/wikipedia_start.html).
+[Package documentation](https://edjnet.github.io/tidywikidatar/), including a more extensive example of a workflow that takes [Wikipedia as a starting point](https://edjnet.github.io/tidywikidatar/articles/wikipedia_start.html).
