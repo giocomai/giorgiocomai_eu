@@ -30,6 +30,8 @@ Tra le varie interviste rilasciate a radio e media online, segnalo in particolar
 
 - Commenti rilasciati al [*Corriere del Ticino*](https://www.cdt.ch/news/mondo/ecco-perche-putin-ha-abbandonato-la-narrativa-della-denazificazione-281856) in occasione del "Giorno della Vittoria" (9 maggio 2022) - [Link](https://www.cdt.ch/news/mondo/ecco-perche-putin-ha-abbandonato-la-narrativa-della-denazificazione-281856) 
 
+- Intervista a [*Radio 3 Mondo*](https://www.balcanicaucaso.org/Media/Multimedia/Uno-sguardo-su-Ucraina-e-Russia) - (12 maggio 2022) - [Link](https://www.balcanicaucaso.org/Media/Multimedia/Uno-sguardo-su-Ucraina-e-Russia)
+
 - Intervista alla trasmissione radio ["Il vaso di Pandora" di Radio Capodistria](https://365.rtvslo.si/arhiv/il-vaso-di-pandora/174872257), a partire circa dal minuto 34, in cui si offre ulteriore contesto a precedenti analisi (13 maggio 2022) - [Link](https://365.rtvslo.si/arhiv/il-vaso-di-pandora/174872257)
 
 - Intervista pubblicata su [*globalproject.info*](https://www.globalproject.info/it/mondi/vladimir-putin-e-il-nuovo-ordine-neoliberale-in-russia/24000), in cui si evidenziano in particolare dinamiche interne alla Federazione russa negli ultimi vent'anni e dinamiche relative a Russia e multilateralismo internazionale (24 maggio 2022) - [Link](https://www.globalproject.info/it/mondi/vladimir-putin-e-il-nuovo-ordine-neoliberale-in-russia/24000)
