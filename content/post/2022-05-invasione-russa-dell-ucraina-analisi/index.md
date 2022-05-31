@@ -15,7 +15,7 @@ lastmod: '2022-05-31T13:47:56+02:00'
 ## Articoli
 
 
-[Spunti per un'analisi di medio periodo sull'invasione dell'Ucraina da parte della Russia](https://www.balcanicaucaso.org/aree/Russia/Spunti-per-un-analisi-di-medio-periodo-sull-invasione-dell-Ucraina-da-parte-della-Russia-218007)
+__[Spunti per un'analisi di medio periodo sull'invasione dell'Ucraina da parte della Russia](https://www.balcanicaucaso.org/aree/Russia/Spunti-per-un-analisi-di-medio-periodo-sull-invasione-dell-Ucraina-da-parte-della-Russia-218007)__
 
 5 maggio 2022
 
