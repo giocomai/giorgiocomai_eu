@@ -19,7 +19,7 @@ __[Spunti per un'analisi di medio periodo sull'invasione dell'Ucraina da parte d
 
 5 maggio 2022
 
-*La rielaborazione di alcuni spunti di riflessione presentati in eventi pubblici in questi primi mesi di guerra* - [Link](https://www.balcanicaucaso.org/aree/Russia/Spunti-per-un-analisi-di-medio-periodo-sull-invasione-dell-Ucraina-da-parte-della-Russia-218007)
+*Rielaborazione di alcuni spunti di riflessione presentati in eventi pubblici in questi primi mesi di guerra* - [Link](https://www.balcanicaucaso.org/aree/Russia/Spunti-per-un-analisi-di-medio-periodo-sull-invasione-dell-Ucraina-da-parte-della-Russia-218007)
 
 [Disponibile anche in versione letta ad alta voce](https://www.spreaker.com/user/obctranseuropa/spunti-per-unanalisi-di-medio-periodo-su)
 
