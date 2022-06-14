@@ -1,6 +1,6 @@
 ---
-title: "Finding the busiest European plane routes that can be travelled by train, with coordinates and identifiers"
-# subtitle: ""
+title: "Finding the busiest European air routes that can be travelled by train"
+subtitle: "(with coordinates of locations, unique identifiers, and labels in multiple languages)"
 author: "Giorgio Comai"
 institute: "OBCT/EDJNet"
 date: "2022-06-16"
