@@ -76,8 +76,8 @@ knitr::include_graphics("maps/routes_map_gg.png")
 In principle, standardised, but with considerable data issues, including:
 
 - there are slightly different stats, not all of them available for all countries
-  - We opted for "passengers carried (departures)", which is mostly available
-      - but e.g. not for Turkey, for which we had to rely on  “passengers carried” (PAS_CRD)
+  - We opted for "passengers carried (departures)" - `PAS_CRD`, which is mostly available
+      - but e.g. not for Turkey, for which we had to rely on  “passengers on board” (`PAS_BRD`)
   - Czechia has only data for the country of destination, not specific airport 
       - we derived the data from other countries, using "passengers carried (arrivals)"  (and with the same approach, also data for Bosnia, Albania, Moldova)
   - airports in Serbia, Montenegro or Pristina airport occasionally have inconsistent ICAO codes (e.g. RS_ME instead of the two-letter country code); Basel airport is reported with different country codes
@@ -244,6 +244,10 @@ knitr::include_graphics("maps/routes_map_FR_gg.png")
   - flights to "unknown airport", in particular from Czechia
   - inconsistent airport codes
   - no coordinates for airports included
+
+- Other desirable data, include:
+  - connecting flights
+  - prices
   
 - Wikidata is very useful
   - to get unique identifiers that be can used across datasets
