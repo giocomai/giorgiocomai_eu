@@ -124,6 +124,34 @@ RUN a2enmod rewrite
 RUN service apache2 restart
 ```
 
+[2022-10-14 - update with php 8]
+
+```
+FROM php:8.0-apache
+
+RUN apt-get update
+
+RUN apt-get install -y libzip-dev zlib1g-dev 
+
+#imagick
+RUN apt-get -y install gcc make autoconf libc-dev pkg-config
+RUN apt-get -y install libmagickwand-dev --no-install-recommends
+RUN pecl install imagick
+RUN docker-php-ext-enable imagick
+
+RUN docker-php-ext-install zip mysqli pdo pdo_mysql gd exif
+
+RUN rm -r /var/lib/apt/lists/*
+
+RUN a2enmod rewrite
+
+RUN sed -i -e 's/Listen 80/Listen 80\nServerName localhost/' /etc/apache2/ports.conf
+
+RUN service apache2 restart
+
+EXPOSE 80
+
+```
 ## Step 2: Get your docker-compose up and running
 
 Here's a basic docker-compose.yml with Traefik that should get you up and running. Search for all instances of "example.com" and put your own domain. Make sure the relevant domain (or subdomain) points at your server. Also, make sure you set a random password for both database and wordpress host, and make sure they correspond (of course, e.g. the database name, user, and password you set up in the _db docker should be the same that Wordpress uses to access them). I also included a phpmyadmin Docker just in case, this can of course safely be removed. 
