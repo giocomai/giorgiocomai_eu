@@ -85,7 +85,7 @@ To prevent Wordpress from asking about FTP credentials, you may also want to add
 define('FS_METHOD', 'direct');
 ```
 
-Keep in mind that if you are using Traefik or similar reverse proxy, as described in the [Wordpress documentation](https://wordpress.org/support/article/administration-over-ssl/) you need to add the following chunk __at the beginning__ of your `wp-config.php` file. [^1]
+Keep in mind that if you are using Traefik or similar reverse proxy, as described in the [Wordpress documentation](https://wordpress.org/support/article/administration-over-ssl/) you need to add the following chunk __at the beginning__ of your `wp-config.php` file.
 
 
 ```
