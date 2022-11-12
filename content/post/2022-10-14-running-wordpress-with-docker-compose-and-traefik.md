@@ -62,6 +62,23 @@ chown -R www-data wp-content
 chmod -R 755 wp-content
 ```
 
+This is the most secure option, but then you will need to relax ownership when updating.
+
+Relax ownerships:
+```
+chown www-data:www-data  -R *
+```
+
+Update. And then set them back.
+
+```
+chown root:root  -R * 
+chown www-data:www-data wp-content
+```
+
+See [this question on StackOverflow](https://stackoverflow.com/questions/18352682/correct-file-permissions-for-wordpress) for further references and debates on the implications. Notice that if you keep the more restrictive file ownership proposed above automatic updates will not work.
+
+
 To prevent Wordpress from asking about FTP credentials, you may also want to add the following line to `wp-config.php`:
 
 ```
