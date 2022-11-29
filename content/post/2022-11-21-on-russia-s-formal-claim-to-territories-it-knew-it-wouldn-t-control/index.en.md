@@ -4,7 +4,7 @@ author: Giorgio Comai
 date: '2022-11-20'
 slug: []
 categories:
-  - Blog
+  - Microblog
   - fediverse
 tags:
   - russia
@@ -23,7 +23,7 @@ image:
 projects: []
 ---
 
-*[Originally posted to the Fediverse - [Source](https://fediverse.giorgiocomai.eu/notice/APlLXH7bS7rd6XXeee)]*
+*Originally posted to the Fediverse - [Source](https://fediverse.giorgiocomai.eu/notice/APlLXH7bS7rd6XXeee)]*
 
 One of the "big decisions" that looks puzzling in relation to Russia's invasion of Ukraine is why did Putin decide to declare Russian sovereignty over more parts of Ukraine (Kherson and Zaporizhzhia) not when he could still hope to actually conquer them, but at a point in time when it was already evident that the Russian army could not plausibly cling to what it had, much less gain new ground.
 

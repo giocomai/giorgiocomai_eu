@@ -48,6 +48,9 @@ social:
 - icon: stack-overflow
   icon_pack: fab
   link: https://stackoverflow.com/users/4124601/giocomai
+- icon: mastodon
+  icon_pack: fab
+  link: https://fediverse.giorgiocomai.eu/giocomai
 superuser: true
 user_groups:
 - Researchers
