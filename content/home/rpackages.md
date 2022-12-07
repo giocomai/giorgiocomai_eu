@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 23  # Order that this section will appear.
 
 title = "R packages and data projects"
-subtitle = ""
+subtitle = "Check out a more comprehensive curated list [on GitHub](https://github.com/giocomai/)"
 
 [content]
   # Page type to display. E.g. project.
