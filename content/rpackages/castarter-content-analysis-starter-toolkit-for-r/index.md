@@ -1,7 +1,7 @@
 ---
-title: castarter - content analysis starter toolkit for R
+title: castarter.legacy - content analysis starter toolkit for R
 author: Giorgio Comai
-slug: castarter-content-analysis-starter-toolkit-for-r
+slug: castarter-legacy-content-analysis-starter-toolkit-for-r
 categories:
   - R packages
 tags:
