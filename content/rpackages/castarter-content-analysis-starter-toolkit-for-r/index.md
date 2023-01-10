@@ -36,4 +36,4 @@ slides: ''
 
 `castarter` (now `castarter.legacy`) is designed to make it easy also for relatively inexperienced users to create a textual dataset from a website, or a section of a website, keep it up-to-date, and explore it through word frequency graphs or a web interface that makes it possibe to tag items.
 
-Documentation is available on [`castarter`’s website](https://giocomai.github.io/castarter).
+Documentation is available on [`castarter`’s website](https://giocomai.github.io/castarter.legacy).
