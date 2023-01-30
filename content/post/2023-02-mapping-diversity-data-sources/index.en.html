@@ -1,0 +1,147 @@
+---
+title: 'The messy data sources behind "Mapping diversity"'
+author: Giorgio Comai
+date: '2023-01-30'
+slug: []
+categories:
+  - Data notes
+tags:
+  - rstats
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2023-01-30T10:55:35+01:00'
+featured: no
+draft: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>We have been toying with the idea of doing large-scale open-ended analysis of street names across Europe for quite some time.</p>
+<p>Back in 2019, I quickly built <a href="https://giocomai.github.io/genderedstreetnames/">an R package</a> that facilitated retrieving the names of streets used in a municipality, tried to guess which were humans and the relative gender (simplistically operationalised as “sex at birth”),
+and provided a basic interface to check the data (<a href="https://giocomai.github.io/genderedstreetnames/articles/genderedstreetnames.html">here’s a walkthrough of the process</a>).</p>
+<div class="figure">
+<img src="img/fix_street_names_screenshot.png" alt="" />
+<p class="caption">A screenshot of the first interface we developed</p>
+</div>
+<p>We never really pursued the idea in this format for a number of reasons. Among them, the fact that in the following years, a number of initiatives used slighlty different approaches to arrive at the same results.</p>
+<p>We felt that to give more context, more than the gender dimension needed to be taken into account. For example, the extremely small number of streets dedicated to women in most cities is striking, but in the case of Italy, for example it is sometimes even more striking how many of those women were religious figures or Catholic saints.</p>
+<p>We decided to work in this direction, and eventually came out with the first version of <a href="https://mappingdiversity.eu/">Mapping Diversity</a>, covering more than 20 cities across Italy (the main city of reach region).</p>
+<p>In terms of data, its key features were:</p>
+<ul>
+<li>street names taken from OpenStreetMap</li>
+<li>tentative automatic matching of street names to the Wikidata identifier of the person a given street is dedicated to</li>
+<li>manual check limited to:
+<ul>
+<li>claiming if a street was dedicated to a human or not</li>
+<li>if it was a woman,
+<ul>
+<li>match it to the relative Wikidata identifier (which allows among other things, to show date of birth, profession, and a picture on the interactive visualisation)</li>
+<li>assign it to one of a small number of predefined category (e.g. religious figure, cultural figure, etc.)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>This was time consuming (have you ever considered that Rome, for example, has more than 16 thousands named streets? consider manually checking all of them), but not devastatingly so. Automatic matching functioned reasonably well, and besides confirming if it was a human or not, one had to give some more thinking to the matching only if the subject was a woman (each woman had to be matched to a Wikidata identifier and a category). But since so few streets are dedicated to women… in terms of data cleaning, it was not too bad. Besides, we worked on the assumption that if a street was dedicated to a given person in one city, then the same match would be applied to all Italian cities: not a 100 per cent safe bet, but we felt it was acceptable to get wrong a few individuals out of tens of thousands of matches, as this incredibly reduced the number of streets to check (each city in Italy will have a street dedicated to “Giuseppe Garibaldi”, but we manually checked it only once).</p>
+<p>The resulting output got reasonable visibility and contributed to stir some much needed debate. But that was in Italy, and we like European-wide stories. Also, we felt the debate needed to go further than the gender dimension, and more explicitly consider also who were all these men that have a streets dedicated to them.</p>
+<p>We understood that this would have entailed more complexity and more work, but based on our first experience based on Italy, we moved forward. As we will see, things turned out to be much more complicated and time-consuming than we initially imagined, because many things change considerably from country to country, and sometimes from region to region. As a consequence, even in cases where in principle there would be a more efficient, more effective, or more comprehensive solutions for a given city or country, we mostly sticked to a standardised approach for all of Europe, as this allowed to have a more consistent data pipeline.</p>
+<div id="main-data-sources-and-data-processing-features" class="section level2">
+<h2>Main data sources and data processing features</h2>
+<div id="street-names" class="section level3">
+<h3>Street names</h3>
+<p>The main point of reference for openly licensed geographic data is OpenStreetMap, indeed OpenStreetMap is the source we used for street names (thank you OpenStreetMap contributors!). OpenStreetMap has overall rather comprehensive and up to date data for the main European cities, and offers both the names of streets and their exact location on a map. Many cities around Europe distribute in some format a list of street names, but less often in a format that makes it possible to draw them on a map.</p>
+<p>However, even if OpenStreetMap is a global project, local peculiarities emerge again and again, both due to differences in language and common practices across countries, as well due to different standards self-defined by communities of mappers in different countries.</p>
+<p>Dealing with multilingual names can be a mess. In OpenStreetMap there is both a generic <code>name</code> tag, as well as the possibility to include specific language versions. There is <a href="https://wiki.openstreetmap.org/wiki/Multilingual_names">a set of rule on how to deal with all sorts of issues related to multinlingualism</a>, but these can be country-specific, or often left incomplete.</p>
+<p>We relied on the generic <code>name</code> tag, assuming it would be in the main language used in a given country, and dealing with exceptions either on a case by base basis (e.g. as we did with the relatively small Bozen/Bolzano in South Tyrol), or more systematically, as we did with the main Belgian cities (which include both a French and Dutch name of street separated by a hyphen, with the order of languages depending on the municipality).</p>
+<p>There is no commonly agreed standard on how street names should <em>precisely</em> be written. The broad expectation is that street names are written in the same way as they are written in the real world, but then, there’s a number of best practices, some of them countrys-specific. For example, if a full name of a person is known, then this should be used rather than only the first letter of the first name. But such things may be inconsistently applied within a given country, nevermind across countries. Such things not only complicate matching a given street to the person or entity it is dedicated to, but also matching it with other datasets relevant datasets that may exist at city, region, or country level.</p>
+<p>All things considerd, for better or worse, we sticked with the primary <code>name</code> tag for all street names.</p>
+<p>Next, we wanted to retrieve all streets <em>in a given city or municipality</em>.</p>
+</div>
+<div id="administrative-boundaries" class="section level3">
+<h3>Administrative boundaries</h3>
+<p>OpenStreetMap has records for administrative boundaries, but, as quite clearly stated in the <a href="https://wiki.openstreetmap.org/wiki/Key:admin_level">relevant documentation</a>, these are used incosistently across countries. “admin_level”:</p>
+<blockquote>
+<p>“While admin_level=2 is almost always a de-facto independent country, and admin_level=4 is usually equivalent to a”province”, higher values vary in meaning between countries. A data consumer looking for municipalities corresponding to “city”, “town” or “village” boundaries will find these tagged anywhere from admin_level=4 to admin_level=10”.</p>
+</blockquote>
+<p>In principle, we could have checked what is the practice in each country, see if these are indeed applied consistently across a given country, see if these are matched to a consisent identifier, and take it from there.</p>
+<p>Instead, we opted to the more practical solution of relying on a dataset of Local Administrative Units (LAUs) distributed by Eurostat, that can be used, including the following copyright notice in the output: <code>© EuroGeographics for the administrative boundaries</code>.</p>
+<p>This made it possible to use an already standardised dataset, with a consistent identifier that can be used to match it to other data sources. Even so, the output did not always make sense. For example, there are a few cities - including Bruxelles, Lisbon, and Dublin - that are composed of a number of municipalities. In such cases it may be relevant to keep the data at the municipality level, but for many readers having the full urban area would make more sense. In such cases, we fell back on the relevant NUTS region.</p>
+<p>Wtih standardised administrative boundaries, and with country files with all streets in a country taken from OpenStreetMap (<a href="https://download.geofabrik.de/europe.html">as distributed by Geofabrik</a>), it straightforward to crop the national or regional data with the boundaries of the given municipality, drop all streets that have no name (often, service streets) and get a set of streets names that can easily be drawn on a map.</p>
+<p>This is also how we derived a unique identifiers for each street. In OpenStreetMap, streets do not have a unique identifier (unless they are part of a relation). In our case, the identifier became a combination of the full street name itself with the gisco_id of the municipality: every streets with exactly the same name spelling within a given municipality is considered to be a single street.</p>
+<p>Some countries or cities have unique identifiers for streets (e.g. <a href="https://cuzk.cz/">Czechia</a>). Some mostly larger cities have all of their streets as a separate Wikidata entity. Still, due to differences in spelling, word order, lack or presence of honorific titles, and such, achieving a full match between such datasets is not straightforward, and may need custom solutions for each relevant city. Again, rather than developing custom country or city-specific solutions, we went for a solution that could be consistently applied across our datasets.</p>
+<p>Now comes the difficult part.</p>
+</div>
+<div id="matching-streets-to-the-entity-it-is-named-after" class="section level3">
+<h3>Matching streets to the entity it is named after</h3>
+<p>Potentially, there are a number of sources available that include information about whom a street is named after.</p>
+<p>Some of them are high quality, but difficult or impossible to scale or generalise. These include:</p>
+<ul>
+<li>Open data distributed by a municipality with this information. Even when it exists, it is mostly not easily matchable to geographic data, it would be difficult to match a person with data about a person. Even in a best case scenario this would require manual work to transform the data into something that can be visualised and compared with other countries or cities. An example of an almost ideal format is the one used by the municipality of Bologna in Italy to report about <a href="https://opendata.comune.bologna.it/explore/dataset/le-aree-verdi-e-le-vie-di-bologna-dedicate-alle-donne/information/">streets and public spaces dedicated to women in the Italian municipality of Bologna</a>: open data in nice tabular format, with geographic coordinates included, time when the street was dedicatetd to the given person, basic biographic information included in a mostly parsable format (the ideal format, from our perspective, would also include a Wikidata identifier, would be comprehensive of all streets, and perhaps include information to whom the street was named before in case of name change).</li>
+<li>in the case of major cities, there are books dedicated to the subject, that include information about the person a street is dedicated to (e.g., for Bucharest, <a href="https://www.danagont.ro/strazi-din-bucuresti-si-numele-lor-aurel-ionescu/">Străzi din București și numele lor</a>).</li>
+<li>in the case of major cities, sometimes there are local initiatives dedicated to highlighting particularly interesting biographies of people who have been dedicaded a street (e.g., again in the case of Bucharest, <a href="https://strazicurenume.ro/">Străzi cu Renume</a>)</li>
+</ul>
+<p>Some initiatives exist that include information about streets names dedicated to women. The most comprehensive is probably a vast initiative established in Italy with information about streets dedicated to women across most municipalities of the country, <a href="https://www.toponomasticafemminile.com/">Toponomastica femminile</a>. This includes carefully researched data on thousands of municipalities.</p>
+<p>There are some initiatives that present information in a structured format about a number of cities, in Europe or elsewhere, which similarly to our own initiative rely on OpenStreetMap and Wikidata:</p>
+<ul>
+<li><a href="https://github.com/EqualStreetNames/equalstreetnames">EqualStreetNames</a></li>
+<li><a href="https://geochicasosm.github.io/lascallesdelasmujeres/">Las Calles de las Mujeres</a></li>
+</ul>
+<p>Some academic articles or studies have been dedicated to the matter, and some of them have included relevant datasets, e.g.:</p>
+<ul>
+<li><a href="https://en.stnameslab.com/">stnameslab</a></li>
+<li><a href="https://doi.org/10.1371/journal.pone.0252869">Streetonomics: Quantifying culture using street names</a></li>
+<li><a href="https://doi.org/10.1016/j.cities.2020.102773">Political patterning of urban namescapes and post-socialist toponymic change: A quantitative analysis of three Romanian cities</a></li>
+</ul>
+<p>Some journalistic investigations have dealt with these issues, and could be used as a terms of reference in some cases, see e.g.:</p>
+<ul>
+<li><a href="https://www.zeit.de/feature/streetdirectory-streetnames-origin-germany-infographic-english">Streetnames: Streetscapes – Mozart, Marx and a Dictator</a>, by <em>Die Zeit</em></li>
+</ul>
+<p>Finally, these data can in principle be stored directly in the very sources we used:</p>
+<ul>
+<li>the data can be stored directly in OpenStreetMap through a set of dedicated tags such as <code>name:etymology:wikidata</code>, as discussed in details in <a href="https://www.openstreetmap.org/user/tffmh/diary/400600">this post detailing the work done in a German town</a>. Name change could also be recorded there, using the <a href="data%20namespace%20feature">https://wiki.openstreetmap.org/wiki/Proposed_features/Date_namespace</a>. Unfortunately, this information is only sparesely included in OpenStreetMap.</li>
+<li>the data can be stored directly in Wikidata, using the “named after” property in relation to entity. This is indeed quite widely used for the cities that have each of their street as a separate Wikidata entity. But how many municipalities have each of their street as a separate Wikidata entitiy? This varies hugely among countries:
+<ul>
+<li>in some countries, e.g. Czechia and the Netherlands, the data are apparently rather comprehensive</li>
+<li>in some countries such as Germany or France a number of municipalities have been included, but apparently with no specific criteria, if not the availability of relevant open data and the presence of a local activist initiating their upload</li>
+<li>in most other countries, just just a small number of monumental streets have their own Wikidata entity.</li>
+</ul></li>
+</ul>
+<p>By itself, none of these two sources offers an ideal format for storing such data. For example, Wikidata includes coordinates of the street as a single point, and in the overwhelming majority of cases does not include a direct pointer to the relevant street in OpenStreetMap. This is a consquence of the data model and prevailing practices in OpenStreetMap: streets are often effectively composed of many segments with potentially different properties, often formally not attached to each other. They mostly do not have a unique permanent identifier that can be linked from Wikidata. Such an identifier <em>can</em> exist in OpenStreetMap if all components of a street are united in a <em>relation</em> (see the <a href="https://wiki.openstreetmap.org/wiki/Relations/Proposed/Street">relevant proposal</a>), which seems to be a sensible but not very common practice, partly because it could often be considered redundant or unnecessary.</p>
+<p><em>If</em> each street was united in a relation in OpenStreetMap and hence have a permanent identifier, and each street existed in Wikidata with its own permanenent Q identifier, then the two could be connected through Wikidata’s <a href="https://www.wikidata.org/wiki/Property:P402">OpenStreetMap relation ID</a> property, and we would have the best of all worlds. If more countries were like Czechia, with each street having <a href="https://www.wikidata.org/wiki/Property:P4533">a unique identifier distributed as open data</a> and thus easily associated from Wikidata, we would be much closer to this world, as then this could be combined with all sorts of other open data.</p>
+<p>But unfortunately, we are not very close to that world.</p>
+<p>So this is how we proceeded starting from the world we currently inhabit.</p>
+<p>[… work in progress …]</p>
+</div>
+<div id="summary" class="section level3">
+<h3>Summary</h3>
+</div>
+</div>
+<div id="identifying-streets" class="section level2">
+<h2>Identifying streets</h2>
+</div>
+<div id="assumptions" class="section level2">
+<h2>Assumptions</h2>
+<ul>
+<li>the streetname is the identifier</li>
+<li>within a municipality, all segments of a street that have exactly the same street name are considered to be one street</li>
+</ul>
+<div id="when-you-refer-to-street-names-in-a-municipality" class="section level3">
+<h3>When you refer to street names in a municipality</h3>
+</div>
+</div>
+<div id="getting-street-names-for-european-municipalities" class="section level2">
+<h2>Getting street names for European municipalities</h2>
+<p>A street is a street</p>
+<div id="regions-and-countries-with-bilingual-street-names" class="section level3">
+<h3>Regions and countries with bilingual street names</h3>
+<p>In Belgium</p>
+<p>…</p>
+</div>
+</div>
+<div id="data-quality-issues" class="section level2">
+<h2>Data quality issues</h2>
+</div>
