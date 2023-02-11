@@ -34,6 +34,6 @@ projects: ["R-packages"]
 slides: ''
 ---
 
-`castarter` is a more modern, fully-featured, and consistent iteration of castarter - Content Analysis Starter Toolkit for the R programming language (a previous iteration is still available as [`castarter.legacy`](https://github.com/giocomai/castarter.legacy). It facilitates text mining and web scraping by taking care of many of the most common file management issues, keeps tracks of download advancement in a local database, facilitates extraction through dedicated convenience functions, and allows for basic exploration of textual corpora through a Shiny interface.
+[`castarter`](https://github.com/giocomai/castarter) is a more modern, fully-featured, and consistent iteration of castarter - Content Analysis Starter Toolkit for the R programming language (a previous iteration is still available as [`castarter.legacy`](https://github.com/giocomai/castarter.legacy). It facilitates text mining and web scraping by taking care of many of the most common file management issues, keeps tracks of download advancement in a local database, facilitates extraction through dedicated convenience functions, and allows for basic exploration of textual corpora through a Shiny interface.
 
-It is currently at an early stage of development, and it is not fully functional at this stage.
+It is currently under active development.
