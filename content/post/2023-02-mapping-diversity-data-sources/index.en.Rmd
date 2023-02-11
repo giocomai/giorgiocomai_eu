@@ -117,7 +117,9 @@ Some journalistic investigations have dealt with these issues, and could be used
 
 Finally, these data can in principle be stored directly in the very sources we used:
 
-- the data can be stored directly in OpenStreetMap through a set of dedicated tags such as `name:etymology:wikidata`, as discussed in details in [this post detailing the work done in a German town](https://www.openstreetmap.org/user/tffmh/diary/400600). Name change could also be recorded there, using the [https://wiki.openstreetmap.org/wiki/Proposed_features/Date_namespace](data namespace feature). Unfortunately, this information is only sparesely included in OpenStreetMap.
+- the data can be stored directly in OpenStreetMap through a set of dedicated tags such as `name:etymology:wikidata`, as discussed in details in [this post detailing the work done in a German town](https://www.openstreetmap.org/user/tffmh/diary/400600). Name change could also be recorded there, using the [https://wiki.openstreetmap.org/wiki/Proposed_features/Date_namespace](data namespace feature). Unfortunately, this information is only sparesely included in OpenStreetMap. There are however interactive maps available online that allow both to see available data and contribute this information directly on OpenStreetMap, see in particular:
+  - [mapcomplete.osm.be/etymology](https://mapcomplete.osm.be/etymology?z=18&lat=40.72012&lon=-73.9893&language=en#welcome)
+  - [https://etymology.dsantini.it/](https://etymology.dsantini.it/)
 - the data can be stored directly in Wikidata, using the "named after" property in relation to entity. This is indeed quite widely used for the cities that have each of their street as a separate Wikidata entity. But how many municipalities have each of their street as a separate Wikidata entitiy? This varies hugely among countries:
   - in some countries, e.g. Czechia and the Netherlands, the data are apparently rather comprehensive
   - in some countries such as Germany or France a number of municipalities have been included, but apparently with no specific criteria, if not the availability of relevant open data and the presence of a local activist initiating their upload
