@@ -19,6 +19,10 @@ image:
 projects: []
 ---
 
+*__2023 update__: if you are just looking for a basic and updated php-based Dockerfile for Wordpress, with its own Traefik-based docker-compose.yml, [check out this post](../2022-10-14-running-wordpress-with-docker-compose-and-traefik). If you are interested in testing older php versions, read on.*
+
+---
+
 As of Autumn 2019, many Wordpress users will likely have found a warning suggesting they *must* update php on their server. As [php 5.6 has reached end of life in 2018](https://haydenjames.io/php-5-6-eol-end-of-life-php-7-compatibility-check/), this is well needed. Yet, many Wordpress installations that have been running for years may be using a plugin or a theme that is not compatible with php 7.3. 
 
 Being to some extent responsible for a number (undisclosed, but not negligible) of Worpress installations scattered across a number of servers, I needed a way to make sure that updates go smoothly, and be best-positioned to change back and forth between php versions to introduce all necessary fixes. 
