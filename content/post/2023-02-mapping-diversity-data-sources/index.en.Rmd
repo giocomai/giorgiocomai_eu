@@ -57,7 +57,6 @@ The main point of reference for openly licensed geographic data is OpenStreetMap
 
 However, even if OpenStreetMap is a global project, local peculiarities emerge again and again, both due to differences in language and common practices across countries, as well due to different standards self-defined by communities of mappers in different countries. 
 
-
 Dealing with multilingual names can be a mess. In OpenStreetMap there is both a generic `name` tag, as well as the possibility to include specific language versions. There is [a set of rule on how to deal with all sorts of issues related to multinlingualism](https://wiki.openstreetmap.org/wiki/Multilingual_names), but these can be country-specific, or often left incomplete. 
 
 We relied on the generic `name` tag, assuming it would be in the main language used in a given country, and dealing with exceptions either on a case by base basis (e.g. as we did with the relatively small Bozen/Bolzano in South Tyrol), or more systematically, as we did with the main Belgian cities (which include both a French and Dutch name of street separated by a hyphen, with the order of languages depending on the municipality).
@@ -132,6 +131,110 @@ By itself, none of these two sources offers an ideal format for storing such dat
 But unfortunately, we are not very close to that world. 
 
 So this is how we proceeded starting from the world we currently inhabit.
+
+### Our approach for matching geo-located street names to the person or entity they are dedicated to
+
+The previous paragraphs outlined how we got to have a list of street names for each municipality in Europe, and how we didn't find a pre-existent consistent and scalable approach to the get the relevant data from many cities across Europe, leaving the possibility to expand the effort to any municipality big or small.
+
+The best approach would have probably been a mix and match, based on availability of data and country- or language-based specificities. This would have implied a per-country or per-city approach that we felt was not manageable. This choice - in hindsight, very much debatable - was partly driven by our experience with Italy as a pilot country. Indeed, in the case of Italy:
+
+- no major city has all its streets as a Wikidata entity
+- no major city has all of its streets matched to a Wikidata identifier
+- streets are predictably named (e.g. it's always "via di *something*", "piazza *something*", "viale *name* *surname*", etc.)
+- in the vast majority of cases, streets dedicated to people have both name and surname spelled out in full in the street name
+- names have a single standard form (in other languages, name streets may change due declension or adjectivization of names)
+
+We were obviously aware of the language differences, but we under-esitamted data availability in other countries.
+
+Either way, we went with a mostly standard approach:
+
+1. take a street name
+1. for countries where it is common to have a Wikidata entity for each street, search the full street name string on Wikidata, and see if the "named after" field is available. If it is, keep it, and skip all the rest. If no match is found, or if a country is known for not having streets as entities on Wikidata, move on to the next steps.
+1. remove the part of the name that describes the way, not the person or entity it is dedicated to, based on custom lists (e.g. for Italy remove all the "via", "viale", etc. at the beginning of the name string, for German all the "Straße" at the end of the word)
+1. if the relevant language leads to changes in the way a name is written, tentatively try to change the name to have it in its nominative form (e.g. in Polish turn endings in "-szka", to endings "-szek"). This has been done completely based on word patterns (i.e. via *regex*), and not thoroughly optimised (as again, this implied a different solution for each country/language), so the quality of the results varied. 
+1. search the remaining part of the street in Wikidata in the main language used in a given country
+1. if a match is found, tentatively keep it
+
+We bulk processed all the main cities across Europe in this way, but the same process happens on the fly on a dedicated custom interface for other municipalities.
+
+### Manual checking data
+
+Time for the most fascinating part of in the life of a data journalist: manual data cleaning. 
+
+In principle this approach can be used to match all street to an entity, not only to persons. For example, if the matching is done thoroughly, one could see how many streets across Europe are dedicated to particular trees (e.g. "chestnut street") or to abstract concepts (e.g. "peace"). However, we decided to limit ourselves to streets named after people.
+
+In some countries, in particular those where both name and surname are usually spelled out in full, the results were pretty good. In particular, there were very few false positives, mostly related to the fact that when a contemporary sportsperson or researcher has the same name as a 19th century burgermeister, then Wikidata gives precedence to the former. There were somewhat more false negatives, in particular in countries where it is quite common to name streets after military officials, partisans, or participants to revolutionary events that are remembered for their role, but that are not "famous", in the sense, that little is known about their life and they do not have an own presence in Wikidata or Wikipedia. Even in such cases, however, with e.g. about 10 per cent of streets dedicated to humans to fix, this means having to fix  hundreds of streets in major cities that have many thousands of different streets. 
+
+In some countries, the quality of the data was more degraded, either because the parsing of the names was not very successful, or because it is common to include only a surname but no first name in the street name, or because some names are so common that is not obvious to whom a street has been dedicated to, without local knowledge/consulting local databases.
+
+Next, we exported these data as spreadsheets and shared it with partners around the continent, with two files for each city. One file had supposedly only humans, and a data point had to be flagged only if it was not in fact, a human, while the other was supposedly of non-humans, and a street had to be flagged only if, indeed, it was a human. If it was obvious from the name of the person, gender assigned at birth could also be directly added, or Wikidata identifier fixed.
+
+Additional checking or data fixing could be achieved through a dedicated web interface. The interface is less than ideal for batch-confirming hundreds of correct matches, but is more handy than working in a spreadsheet for adjusting human/non-human status, gender, or Wikidata id on a case by case basis.
+
+We initially considered a "category" and a "tag" field, to enable matching assigning streets to particular issues (e.g. streets dedicated to people associated with colonialism), but this soon appeared to be unfeasible to scale, and best left to other approaches once the association with a Wikidata id has been confirmed.
+
+### Clarifying concepts: what is a human?
+
+Doing data cateogrisation at scale frequently leads to a number of edge cases that push one to reconsider even the most basic questions, such as what counts as a person. We eventually went for "a person is a distinct, identifiable, human being who has actually lived on this Earth". This definition leaves out a number of cases that could almost fit in there, including most commonly:
+
+- streets dedicated to deities, legendary figures, or literary characters; when these had a distinct gender, this may have been included in some of the ensuing analyses
+- streets dedicated to vast groups of people (e.g. "resistance fighters" were surely humans, but they are a category of people, not a distinct identifiable human)
+- streets dedicated to a building or city, which in its turn is named after a human (e.g. "St. Michael's Church street")
+
+If streets were dedicated to a small number of distinct individuals, e.g. "Pierre and Marie Curie", then both individuals would be assigned to a street. 
+
+### The data model
+
+To facilitate sharing of data across different teams, we preferred to stick to tabular data formats. 
+
+At the most basic, this is how our internal data model looks like, showing first some streets dedicated to more than one person for reference:
+
+```{r echo=FALSE, R.options = list(width = 1000)}
+city_df <- readr::read_csv(file = fs::path("data", "RO_143450-municipiul sibiu (sibiu)-1677594527.csv"), show_col_types = FALSE)
+
+city_df |>
+  dplyr::select(!c("country", "category", "tag", "named_after_custom_label", "session", "time")) |> 
+  dplyr::arrange(dplyr::desc(person), dplyr::desc(named_after_n),named_after_id)  |>
+  dplyr::slice_head(n = 20) |>
+  knitr::kable(format = "html", table.attr = "style='width:1000px;margin-left:-180px;'")
+```
+
+
+The `gisco_id` is a unique code for each local administrative unit (mostly, corresponding to municipalities). The expectation is that within each municipality there will only be one street with exactly the same name. In brief, the most basic unit of analysis is a combination of `gisco_id` and `street_name`, which can always be mapped back to OpenStreetMap. Here is a brief explanation for the other columns:
+
+- `named_after_id` is a Wikidata identifier of the entity to which a street has been dedicated to
+- `person` is a binary, either 1 or 0.
+- `gender` can have the `male`, `female`, `other`, or `undetermined` value. This is a simplified version of the kind of data Wikidata offers, which can be have more options (and more than one value per entity)
+- `checked` is a binary. 1 when the street has been confirmed in some form by a manual check. The expectation is that if a street has been checked, at least the field `person` is accurate; all others may be incomplete.
+- `ignore` is a binary. If set to 1, it means that the corresponding `street_name` is not really the name of a street. Street names such as "entrance to Mc Drive" or "Airport ramp to departures" do appear in OpenStreetMap but they are irrelevant to the purpose of this analysis. 
+- `named_after_n` defaults to 1. It corresponds to how many entities a street has been named after. If `named_after_n` is higher than 1, then it is expected that the row is repeated more than once in order to make it possible to have more data.
+
+Based on the Wikidata identifier, it is easy to get a nice label and description of the entity a street is named after (possibly, in different languages), as well as a lot of other information, including date and place of birth and death, occupation, etc. 
+
+Here's just a quick example with date of birth and death.
+
+```{r echo=FALSE, R.options = list(width = 1000)}
+city_details_df <- readr::read_csv(file = fs::path("data", "RO_143450-municipiul sibiu (sibiu)-with_details-1677594547.csv"), show_col_types = FALSE)
+
+city_details_df |>
+  dplyr::arrange(dplyr::desc(person), dplyr::desc(named_after_n),named_after_id)  |>
+    dplyr::select(c("street_name", "named_after_id", "gender", "label", "description", "date_of_birth", "date_of_death")) |> 
+  dplyr::mutate(date_of_birth = stringr::str_extract(string = date_of_birth, "[[:digit:]]{4}"),
+                date_of_death = stringr::str_extract(string = date_of_death, "[[:digit:]]{4}")) |>
+  dplyr::slice_head(n = 20) |>
+  knitr::kable(format = "html", table.attr = "style='width:1000px;margin-left:-180px;'")
+```
+
+This data model is mostly functional, but is missing two things that on more careful consideration would be necessary. 
+
+- a `named_after_custom_label`, introduced late in the project and mostly not yet used, that allows to introduce a custom label when a given person does not have an own identifier in Wikidata. This is useful in particular for languages where the name of the person an entity is dedicated to does not keep its base form. If, for example, I was not able to match "Aleja Pawła Strzeleckiego" to the correct Wikidata identifier, I should at least be able to keep record of the fact that this street is named after someone called "Paweł Strzelecki".
+- an additional column, or possibly, a separate table, for deduplication. It is infrequent, but by far not unseen, for a street to be present with multiple names in OpenStreetMap. For example, "Aleja Pawła Strzeleckiego" could also be recorded as " "Aleja P. Strzeleckiego", or "Al. Pawła Strzeleckiego", or "Aleja Pawła Edmunda Strzeleckiego". 
+
+Even with this additions, there is currently not a straightforward way to distinguish two streets that have the same name, are within the same municipality, but are effectively two separate streets. E.g. two "Mueller-Straße" dedicated to two different people called "Mueller" in different parts of Berlin. These are really residual issue, and ideally this could be addressed in OpenStreetMap itself by including the first name of the person if it is known. If not... these are really marginal cases, and not all data models can be perfect.
+
+
+
+
 
 [... work in progress ...]
 

@@ -102,7 +102,11 @@ and provided a basic interface to check the data (<a href="https://giocomai.gith
 </ul>
 <p>Finally, these data can in principle be stored directly in the very sources we used:</p>
 <ul>
-<li>the data can be stored directly in OpenStreetMap through a set of dedicated tags such as <code>name:etymology:wikidata</code>, as discussed in details in <a href="https://www.openstreetmap.org/user/tffmh/diary/400600">this post detailing the work done in a German town</a>. Name change could also be recorded there, using the <a href="data%20namespace%20feature">https://wiki.openstreetmap.org/wiki/Proposed_features/Date_namespace</a>. Unfortunately, this information is only sparesely included in OpenStreetMap.</li>
+<li>the data can be stored directly in OpenStreetMap through a set of dedicated tags such as <code>name:etymology:wikidata</code>, as discussed in details in <a href="https://www.openstreetmap.org/user/tffmh/diary/400600">this post detailing the work done in a German town</a>. Name change could also be recorded there, using the <a href="data%20namespace%20feature">https://wiki.openstreetmap.org/wiki/Proposed_features/Date_namespace</a>. Unfortunately, this information is only sparesely included in OpenStreetMap. There are however interactive maps available online that allow both to see available data and contribute this information directly on OpenStreetMap, see in particular:
+<ul>
+<li><a href="https://mapcomplete.osm.be/etymology?z=18&amp;lat=40.72012&amp;lon=-73.9893&amp;language=en#welcome">mapcomplete.osm.be/etymology</a></li>
+<li><a href="https://etymology.dsantini.it/">https://etymology.dsantini.it/</a></li>
+</ul></li>
 <li>the data can be stored directly in Wikidata, using the “named after” property in relation to entity. This is indeed quite widely used for the cities that have each of their street as a separate Wikidata entity. But how many municipalities have each of their street as a separate Wikidata entitiy? This varies hugely among countries:
 <ul>
 <li>in some countries, e.g. Czechia and the Netherlands, the data are apparently rather comprehensive</li>
@@ -114,6 +118,1112 @@ and provided a basic interface to check the data (<a href="https://giocomai.gith
 <p><em>If</em> each street was united in a relation in OpenStreetMap and hence have a permanent identifier, and each street existed in Wikidata with its own permanenent Q identifier, then the two could be connected through Wikidata’s <a href="https://www.wikidata.org/wiki/Property:P402">OpenStreetMap relation ID</a> property, and we would have the best of all worlds. If more countries were like Czechia, with each street having <a href="https://www.wikidata.org/wiki/Property:P4533">a unique identifier distributed as open data</a> and thus easily associated from Wikidata, we would be much closer to this world, as then this could be combined with all sorts of other open data.</p>
 <p>But unfortunately, we are not very close to that world.</p>
 <p>So this is how we proceeded starting from the world we currently inhabit.</p>
+</div>
+<div id="our-approach-for-matching-geo-located-street-names-to-the-person-or-entity-they-are-dedicated-to" class="section level3">
+<h3>Our approach for matching geo-located street names to the person or entity they are dedicated to</h3>
+<p>The previous paragraphs outlined how we got to have a list of street names for each municipality in Europe, and how we didn’t find a pre-existent consistent and scalable approach to the get the relevant data from many cities across Europe, leaving the possibility to expand the effort to any municipality big or small.</p>
+<p>The best approach would have probably been a mix and match, based on availability of data and country- or language-based specificities. This would have implied a per-country or per-city approach that we felt was not manageable. This choice - in hindsight, very much debatable - was partly driven by our experience with Italy as a pilot country. Indeed, in the case of Italy:</p>
+<ul>
+<li>no major city has all its streets as a Wikidata entity</li>
+<li>no major city has all of its streets matched to a Wikidata identifier</li>
+<li>streets are predictably named (e.g. it’s always “via di <em>something</em>”, “piazza <em>something</em>”, “viale <em>name</em> <em>surname</em>”, etc.)</li>
+<li>in the vast majority of cases, streets dedicated to people have both name and surname spelled out in full in the street name</li>
+<li>names have a single standard form (in other languages, name streets may change due declension or adjectivization of names)</li>
+</ul>
+<p>We were obviously aware of the language differences, but we under-esitamted data availability in other countries.</p>
+<p>Either way, we went with a mostly standard approach:</p>
+<ol style="list-style-type: decimal">
+<li>take a street name</li>
+<li>for countries where it is common to have a Wikidata entity for each street, search the full street name string on Wikidata, and see if the “named after” field is available. If it is, keep it, and skip all the rest. If no match is found, or if a country is known for not having streets as entities on Wikidata, move on to the next steps.</li>
+<li>remove the part of the name that describes the way, not the person or entity it is dedicated to, based on custom lists (e.g. for Italy remove all the “via”, “viale”, etc. at the beginning of the name string, for German all the “Straße” at the end of the word)</li>
+<li>if the relevant language leads to changes in the way a name is written, tentatively try to change the name to have it in its nominative form (e.g. in Polish turn endings in “-szka”, to endings “-szek”). This has been done completely based on word patterns (i.e. via <em>regex</em>), and not thoroughly optimised (as again, this implied a different solution for each country/language), so the quality of the results varied.</li>
+<li>search the remaining part of the street in Wikidata in the main language used in a given country</li>
+<li>if a match is found, tentatively keep it</li>
+</ol>
+<p>We bulk processed all the main cities across Europe in this way, but the same process happens on the fly on a dedicated custom interface for other municipalities.</p>
+</div>
+<div id="manual-checking-data" class="section level3">
+<h3>Manual checking data</h3>
+<p>Time for the most fascinating part of in the life of a data journalist: manual data cleaning.</p>
+<p>In principle this approach can be used to match all street to an entity, not only to persons. For example, if the matching is done thoroughly, one could see how many streets across Europe are dedicated to particular trees (e.g. “chestnut street”) or to abstract concepts (e.g. “peace”). However, we decided to limit ourselves to streets named after people.</p>
+<p>In some countries, in particular those where both name and surname are usually spelled out in full, the results were pretty good. In particular, there were very few false positives, mostly related to the fact that when a contemporary sportsperson or researcher has the same name as a 19th century burgermeister, then Wikidata gives precedence to the former. There were somewhat more false negatives, in particular in countries where it is quite common to name streets after military officials, partisans, or participants to revolutionary events that are remembered for their role, but that are not “famous”, in the sense, that little is known about their life and they do not have an own presence in Wikidata or Wikipedia. Even in such cases, however, with e.g. about 10 per cent of streets dedicated to humans to fix, this means having to fix hundreds of streets in major cities that have many thousands of different streets.</p>
+<p>In some countries, the quality of the data was more degraded, either because the parsing of the names was not very successful, or because it is common to include only a surname but no first name in the street name, or because some names are so common that is not obvious to whom a street has been dedicated to, without local knowledge/consulting local databases.</p>
+<p>Next, we exported these data as spreadsheets and shared it with partners around the continent, with two files for each city. One file had supposedly only humans, and a data point had to be flagged only if it was not in fact, a human, while the other was supposedly of non-humans, and a street had to be flagged only if, indeed, it was a human. If it was obvious from the name of the person, gender assigned at birth could also be directly added, or Wikidata identifier fixed.</p>
+<p>Additional checking or data fixing could be achieved through a dedicated web interface. The interface is less than ideal for batch-confirming hundreds of correct matches, but is more handy than working in a spreadsheet for adjusting human/non-human status, gender, or Wikidata id on a case by case basis.</p>
+<p>We initially considered a “category” and a “tag” field, to enable matching assigning streets to particular issues (e.g. streets dedicated to people associated with colonialism), but this soon appeared to be unfeasible to scale, and best left to other approaches once the association with a Wikidata id has been confirmed.</p>
+</div>
+<div id="clarifying-concepts-what-is-a-human" class="section level3">
+<h3>Clarifying concepts: what is a human?</h3>
+<p>Doing data cateogrisation at scale frequently leads to a number of edge cases that push one to reconsider even the most basic questions, such as what counts as a person. We eventually went for “a person is a distinct, identifiable, human being who has actually lived on this Earth”. This definition leaves out a number of cases that could almost fit in there, including most commonly:</p>
+<ul>
+<li>streets dedicated to deities, legendary figures, or literary characters; when these had a distinct gender, this may have been included in some of the ensuing analyses</li>
+<li>streets dedicated to vast groups of people (e.g. “resistance fighters” were surely humans, but they are a category of people, not a distinct identifiable human)</li>
+<li>streets dedicated to a building or city, which in its turn is named after a human (e.g. “St. Michael’s Church street”)</li>
+</ul>
+<p>If streets were dedicated to a small number of distinct individuals, e.g. “Pierre and Marie Curie”, then both individuals would be assigned to a street.</p>
+</div>
+<div id="the-data-model" class="section level3">
+<h3>The data model</h3>
+<p>To facilitate sharing of data across different teams, we preferred to stick to tabular data formats.</p>
+<p>At the most basic, this is how our internal data model looks like, showing first some streets dedicated to more than one person for reference:</p>
+<table style="width:1000px;margin-left:-180px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+gisco_id
+</th>
+<th style="text-align:left;">
+street_name
+</th>
+<th style="text-align:left;">
+named_after_id
+</th>
+<th style="text-align:right;">
+person
+</th>
+<th style="text-align:left;">
+gender
+</th>
+<th style="text-align:right;">
+checked
+</th>
+<th style="text-align:right;">
+ignore
+</th>
+<th style="text-align:right;">
+named_after_n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Aleea Frații Buzești
+</td>
+<td style="text-align:left;">
+Q12738437
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Aleea Frații Buzești
+</td>
+<td style="text-align:left;">
+Q25459719
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Aleea Frații Buzești
+</td>
+<td style="text-align:left;">
+Q28726062
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Frații Grachi
+</td>
+<td style="text-align:left;">
+Q212109
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Frații Grachi
+</td>
+<td style="text-align:left;">
+Q297183
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Charles Darwin
+</td>
+<td style="text-align:left;">
+Q1035
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Liviu Ciulei
+</td>
+<td style="text-align:left;">
+Q1065030
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Gheorghe Șoima
+</td>
+<td style="text-align:left;">
+Q115184221
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Profesor Petru Șpan
+</td>
+<td style="text-align:left;">
+Q115205961
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Martin Hochmaister
+</td>
+<td style="text-align:left;">
+Q1165945
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada M. Viteazul
+</td>
+<td style="text-align:left;">
+Q118755
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Bulevardul Mihai Viteazul
+</td>
+<td style="text-align:left;">
+Q118755
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Ana Ipătescu
+</td>
+<td style="text-align:left;">
+Q12720571
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Poet Aron Cotruș
+</td>
+<td style="text-align:left;">
+Q12721002
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Avocat Ilie Măcelaru
+</td>
+<td style="text-align:left;">
+Q12730321
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Ioan Codru Drăgușanu
+</td>
+<td style="text-align:left;">
+Q12730814
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Ion Pop Reteganu
+</td>
+<td style="text-align:left;">
+Q12730934
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Pincio Ioan Păun
+</td>
+<td style="text-align:left;">
+Q12730939
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Marius Sturza
+</td>
+<td style="text-align:left;">
+Q12735074
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RO_143450
+</td>
+<td style="text-align:left;">
+Strada Petru Poni
+</td>
+<td style="text-align:left;">
+Q12737913
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>gisco_id</code> is a unique code for each local administrative unit (mostly, corresponding to municipalities). The expectation is that within each municipality there will only be one street with exactly the same name. In brief, the most basic unit of analysis is a combination of <code>gisco_id</code> and <code>street_name</code>, which can always be mapped back to OpenStreetMap. Here is a brief explanation for the other columns:</p>
+<ul>
+<li><code>named_after_id</code> is a Wikidata identifier of the entity to which a street has been dedicated to</li>
+<li><code>person</code> is a binary, either 1 or 0.</li>
+<li><code>gender</code> can have the <code>male</code>, <code>female</code>, <code>other</code>, or <code>undetermined</code> value. This is a simplified version of the kind of data Wikidata offers, which can be have more options (and more than one value per entity)</li>
+<li><code>checked</code> is a binary. 1 when the street has been confirmed in some form by a manual check. The expectation is that if a street has been checked, at least the field <code>person</code> is accurate; all others may be incomplete.</li>
+<li><code>ignore</code> is a binary. If set to 1, it means that the corresponding <code>street_name</code> is not really the name of a street. Street names such as “entrance to Mc Drive” or “Airport ramp to departures” do appear in OpenStreetMap but they are irrelevant to the purpose of this analysis.</li>
+<li><code>named_after_n</code> defaults to 1. It corresponds to how many entities a street has been named after. If <code>named_after_n</code> is higher than 1, then it is expected that the row is repeated more than once in order to make it possible to have more data.</li>
+</ul>
+<p>Based on the Wikidata identifier, it is easy to get a nice label and description of the entity a street is named after (possibly, in different languages), as well as a lot of other information, including date and place of birth and death, occupation, etc.</p>
+<p>Here’s just a quick example with date of birth and death.</p>
+<table style="width:1000px;margin-left:-180px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+street_name
+</th>
+<th style="text-align:left;">
+named_after_id
+</th>
+<th style="text-align:left;">
+gender
+</th>
+<th style="text-align:left;">
+label
+</th>
+<th style="text-align:left;">
+description
+</th>
+<th style="text-align:left;">
+date_of_birth
+</th>
+<th style="text-align:left;">
+date_of_death
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Aleea Frații Buzești
+</td>
+<td style="text-align:left;">
+Q12738437
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Preda Buzescu
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1550
+</td>
+<td style="text-align:left;">
+1608
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Aleea Frații Buzești
+</td>
+<td style="text-align:left;">
+Q25459719
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Stroe Buzescu
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1550
+</td>
+<td style="text-align:left;">
+1602
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Aleea Frații Buzești
+</td>
+<td style="text-align:left;">
+Q28726062
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Radu Buzescu
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1550
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Frații Grachi
+</td>
+<td style="text-align:left;">
+Q212109
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Tiberius Gracchus
+</td>
+<td style="text-align:left;">
+ancient Rome politician
+</td>
+<td style="text-align:left;">
+0162
+</td>
+<td style="text-align:left;">
+0133
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Frații Grachi
+</td>
+<td style="text-align:left;">
+Q297183
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Gaius Gracchus
+</td>
+<td style="text-align:left;">
+ancient Roman politician
+</td>
+<td style="text-align:left;">
+0154
+</td>
+<td style="text-align:left;">
+0121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Charles Darwin
+</td>
+<td style="text-align:left;">
+Q1035
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Charles Darwin
+</td>
+<td style="text-align:left;">
+English naturalist and biologist (1809–1882)
+</td>
+<td style="text-align:left;">
+1809
+</td>
+<td style="text-align:left;">
+1882
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Liviu Ciulei
+</td>
+<td style="text-align:left;">
+Q1065030
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Liviu Ciulei
+</td>
+<td style="text-align:left;">
+Romanian architect, stage/film actor and director, costume and scenery designer
+</td>
+<td style="text-align:left;">
+1923
+</td>
+<td style="text-align:left;">
+2011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Gheorghe Șoima
+</td>
+<td style="text-align:left;">
+Q115184221
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Gheorghe Șoima
+</td>
+<td style="text-align:left;">
+Romanian composer
+</td>
+<td style="text-align:left;">
+1911
+</td>
+<td style="text-align:left;">
+1985
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Profesor Petru Șpan
+</td>
+<td style="text-align:left;">
+Q115205961
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Petru Șpan
+</td>
+<td style="text-align:left;">
+Romanian pedagogue
+</td>
+<td style="text-align:left;">
+1860
+</td>
+<td style="text-align:left;">
+1911
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Martin Hochmaister
+</td>
+<td style="text-align:left;">
+Q1165945
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Martin Hochmeister
+</td>
+<td style="text-align:left;">
+printer (1740-1789)
+</td>
+<td style="text-align:left;">
+1740
+</td>
+<td style="text-align:left;">
+1789
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada M. Viteazul
+</td>
+<td style="text-align:left;">
+Q118755
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Michael the Brave
+</td>
+<td style="text-align:left;">
+Romanian prince of Wallachia, Transylvania and Moldavia
+</td>
+<td style="text-align:left;">
+1558
+</td>
+<td style="text-align:left;">
+1601
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bulevardul Mihai Viteazul
+</td>
+<td style="text-align:left;">
+Q118755
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Michael the Brave
+</td>
+<td style="text-align:left;">
+Romanian prince of Wallachia, Transylvania and Moldavia
+</td>
+<td style="text-align:left;">
+1558
+</td>
+<td style="text-align:left;">
+1601
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Ana Ipătescu
+</td>
+<td style="text-align:left;">
+Q12720571
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+Ana Ipătescu
+</td>
+<td style="text-align:left;">
+Participant in the Romanian Revolution of 1848
+</td>
+<td style="text-align:left;">
+1805
+</td>
+<td style="text-align:left;">
+1875
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Poet Aron Cotruș
+</td>
+<td style="text-align:left;">
+Q12721002
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Aron Cotruș
+</td>
+<td style="text-align:left;">
+Romanian poet and diplomat (1891-1961)
+</td>
+<td style="text-align:left;">
+1891
+</td>
+<td style="text-align:left;">
+1961
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Avocat Ilie Măcelaru
+</td>
+<td style="text-align:left;">
+Q12730321
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Ilie Măcelar
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1822
+</td>
+<td style="text-align:left;">
+1891
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Ioan Codru Drăgușanu
+</td>
+<td style="text-align:left;">
+Q12730814
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Ion Codru-Drăgușanu
+</td>
+<td style="text-align:left;">
+Austro-Hungarian ethnic Romanian prose writer
+</td>
+<td style="text-align:left;">
+1817
+</td>
+<td style="text-align:left;">
+1884
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Ion Pop Reteganu
+</td>
+<td style="text-align:left;">
+Q12730934
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Ion Pop-Reteganul
+</td>
+<td style="text-align:left;">
+Romanian writer
+</td>
+<td style="text-align:left;">
+1853
+</td>
+<td style="text-align:left;">
+1905
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Pincio Ioan Păun
+</td>
+<td style="text-align:left;">
+Q12730939
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Ion Păun-Pincio
+</td>
+<td style="text-align:left;">
+Romanian poet
+</td>
+<td style="text-align:left;">
+1868
+</td>
+<td style="text-align:left;">
+1894
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Marius Sturza
+</td>
+<td style="text-align:left;">
+Q12735074
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Marius Sturza
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1876
+</td>
+<td style="text-align:left;">
+1954
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strada Petru Poni
+</td>
+<td style="text-align:left;">
+Q12737913
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Petru Poni
+</td>
+<td style="text-align:left;">
+Romanian chemist (1841-1925)
+</td>
+<td style="text-align:left;">
+1841
+</td>
+<td style="text-align:left;">
+1925
+</td>
+</tr>
+</tbody>
+</table>
+<p>This data model is mostly functional, but is missing two things that on more careful consideration would be necessary.</p>
+<ul>
+<li>a <code>named_after_custom_label</code>, introduced late in the project and mostly not yet used, that allows to introduce a custom label when a given person does not have an own identifier in Wikidata. This is useful in particular for languages where the name of the person an entity is dedicated to does not keep its base form. If, for example, I was not able to match “Aleja Pawła Strzeleckiego” to the correct Wikidata identifier, I should at least be able to keep record of the fact that this street is named after someone called “Paweł Strzelecki”.</li>
+<li>an additional column, or possibly, a separate table, for deduplication. It is infrequent, but by far not unseen, for a street to be present with multiple names in OpenStreetMap. For example, “Aleja Pawła Strzeleckiego” could also be recorded as ” “Aleja P. Strzeleckiego”, or “Al. Pawła Strzeleckiego”, or “Aleja Pawła Edmunda Strzeleckiego”.</li>
+</ul>
+<p>Even with this additions, there is currently not a straightforward way to distinguish two streets that have the same name, are within the same municipality, but are effectively two separate streets. E.g. two “Mueller-Straße” dedicated to two different people called “Mueller” in different parts of Berlin. These are really residual issue, and ideally this could be addressed in OpenStreetMap itself by including the first name of the person if it is known. If not… these are really marginal cases, and not all data models can be perfect.</p>
 <p>[… work in progress …]</p>
 </div>
 <div id="summary" class="section level3">
