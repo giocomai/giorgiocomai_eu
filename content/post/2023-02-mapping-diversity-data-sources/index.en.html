@@ -1,16 +1,17 @@
 ---
 title: 'The messy data sources behind "Mapping diversity"'
 author: Giorgio Comai
-date: '2023-01-30'
+date: '2023-03-01'
 slug: []
 categories:
   - Data notes
 tags:
   - rstats
+  - maps
 subtitle: ''
 summary: ''
 authors: []
-lastmod: '2023-01-30T10:55:35+01:00'
+lastmod: '2023-03-01T10:55:35+01:00'
 featured: no
 draft: no
 image:
@@ -36,15 +37,11 @@ and provided a basic interface to check the data (<a href="https://giocomai.gith
 <ul>
 <li>street names taken from OpenStreetMap</li>
 <li>tentative automatic matching of street names to the Wikidata identifier of the person a given street is dedicated to</li>
-<li>manual check limited to:
-<ul>
+<li>manual check limited to:</li>
 <li>claiming if a street was dedicated to a human or not</li>
-<li>if it was a woman,
-<ul>
+<li>if it was a woman,</li>
 <li>match it to the relative Wikidata identifier (which allows among other things, to show date of birth, profession, and a picture on the interactive visualisation)</li>
 <li>assign it to one of a small number of predefined category (e.g. religious figure, cultural figure, etc.)</li>
-</ul></li>
-</ul></li>
 </ul>
 <p>This was time consuming (have you ever considered that Rome, for example, has more than 16 thousands named streets? consider manually checking all of them), but not devastatingly so. Automatic matching functioned reasonably well, and besides confirming if it was a human or not, one had to give some more thinking to the matching only if the subject was a woman (each woman had to be matched to a Wikidata identifier and a category). But since so few streets are dedicated to women… in terms of data cleaning, it was not too bad. Besides, we worked on the assumption that if a street was dedicated to a given person in one city, then the same match would be applied to all Italian cities: not a 100 per cent safe bet, but we felt it was acceptable to get wrong a few individuals out of tens of thousands of matches, as this incredibly reduced the number of streets to check (each city in Italy will have a street dedicated to “Giuseppe Garibaldi”, but we manually checked it only once).</p>
 <p>The resulting output got reasonable visibility and contributed to stir some much needed debate. But that was in Italy, and we like European-wide stories. Also, we felt the debate needed to go further than the gender dimension, and more explicitly consider also who were all these men that have a streets dedicated to them.</p>
@@ -102,17 +99,13 @@ and provided a basic interface to check the data (<a href="https://giocomai.gith
 </ul>
 <p>Finally, these data can in principle be stored directly in the very sources we used:</p>
 <ul>
-<li>the data can be stored directly in OpenStreetMap through a set of dedicated tags such as <code>name:etymology:wikidata</code>, as discussed in details in <a href="https://www.openstreetmap.org/user/tffmh/diary/400600">this post detailing the work done in a German town</a>. Name change could also be recorded there, using the <a href="data%20namespace%20feature">https://wiki.openstreetmap.org/wiki/Proposed_features/Date_namespace</a>. Unfortunately, this information is only sparesely included in OpenStreetMap. There are however interactive maps available online that allow both to see available data and contribute this information directly on OpenStreetMap, see in particular:
-<ul>
+<li>the data can be stored directly in OpenStreetMap through a set of dedicated tags such as <code>name:etymology:wikidata</code>, as discussed in details in <a href="https://www.openstreetmap.org/user/tffmh/diary/400600">this post detailing the work done in a German town</a>. Name change could also be recorded there, using the <a href="data%20namespace%20feature">https://wiki.openstreetmap.org/wiki/Proposed_features/Date_namespace</a>. Unfortunately, this information is only sparesely included in OpenStreetMap. There are however interactive maps available online that allow both to see available data and contribute this information directly on OpenStreetMap, see in particular:</li>
 <li><a href="https://mapcomplete.osm.be/etymology?z=18&amp;lat=40.72012&amp;lon=-73.9893&amp;language=en#welcome">mapcomplete.osm.be/etymology</a></li>
 <li><a href="https://etymology.dsantini.it/">https://etymology.dsantini.it/</a></li>
-</ul></li>
-<li>the data can be stored directly in Wikidata, using the “named after” property in relation to entity. This is indeed quite widely used for the cities that have each of their street as a separate Wikidata entity. But how many municipalities have each of their street as a separate Wikidata entitiy? This varies hugely among countries:
-<ul>
+<li>the data can be stored directly in Wikidata, using the “named after” property in relation to entity. This is indeed quite widely used for the cities that have each of their street as a separate Wikidata entity. But how many municipalities have each of their street as a separate Wikidata entitiy? This varies hugely among countries:</li>
 <li>in some countries, e.g. Czechia and the Netherlands, the data are apparently rather comprehensive</li>
 <li>in some countries such as Germany or France a number of municipalities have been included, but apparently with no specific criteria, if not the availability of relevant open data and the presence of a local activist initiating their upload</li>
 <li>in most other countries, just just a small number of monumental streets have their own Wikidata entity.</li>
-</ul></li>
 </ul>
 <p>By itself, none of these two sources offers an ideal format for storing such data. For example, Wikidata includes coordinates of the street as a single point, and in the overwhelming majority of cases does not include a direct pointer to the relevant street in OpenStreetMap. This is a consquence of the data model and prevailing practices in OpenStreetMap: streets are often effectively composed of many segments with potentially different properties, often formally not attached to each other. They mostly do not have a unique permanent identifier that can be linked from Wikidata. Such an identifier <em>can</em> exist in OpenStreetMap if all components of a street are united in a <em>relation</em> (see the <a href="https://wiki.openstreetmap.org/wiki/Relations/Proposed/Street">relevant proposal</a>), which seems to be a sensible but not very common practice, partly because it could often be considered redundant or unnecessary.</p>
 <p><em>If</em> each street was united in a relation in OpenStreetMap and hence have a permanent identifier, and each street existed in Wikidata with its own permanenent Q identifier, then the two could be connected through Wikidata’s <a href="https://www.wikidata.org/wiki/Property:P402">OpenStreetMap relation ID</a> property, and we would have the best of all worlds. If more countries were like Czechia, with each street having <a href="https://www.wikidata.org/wiki/Property:P4533">a unique identifier distributed as open data</a> and thus easily associated from Wikidata, we would be much closer to this world, as then this could be combined with all sorts of other open data.</p>
@@ -1218,40 +1211,140 @@ Romanian chemist (1841-1925)
 </tr>
 </tbody>
 </table>
-<p>This data model is mostly functional, but is missing two things that on more careful consideration would be necessary.</p>
+<p>This data model is mostly functional, but is missing a couple of things that on more careful consideration would be necessary.</p>
 <ul>
 <li>a <code>named_after_custom_label</code>, introduced late in the project and mostly not yet used, that allows to introduce a custom label when a given person does not have an own identifier in Wikidata. This is useful in particular for languages where the name of the person an entity is dedicated to does not keep its base form. If, for example, I was not able to match “Aleja Pawła Strzeleckiego” to the correct Wikidata identifier, I should at least be able to keep record of the fact that this street is named after someone called “Paweł Strzelecki”.</li>
 <li>an additional column, or possibly, a separate table, for deduplication. It is infrequent, but by far not unseen, for a street to be present with multiple names in OpenStreetMap. For example, “Aleja Pawła Strzeleckiego” could also be recorded as ” “Aleja P. Strzeleckiego”, or “Al. Pawła Strzeleckiego”, or “Aleja Pawła Edmunda Strzeleckiego”.</li>
+<li>an additional column to match the Wikidata identifier of the streets itself, when it exists as its own entity on Wikidata</li>
 </ul>
-<p>Even with this additions, there is currently not a straightforward way to distinguish two streets that have the same name, are within the same municipality, but are effectively two separate streets. E.g. two “Mueller-Straße” dedicated to two different people called “Mueller” in different parts of Berlin. These are really residual issue, and ideally this could be addressed in OpenStreetMap itself by including the first name of the person if it is known. If not… these are really marginal cases, and not all data models can be perfect.</p>
-<p>[… work in progress …]</p>
-</div>
-<div id="summary" class="section level3">
-<h3>Summary</h3>
+<p>Even with this additions, there is currently not a straightforward way to distinguish two streets that have the same name, are within the same municipality, but are effectively two separate streets. E.g. two “Müllerstraße” dedicated to two different people called “Mueller” in different parts of the same city. These are really residual issues, and ideally this could be addressed in OpenStreetMap itself by including the first name of the person if it is known. If not… these are really marginal cases, and not all data models can be perfect.</p>
 </div>
 </div>
-<div id="identifying-streets" class="section level2">
-<h2>Identifying streets</h2>
-</div>
-<div id="assumptions" class="section level2">
-<h2>Assumptions</h2>
+<div id="additional-manual-quality-checks" class="section level2">
+<h2>Additional manual quality checks</h2>
+<p>When was done, an additional layer of checks has been added to reduce the number of mismataches, in particular checking for the consistency between manually introduced data and Wikidata-derived data</p>
 <ul>
-<li>the streetname is the identifier</li>
-<li>within a municipality, all segments of a street that have exactly the same street name are considered to be one street</li>
+<li>does the Wikidata id of what has been manually tagged as a person really match a person?</li>
+<li>does the gender correspond?</li>
+<li>if the date of death of a person is missing, is this a really a correct match?</li>
 </ul>
-<div id="when-you-refer-to-street-names-in-a-municipality" class="section level3">
-<h3>When you refer to street names in a municipality</h3>
+<p>After this, we took a 5% sample of streets of a given city, and made sure errors in the sample were less than 5%. If there were more, a new round of thorough checks was initiated.</p>
 </div>
+<div id="the-data" class="section level2">
+<h2>The data</h2>
+<p>So this is how the name of at least 174 449 streets across Europe has been checked by someone related to EDJNet. In many cases, it was just quick skimming to confirm that some street names were clearly not named after a person. In others, it was a slow process of confirming to whom a given person a street was dedicated to, or contributing some details to Wikidata. Indeed, I have personally added thousands of data points to Wikidata in the course of this project (more about giving back to Wikidata later).</p>
+<p>So here’s a quick summary of the number of streets by country that we have processed:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">country</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AT</td>
+<td align="right">7317</td>
+</tr>
+<tr class="even">
+<td align="left">BE</td>
+<td align="right">4327</td>
+</tr>
+<tr class="odd">
+<td align="left">CY</td>
+<td align="right">1442</td>
+</tr>
+<tr class="even">
+<td align="left">CZ</td>
+<td align="right">7907</td>
+</tr>
+<tr class="odd">
+<td align="left">DE</td>
+<td align="right">11263</td>
+</tr>
+<tr class="even">
+<td align="left">DK</td>
+<td align="right">2883</td>
+</tr>
+<tr class="odd">
+<td align="left">EL</td>
+<td align="right">3441</td>
+</tr>
+<tr class="even">
+<td align="left">ES</td>
+<td align="right">9121</td>
+</tr>
+<tr class="odd">
+<td align="left">FR</td>
+<td align="right">9024</td>
+</tr>
+<tr class="even">
+<td align="left">HR</td>
+<td align="right">5169</td>
+</tr>
+<tr class="odd">
+<td align="left">HU</td>
+<td align="right">7697</td>
+</tr>
+<tr class="even">
+<td align="left">IE</td>
+<td align="right">12791</td>
+</tr>
+<tr class="odd">
+<td align="left">IT</td>
+<td align="right">47040</td>
+</tr>
+<tr class="even">
+<td align="left">MD</td>
+<td align="right">1463</td>
+</tr>
+<tr class="odd">
+<td align="left">PL</td>
+<td align="right">13768</td>
+</tr>
+<tr class="even">
+<td align="left">PT</td>
+<td align="right">16824</td>
+</tr>
+<tr class="odd">
+<td align="left">RO</td>
+<td align="right">5548</td>
+</tr>
+<tr class="even">
+<td align="left">SE</td>
+<td align="right">5065</td>
+</tr>
+<tr class="odd">
+<td align="left">UA</td>
+<td align="right">2351</td>
+</tr>
+</tbody>
+</table>
+<p>This is what is at the base of the journalistic outputs we have published so far.</p>
 </div>
-<div id="getting-street-names-for-european-municipalities" class="section level2">
-<h2>Getting street names for European municipalities</h2>
-<p>A street is a street</p>
-<div id="regions-and-countries-with-bilingual-street-names" class="section level3">
-<h3>Regions and countries with bilingual street names</h3>
-<p>In Belgium</p>
-<p>…</p>
+<div id="what-we-have-built-in-the-process" class="section level2">
+<h2>What we have built in the process</h2>
+<p>We have built an interactive interface that makes it easier to check data across new cities. It can run either on a remote server - we have a hosted version online - as well as on a local computer. It is now available as a package for the R programming language, <a href="https://github.com/EDJNet/streetnamer"><code>streetnamer</code></a>.</p>
+<p>Besides we have built a package for the R programming language to streamline the processing of data from Wikidata. The package itself - <a href="https://github.com/EDJNet/tidywikidatar/"><code>tidywikidatar</code></a> - has received wider adoption and has been downloaded about 10.000 times from its main CRAN repostiory at the time of writing.</p>
+<p>Both packages are available on GitHub, but they are not equally usable:</p>
+<ul>
+<li><code>tidywikidatar</code> is a stable package which has been widely tested, is rather well documented, and while it still has some issues and many planned improvements, it can safely be used in production environments</li>
+<li><code>streetnamer</code>, on the contrary, mostly works, but it has patchy documentation, and itself relies on another not fully mature package - <a href="https://github.com/giocomai/latlon2map"><code>latlon2map</code></a> - to retrieve geographic data. Some functions are nicely built, the interface is built with modules that can be adapted to other circumstances, but even beyond the documentation and the many improvements it should ideally receive, there are still some glitches that need fixing. Hopefully, the documentation will be improved, some tests will be added, and the main glitches smoothed out, but the truth is that this whole endeavour has already taken up much more time than we initially budgeted, so it’s difficult to say how much we’ll really be able to support this going forward.</li>
+</ul>
+<p>It’s also an open question if this should really be a priority, given the many other things that should be done to make the most of this effort.</p>
 </div>
-</div>
-<div id="data-quality-issues" class="section level2">
-<h2>Data quality issues</h2>
+<div id="what-next" class="section level2">
+<h2>What next?</h2>
+<p>So now we have this bunch of data, and all this infrastructure, and the question stands: what are we going to do do with it?</p>
+<p>In the coming months, as we finalise the outputs we planned, we will of course be releasing the full dataset.</p>
+<p>Still, a lot of work would be needed to make the most of it, even just to interact with all the potential interlocutors that may want to build up on this, and it’s difficult to say at this stage how much we will be able to continue working on this in the coming months and years.</p>
+<p>Indeed, quite a lot of work would be needed just to keep this up to date: every month, dozens of new streets appear in big cities that have thousands of streets, some change name, some existed in the real world but were not included in OpenStreetMap. This means that by 2024, there could be a few thousand new streets to be checked for all the cities we have included in our initial publication.</p>
+<p>So here’s a few things that will happen, some that may happen, and some that it would be great to see happen:</p>
+<ul>
+<li>we’ll be releasing the full datasets and a somewhat functional web interface to check the data, fix them, or process them for municipalities big and small across Europe. Other folks do interesting stuff with it, add new data, fix things that slipped through our checks, and open up a public conversation that, in its data-based format, has so far been mostly explored in a few big cities.</li>
+<li>there is certainly scope to check data with other initiatives that have been working in these direction; some of them have likely better quality data than we do in some cities, and by checking for the differences it would surely be easier to spot issues and improve on the overall data quality.</li>
+<li>ideally, we would find good ways to give back, both to Wikidata and to OpenStreetMap; the data themselves can technically be stored in either, but it’s really not straightfoward to to this systematically. There are surely ways, but they would need time and consideration.</li>
+<li>use our datasets to show which data are missing, in particular which people are not on Wikidata, but perhaps should be there. What comes out from our dataset is a mostly clean list of people who are not on Wikidata, but since a street has been named after them, they would probably mostly cross the notability threshold.</li>
+<li>finally, of course, the obvious: by having a clear, structured, data-based summary of who all the streets in our cities and towns are named after, we can more openly question how well this reflects the society we want to live in.</li>
+</ul>
 </div>
