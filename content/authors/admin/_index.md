@@ -58,7 +58,9 @@ user_groups:
 --- 
 
 
-I am a researcher and data analyst at [OBCT/CCI](https://www.balcanicaucaso.org/).
+I am a researcher and data analyst at [OBCT/CCI](https://www.balcanicaucaso.org/). 
+
+I am currently working on a research project dedicated to text as data (and data in the text): find out more on [tadadit.xyz](https://tadadit.xyz/).
 
 Here is some more information about my (not necessarily contiguous) professional interests.
 
@@ -69,5 +71,3 @@ In recent years, I have increasingly been working on structured approaches for a
 I have also been working as a data analyst and consultant, crunching data at the European Data Journalism Network ([EDJNet](https://europeandatajournalism.eu/)), writing code and developing [packages in the R programming language](https://github.com/giocomai/), and working on data visualisation and geographic data analysis.
 
 I occasionally post on my data visualisation blog: [`the codebase`](https://codebase.giorgiocomai.eu/).
-
-__Current research project__: text as data (and data in the text) in online local sources related to Russia's invasion of Ukraine and other conflicts in post-Soviet spaces.
