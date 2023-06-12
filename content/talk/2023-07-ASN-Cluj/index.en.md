@@ -5,8 +5,9 @@ date: '2023-07-06'
 slug: []
 categories: []
 tags:
-  - Russia
+  - russia
   - content analys
+  - russia's invasion of ukraine
 subtitle: ''
 summary: 'Paper presented at the European ASN in Cluj-Napoca'
 authors: []

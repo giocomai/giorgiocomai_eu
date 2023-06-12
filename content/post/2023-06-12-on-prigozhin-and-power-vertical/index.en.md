@@ -22,6 +22,8 @@ image:
 projects: []
 ---
 
+*[Originally posted on the Fediverse](https://fediverse.giorgiocomai.eu/notice/AWbjLTFrh4aoJyCjS4)*
+
 > "Wagner group chief Yevgeny Prigozhin has launched another diatribe against the Russian army. Is he a loose cannon, or a Kremlin puppet?"
 
 https://www.theguardian.com/commentisfree/2023/jun/09/russian-armed-forces-infighting-yevgeny-prigozhin
