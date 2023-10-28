@@ -1,5 +1,5 @@
 ---
-title: On the use of 'ethnic cleansing' in the case of Nagorno Karabakh
+title: "On the use of 'ethnic cleansing' in the case of Nagorno Karabakh"
 author: Giorgio Comai
 date: '2023-09-30'
 slug: []
