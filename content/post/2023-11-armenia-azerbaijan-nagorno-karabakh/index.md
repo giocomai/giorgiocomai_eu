@@ -29,3 +29,9 @@ Una breve rassegna di analisi, podcast e interventi pubblici in italiano riguard
 
 - [Nagorno Karabakh: sarà (nuovamente) guerra?](https://www.youtube.com/watch?v=DEbrdGZdIFU), evento organizzato da Ispi [interamente disponibile online](https://www.youtube.com/watch?v=DEbrdGZdIFU); hanno partecipato: Giorgio Comai (Osservatorio Balcani e Caucaso Transeuropa), Aldo Ferrari (ISPI; Università Ca' Foscari Venezia), Eleonora Tafuro Ambrosetti (ISPI), 30 settembre 2020
 - [È la fine del Nagorno-Karabakh?](https://www.ispionline.it/it/pubblicazione/e-la-fine-del-nagorno-karabakh-146468), evento organizzato da Ispi [interamente disponibile online](https://www.youtube.com/watch?v=q0_08A5PaPM); hanno partecipato: Giorgio Comai (Osservatorio Balcani e Caucaso Transeuropa), Alessia De Luca (ISPI), Monica Ellena (Institute for War & Peace Reporting), Aldo Ferrari (Università Ca’ Foscari Venezia; ISPI). 4 ottobre 2023
+
+## Report
+
+(non specifico sul Nagorno Karabakh, ma rilevante per il contesto)
+
+- [Il Caucaso del Sud: Mosca cerca stabilità, non nuove opportunità](https://www.parlamento.it/application/xmanager/projects/parlamento/file/repository/affariinternazionali/osservatorio/approfondimenti/PI00192App.pdf), con Marilisa Lorusso, in *La Russia e il suo vicinato: Asia Centrale e Caucaso*, a cura dell'Istituto per gli Studi di Politica Internazionale per *L'Osservatorio di politica internazionale*, [parlamento.it](https://www.parlamento.it/application/xmanager/projects/parlamento/file/repository/affariinternazionali/osservatorio/approfondimenti/PI00192App.pdf)
