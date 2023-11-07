@@ -11,7 +11,7 @@ tags:
 summary: "Analisi e podcast usciti in italiano riguardanti il conflitto tra Armenia e Azerbaijan e la guerra in Nagorno Karabakh"
 ---
 
-Una breve rassegna di analisi, podcast e interventi pubblici in italiano riguardanti il conflitto tra Armenia e Azerbaijan e la guerra in Nagorno Karabakh
+Una breve rassegna di mie analisi, podcast e interventi pubblici in italiano riguardanti il conflitto tra Armenia e Azerbaijan e la guerra in Nagorno Karabakh
 
 ## Articoli
 
