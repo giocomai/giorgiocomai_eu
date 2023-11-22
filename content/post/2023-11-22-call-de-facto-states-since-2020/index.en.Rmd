@@ -1,0 +1,35 @@
+---
+title: "Call for papers | De facto states since 2020: new realities and theory updates"
+date: '2023-11-22'
+slug: [call-de-facto-states-since-2020]
+categories:
+  - Research notes
+tags:
+  - de facto states
+subtitle: 'We invite you to join us in presenting a panel proposal to the International Studies Association conference (Rijeka, 18-21 June 2024). We welcome fellow co-panelists, chair, and discussant. Deadline to join our proposal: 8 December 2023.'
+summary: ''
+authors: [Andrea Peinhopf, Gela Merabishvili, Giorgio Comai]
+lastmod: '2023-11-22T08:27:26+02:00'
+featured: no
+draft: no
+projects: []
+---
+
+### Concept
+
+For at least two decades, the concept of “de facto state” offered a useful framework for understanding prevalent dynamics in these entities for a large number of research questions. However, the past 2-3 years, particularly the second Karabakh War and Russia’s full-scale invasion of Ukraine, have brought major geopolitical shifts to de facto states. These violent developments either altogether put an end to de facto statehood in some cases (e.g. Karabakh) or substantially changed the international context in which they operate in others. These dramatic geopolitical dynamics create challenges to established assumptions about de facto statehood and open new theoretical questions about the nature of de facto states, as well as their place in an international context where violence has become more prominent, including in Europe.
+
+This panel welcomes both empirical and theoretical papers. Empirically, we seek to explore the effects of changing power dynamics and new insecurities on these contested territories, as well as the indirect fallout of Russia’s invasion of Ukraine. For instance, in what ways have they become more isolated and dependent on the patron state? Theoretically, we aim to critically reflect on the enduring relevance of existing concepts such as ‘de facto state’ or ‘unrecognised state’ and on their suitability for analysing ongoing dynamics, as well as to question the extent to which they still offer a good theoretical basis going forward.
+
+### A proposal by
+
+- __Andrea Peinhopf__, *Northumbria University (Newcastle)*, andrea.peinhopf@northumbria.ac.uk
+- __Gela Merabishvili__, *Eötvös Loránd University - ELTE (Budapest)*, gela.merabishvili@ttk.elte.hu
+- __Giorgio Comai__, *OBC Transeuropa/CCI (Trentino)*, giorgio.comai@cci.tn.it
+
+### Contacts
+
+If you are interested, please share your proposal via email by writing to Andrea Peinhopf - andrea.peinhopf@northumbria.ac.uk 
+Feel free to get in touch with any of us for any clarification or discuss this further.
+
+[See also the original call for proposals on ISA's website](https://www.isanet.org/conferences/ISA-Rijeka-2024/Call)
