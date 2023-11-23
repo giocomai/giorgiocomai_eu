@@ -1,7 +1,6 @@
 ---
 title: "Call for papers - De facto states since 2020: new realities and theory updates"
 date: '2023-11-22'
-slug: [call-de-facto-states-since-2020]
 categories:
   - Research notes
 subtitle: 'We invite you to join us in presenting a panel proposal to the CEEISA-ISA Joint International Conference (Rijeka, 18-21 June 2024). We welcome fellow co-panelists, chair, and discussant. Deadline to join our proposal: 8 December 2023.'
