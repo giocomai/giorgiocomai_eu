@@ -69,3 +69,5 @@ In recent years, I have increasingly been working on structured approaches for a
 I have also been working as a data analyst and consultant, crunching data at the European Data Journalism Network ([EDJNet](https://europeandatajournalism.eu/)), writing code and developing [packages in the R programming language](https://github.com/giocomai/), and working on data visualisation and geographic data analysis.
 
 I occasionally post on my data visualisation blog: [`the codebase`](https://codebase.giorgiocomai.eu/).
+
+Find me micro-blogging in the Fediverse <a rel="me" href="https://mastodon.social/@giocomai">@giocomai@mastodon.social</a>.
