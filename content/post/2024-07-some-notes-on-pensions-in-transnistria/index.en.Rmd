@@ -1,0 +1,55 @@
+---
+title: Some notes on pensions in Transnistria
+author: Giorgio Comai
+date: '2024-06-29'
+slug: []
+categories:
+  - Research notes
+tags:
+  - transnistria
+  - de facto
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2024-06-29T21:59:09+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+There are different sources relevant for getting a better quantitative picture of the situation with pensioners in Transnistria, and more specifically:
+
+- how many pensioners are there in Transnistria?
+- what is their average pension?
+- who is paying for their pension?
+
+The answers to these questions are often not straightforward, in particular because Russia is paying in full part of the pensioners, and is paying an additional bonus to those registered with local authorities (but also, those registered with Russia's pension fund get a compensation if due to exchange rate fluctuations their Russian pension would be smaller than their original Transnistrian pension). 
+
+
+## Russia's open data
+
+https://sfr.gov.ru/opendata/pfr_opendata/~7706016118-abroad
+
+```{r ru_pensions_in_moldova}
+ru_pensions_in_moldova <- readr::read_csv(fs::path("data", "ru_pensions_in_moldova.csv"), show_col_types = FALSE)
+
+ru_pensions_in_moldova |> 
+  ggplot2::ggplot(mapping = ggplot2::aes(x = year, y = n, label = scales::number(n))) +
+  ggplot2::geom_col() +
+  ggplot2::geom_text(color = "white", vjust = 1.5, family = "Roboto Condensed") +
+  ggplot2::scale_y_continuous(name = NULL, labels = scales::number) +
+  ggplot2::scale_x_continuous(name = NULL, breaks = scales::pretty_breaks(7)) +
+  ggplot2::theme_minimal(base_family = "Roboto Condensed") +
+  ggplot2::labs(title = "Recipients of Russian pensions in Moldova", 
+                subtitle = "According to open data published by the Russian pension fund", 
+                caption = "Data processing: Giorgio Comai\nsource: 'Численность получателей российских пенсий, проживающих за границей' \nhttps://sfr.gov.ru/opendata/pfr_opendata/~7706016118-abroad")
+```
+[*Download data as a csv file*](data/ru_pensions_in_moldova.csv)
+
+
+## Transnistria 
+
+https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/
