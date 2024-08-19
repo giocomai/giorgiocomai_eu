@@ -26,20 +26,23 @@ There are different sources relevant for getting a better quantitative picture o
 - what is their average pension?
 - who is paying for their pension?
 
-The answers to these questions are often not straightforward, in particular because Russia is paying in full part of the pensioners, and is paying an additional bonus to those registered with local authorities (but also, those registered with Russia's pension fund get a compensation if due to exchange rate fluctuations their Russian pension would be smaller than their original Transnistrian pension). 
+The answers to these questions are often not straightforward, in particular because Russia is paying in full part of the pensioners, and is paying an additional bonus to those registered with local authorities (but also, those registered with Russia's pension fund [get a compensation](https://www.novostipmr.com/ru/content/doplaty-rossiyskim-pensioneram-kak-eto-budet) if due to exchange rate fluctuations their Russian pension would be smaller than their original Transnistrian pension). 
 
 
 ## Russia's open data
 
-https://sfr.gov.ru/opendata/pfr_opendata/~7706016118-abroad
+The officially recorded number of recipients of a Russian pension in Moldova, as recorded in the [open data portal of the Russia's social fund](https://sfr.gov.ru/opendata/pfr_opendata/~7706016118-abroad) (previously, the Russian pension fund), may seem puzzling at first: no data before 2015, then a steep increase between 2016 and 2019 up to almost 50 thousand, and then all of a sudden down to about one hundred.  
 
 ```{r ru_pensions_in_moldova}
 ru_pensions_in_moldova <- readr::read_csv(fs::path("data", "ru_pensions_in_moldova.csv"), show_col_types = FALSE)
 
 ru_pensions_in_moldova |> 
+  dplyr::mutate(adjust = dplyr::if_else(n>1000, 1.5, -0.5),
+                text_color = dplyr::if_else(n>1000, "white", "gray30")) |> 
   ggplot2::ggplot(mapping = ggplot2::aes(x = year, y = n, label = scales::number(n))) +
   ggplot2::geom_col() +
-  ggplot2::geom_text(color = "white", vjust = 1.5, family = "Roboto Condensed") +
+  ggplot2::geom_text(mapping = ggplot2::aes(vjust = adjust, color = text_color), family = "Roboto Condensed") +
+  ggplot2::scale_color_identity() +
   ggplot2::scale_y_continuous(name = NULL, labels = scales::number) +
   ggplot2::scale_x_continuous(name = NULL, breaks = scales::pretty_breaks(7)) +
   ggplot2::theme_minimal(base_family = "Roboto Condensed") +
@@ -53,3 +56,11 @@ ru_pensions_in_moldova |>
 ## Transnistria 
 
 https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/
+
+
+## Notes
+
+https://eadaily.com/ru/news/2023/01/26/krasnoselskiy-rossiyskie-pensionery-v-pridnestrove-do-sih-por-bez-deneg
+
+https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/
+https://giorgiocomai.eu/post/russia-and-pensions-in-post-soviet-de-facto-states/
