@@ -23,7 +23,7 @@ image:
 projects: []
 ---
 
-*[Originally posted to the Fediverse - [Source](https://fediverse.giorgiocomai.eu/notice/AQ3iJWU5D04kq0rj84]*
+*[Originally posted to the Fediverse - [Source](https://fediverse.giorgiocomai.eu/notice/AQ3iJWU5D04kq0rj84)]*
 
 I have looked at a full broadcast live yesterday night on (nationalist) Tsargrad TV, and rather than the outrageous quotes that inevitably emerge - and are inevitably picked up by the BBC's great [Francis Scarr](https://newsie.social/@francisscarr/109421032155568237) - what I found more interesting was the framing, i.e. let's talk about the issues that the authorities don't want to talk about, as what they say does not make sense. 
 
