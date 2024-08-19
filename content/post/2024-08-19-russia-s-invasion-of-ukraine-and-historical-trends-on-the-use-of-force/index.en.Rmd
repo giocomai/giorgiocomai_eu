@@ -1,0 +1,36 @@
+---
+title: "Russia's invasion of Ukraine and historical trends on the use of force"
+author: Giorgio Comai
+date: '2024-08-19'
+slug: [russia-use-of-force-historical-trend]
+categories:
+  - Microblog
+tags:
+  - use of force
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2024-08-19T22:17:50+02:00'
+featured: no
+draft: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+bibliography: references.bib
+---
+
+Reflecting on major changes in the use of force in international relations, @holsti2016 records the common understanding that **inter-state wars** have become less frequent in recent decades.
+
+> "Aggression, a secretly planned, unprovoked war of choice, usually with a staged ‘incident’ or some ‘intolerable’ condition as a pretext, remains a relatively rare event in international life."
+
+He also highlights how, in stark contrast to previous centuries, territorial conquest resulting from the use of force has effectively become obsolete and almost unseen after 1945.
+
+Russia's large scale invasion of Ukraine in 2022 seems to contradict both of these long-term trends. There is, however, good reason to believe that regime change in Kyiv, rather that long-term inter-state war and territorial conquest was the main objectives of Vladimir Putin when he decided to use force.
+
+If we accept this view, then it appears that Putin did not plan to engage in inter-state war, but rather, to *use force to unilaterally depose a regime*, which would have been fully in line with contemporary trends. Indeed, Holsti observes
+
+> "two remarkable shifts from historical trends: the significant decline in the incidence of conquest/aggression and classic inter-state wars, offset by **the increase in the great powers’ propensity to use force unilaterally to prop up or depose regimes in the post-colonial world**."
+
+## References
