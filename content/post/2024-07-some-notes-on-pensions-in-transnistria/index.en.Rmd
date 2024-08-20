@@ -21,6 +21,8 @@ image:
 projects: []
 ---
 
+__N.B. This is a draft post! It is temporarily published *as is*, and may be updated and finalised__
+
 There are different sources relevant for getting a better quantitative picture of the situation with pensioners in Transnistria, and more specifically:
 
 - how many pensioners are there in Transnistria?
@@ -54,14 +56,12 @@ ru_pensions_in_moldova |>
 [*Download data as a csv file*](data/ru_pensions_in_moldova.csv)
 
 
-## Transnistria 
+### Some links for reference
+
+https://giorgiocomai.eu/post/russia-and-pensions-in-post-soviet-de-facto-states/
 
 https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/
-
-
-## Notes
 
 https://eadaily.com/ru/news/2023/01/26/krasnoselskiy-rossiyskie-pensionery-v-pridnestrove-do-sih-por-bez-deneg
 
 https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/
-https://giorgiocomai.eu/post/russia-and-pensions-in-post-soviet-de-facto-states/

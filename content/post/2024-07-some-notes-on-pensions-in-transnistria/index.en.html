@@ -1,0 +1,63 @@
+---
+title: Some notes on pensions in Transnistria
+author: Giorgio Comai
+date: '2024-06-29'
+draft: true
+slug: []
+categories:
+  - Research notes
+tags:
+  - transnistria
+  - de facto
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2024-06-29T21:59:09+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>There are different sources relevant for getting a better quantitative picture of the situation with pensioners in Transnistria, and more specifically:</p>
+<ul>
+<li>how many pensioners are there in Transnistria?</li>
+<li>what is their average pension?</li>
+<li>who is paying for their pension?</li>
+</ul>
+<p>The answers to these questions are often not straightforward, in particular because Russia is paying in full part of the pensioners, and is paying an additional bonus to those registered with local authorities (but also, those registered with Russia’s pension fund <a href="https://www.novostipmr.com/ru/content/doplaty-rossiyskim-pensioneram-kak-eto-budet">get a compensation</a> if due to exchange rate fluctuations their Russian pension would be smaller than their original Transnistrian pension).</p>
+<div id="russias-open-data" class="section level2">
+<h2>Russia’s open data</h2>
+<p>The officially recorded number of recipients of a Russian pension in Moldova, as recorded in the <a href="https://sfr.gov.ru/opendata/pfr_opendata/~7706016118-abroad">open data portal of the Russia’s social fund</a> (previously, the Russian pension fund), may seem puzzling at first: no data before 2015, then a steep increase between 2016 and 2019 up to almost 50 thousand, and then all of a sudden down to about one hundred.</p>
+<pre class="r"><code>ru_pensions_in_moldova &lt;- readr::read_csv(fs::path(&quot;data&quot;, &quot;ru_pensions_in_moldova.csv&quot;), show_col_types = FALSE)
+
+ru_pensions_in_moldova |&gt; 
+  dplyr::mutate(adjust = dplyr::if_else(n&gt;1000, 1.5, -0.5),
+                text_color = dplyr::if_else(n&gt;1000, &quot;white&quot;, &quot;gray30&quot;)) |&gt; 
+  ggplot2::ggplot(mapping = ggplot2::aes(x = year, y = n, label = scales::number(n))) +
+  ggplot2::geom_col() +
+  ggplot2::geom_text(mapping = ggplot2::aes(vjust = adjust, color = text_color), family = &quot;Roboto Condensed&quot;) +
+  ggplot2::scale_color_identity() +
+  ggplot2::scale_y_continuous(name = NULL, labels = scales::number) +
+  ggplot2::scale_x_continuous(name = NULL, breaks = scales::pretty_breaks(7)) +
+  ggplot2::theme_minimal(base_family = &quot;Roboto Condensed&quot;) +
+  ggplot2::labs(title = &quot;Recipients of Russian pensions in Moldova&quot;, 
+                subtitle = &quot;According to open data published by the Russian pension fund&quot;, 
+                caption = &quot;Data processing: Giorgio Comai\nsource: &#39;Численность получателей российских пенсий, проживающих за границей&#39; \nhttps://sfr.gov.ru/opendata/pfr_opendata/~7706016118-abroad&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/ru_pensions_in_moldova-1.png" width="672" />
+<a href="data/ru_pensions_in_moldova.csv"><em>Download data as a csv file</em></a></p>
+</div>
+<div id="transnistria" class="section level2">
+<h2>Transnistria</h2>
+<p><a href="https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/" class="uri">https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/</a></p>
+</div>
+<div id="notes" class="section level2">
+<h2>Notes</h2>
+<p><a href="https://eadaily.com/ru/news/2023/01/26/krasnoselskiy-rossiyskie-pensionery-v-pridnestrove-do-sih-por-bez-deneg" class="uri">https://eadaily.com/ru/news/2023/01/26/krasnoselskiy-rossiyskie-pensionery-v-pridnestrove-do-sih-por-bez-deneg</a></p>
+<p><a href="https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/" class="uri">https://ef-pmr.org/otchet_ob_ispolnenii_byudjeta_egfss_pmr_za_2023_god/</a>
+<a href="https://giorgiocomai.eu/post/russia-and-pensions-in-post-soviet-de-facto-states/" class="uri">https://giorgiocomai.eu/post/russia-and-pensions-in-post-soviet-de-facto-states/</a></p>
+</div>
