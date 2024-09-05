@@ -50,7 +50,7 @@ social:
   link: https://stackoverflow.com/users/4124601/giocomai
 - icon: mastodon
   icon_pack: fab
-  link: https://fediverse.giorgiocomai.eu/giocomai
+  link: https://mastodon.social/@giocomai
 superuser: true
 user_groups:
 - Researchers
