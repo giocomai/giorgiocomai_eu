@@ -16,11 +16,12 @@ education:
 email: "g@giorgiocomai.eu"
 interests:
 - data crunching, data visualisation and geocomputation
+- peace and conflict studies
 - data collection methods and ethics in research
 - structured analysis of web contents
 - Post-Soviet affairs and de facto states
-- R programming
 - digital humanities
+- R programming
 
 name: Giorgio Comai
 organizations:
@@ -58,7 +59,7 @@ user_groups:
 --- 
 
 
-I am a researcher and data analyst at [OBCT/CCI](https://www.balcanicaucaso.org/). 
+I am senior researcher and data analyst at [OBCT/CCI](https://www.balcanicaucaso.org/), and lecturer at the University of Trento (2024/2025). 
 
 I am currently working on a research project dedicated to text as data (and data in the text): find out more on [tadadit.xyz](https://tadadit.xyz/).
 
