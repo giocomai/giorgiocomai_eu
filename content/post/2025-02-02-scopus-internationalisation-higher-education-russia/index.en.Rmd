@@ -6,12 +6,13 @@ categories:
 subtitle: 'A quantitative investigation based on Scopus'
 summary: ''
 authors: [Giorgio Comai]
-lastmod: '2025-02-02T08:27:26+02:00'
+lastmod: '2025-02-02T09:27:26+02:00'
 featured: yes
 draft: no
 projects: []
 ---
 
+DOI for this research note: [https://doi.org/10.5281/zenodo.14791245](https://doi.org/10.5281/zenodo.14791245)
 
 ```{r setup, echo=FALSE, include=FALSE}
 scopus_cache_folder <- readr::read_lines("cache_folder.txt")
@@ -19,6 +20,7 @@ scopus_results_folder <- fs::path(scopus_cache_folder, "scopus_results")
 processing_cache <- fs::dir_create("processing_cache")
 
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+knitr::opts_chunk$set(fig.path = "static")
 #knitr::opts_chunk$set(dev="cairo_pdf")
 
 ggplot2::theme_set(ggplot2::theme_minimal() +
@@ -41,7 +43,7 @@ source("he_global_by_subj_area.R")
 
 ## Objective of this research note
 
-Outline trends in the publication record of Russia-affiliated scholars writing about internationalisation of higher education and publishing their work in established scholarly journals
+Outline trends in the publication record of Russia-affiliated scholars writing about internationalisation of higher education and publishing their work in established scholarly journals.
 
 
 
@@ -1122,7 +1124,7 @@ current_ihe_df <- ru_noru_ihe_df |> dplyr::distinct(`dc:identifier`, .keep_all =
 
 ```
 
-```{r}
+```{r eval = FALSE}
 current_ihe_df |> 
   dplyr::group_by(Affiliation, year) |> 
   dplyr::count() |> 
@@ -1169,4 +1171,6 @@ no_ru_gg +
     subtitle = "Counting relevant social sciences publications in Scopus-indexed journals",
     caption =  stringr::str_c("* ", sQuote('Russian affiliation'), " attributed if at least one author is affiliated with a Russia-based institution"))
 ```
+
+
 
