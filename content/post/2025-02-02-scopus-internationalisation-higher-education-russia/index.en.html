@@ -1,0 +1,700 @@
+---
+title: "Russia-affiliated scholars publishing about internationalisation of higher education"
+date: '2025-02-02'
+categories:
+  - Research notes
+subtitle: 'A quantitative investigation based on Scopus'
+summary: ''
+authors: [Giorgio Comai]
+lastmod: '2025-02-02T08:27:26+02:00'
+featured: yes
+draft: no
+projects: []
+---
+
+
+
+<div id="objective-of-this-research-note" class="section level2">
+<h2>Objective of this research note</h2>
+<p>Outline trends in the publication record of Russia-affiliated scholars writing about internationalisation of higher education and publishing their work in established scholarly journals</p>
+</div>
+<div id="operationalisation-of-the-objective" class="section level2">
+<h2>Operationalisation of the objective</h2>
+<p>Rely on the Scopus API to search for all articles published:</p>
+<ul>
+<li><strong>between 2011 and 2024</strong></li>
+<li>in the following <strong>subject area ‘SOCI’</strong></li>
+<li>matching in either the title, the abstract, or the author-provided article keywords the following string: <strong>‘higher education’</strong>
+<ul>
+<li>considering other criteria for narrowing further the number of results in subsequent steps</li>
+</ul></li>
+<li>in any Scopus-indexed journal
+<ul>
+<li>considering the option to limit results to top ranked journals (e.g. Q1 and Q2)</li>
+</ul></li>
+</ul>
+<p>Additional notes clarifying some of these choices</p>
+<ul>
+<li><strong>Why set 2011 as the start date?</strong>
+<ul>
+<li><strong>data availability</strong>: according to the official Scopus website, journal CiteScore data are effectively available only starting with 2011; as CiteScore is used for filtering Q1 and Q2 publications, this criteria could scarcely be consistenyly applied retroactively (“the first journal metric values for CiteScore are available for 2011” - <a href="https://service.elsevier.com/app/answers/detail/a_id/29859/">https://service.elsevier.com/app/answers/detail/a_id/29859/</a>)</li>
+<li><strong>relevance</strong>: the focus is on policies favouring internationalisation of higher education that gained traction in Russia mostly in the 2010s</li>
+<li><strong>pragmatic considerations</strong>: in previous years, the number of publications focused on higher education by Russia-affiliated scholars is anyway negligible</li>
+</ul></li>
+<li><strong>Why set only SOCI as the subject area?</strong>
+<ul>
+<li><strong>pragmatic considerations</strong>: a separate test including also “ECON” and “ARTS” has been conducted; the number of additional unique matches was limited, and often less relevant</li>
+<li><strong>clarity</strong>: an explicit focus on social sciences Scopus-indexed journals enhances clarity in the case selection</li>
+</ul></li>
+<li><strong>Why rely only on “higher education” as keyword?</strong>
+<ul>
+<li><strong>pragmatic considerations</strong>: additional contiguous keywords, such as “university”, brought in a large number of spurious matching; domain-specific keywords (e.g. “Bologna process”) may have skewed results; ultimately, if an article really focuses on internationalisation of higher education it is strongly expected that it will use that expression in either title, abstract, or user-selected keywords</li>
+</ul></li>
+<li><strong>Why only journal publications, and not e.g. book chapters?</strong>
+<ul>
+<li><strong>pragmatic considerations</strong>: focusing on journal articles allows to differentiate publications based on ranking</li>
+</ul></li>
+</ul>
+</div>
+<div id="data-retrieval" class="section level2">
+<h2>Data retrieval</h2>
+<p>The data was downloaded from Scopus API in January 2025 via <a href="https://api.elsevier.com">api.elsevier.com</a> and <a href="https://www.scopus.com">www.scopus.com</a>.</p>
+<p>See:</p>
+<ul>
+<li><a href="https://dev.elsevier.com/policy.html">Scopus Use Policies</a></li>
+<li><a href="https://dev.elsevier.com/tecdoc_attribution_scopus.html">Scopus Attribution Guide</a></li>
+</ul>
+</div>
+<div id="differentiate-articles" class="section level2">
+<h2>Differentiate articles</h2>
+<p>Articles are differentiated based on a set of criteria:</p>
+<ul>
+<li>articles with at least an author with a Russian affiliation?</li>
+<li>articles published in Q1 and Q2 journals VS all Scopus-indexed publications</li>
+<li>articles that are specifically about <em>internationalisation</em> of higher education, base on a narrow or slightly broader set of criteria.</li>
+</ul>
+<p>The same analysis and graphs will be reproduced based on each set of criteria.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 1: </span>Share of Scopus-indexed journal articles mentioning higher education in either title, abstract, or keyword; Russian affiliation recorded if at least one co-author has a Russian affiliation.</caption>
+<colgroup>
+<col width="6%" />
+<col width="7%" />
+<col width="28%" />
+<col width="25%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="right">All</th>
+<th align="right">No Russian affiliation</th>
+<th align="right">Russian affiliation</th>
+<th align="left">Russian affiliation share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2011</td>
+<td align="right">4073</td>
+<td align="right">4057</td>
+<td align="right">16</td>
+<td align="left">0.39%</td>
+</tr>
+<tr class="even">
+<td align="right">2012</td>
+<td align="right">4399</td>
+<td align="right">4341</td>
+<td align="right">58</td>
+<td align="left">1.32%</td>
+</tr>
+<tr class="odd">
+<td align="right">2013</td>
+<td align="right">4991</td>
+<td align="right">4941</td>
+<td align="right">50</td>
+<td align="left">1.00%</td>
+</tr>
+<tr class="even">
+<td align="right">2014</td>
+<td align="right">5450</td>
+<td align="right">5328</td>
+<td align="right">122</td>
+<td align="left">2.24%</td>
+</tr>
+<tr class="odd">
+<td align="right">2015</td>
+<td align="right">6126</td>
+<td align="right">5837</td>
+<td align="right">289</td>
+<td align="left">4.72%</td>
+</tr>
+<tr class="even">
+<td align="right">2016</td>
+<td align="right">6481</td>
+<td align="right">6134</td>
+<td align="right">347</td>
+<td align="left">5.35%</td>
+</tr>
+<tr class="odd">
+<td align="right">2017</td>
+<td align="right">7115</td>
+<td align="right">6802</td>
+<td align="right">313</td>
+<td align="left">4.40%</td>
+</tr>
+<tr class="even">
+<td align="right">2018</td>
+<td align="right">8287</td>
+<td align="right">7829</td>
+<td align="right">458</td>
+<td align="left">5.53%</td>
+</tr>
+<tr class="odd">
+<td align="right">2019</td>
+<td align="right">9915</td>
+<td align="right">9373</td>
+<td align="right">542</td>
+<td align="left">5.47%</td>
+</tr>
+<tr class="even">
+<td align="right">2020</td>
+<td align="right">11552</td>
+<td align="right">11014</td>
+<td align="right">538</td>
+<td align="left">4.66%</td>
+</tr>
+<tr class="odd">
+<td align="right">2021</td>
+<td align="right">12404</td>
+<td align="right">11894</td>
+<td align="right">510</td>
+<td align="left">4.11%</td>
+</tr>
+<tr class="even">
+<td align="right">2022</td>
+<td align="right">13497</td>
+<td align="right">13041</td>
+<td align="right">456</td>
+<td align="left">3.38%</td>
+</tr>
+<tr class="odd">
+<td align="right">2023</td>
+<td align="right">14666</td>
+<td align="right">14200</td>
+<td align="right">466</td>
+<td align="left">3.18%</td>
+</tr>
+<tr class="even">
+<td align="right">2024</td>
+<td align="right">18532</td>
+<td align="right">18142</td>
+<td align="right">390</td>
+<td align="left">2.10%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Table 2: </span>Share of Q1 and Q2 Scopus-indexed journal articles mentioning higher education in either title, abstract, or keyword; Russian affiliation recorded if at least one co-author has a Russian affiliation.</caption>
+<colgroup>
+<col width="6%" />
+<col width="7%" />
+<col width="28%" />
+<col width="25%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="right">All</th>
+<th align="right">No Russian affiliation</th>
+<th align="right">Russian affiliation</th>
+<th align="left">Russian affiliation share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2011</td>
+<td align="right">1595</td>
+<td align="right">1594</td>
+<td align="right">1</td>
+<td align="left">0.06%</td>
+</tr>
+<tr class="even">
+<td align="right">2012</td>
+<td align="right">1797</td>
+<td align="right">1788</td>
+<td align="right">9</td>
+<td align="left">0.50%</td>
+</tr>
+<tr class="odd">
+<td align="right">2013</td>
+<td align="right">2130</td>
+<td align="right">2124</td>
+<td align="right">6</td>
+<td align="left">0.28%</td>
+</tr>
+<tr class="even">
+<td align="right">2014</td>
+<td align="right">2143</td>
+<td align="right">2134</td>
+<td align="right">9</td>
+<td align="left">0.42%</td>
+</tr>
+<tr class="odd">
+<td align="right">2015</td>
+<td align="right">2376</td>
+<td align="right">2362</td>
+<td align="right">14</td>
+<td align="left">0.59%</td>
+</tr>
+<tr class="even">
+<td align="right">2016</td>
+<td align="right">2608</td>
+<td align="right">2595</td>
+<td align="right">13</td>
+<td align="left">0.50%</td>
+</tr>
+<tr class="odd">
+<td align="right">2017</td>
+<td align="right">2994</td>
+<td align="right">2956</td>
+<td align="right">38</td>
+<td align="left">1.27%</td>
+</tr>
+<tr class="even">
+<td align="right">2018</td>
+<td align="right">3672</td>
+<td align="right">3588</td>
+<td align="right">84</td>
+<td align="left">2.29%</td>
+</tr>
+<tr class="odd">
+<td align="right">2019</td>
+<td align="right">4317</td>
+<td align="right">4139</td>
+<td align="right">178</td>
+<td align="left">4.12%</td>
+</tr>
+<tr class="even">
+<td align="right">2020</td>
+<td align="right">5426</td>
+<td align="right">5169</td>
+<td align="right">257</td>
+<td align="left">4.74%</td>
+</tr>
+<tr class="odd">
+<td align="right">2021</td>
+<td align="right">6197</td>
+<td align="right">5901</td>
+<td align="right">296</td>
+<td align="left">4.78%</td>
+</tr>
+<tr class="even">
+<td align="right">2022</td>
+<td align="right">7350</td>
+<td align="right">7076</td>
+<td align="right">274</td>
+<td align="left">3.73%</td>
+</tr>
+<tr class="odd">
+<td align="right">2023</td>
+<td align="right">8556</td>
+<td align="right">8267</td>
+<td align="right">289</td>
+<td align="left">3.38%</td>
+</tr>
+<tr class="even">
+<td align="right">2024</td>
+<td align="right">11344</td>
+<td align="right">11117</td>
+<td align="right">227</td>
+<td align="left">2.00%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="two-approaches-for-keeping-only-articles-about-internationalisation-of-higher-education" class="section level2">
+<h2>Two approaches for keeping only articles about <em>internationalisation</em> of higher education</h2>
+<div id="analysis-based-only-on-articles-that-explicitly-refer-to-internationalisation-of-higher-education-narrower-criteria" class="section level3">
+<h3>Analysis based only on articles that explicitly refer to internationalisation of higher education (narrower criteria)</h3>
+<p>In order to capture only articles that explicitly focus on internationalisation of higher education, this section is based only on articles that match the following criteria:</p>
+<ul>
+<li>the full string “internationali(s|z)ation of higher education” is present in either title or abstract</li>
+<li>the author-provided keywords include both “higher education” and “internationali(s|z)ation”</li>
+</ul>
+<p>This leads to a significantly reduced set of publications.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-4">Table 3: </span>Total number of publications based on the narrow criteria</caption>
+<thead>
+<tr class="header">
+<th align="left">Property</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Total publications</td>
+<td align="right">1919</td>
+</tr>
+<tr class="even">
+<td align="left">Publications with Russia-affiliated authors</td>
+<td align="right">70</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="universities-with-most-publications-narrower-criteria" class="section level3">
+<h3>Universities with most publications (narrower criteria)</h3>
+<table>
+<caption><span id="tab:unnamed-chunk-9">Table 4: </span>Institutions with most publications and most citations based on narrower criteria</caption>
+<colgroup>
+<col width="7%" />
+<col width="20%" />
+<col width="5%" />
+<col width="33%" />
+<col width="15%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">afid</th>
+<th align="right">Number of publications</th>
+<th align="right">Cited</th>
+<th align="left">affilname</th>
+<th align="left">affiliation-city</th>
+<th align="left">affiliation-country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">60016849</td>
+<td align="right">16</td>
+<td align="right">816</td>
+<td align="left">University of Toronto</td>
+<td align="left">Toronto</td>
+<td align="left">Canada</td>
+</tr>
+<tr class="even">
+<td align="left">60017919</td>
+<td align="right">40</td>
+<td align="right">772</td>
+<td align="left">The Education University of Hong Kong</td>
+<td align="left">Hong Kong</td>
+<td align="left">China</td>
+</tr>
+<tr class="odd">
+<td align="left">60031117</td>
+<td align="right">13</td>
+<td align="right">733</td>
+<td align="left">Boston College</td>
+<td align="left">Chestnut Hill</td>
+<td align="left">United States</td>
+</tr>
+<tr class="even">
+<td align="left">60010365</td>
+<td align="right">16</td>
+<td align="right">517</td>
+<td align="left">The University of British Columbia</td>
+<td align="left">Vancouver</td>
+<td align="left">Canada</td>
+</tr>
+<tr class="odd">
+<td align="left">60006541</td>
+<td align="right">28</td>
+<td align="right">463</td>
+<td align="left">The University of Hong Kong</td>
+<td align="left">Hong Kong</td>
+<td align="left">Hong Kong</td>
+</tr>
+<tr class="even">
+<td align="left">60031004</td>
+<td align="right">11</td>
+<td align="right">427</td>
+<td align="left">The University of Queensland</td>
+<td align="left">Brisbane</td>
+<td align="left">Australia</td>
+</tr>
+<tr class="odd">
+<td align="left">60006242</td>
+<td align="right">17</td>
+<td align="right">378</td>
+<td align="left">UCL Institute of Education</td>
+<td align="left">London</td>
+<td align="left">United Kingdom</td>
+</tr>
+<tr class="even">
+<td align="left">60031846</td>
+<td align="right">6</td>
+<td align="right">358</td>
+<td align="left">University of South Australia</td>
+<td align="left">Adelaide</td>
+<td align="left">Australia</td>
+</tr>
+<tr class="odd">
+<td align="left">60019578</td>
+<td align="right">13</td>
+<td align="right">352</td>
+<td align="left">Monash University</td>
+<td align="left">Melbourne</td>
+<td align="left">Australia</td>
+</tr>
+<tr class="even">
+<td align="left">60005273</td>
+<td align="right">6</td>
+<td align="right">347</td>
+<td align="left">Korea University</td>
+<td align="left">Seoul</td>
+<td align="left">South Korea</td>
+</tr>
+</tbody>
+</table>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<table>
+<caption><span id="tab:unnamed-chunk-13">Table 5: </span>Most cited affiliations in Russia (narrower definition)</caption>
+<colgroup>
+<col width="80%" />
+<col width="9%" />
+<col width="7%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Affiliation</th>
+<th align="left">affiliation-city</th>
+<th align="right">Publications</th>
+<th align="right">Cited</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60020513">HSE University</a></td>
+<td align="left">Moscow</td>
+<td align="right">8</td>
+<td align="right">82</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60015024">RUDN University</a></td>
+<td align="left">Moscow</td>
+<td align="right">5</td>
+<td align="right">34</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60103702">Ural Federal University</a></td>
+<td align="left">Yekaterinburg</td>
+<td align="right">4</td>
+<td align="right">28</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60107804">Russian Presidential Academy of National Economy and Public Administration</a></td>
+<td align="left">Moscow</td>
+<td align="right">4</td>
+<td align="right">26</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60032576">Moscow State Institute of International Relations (MGIMO)</a></td>
+<td align="left">Moscow</td>
+<td align="right">5</td>
+<td align="right">23</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60103811">Far Eastern Federal University</a></td>
+<td align="left">Vladivostok</td>
+<td align="right">2</td>
+<td align="right">23</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60030998">Plekhanov Russian University of Economics</a></td>
+<td align="left">Moscow</td>
+<td align="right">2</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60075346">Siberian Federal University</a></td>
+<td align="left">Krasnoyarsk</td>
+<td align="right">3</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60031888">Saint Petersburg State University</a></td>
+<td align="left">Saint Petersburg</td>
+<td align="right">5</td>
+<td align="right">18</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://www.scopus.com/affil/profile.uri?afid=60009789">University of Tyumen</a></td>
+<td align="left">Tyumen</td>
+<td align="right">1</td>
+<td align="right">16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="include-also-articles-that-mention-concepts-that-are-contiguous-to-internationalisation-of-higher-education-broader-criteria" class="section level2">
+<h2>Include also articles that mention concepts that are contiguous to internationalisation of higher education (broader criteria)</h2>
+<p>Rather than keeping only articles that refer to “internationalisation of higer education”, the following section includes also articles that, besides “higher education”, <em>also</em> has one of the following keywords in either title, abstract, or author-given keywords. This list of keyword has been inductively derived from the most frequent terms that appeared in the abstracts meeting the narrower definition.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-14">Table 6: </span>Selected keywords relevant to internationalisation of higher education</caption>
+<thead>
+<tr class="header">
+<th align="left">keywords</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">internationalisation</td>
+</tr>
+<tr class="even">
+<td align="left">internationalization</td>
+</tr>
+<tr class="odd">
+<td align="left">foreign students</td>
+</tr>
+<tr class="even">
+<td align="left">foreign language</td>
+</tr>
+<tr class="odd">
+<td align="left">academic mobility</td>
+</tr>
+<tr class="even">
+<td align="left">student mobility</td>
+</tr>
+<tr class="odd">
+<td align="left">international students</td>
+</tr>
+<tr class="even">
+<td align="left">bologna process</td>
+</tr>
+<tr class="odd">
+<td align="left">international education</td>
+</tr>
+<tr class="even">
+<td align="left">export of education</td>
+</tr>
+<tr class="odd">
+<td align="left">world-class universities</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-15">Table 7: </span>Share of Scopus-indexed journal articles mentioning higher education AND another internationalisation-related keyword in either title, abstract, or author-given keywords; Russian affiliation recorded if at least one co-author has a Russian affiliation.</caption>
+<colgroup>
+<col width="6%" />
+<col width="6%" />
+<col width="29%" />
+<col width="25%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="right">All</th>
+<th align="right">No Russian affiliation</th>
+<th align="right">Russian affiliation</th>
+<th align="left">Russian affiliation share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2011</td>
+<td align="right">240</td>
+<td align="right">238</td>
+<td align="right">2</td>
+<td align="left">0.83%</td>
+</tr>
+<tr class="even">
+<td align="right">2012</td>
+<td align="right">255</td>
+<td align="right">251</td>
+<td align="right">4</td>
+<td align="left">1.57%</td>
+</tr>
+<tr class="odd">
+<td align="right">2013</td>
+<td align="right">332</td>
+<td align="right">331</td>
+<td align="right">1</td>
+<td align="left">0.30%</td>
+</tr>
+<tr class="even">
+<td align="right">2014</td>
+<td align="right">339</td>
+<td align="right">327</td>
+<td align="right">12</td>
+<td align="left">3.54%</td>
+</tr>
+<tr class="odd">
+<td align="right">2015</td>
+<td align="right">373</td>
+<td align="right">338</td>
+<td align="right">35</td>
+<td align="left">9.38%</td>
+</tr>
+<tr class="even">
+<td align="right">2016</td>
+<td align="right">462</td>
+<td align="right">409</td>
+<td align="right">53</td>
+<td align="left">11.47%</td>
+</tr>
+<tr class="odd">
+<td align="right">2017</td>
+<td align="right">409</td>
+<td align="right">374</td>
+<td align="right">35</td>
+<td align="left">8.56%</td>
+</tr>
+<tr class="even">
+<td align="right">2018</td>
+<td align="right">532</td>
+<td align="right">459</td>
+<td align="right">73</td>
+<td align="left">13.72%</td>
+</tr>
+<tr class="odd">
+<td align="right">2019</td>
+<td align="right">630</td>
+<td align="right">539</td>
+<td align="right">91</td>
+<td align="left">14.44%</td>
+</tr>
+<tr class="even">
+<td align="right">2020</td>
+<td align="right">720</td>
+<td align="right">649</td>
+<td align="right">71</td>
+<td align="left">9.86%</td>
+</tr>
+<tr class="odd">
+<td align="right">2021</td>
+<td align="right">771</td>
+<td align="right">689</td>
+<td align="right">82</td>
+<td align="left">10.64%</td>
+</tr>
+<tr class="even">
+<td align="right">2022</td>
+<td align="right">833</td>
+<td align="right">780</td>
+<td align="right">53</td>
+<td align="left">6.36%</td>
+</tr>
+<tr class="odd">
+<td align="right">2023</td>
+<td align="right">972</td>
+<td align="right">915</td>
+<td align="right">57</td>
+<td align="left">5.86%</td>
+</tr>
+<tr class="even">
+<td align="right">2024</td>
+<td align="right">1216</td>
+<td align="right">1179</td>
+<td align="right">37</td>
+<td align="left">3.04%</td>
+</tr>
+</tbody>
+</table>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+</div>

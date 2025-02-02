@@ -1,0 +1,1172 @@
+---
+title: "Russia-affiliated scholars publishing about internationalisation of higher education"
+date: '2025-02-02'
+categories:
+  - Research notes
+subtitle: 'A quantitative investigation based on Scopus'
+summary: ''
+authors: [Giorgio Comai]
+lastmod: '2025-02-02T08:27:26+02:00'
+featured: yes
+draft: no
+projects: []
+---
+
+
+```{r setup, echo=FALSE, include=FALSE}
+scopus_cache_folder <- readr::read_lines("cache_folder.txt")
+scopus_results_folder <- fs::path(scopus_cache_folder, "scopus_results")
+processing_cache <- fs::dir_create("processing_cache")
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+#knitr::opts_chunk$set(dev="cairo_pdf")
+
+ggplot2::theme_set(ggplot2::theme_minimal() +
+                     ggplot2::theme(
+                       #legend.position = "bottom",
+                                    legend.title = ggplot2::element_blank(),
+                                    legend.direction = "vertical",
+                                    text = ggplot2::element_text(family = "Roboto Condensed",
+                                                                 size = 14)))
+
+invisible(extrafont::loadfonts(quiet = TRUE))
+library(kableExtra)
+# %>% kable_paper(full_width = F)   
+```
+
+```{r he_global_by_subj_area, eval=FALSE}
+source("he_global_by_subj_area.R")
+```
+
+
+## Objective of this research note
+
+Outline trends in the publication record of Russia-affiliated scholars writing about internationalisation of higher education and publishing their work in established scholarly journals
+
+
+
+```{r he_combo_df}
+max_year <- 2024
+min_year <- 2011
+#subject_areas <- c("SOCI", "ECON", "ARTS")
+subject_areas <- c("SOCI")
+
+#keywords <- c("higher education", "university")
+keywords <- c("higher education")
+
+he_combo_df <- tidyr::expand_grid(year = max_year:min_year, 
+                                  subjarea = subject_areas, 
+                                  keyword = keywords,
+                                  srctype = c("j"), 
+                                  view = "COMPLETE",
+                                 # doctype = c("ar")
+                                  ) |> 
+  tidyr::unite(col = "filename", dplyr::everything(), sep = "-", remove = FALSE) |> 
+  dplyr::mutate(filename = stringr::str_replace_all(string = filename,
+                                                    pattern = "[[:space:]]",
+                                                    replacement = "_")) |> 
+  dplyr::mutate(query = glue::glue("SRCTYPE({srctype}) AND SUBJAREA({subjarea}) AND TITLE-ABS-KEY('{keyword}') AND PUBYEAR = {year}"))
+
+```
+
+
+## Operationalisation of the objective
+
+Rely on the Scopus API to search for all articles published:
+
+- __between `r min_year` and `r max_year`__
+- in the following __subject area `r stringr::str_flatten(sQuote(subject_areas), collapse = "; ")`__
+- matching in either the title, the abstract, or the author-provided article keywords the following string: __`r stringr::str_flatten(sQuote(keywords), collapse = "; ")`__
+  - considering other criteria for narrowing further the number of results in subsequent steps
+- in any Scopus-indexed journal
+  - considering the option to limit results to top ranked journals (e.g. Q1 and Q2)
+
+
+Additional notes clarifying some of these choices
+
+- __Why set 2011 as the start date?__
+  - __data availability__: according to the official Scopus website, journal CiteScore data are effectively available only starting with 2011; as CiteScore is used for filtering Q1 and Q2 publications, this criteria could scarcely be consistenyly applied retroactively ("the first journal metric values for CiteScore are available for 2011" - [https://service.elsevier.com/app/answers/detail/a_id/29859/](https://service.elsevier.com/app/answers/detail/a_id/29859/))
+  - __relevance__: the focus is on policies favouring internationalisation of higher education that gained traction in Russia mostly in the 2010s
+  - __pragmatic considerations__: in previous years, the number of publications focused on higher education by Russia-affiliated scholars is anyway negligible
+  
+- __Why set only SOCI as the subject area?__
+  - __pragmatic considerations__: a separate test including also "ECON" and "ARTS" has been conducted; the number of additional unique matches was limited, and often less relevant
+  - __clarity__: an explicit focus on social sciences Scopus-indexed journals enhances clarity in the case selection 
+  
+- __Why rely only on "higher education" as keyword?__
+  - __pragmatic considerations__: additional contiguous keywords, such as "university", brought in a large number of spurious matching; domain-specific keywords (e.g. "Bologna process") may have skewed results; ultimately, if an article really focuses on internationalisation of higher education it is strongly expected that it will use that expression in either title, abstract, or user-selected keywords
+  
+- __Why only journal publications, and not e.g. book chapters?__
+  - __pragmatic considerations__: focusing on journal articles allows to differentiate publications based on ranking
+  
+
+## Data retrieval
+
+The data was downloaded from Scopus API in January 2025 via [api.elsevier.com](https://api.elsevier.com) and [www.scopus.com](https://www.scopus.com).
+
+See:
+
+- [Scopus Use Policies](https://dev.elsevier.com/policy.html)
+- [Scopus Attribution Guide](https://dev.elsevier.com/tecdoc_attribution_scopus.html)
+
+
+
+```{r available_results_df}
+available_results_df <- tibble::tibble(
+  path = fs::dir_ls(path = "he_global_by_subj_area",
+                    recurse = FALSE,
+                    type = "file",
+                    glob = "*.rds")) |> 
+  dplyr::mutate(filename = path |> fs::path_file() |> fs::path_ext_remove()) |> 
+  dplyr::left_join(y = he_combo_df,
+                   by = "filename") |> 
+  dplyr::filter(is.na(keyword)==FALSE)
+
+```
+
+
+
+```{r higher_education_df}
+higher_education_file <- fs::path(processing_cache, "higher_education.rds")
+
+if (fs::file_exists(higher_education_file)==FALSE) {
+  higher_education_df <- purrr::map(
+    .progress = "Processing search results",
+    .x = purrr::transpose(available_results_df),
+    .f = function(x) {
+      
+      current_entries <- x[["path"]] |> 
+        readr::read_rds()
+      
+      current_entries_df <- purrr::map(
+        .progress = TRUE,
+        .x = current_entries,
+        .f = function(current_item) {
+          current_item[sapply(current_item, is.null)] <- NA
+          
+          current_item_nol <- current_item
+          
+          current_item_nol$link <- NULL
+          current_item_nol$affiliation <- NULL
+          current_item_nol$`author-count` <- NULL
+          current_item_nol$author <- NULL
+          # TODO freetoread
+          current_item_nol$freetoread <- NULL
+          current_item_nol$freetoreadLabel <- NULL
+          current_item_nol[["@_fa"]] <- NULL
+          
+          current_item_more_df <- tibble::tibble(
+            link_self = current_item |> purrr::pluck("link", 1, "@href"),
+            link_author_affiliation = current_item |> purrr::pluck("link", 2, "@href"),
+            
+            affiliation = purrr::map(
+              .x = current_item |>
+                purrr::pluck("affiliation"),
+              .f = function(current_affiliation) {
+                
+                current_affiliation[sapply(current_affiliation, is.null)] <- NA
+                
+                current_affiliation |> 
+                  tibble::as_tibble() |> 
+                  dplyr::select(-"@_fa")
+              }) |> 
+              list(),
+            author = purrr::map(
+              .x = current_item |>
+                purrr::pluck("author"),
+              .f = function(current_author) {
+                current_author[sapply(current_author, is.null)] <- NA
+                
+                current_author |> 
+                  tibble::as_tibble() |> 
+                  dplyr::select(-"@_fa")
+              }) |> 
+              list(),
+            author_count_total = current_item |> purrr::pluck("author-count", "@total"),
+            author_count_limit = current_item |> purrr::pluck("author-count", "@limit")
+          )
+          
+          current_item_output_df <- current_item_nol |> 
+            tibble::as_tibble() |> 
+            dplyr::bind_cols(current_item_more_df)
+          
+          current_item_output_df
+        }) |> 
+        purrr::list_rbind()
+      
+      current_entries_df |> 
+        dplyr::mutate(query_year = x[["year"]], 
+                      query_subjarea = x[["subjarea"]],
+                      query_keyword = x[["keyword"]],
+                      query = x[["query"]], 
+        )
+    }) |> 
+    purrr::list_rbind() |> 
+    dplyr::filter(is.na(`dc:identifier`)==FALSE) |> 
+    tibble::as_tibble()
+  
+  saveRDS(object = higher_education_df,
+          file = higher_education_file)
+}
+
+higher_education_df <- readr::read_rds(file = higher_education_file) |> 
+  dplyr::filter((query_year <= max_year) &  (query_year >= min_year))
+
+unique_publications_n <- nrow(higher_education_df |> dplyr::distinct(`dc:identifier`))
+```
+
+
+
+```{r soci_only_total_n}
+he_df <- he_soci_df <- higher_education_df |> dplyr::filter(query_subjarea == "SOCI") |> 
+  dplyr::distinct(`dc:identifier`, .keep_all = TRUE) |> 
+  dplyr::mutate(year = lubridate::year(`prism:coverDate`))
+
+soci_only_total_n <- he_soci_df |> nrow()
+```
+
+
+
+
+## Differentiate articles
+
+Articles are differentiated based on a set of criteria:
+
+- articles with at least an author with a Russian affiliation?
+- articles published in Q1 and Q2 journals VS all Scopus-indexed publications
+- articles that are specifically about *internationalisation* of higher education, base on a narrow or slightly broader set of criteria. 
+
+The same analysis and graphs will be reproduced based on each set of criteria. 
+
+
+
+
+
+```{r read_citescore}
+read_citescore <- function(citescore_l) {
+  
+  n_items <- citescore_l |> 
+    purrr::pluck("serial-metadata-response",
+                 "entry") |> 
+    length()
+  
+  if (n_items == 0) {
+    return(NULL)
+  }
+  
+  purrr::map(
+    .x = citescore_l |> 
+    purrr::pluck("serial-metadata-response",
+                 "entry") |> 
+      seq_along(),
+    .f = function(i) {
+      current_citeScoreYearInfo <- citescore_l |> 
+        purrr::pluck("serial-metadata-response",
+                     "entry", i,
+                     "citeScoreYearInfoList",
+                     "citeScoreYearInfo") 
+      
+  current_rank_year_df <- purrr::map(
+    .x = current_citeScoreYearInfo,
+    .f = function(current_year) {
+      
+      cite_score_list <- current_year |> 
+        purrr::pluck("citeScoreInformationList", 1, "citeScoreInfo", 1)
+      
+      cite_score_list |> 
+        tibble::as_tibble() |> 
+        dplyr::select(-`@_fa`) |> 
+        tidyr::unnest_wider(citeScoreSubjectRank) |> 
+        dplyr::select(-`@_fa`) |> 
+        dplyr::mutate(year = current_year[["@year"]], 
+                      status =  current_year[["@status"]]) |> 
+        dplyr::relocate(year, status) 
+    } 
+  ) |> 
+    purrr::list_rbind()
+  
+  
+  citescore_top_level_l <- citescore_l |> 
+    purrr::pluck("serial-metadata-response",
+                 "entry",
+                 i) 
+  
+  
+  if (length(citescore_top_level_l) < 5) {
+    return(NULL)
+  }
+  
+  selected_v <- c("dc:title",
+                  "dc:publisher",
+                  "coverageStartYear", 
+                  "coverageEndYear", 
+                  "prism:aggregationType", 
+                  "source-id", 
+                  "prism:issn",
+                  "prism:url")
+  
+  citescore_top_level_select_l <- citescore_top_level_l[selected_v]
+  
+  names(citescore_top_level_select_l) <- selected_v
+  
+  citescore_top_level_select_no_null_l <- purrr::map(.x = citescore_top_level_select_l, .f = \(x) {
+    if (is.null(x)) {
+      return(NA_character_)
+    } else {
+      return(x)
+    }
+  })
+  
+  info_df <- citescore_top_level_select_no_null_l |> 
+    tibble::as_tibble() |> 
+    dplyr::mutate(source_scopus_url = citescore_top_level_l[["link"]][[1]][["@href"]])
+                  
+  
+  out_df <- info_df |> 
+    dplyr::bind_cols(current_rank_year_df) 
+  
+  out_df
+    }
+  ) |> 
+    purrr::list_rbind()
+}
+
+```
+
+
+
+
+
+```{r scopus_source_by_id_files_df}
+scopus_source_by_id_folder <- fs::path(scopus_cache_folder, "source_by_id")
+
+scopus_source_by_id_files_df <- tibble::tibble(
+  full_path = fs::dir_ls(path = scopus_source_by_id_folder)
+  ) |> 
+  dplyr::mutate(source_id = fs::path_file(path = full_path) |> fs::path_ext_remove())
+
+
+```
+
+
+```{r sources_scores_df}
+
+sources_scores_df_file <-  fs::path(processing_cache, "sources_scores.rds")
+
+if (fs::file_exists(sources_scores_df_file)==FALSE) {
+  
+    sources_scores_df <- purrr::map(
+    .progress = TRUE,
+    .x = scopus_source_by_id_files_df[["full_path"]],
+    .f = function(current_file) {
+      
+      read_citescore(readr::read_rds(file = current_file))
+      
+    }) |> 
+  purrr::list_rbind()
+
+saveRDS(object = sources_scores_df,
+        file = sources_scores_df_file)
+}
+  
+sources_scores_df <- readr::read_rds(sources_scores_df_file)
+
+```
+
+```{r sources_top_percentile_by_year_df}
+sources_top_percentile_by_year_df <- sources_scores_df |> 
+  dplyr::select(c("source-id", "year", "subjectCode", "percentile")) |> 
+  dplyr::mutate(percentile = as.integer(percentile),
+                year = as.integer(year)) |> 
+  dplyr::group_by(`source-id`, year) |> 
+  dplyr::slice_max(order_by = percentile) |> 
+  dplyr::ungroup() |> 
+  dplyr::distinct(`source-id`, year, .keep_all = TRUE)
+```
+
+
+```{r he_percentile_df}
+he_percentile_df <- he_df |> 
+  dplyr::left_join(y = sources_top_percentile_by_year_df,
+                   by = c("source-id", "year"))
+
+he_id_percentile_df <- he_percentile_df |> 
+  dplyr::distinct(`dc:identifier`, percentile)
+
+
+he_q12_df  <- he_percentile_df |> 
+  dplyr::filter(is.na(percentile)==FALSE&percentile>=50) 
+
+he_q12_id_percentile_df <- he_q12_df |> 
+  dplyr::distinct(`dc:identifier`, percentile)
+
+```
+
+
+
+```{r ru_noru_count_df}
+
+ru_he_df <- he_df |> 
+  dplyr::select(`dc:identifier`, affiliation) |> 
+  tidyr::unnest(affiliation) |> 
+  tidyr::unnest(affiliation) |> 
+  dplyr::filter(`affiliation-country` == "Russian Federation") |> 
+  dplyr::distinct(`dc:identifier`)
+
+ru_he_count_by_year_df <- ru_he_df |> 
+    dplyr::left_join(
+    he_df |> 
+      dplyr::distinct(`dc:identifier`, year),
+    by = "dc:identifier"    
+  ) |> 
+  dplyr::distinct(`dc:identifier`, year) |> 
+  dplyr::group_by(year) |> 
+  dplyr::count() |> 
+  dplyr::ungroup()
+
+he_soci_count_by_year_df <-  he_df |> 
+    dplyr::mutate(year = lubridate::year(`prism:coverDate`)) |> 
+  dplyr::distinct(`dc:identifier`, year) |> 
+  dplyr::group_by(year) |> 
+  dplyr::count() |> 
+  dplyr::ungroup()
+
+he_noru_soci_count_by_year_df <-  he_df |> 
+  dplyr::mutate(year = lubridate::year(`prism:coverDate`)) |> 
+  dplyr::anti_join(
+    ru_he_df |> 
+      dplyr::distinct(`dc:identifier`),
+    by = "dc:identifier"    
+  ) |> 
+  dplyr::distinct(`dc:identifier`, year) |> 
+  dplyr::group_by(year) |> 
+  dplyr::count() |> 
+  dplyr::ungroup()
+
+ru_noru_count_df <- dplyr::bind_rows(
+  .id = "type", 
+  `All` = he_soci_count_by_year_df,
+  `No Russian affiliation` = he_noru_soci_count_by_year_df,
+  `Russian affiliation` = ru_he_count_by_year_df
+) |> 
+  tidyr::pivot_wider(names_from = type, values_from = n) |> 
+  dplyr::mutate(`Russian affiliation share` = `Russian affiliation`/`All`)
+
+```
+
+
+
+```{r ru_noru_q12_count_df}
+
+ru_he_q12_df <- he_q12_df |> 
+  dplyr::select(`dc:identifier`, affiliation) |> 
+  tidyr::unnest(affiliation) |> 
+  tidyr::unnest(affiliation) |> 
+  dplyr::filter(`affiliation-country` == "Russian Federation") |> 
+  dplyr::distinct(`dc:identifier`)
+
+ru_he_count_q12_by_year_df <- ru_he_q12_df |> 
+    dplyr::left_join(
+    he_df |> 
+      dplyr::distinct(`dc:identifier`, year),
+    by = "dc:identifier"    
+  ) |> 
+  dplyr::distinct(`dc:identifier`, year) |> 
+  dplyr::group_by(year) |> 
+  dplyr::count() |> 
+  dplyr::ungroup()
+
+he_soci_count_q12_by_year_df <-  he_q12_df |> 
+    dplyr::mutate(year = lubridate::year(`prism:coverDate`)) |> 
+  dplyr::distinct(`dc:identifier`, year) |> 
+  dplyr::group_by(year) |> 
+  dplyr::count() |> 
+  dplyr::ungroup()
+
+he_noru_soci_count_q12_by_year_df <-  he_q12_df |> 
+  dplyr::mutate(year = lubridate::year(`prism:coverDate`)) |> 
+  dplyr::anti_join(
+    ru_he_q12_df |> 
+      dplyr::distinct(`dc:identifier`),
+    by = "dc:identifier"    
+  ) |> 
+  dplyr::distinct(`dc:identifier`, year) |> 
+  dplyr::group_by(year) |> 
+  dplyr::count() |> 
+  dplyr::ungroup()
+
+ru_noru_count_q12_df <- dplyr::bind_rows(
+  .id = "type", 
+  `All` = he_soci_count_q12_by_year_df,
+  `No Russian affiliation` = he_noru_soci_count_q12_by_year_df,
+  `Russian affiliation` = ru_he_count_q12_by_year_df
+) |> 
+  tidyr::pivot_wider(names_from = type, values_from = n) |> 
+  dplyr::mutate(`Russian affiliation share` = `Russian affiliation`/`All`)
+
+```
+
+```{r}
+#| column: page
+
+
+### ru_noru_count_df table
+
+ru_noru_count_df |> 
+  dplyr::mutate(`Russian affiliation share` = scales::percent(`Russian affiliation share`, accuracy = 0.01)) |> 
+  knitr::kable(
+    booktabs = TRUE,
+    caption = "Share of Scopus-indexed journal articles mentioning higher education in either title, abstract, or keyword; Russian affiliation recorded if at least one co-author has a Russian affiliation.",
+    escape = FALSE)
+```
+
+```{r}
+#| column: page
+
+### ru_noru_count_q12_df table
+
+ru_noru_count_q12_df |> 
+  dplyr::mutate(`Russian affiliation share` = scales::percent(`Russian affiliation share`, accuracy = 0.01)) |> 
+  knitr::kable(
+    booktabs = TRUE,
+    caption = "Share of Q1 and Q2 Scopus-indexed journal articles mentioning higher education in either title, abstract, or keyword; Russian affiliation recorded if at least one co-author has a Russian affiliation.",
+    escape = FALSE)
+```
+
+
+
+## Two approaches for keeping only articles about *internationalisation* of higher education
+
+
+
+### Analysis based only on articles that explicitly refer to internationalisation of higher education (narrower criteria)
+
+In order to capture only articles that explicitly focus on internationalisation of higher education, this section is based only on articles that match the following criteria:
+
+- the full string "internationali(s|z)ation of higher education" is present in either title or abstract
+- the author-provided keywords include both "higher education" and "internationali(s|z)ation"
+
+This leads to a significantly reduced set of publications.
+
+
+```{r he_df narrower}
+
+he_df <- higher_education_df |> 
+  dplyr::filter(query_subjarea == "SOCI") |> 
+  dplyr::distinct(`dc:identifier`, .keep_all = TRUE) |> 
+  dplyr::mutate(year = lubridate::year(`prism:coverDate`))
+
+authors_df <- he_df |> 
+  dplyr::distinct(`dc:identifier`, .keep_all = TRUE) |> 
+  dplyr::select(author) |> 
+  tidyr::unnest(author) |> 
+  tidyr::unnest(author)  |> 
+  dplyr::distinct(authname, .keep_all = TRUE)
+
+affiliations_df <- he_df |> 
+  dplyr::distinct(`dc:identifier`, .keep_all = TRUE) |> 
+  dplyr::select(affiliation) |> 
+  tidyr::unnest(affiliation) |> 
+  tidyr::unnest(affiliation) |> 
+  dplyr::distinct(afid, .keep_all = TRUE)
+
+
+authors_by_article_df <- he_df |> 
+  dplyr::select(`dc:identifier`, author) |> 
+  tidyr::unnest(author, keep_empty = TRUE) |> 
+  tidyr::unnest(author, keep_empty = TRUE) |> 
+  tidyr::unnest(afid, keep_empty = TRUE) |> 
+  tidyr::unnest(afid, keep_empty = TRUE) |> 
+  # dplyr::group_by(`dc:identifier`, authid) |> 
+  # dplyr::add_count(name = "afid_count")
+  dplyr::filter(is.na(afid)|afid!="true") |> 
+  dplyr::left_join(affiliations_df, by = "afid") |> 
+  # dplyr::left_join(higher_education_df |> 
+  #                    dplyr::distinct(`dc:identifier`, .keep_all = TRUE) |> 
+  #                    dplyr::select(`dc:identifier`, `citedby-count`),
+  #                  by = "dc:identifier") |> 
+  dplyr::mutate(ru_affiliation = dplyr::if_else(condition = `affiliation-country` == "Russian Federation", true = "Ru",false = "other")) |> 
+  dplyr::distinct(`dc:identifier`, authid, afid, .keep_all = TRUE)
+
+authors_with_combined_affiliations_df <- authors_by_article_df |> 
+  dplyr::group_by(authid) |> 
+  dplyr::summarise(
+    authname = unique(authname)[[1]], 
+    surname = unique(surname)[[1]],
+    `given-name` = unique(`given-name`)[[1]],
+    affilname = stringr::str_flatten(unique(affilname), collapse = ";", na.rm = TRUE),
+                   `affiliation-city` = stringr::str_flatten(unique(`affiliation-city`), collapse = ";", na.rm = TRUE),
+                   ru_affiliation = dplyr::if_else(
+                     condition = "Russian Federation" %in% `affiliation-country`, "ru", "other"),
+                    `affiliation-country` = stringr::str_flatten(unique(`affiliation-country`), collapse = ";", na.rm = TRUE),
+                   .groups = "drop") |> 
+  dplyr::relocate(ru_affiliation, .after = `affiliation-country`)
+
+affiliations_by_article_df <- he_df |> 
+  dplyr::select(`dc:identifier`, author) |> 
+  tidyr::unnest(author) |> 
+  tidyr::unnest(author) |> 
+  tidyr::unnest(afid) |> 
+  tidyr::unnest(afid) |> 
+  dplyr::filter(afid!="true") |> 
+  dplyr::left_join(affiliations_df, by = "afid") |> 
+  # dplyr::left_join(higher_education_df |> 
+  #                    dplyr::distinct(`dc:identifier`, .keep_all = TRUE) |> 
+  #                    dplyr::select(`dc:identifier`, `citedby-count`),
+  #                  by = "dc:identifier") |> 
+  dplyr::mutate(ru_affiliation = dplyr::if_else(condition = `affiliation-country` == "Russian Federation", true = "Ru",false = "other")) |> 
+  dplyr::group_by(`dc:identifier`) |> 
+    dplyr::summarise(affilname = stringr::str_flatten(unique(affilname), collapse = ";", na.rm = TRUE),
+                   `affiliation-city` = stringr::str_flatten(unique(`affiliation-city`), collapse = ";", na.rm = TRUE),
+                   ru_affiliation = dplyr::if_else(
+                     condition = "Russian Federation" %in% `affiliation-country`, "ru", "other"),
+                    `affiliation-country` = stringr::str_flatten(unique(`affiliation-country`), collapse = ";", na.rm = TRUE),
+                   .groups = "drop") |> 
+  dplyr::relocate(ru_affiliation, .after = `affiliation-country`)
+
+filled_percentiles_df <- sources_top_percentile_by_year_df |> 
+  tidyr::complete(year, `source-id`) |> 
+    tidyr::fill(percentile, .direction = "up") |> 
+  tidyr::fill(subjectCode, .direction = "up")
+
+he_percentile_df <- he_df |> 
+  dplyr::mutate(year = lubridate::year(`prism:coverDate`)) |> 
+  dplyr::distinct(`dc:identifier`, .keep_all = TRUE) |> 
+  dplyr::select(c("dc:identifier", "source-id", "year")) |> 
+  dplyr::left_join(y = sources_top_percentile_by_year_df,
+                   by = c("source-id", "year"))
+
+```
+
+
+
+```{r he_narrow_df}
+# higher_education_df |> 
+#       dplyr::mutate(keywords = stringr::str_split(string = authkeywords, pattern = stringr::fixed(pattern = "|"))) |> 
+#   tidyr::unnest(keywords) |> 
+#   dplyr::mutate(keywords = stringr::str_squish(keywords) |> stringr::str_to_lower())  |> 
+#   dplyr::filter(stringr::str_detect())
+
+
+he_narrow_df <- he_df |> 
+  dplyr::mutate(
+    he = dplyr::case_when(
+      stringr::str_detect(
+        string = authkeywords,
+        pattern = stringr::regex(pattern = "internationali(s|z)ation of higher education", ignore_case = TRUE)) ~ TRUE,
+      stringr::str_detect(
+        string = `dc:title`,
+        pattern = stringr::regex(pattern = "internationali(s|z)ation of higher education", ignore_case = TRUE)) ~ TRUE,
+      stringr::str_detect(
+        string = `dc:description`,
+        pattern = stringr::regex(pattern = "internationali(s|z)ation of higher education", ignore_case = TRUE)) ~ TRUE,
+      is.na(authkeywords)==FALSE&stringr::str_detect(
+        string = `authkeywords`,
+        pattern = stringr::regex(pattern = "internationali(s|z)ation", ignore_case = TRUE)
+        )&stringr::str_detect(
+        string = `authkeywords`,
+        pattern = stringr::regex(pattern = "higher education", ignore_case = TRUE)
+        ) ~ TRUE,
+                  stringr::str_detect(
+        string = `dc:title`,
+        pattern = stringr::regex(pattern = "internationali(s|z)ation", ignore_case = TRUE)
+        )&stringr::str_detect(
+        string = `dc:title`,
+        pattern = stringr::regex(pattern = "higher education", ignore_case = TRUE)
+        ) ~ TRUE,
+      .default = FALSE
+    )
+  )|> 
+  dplyr::filter(he) |> 
+  dplyr::distinct(`dc:identifier`, .keep_all = TRUE)
+
+# he_narrow_df  
+```
+
+
+
+
+```{r ihe_percentile_df narrow}
+ihe_percentile_narrow_df <- he_narrow_df |> 
+  dplyr::distinct(`dc:identifier`, .keep_all = TRUE) |> 
+  dplyr::select(c("dc:identifier", "source-id", "year")) |> 
+  dplyr::left_join(y = sources_top_percentile_by_year_df,
+                   by = c("source-id", "year"))
+```
+
+
+```{r author_names_narrower_df}
+author_names_narrower_df <- he_narrow_df |> 
+  dplyr::select(`dc:identifier`, author) |> 
+  tidyr::unnest(author) |> 
+  tidyr::unnest(author) |> 
+  dplyr::distinct(`dc:identifier`, authid, authname) |> 
+  dplyr::group_by(`dc:identifier`) |> 
+  dplyr::summarise(authors = stringr::str_flatten_comma(authname, na.rm = TRUE))
+```
+
+
+
+```{r he_narrow_authors_df}
+
+he_narrow_authors_df <- he_narrow_df |> 
+  dplyr::select(`dc:identifier`, `dc:title`, `prism:publicationName`, `prism:coverDate`, `prism:doi`, `dc:description`, `citedby-count`, authkeywords) |> 
+  dplyr::left_join(y = authors_by_article_df,
+                   by = "dc:identifier") 
+
+```
+
+
+
+
+
+```{r}
+#| column: screen-inset
+
+### he_narrow_combo_dt
+
+he_narrow_combo_dt <- he_narrow_df |> 
+  dplyr::mutate(year = lubridate::year(`prism:coverDate`)) |> 
+    dplyr::left_join(y = author_names_narrower_df,
+                   by = "dc:identifier") |> 
+      dplyr::left_join(y = he_percentile_df |> 
+                     dplyr::select(`dc:identifier`, percentile),
+                   by = "dc:identifier") |> 
+  dplyr::left_join(y = affiliations_by_article_df,
+                   by = "dc:identifier") |> 
+  dplyr::select(-`dc:description`, -`dc:identifier`) |> 
+  dplyr::mutate(title = purrr::map2_chr(
+    .x = `dc:title`,
+    .y = `prism:doi`,
+    .f = \(x,y) {
+      htmltools::a(x, href = stringr::str_c("https://doi.org/", y)) |> as.character()
+    }  )) |>
+  dplyr::rename(journal = `prism:publicationName`) |> 
+  dplyr::select(-`prism:doi`, -`prism:url`) |> 
+  dplyr::select(journal, percentile, year, `title`, authors, `citedby-count`, affilname, `affiliation-city`, `affiliation-country`, ru_affiliation) |> 
+  dplyr::mutate(`citedby-count` = as.integer(`citedby-count`)) |> 
+  dplyr::arrange(dplyr::desc(`citedby-count`)) |> 
+  dplyr::mutate(ru_affiliation = factor(ru_affiliation)) 
+
+
+```
+
+
+```{r}
+tibble::tribble(
+  ~Property, ~Value, 
+  "Total publications", he_narrow_combo_dt |>  nrow(),
+  "Publications with Russia-affiliated authors", he_narrow_combo_dt |> dplyr::filter(ru_affiliation == "ru") |> nrow()
+)  |> 
+  knitr::kable(caption = "Total number of publications based on the narrow criteria")
+```
+
+
+
+```{r}
+# he_narrow_combo_dt |>
+#   dplyr::arrange(dplyr::desc(`citedby-count`)) |> 
+#   dplyr::select(journal, year, `title`, authors, `citedby-count`) |> 
+#   head(10) |>
+#   knitr::kable(caption = "Publications matching the narrower criteria",
+#                 escape = FALSE,
+#                 filter = "top")
+```
+
+
+
+
+```{r}
+#| column: screen-inset
+#| 
+
+
+### Authors with most publications
+
+
+he_narrow_authors_by_publications_df <- he_narrow_authors_df |> 
+  dplyr::distinct(`dc:identifier`, authid) |> 
+  dplyr::group_by(authid) |> 
+  dplyr::count(sort = TRUE) |> 
+  dplyr::ungroup() |> 
+  dplyr::left_join(y = authors_with_combined_affiliations_df,
+                   by = "authid") |> 
+  dplyr::mutate(ru_affiliation = factor(ru_affiliation)) 
+
+# he_narrow_authors_by_publications_df  |> 
+#   dplyr::mutate(
+#     Author = purrr::map2_chr(
+#       .x = `authname`,
+#       .y = `authid`,
+#       .f = \(x,y) {
+#         htmltools::a(x,
+#                      href = stringr::str_c("https://www.scopus.com/authid/detail.uri?authorId=", y)) |> as.character()
+#       }  )) |> 
+#         dplyr::select(-authid, -authname) |>
+#   dplyr::relocate(Author) |> 
+#   dplyr::rename(`Number of publications` = n) |> 
+#   head(10) |> 
+#   dplyr::select(Author, `Number of publications`, `affiliation-country`) |> 
+#  knitr::kable(caption = "Authors with most publications based on narrower criteria",
+#                 escape = FALSE)
+```
+
+
+
+
+```{r}
+#| column: screen-inset
+
+
+
+### Authors with most citations (narrower criteria)
+
+he_narrow_authors_by_citations_df <- he_narrow_authors_df |> 
+  dplyr::distinct(`dc:identifier`, authid, `citedby-count`) |> 
+  dplyr::group_by(authid) |> 
+  dplyr::summarise(Cited = sum(as.numeric(`citedby-count`))) |> 
+  dplyr::ungroup() |> 
+  dplyr::left_join(y = authors_with_combined_affiliations_df,
+                   by = "authid") |> 
+    dplyr::left_join(y = he_narrow_authors_by_publications_df |> 
+  dplyr::select(authid, n),
+                   by = "authid") |> 
+    dplyr::rename(`Number of publications` = n) |> 
+  dplyr::arrange(dplyr::desc(Cited)) |> 
+  dplyr::mutate(ru_affiliation = factor(ru_affiliation)) 
+
+# he_narrow_authors_by_citations_df  |> 
+#   dplyr::mutate(
+#     Author = purrr::map2_chr(
+#       .x = `authname`,
+#       .y = `authid`,
+#       .f = \(x,y) {
+#         htmltools::a(x,
+#                      href = stringr::str_c("https://www.scopus.com/authid/detail.uri?authorId=", y)) |> as.character()
+#       }  )) |> 
+#         dplyr::select(-authid, -authname) |> 
+#   dplyr::select(Author, Cited, `Number of publications`, `affiliation-country`) |> 
+#   head(10) |> 
+#  knitr::kable(caption = "Authors with most citations based on narrower criteria",
+#                 escape = FALSE)
+
+```
+
+
+```{r eval = FALSE}
+
+he_narrow_authors_by_citations_df  |> 
+  dplyr::filter(ru_affiliation == "ru") |> 
+  dplyr::mutate(
+    Author = purrr::map2_chr(
+      .x = `authname`,
+      .y = `authid`,
+      .f = \(x,y) {
+        htmltools::a(x,
+                     href = stringr::str_c("https://www.scopus.com/authid/detail.uri?authorId=", y)) |> as.character()
+      }  )) |> 
+        dplyr::select(-authid, -authname) |> 
+  dplyr::select(Author, Cited, `Number of publications`, `affilname`) |> 
+  head(10) |> 
+ knitr::kable(caption = "Authors with a Russian affiliation with most-cited publications selected based on the narrower criteria",
+                escape = FALSE)
+
+```
+
+
+
+### Universities with most publications (narrower criteria)
+
+
+```{r}
+#| column: screen-inset
+#| 
+he_narrow_affiliations_by_publications_df <- he_narrow_authors_df |> 
+  dplyr::distinct(`dc:identifier`, afid) |> 
+  dplyr::group_by(afid) |> 
+  dplyr::count(sort = TRUE) |> 
+  dplyr::ungroup() |> 
+  dplyr::left_join(y =  he_narrow_authors_df |> 
+  dplyr::distinct(`dc:identifier`, afid, `citedby-count`) |> 
+  dplyr::group_by(afid) |> 
+  dplyr::summarise(Cited = sum(as.numeric(`citedby-count`))) |> 
+  dplyr::ungroup() , by = "afid") |> 
+  dplyr::left_join(y = affiliations_df, by = "afid") |> 
+  dplyr::select(-`affiliation-url`) |> 
+  dplyr::arrange(dplyr::desc(Cited))
+
+
+he_narrow_affiliations_by_publications_df  |> 
+
+  dplyr::rename(`Number of publications` = n) |> 
+  head(10) |> 
+ knitr::kable(caption = "Institutions with most publications and most citations based on narrower criteria",
+                escape = FALSE)
+
+
+```
+
+
+
+
+```{r}
+base_narrow_df <- he_narrow_combo_dt |> 
+  dplyr::group_by(ru_affiliation, year) |> 
+  dplyr::count() 
+
+no_ru_narrow_gg <- base_narrow_df |> dplyr::filter(ru_affiliation == "other") |> 
+ ggplot2::ggplot() +
+  ggplot2::geom_col(mapping = ggplot2::aes(x = year, y = n)) +
+    ggplot2::scale_x_continuous(name = NULL, breaks = seq.int(from = 2011, to = 2024, by = 3)) +
+  ggplot2::scale_y_continuous(name = "Number of publications", labels = scales::number) +
+  ggplot2::labs(title = "No Russian affiliation") +
+    ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+
+ru_narrow_gg <- base_narrow_df |> dplyr::filter(ru_affiliation == "ru") |> 
+ ggplot2::ggplot() +
+  ggplot2::geom_col(mapping = ggplot2::aes(x = year, y = n))+
+    ggplot2::scale_x_continuous(name = NULL, breaks = seq.int(from = 2011, to = 2024, by = 3)) +
+  ggplot2::scale_y_continuous(name = NULL, labels = scales::number) +
+  ggplot2::labs(title = "Russian affiliation") +
+    ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+
+library("patchwork")
+
+no_ru_narrow_gg +
+  ru_narrow_gg  + 
+  plot_annotation(    title = "Number of publications about internationalisation of higher education",
+    subtitle = "Counting relevant social sciences publications in Scopus-indexed journals",
+    caption =  stringr::str_c("* ", sQuote('Russian affiliation'), " attributed if at least one author is affiliated with a Russia-based institution"))
+
+ggplot2::ggsave("narrower_criteria.png", bg = "white", width = 8, height = 4.5)
+```
+
+
+
+
+
+```{r}
+ru_pubs_narrow_df <- he_narrow_df |> 
+  tidyr::unnest(author) |> 
+  tidyr::unnest(author) |> 
+    tidyr::unnest(afid) |> 
+  tidyr::unnest(afid) |> 
+  dplyr::filter(afid!="true") |> 
+  dplyr::select(authid, afid, `dc:identifier`) |> 
+  dplyr::left_join(y = affiliations_df, by = "afid") |> 
+  dplyr::filter(`affiliation-country` == "Russian Federation") |> 
+  dplyr::distinct(authid, afid, `dc:identifier`) |> 
+  dplyr::left_join(y = he_narrow_df |> 
+                     dplyr::transmute( `dc:identifier`,
+                                       `citedby-count` = as.numeric(`citedby-count`)), 
+                   by =  "dc:identifier")
+
+
+```
+
+
+
+
+
+```{r}
+top_ru_authors_by_citation_narrow_df  <- ru_pubs_narrow_df |> 
+  dplyr::group_by(authid) |> 
+  dplyr::summarise(`Cited` = sum(`citedby-count`)) |> 
+  dplyr::arrange(dplyr::desc(Cited)) |> 
+  dplyr::left_join(y = authors_df |> 
+                     dplyr::select(authid, `author-url`, authname, surname, `given-name`),
+                   by = "authid") |> 
+  dplyr::distinct(authid, .keep_all = TRUE)
+
+# top_ru_authors_by_citation_narrow_df |> 
+#   dplyr::mutate(
+#     Author = purrr::map2_chr(
+#       .x = `authname`,
+#       .y = `authid`,
+#       .f = \(x,y) {
+#         htmltools::a(x,
+#                      href = stringr::str_c("https://www.scopus.com/authid/detail.uri?authorId=", y)) |> as.character()
+#       }  )) |> 
+#       dplyr::select(Author,  surname, `given-name`, Cited) |> 
+#   head(10) |> 
+#   knitr::kable(caption = "Most cited authors who published about internationalisation of higher education with a Russian affiliation (narrower definition)", escape = FALSE)
+
+# https://www.scopus.com/authid/detail.uri?authorId=25633773000
+```
+
+
+
+
+
+```{r}
+top_ru_affiliations_by_citation_narrow_df  <- ru_pubs_narrow_df |> 
+  dplyr::distinct(afid, `dc:identifier`, .keep_all = TRUE) |> 
+  dplyr::group_by(afid) |> 
+  dplyr::summarise(`Cited` = sum(`citedby-count`), Publications = dplyr::n()) |> 
+  dplyr::arrange(dplyr::desc(Cited)) |> 
+  dplyr::left_join(y = affiliations_df |> 
+                     dplyr::select(afid, affilname, `affiliation-city`),
+                   by = "afid") 
+
+top_ru_affiliations_by_citation_narrow_df |> 
+  dplyr::mutate(
+    Affiliation = purrr::map2_chr(
+      .x = `affilname`,
+      .y = `afid`,
+      .f = \(x,y) {
+        htmltools::a(x,
+                     href = stringr::str_c("https://www.scopus.com/affil/profile.uri?afid=", y)) |> as.character()
+      }  )) |> 
+      dplyr::select(Affiliation,  `affiliation-city`, Publications, Cited) |> 
+  head(10) |> 
+  knitr::kable(caption = "Most cited affiliations in Russia  (narrower definition)", escape = FALSE)
+
+```
+
+
+## Include also articles that mention concepts that are contiguous to internationalisation of higher education (broader criteria)
+
+
+Rather than keeping only articles that refer to "internationalisation of higer education", the following section includes also articles that, besides "higher education", *also* has one of the following keywords in either title, abstract, or author-given keywords. This list of keyword has been inductively derived from the most frequent terms that appeared in the abstracts meeting the narrower definition.
+
+
+```{r}
+
+### selected_keywords_v
+selected_keywords_v <- c("internationalisation",
+                         "internationalization", 
+                         "foreign students",
+                         "foreign language",
+                         #"globalization",
+                         "academic mobility",
+                         "student mobility",
+                         #"mobility",
+                         "international students",
+                         "bologna process",
+                         #"migration",
+                         "international education",
+                         "export of education",
+                         "world-class universities"
+)
+tibble::tibble(keywords = selected_keywords_v
+) |> 
+  knitr::kable(caption = "Selected keywords relevant to internationalisation of higher education")
+```
+
+
+
+
+
+```{r ihe_df}
+ihe_df <- he_df |> 
+  dplyr::filter(
+    stringr::str_detect(
+      string = authkeywords,
+      pattern = stringr::regex(pattern = stringr::str_c(selected_keywords_v, collapse = "|"),
+                               ignore_case = TRUE)
+      )|  stringr::str_detect(
+      string = `dc:title`,
+      pattern = stringr::regex(pattern = stringr::str_c(selected_keywords_v, collapse = "|"),
+                               ignore_case = TRUE)
+      )|  stringr::str_detect(
+      string = `dc:description`,
+      pattern = stringr::regex(pattern = stringr::str_c(selected_keywords_v, collapse = "|"),
+                               ignore_case = TRUE)
+      )
+    )
+```
+
+
+```{r ru_ihe_df}
+ru_ihe_df <- ihe_df |> 
+  dplyr::select(`dc:identifier`, affiliation) |> 
+  tidyr::unnest(affiliation) |> 
+  tidyr::unnest(affiliation) |> 
+  dplyr::filter(`affiliation-country` == "Russian Federation") |> 
+  dplyr::distinct(`dc:identifier`)
+
+
+ru_noru_ihe_df <- ihe_df |> 
+  dplyr::mutate(Affiliation = dplyr::if_else(
+    condition = `dc:identifier` %in% ru_ihe_df[["dc:identifier"]],
+    true = "Russian affiliation",
+    false = "No Russian affiliation"
+  ))
+
+ru_noru_ihe_count_df <- ru_noru_ihe_df |> 
+  dplyr::group_by(Affiliation, year) |> 
+  dplyr::count() |> 
+  dplyr::ungroup() |> 
+  tidyr::pivot_wider(names_from = Affiliation, values_from = n) |> 
+  dplyr::mutate(All = `Russian affiliation` + `No Russian affiliation`) |> 
+  dplyr::mutate(`Russian affiliation share` = `Russian affiliation`/`All`) |> 
+  dplyr::relocate(All, .after = year)
+
+```
+
+```{r}
+#| column: page
+
+###  ru_noru_ihe_count_df table
+
+ru_noru_ihe_count_df |> 
+  dplyr::mutate(`Russian affiliation share` = scales::percent(`Russian affiliation share`, accuracy = 0.01)) |> 
+  knitr::kable(caption = "Share of Scopus-indexed journal articles mentioning higher education AND another internationalisation-related keyword in either title, abstract, or author-given keywords; Russian affiliation recorded if at least one co-author has a Russian affiliation.")
+```
+
+
+
+```{r}
+current_ihe_df <- ru_noru_ihe_df |> dplyr::distinct(`dc:identifier`, .keep_all = TRUE)
+
+
+```
+
+```{r}
+current_ihe_df |> 
+  dplyr::group_by(Affiliation, year) |> 
+  dplyr::count() |> 
+  ggplot2::ggplot() +
+  ggplot2::geom_col(mapping = ggplot2::aes(x = year, y = n)) +
+  ggplot2::facet_wrap(~Affiliation) +
+  ggplot2::scale_x_continuous(name = NULL, breaks = seq.int(from = 2011, to = 2024, by = 3)) +
+  ggplot2::scale_y_continuous(name = "Number of publications", labels = scales::number) +
+  ggplot2::labs(
+    title = "Number of publications about internationalisation of higher education",
+    subtitle = "Counting relevant social sciences publications in Scopus-indexed journals",
+    caption =  stringr::str_c("* ", sQuote('Russian affiliation'), " attributed if at least one author is affiliated with a Russia-based institution"))
+```
+
+
+
+
+```{r}
+base_df <- current_ihe_df |> 
+  dplyr::group_by(Affiliation, year) |> 
+  dplyr::count() 
+
+no_ru_gg <- base_df |> dplyr::filter(Affiliation == "No Russian affiliation") |> 
+ ggplot2::ggplot() +
+  ggplot2::geom_col(mapping = ggplot2::aes(x = year, y = n)) +
+    ggplot2::scale_x_continuous(name = NULL, breaks = seq.int(from = 2011, to = 2024, by = 3)) +
+  ggplot2::scale_y_continuous(name = "Number of publications", labels = scales::number) +
+  ggplot2::labs(title = "No Russian affiliation") +
+    ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+
+ru_gg <- base_df |> dplyr::filter(Affiliation == "Russian affiliation") |> 
+ ggplot2::ggplot() +
+  ggplot2::geom_col(mapping = ggplot2::aes(x = year, y = n))+
+    ggplot2::scale_x_continuous(name = NULL, breaks = seq.int(from = 2011, to = 2024, by = 3)) +
+  ggplot2::scale_y_continuous(name = NULL, labels = scales::number) +
+  ggplot2::labs(title = "Russian affiliation") +
+    ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+
+library("patchwork")
+
+no_ru_gg +
+  ru_gg  + 
+  plot_annotation(    title = "Number of publications about internationalisation of higher education",
+    subtitle = "Counting relevant social sciences publications in Scopus-indexed journals",
+    caption =  stringr::str_c("* ", sQuote('Russian affiliation'), " attributed if at least one author is affiliated with a Russia-based institution"))
+```
+
