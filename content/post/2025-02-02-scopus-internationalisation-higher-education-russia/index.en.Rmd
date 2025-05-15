@@ -1,5 +1,5 @@
 ---
-title: "Russia-affiliated scholars publishing about internationalisation of higher education"
+title: "Russia-affiliated scholars publishing about internationalisation of higher education (based on Scopus)"
 date: '2025-02-02'
 categories:
   - Research notes
