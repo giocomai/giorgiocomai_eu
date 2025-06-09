@@ -6,13 +6,18 @@ categories:
 subtitle: 'A quantitative investigation based on OpenAlex'
 summary: ''
 authors: [Giorgio Comai]
-lastmod: '2025-05-14T09:27:26+02:00'
+lastmod: '2025-06-09T09:27:26+02:00'
 featured: yes
 draft: no
 projects: []
 ---
 
+*Update log:*
 
+- *2025-05-14 - post published on-line*
+- *2025-06-09 - updates to tables enabling direct links to pre-filtered interactive dashboard on OpenAlex; adjustment to one of the tables, in which authors with multiple affiliations would have double-counted their citations for relevant publications; main data and graphs unchanged.*
+
+<hr />
 
 ```{r setup, echo = FALSE, message=FALSE, warning=FALSE}
 # https://docs.ropensci.org/openalexR/
@@ -79,7 +84,7 @@ Outline trends in the publication record of Russia-affiliated scholars writing a
 
 ## Relying on OpenAlex's categorisation
 
-OpenAlex automatically associated each publication to one or more concepts. Luckily, among the `r scales::number(n_concepts)` concepts included in OpenAlex as of this writing, there is one which perfectly aligns with the objectives of this research note:
+OpenAlex automatically associates each publication to one or more concepts. Luckily, among the `r scales::number(n_concepts)` concepts included in OpenAlex as of this writing, there is one which perfectly aligns with the objectives of this research note:
 
 - [concept c2778011250: Internationalization of Higher Education](https://openalex.org/concepts/c2778011250)
 
@@ -109,14 +114,19 @@ if (!fs::file_exists(current_concept_file)) {
           file = current_concept_file)
 }
 
-works_df <- readr::read_rds(file = current_concept_file)
+works_all_df <- readr::read_rds(file = current_concept_file)
 
+works_df <- works_all_df |> 
+  dplyr::filter(type == "article") |> 
+  dplyr::filter(publication_year>=2011) |> 
+  dplyr::filter(publication_year<=2024)
+#nrow(works_df)
 ```
 
-OpenAlex includes a total of `r scales::number(nrow(works_df))` works about "Internationalization of Higher Education":
+OpenAlex includes a total of `r scales::number(nrow(works_all_df))` works about "Internationalization of Higher Education":
 
-```{r}
-works_df |> 
+```{r works_all_df by type}
+works_all_df |> 
   dplyr::group_by(type) |> 
   dplyr::count() |> 
   dplyr::ungroup() |> 
@@ -130,14 +140,19 @@ works_df |>
 
 ```
 
-For consistency with the previous, Scopus-based analysis, we will focus exclusively on journal articles published between 2011 and 2024.
-
-
+For consistency with the previous, Scopus-based analysis, we will focus exclusively on __journal articles__ published __between 2011 and 2024__. This reduces the number of publications object of analysis to `r scales::number(nrow(works_df))`.
 
 
 
 ```{r affiliation_df}
-affiliation_df <- works_df |> 
+authorship_df <- works_df |> 
+  dplyr::select(id, authorships, cited_by_count) |> 
+  dplyr::rename(work_id = id) |> 
+  tidyr::unnest(authorships) |> 
+  dplyr::rename(author_id = id,
+                author_display_name = display_name)
+
+affiliation_pre_df <- works_df |> 
   dplyr::select(id, authorships, cited_by_count) |> 
   dplyr::rename(work_id = id) |> 
   tidyr::unnest(authorships) |> 
@@ -149,9 +164,28 @@ affiliation_df <- works_df |>
                 affiliation_country_code = country_code) |> 
   dplyr::group_by(author_id) |> 
   dplyr::mutate(
-    affiliation_name_combo = stringr::str_flatten(unique(affiliation_display_name), collapse = "; "), 
-    cited_by_total = sum(cited_by_count)) |> 
+    affiliation_name_combo = stringr::str_flatten(unique(affiliation_display_name), collapse = "; ")) |> 
+  dplyr::ungroup() 
+
+
+by_author_count_df <- authorship_df |> 
+  dplyr::distinct(work_id, author_id) |> 
+  dplyr::group_by(author_id) |> 
+  dplyr::count() |> 
   dplyr::ungroup()
+
+by_author_citation_count_df <- authorship_df |> 
+  dplyr::distinct(work_id, author_id, cited_by_count) |> 
+  dplyr::group_by(author_id) |> 
+  dplyr::summarise(
+    cited_by_total = sum(cited_by_count)
+  ) |> 
+  dplyr::ungroup()
+
+
+affiliation_df <- affiliation_pre_df |> 
+  dplyr::left_join(y = by_author_count_df, by = "author_id") |> 
+  dplyr::left_join(y = by_author_citation_count_df, by = "author_id")
 ```
 
 
@@ -194,7 +228,7 @@ works_ru_long_df <- works_df |>
 ```
 
 
-```{r}
+```{r works_ru_long_df gt}
 
 works_ru_long_df |> 
   tidyr::pivot_wider(names_from = ru_affiliation, values_from = n) |> 
@@ -231,7 +265,6 @@ total_na_n <- works_ru_long_df |>
   sum()
 
 total_n <- works_ru_long_df |> 
-  dplyr::filter(ru_affiliation == "Affiliation not available") |> 
   dplyr::pull(n) |> 
   sum()
 ```
@@ -243,7 +276,7 @@ In brief, OpenAlex identifies `r scales::number(total_n)` journal articles, incl
 - `r scales::number(total_no_ru_n)` articles with no author with a Russian affiliation
 - `r scales::number(total_na_n)` articles where the affiliation is not available (or, in a small number of cases, the country of the affiliation is not available)
 
-
+It is possible to explore this subset of publications through OpenAlex's interactive dashboard [following this link](https://openalex.org/works?filter=concepts.id%3Ac2778011250,authorships.countries%3Acountries%2Fru,publication_year%3A2011-2024,type%3Atypes%2Farticle&page=1): it shows only journal articles, published between 2011 and 2024, tagged with the concept "Internationalization of Higher Education".
 
 ```{r ru_no_ru_gg}
 base_df <- works_ru_long_df |> 
@@ -273,14 +306,15 @@ no_ru_gg +
   ru_gg  + 
   plot_annotation(    title = "Number of publications about internationalisation of higher education",
     subtitle = "Counting relevant journal publications identified by OpenAlex",
-    caption =  stringr::str_c("* ", sQuote('Russian affiliation'), " attributed if at least one author is affiliated with a Russia-based institution"))
+    caption =  stringr::str_c("* ", sQuote('Russian affiliation'), " attributed if at least one author is affiliated with a Russia-based institution", "\nNot included when affiliation is not available or could not be attributed to any country."))
 ```
+
 
 
 
 ## Focus on publications by scholars with a Russian affiliation
 
-It is possible to explore this subset of publications through OpenAlex's interactive dashboard [following this link](https://openalex.org/works?filter=concepts.id%3Ac2778011250,authorships.countries%3Acountries%2Fru,publication_year%3A2011-2024,type%3Atypes%2Farticle&page=1).
+
 
 ```{r ru_affiliations_df}
 ru_affiliations_df <- affiliation_df |> 
@@ -288,28 +322,39 @@ ru_affiliations_df <- affiliation_df |>
   dplyr::filter(affiliation_country_code == "RU") 
 ```
 
+### By author
+
+Authors of scholarly articles associated with 'internationalisation of higher education' published with a Russian affiliation. Ordered by number of publications; click on the `cited by` column to order by number of times cited.
+
 
 ```{r ru_affiliations_df_gt}
-ru_affiliations_df_gt <- ru_affiliations_df |> 
-  dplyr::group_by(author_id) |> 
-  dplyr::count(sort = TRUE) |> 
-  dplyr::ungroup() |> 
-  dplyr::left_join(
-    affiliation_df |> 
-      dplyr::distinct(author_id, author_display_name, affiliation_name_combo, cited_by_total),
-    by = "author_id") |> 
+ru_affiliations_df_gt <- ru_affiliations_df |>
+  dplyr::distinct(author_id, .keep_all = TRUE) |> 
+  # dplyr::left_join(
+  #   y = affiliation_df |> 
+  #     dplyr::distinct(author_id, author_display_name, affiliation_name_combo, cited_by_total),
+  #   by = "author_id") |> 
  # dplyr::filter(n>2) |> 
-  dplyr::mutate(author = purrr::map2_chr(
+  dplyr::mutate(
+    author = purrr::map2_chr(
     .x = author_display_name,
     .y = author_id,
     .f = \(x,y) {
-      htmltools::a(x, href = y) |> as.character()
-    }  )) |>
+      htmltools::a(x,
+                   href = stringr::str_c("https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.author.id:",
+                   y |> stringr::str_remove(pattern = stringr::fixed("https://openalex.org/")))
+                   ) |> as.character()
+    } 
+     )
+    ) |>
   dplyr::select(author, affiliation_name_combo, n, cited_by_total) |> 
+  dplyr::arrange(dplyr::desc(n),
+                 dplyr::desc(cited_by_total)
+                 ) |> 
   dplyr::rename(affiliation = affiliation_name_combo, 
                 publications = n, 
                 `cited by` = cited_by_total) |> 
-    gt::gt(caption = "Authors of scholarly articles associated with 'internationalisation of higher education' published with a Russian affiliation and more than two publications") |>gt::cols_width(
+    gt::gt(caption = "Authors of scholarly articles associated with 'internationalisation of higher education' published with a Russian affiliation. Ordered by number of publications; click on the `cited by` column to order by number of times cited.") |>gt::cols_width(
       `publications` ~ gt::px(120),
       `cited by` ~ gt::px(120)
                ) |> 
@@ -337,35 +382,117 @@ htmltools::includeHTML("ru_affiliations_df_gt.html")
 
 ### By institution
 
+Russian institutions where scholars who published about 'internationalisation of higher education' were affiliated with. Ordered by number of publications; click on the `cited by` column to order by number of times cited.
+
 ```{r by_institution}
-ru_affiliations_df |> 
+ru_affiliations_by_institution_df <- ru_affiliations_df |> 
   dplyr::distinct(work_id, affiliation_id, affiliation_display_name) |> 
   dplyr::left_join(works_df |> 
-  dplyr::rename(work_id = id) |> 
-  dplyr::select(work_id, cited_by_count),
-  by = "work_id") |> 
+                     dplyr::rename(work_id = id) |> 
+                     dplyr::select(work_id, cited_by_count),
+                   by = "work_id") |> 
   dplyr::group_by(affiliation_id, affiliation_display_name) |> 
   dplyr::summarise(cited_by_count = sum(cited_by_count), 
                    publications = dplyr::n()) |> 
   dplyr::ungroup() |> 
-  dplyr::arrange(dplyr::desc(cited_by_count)) |> 
-  gt::gt(caption = "Authors affiliated with these Russia-based institutions have published about 'internationalisation of higher education'")
+  dplyr::arrange(dplyr::desc(cited_by_count)) 
 
+
+ru_affiliations_by_institution_df_gt <- ru_affiliations_by_institution_df |> 
+  dplyr::mutate(
+    affiliation_display_name = purrr::map2_chr(
+      .x = affiliation_display_name,
+      .y = affiliation_id,
+      .f = \(x,y) {
+        htmltools::a(x,
+                     href = stringr::str_c("https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:",
+                                           y |> stringr::str_remove(pattern = stringr::fixed("https://openalex.org/")))
+        ) |> as.character()
+      } 
+    )
+  ) |> 
+  dplyr::rename(affiliation = affiliation_display_name,
+                `cited by` = cited_by_count) |> 
+  dplyr::select(affiliation, publications, `cited by`) |> 
+gt::gt(caption = "Authors affiliated with these Russia-based institutions have published about 'internationalisation of higher education'") |> 
+  gt::cols_width(
+    `publications` ~ gt::px(120),
+    `cited by` ~ gt::px(120)
+  ) |> 
+  gt::opt_interactive(active = TRUE, use_pagination = TRUE, use_sorting = TRUE, page_size_default = 3, use_page_size_select = TRUE) |> 
+  gt::fmt_markdown(columns = affiliation)
+
+gt::gtsave(data = ru_affiliations_by_institution_df_gt,
+           filename = "ru_affiliations_by_institution_df_gt.html")
+
+htmltools::includeHTML("ru_affiliations_by_institution_df_gt.html")
 ```
 
 ### By article
 
-```{r by_article}
-ru_affiliations_df |> 
+```{r ru_affiliations_by_article_df}
+ru_affiliations_by_article_df <- ru_affiliations_df |> 
   dplyr::distinct(work_id) |> 
   dplyr::left_join(works_df |> 
   dplyr::rename(work_id = id) |> 
-  dplyr::select(work_id, title, publication_year, cited_by_count, source_display_name),
+  dplyr::select(work_id, title, publication_year, cited_by_count, source_display_name, source_id),
   by = "work_id") |> 
   dplyr::arrange(dplyr::desc(cited_by_count), publication_year) |>
-  dplyr::rename(journal = source_display_name) |> 
-  gt::gt(caption = "List of articles with a Russian affiliation")
+  dplyr::rename(journal = source_display_name)
+
+n_na <- ru_affiliations_by_article_df |> 
+  dplyr::filter(is.na(source_id)) |> 
+  nrow()
+
+```
+
+
+Full list of articles on OpenAlex about "internationalisation of higher education" by at least one author with a Russian affiliation.
+
+N.B. some items, although categorised by OpenAlex as articles, do not have information about the journal where they have been published; following their DOIs, these seems to be published in conference proceedings or similar. This issue involves `r n_na` articles in total. You can see them by ordering by `journal` (clicking on the `journal` column header) in the following table.
+
+```{r by_article}
+
+ru_affiliations_by_article_df_gt <- ru_affiliations_by_article_df |> 
+  dplyr::mutate(
+    title = purrr::map2_chr(
+      .x = title,
+      .y = work_id,
+      .f = \(x,y) {
+        htmltools::a(x,
+                     href = y
+        ) |> as.character()
+      } 
+    )
+  ) |> 
+    dplyr::mutate(
+    journal = purrr::map2_chr(
+      .x = journal,
+      .y = source_id,
+      .f = \(x,y) {
+        htmltools::a(x,
+                     href = y
+        ) |> as.character()
+      } 
+    )
+  ) |> 
+  dplyr::rename(year = publication_year,
+                `cited by` = cited_by_count) |> 
+  dplyr::select(title, year, journal, `cited by`) |> 
+  dplyr::mutate(journal = dplyr::if_else(journal == "<a href>NA</a>", NA_character_, journal)) |> 
+  gt::gt(caption = "List of articles with a Russian affiliation") |> 
+  gt::cols_width(
+    `cited by` ~ gt::px(120)
+  ) |> 
+  gt::opt_interactive(active = TRUE, use_pagination = TRUE, use_sorting = TRUE, page_size_default = 3, use_page_size_select = TRUE) |> 
+  gt::fmt_markdown(columns = c(title, journal))
+
+gt::gtsave(data = ru_affiliations_by_article_df_gt,
+           filename = "ru_affiliations_by_article_df_gt.html")
+
+htmltools::includeHTML("ru_affiliations_by_article_df_gt.html")
 
 
 ```
+
 

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/core-js/shim.min.js"></script>
+<script src="lib/react/react.min.js"></script>
+<script src="lib/react/react-dom.min.js"></script>
+<script src="lib/reactwidget/react-tools.js"></script>
+<script src="lib/htmlwidgets/htmlwidgets.js"></script>
+<link href="lib/reactable/reactable.css" rel="stylesheet" />
+<script src="lib/reactable-binding/reactable.js"></script>
+
+</head>
+<body>
+<div id="dfrgeoswqd" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  <style>#dfrgeoswqd table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#dfrgeoswqd thead, #dfrgeoswqd tbody, #dfrgeoswqd tfoot, #dfrgeoswqd tr, #dfrgeoswqd td, #dfrgeoswqd th {
+  border-style: none;
+}
+
+#dfrgeoswqd p {
+  margin: 0;
+  padding: 0;
+}
+
+#dfrgeoswqd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#dfrgeoswqd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#dfrgeoswqd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#dfrgeoswqd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dfrgeoswqd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dfrgeoswqd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dfrgeoswqd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dfrgeoswqd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dfrgeoswqd .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#dfrgeoswqd .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#dfrgeoswqd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dfrgeoswqd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dfrgeoswqd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dfrgeoswqd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dfrgeoswqd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfrgeoswqd .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#dfrgeoswqd .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#dfrgeoswqd .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#dfrgeoswqd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfrgeoswqd .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#dfrgeoswqd .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfrgeoswqd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dfrgeoswqd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfrgeoswqd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dfrgeoswqd .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfrgeoswqd .gt_left {
+  text-align: left;
+}
+
+#dfrgeoswqd .gt_center {
+  text-align: center;
+}
+
+#dfrgeoswqd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dfrgeoswqd .gt_font_normal {
+  font-weight: normal;
+}
+
+#dfrgeoswqd .gt_font_bold {
+  font-weight: bold;
+}
+
+#dfrgeoswqd .gt_font_italic {
+  font-style: italic;
+}
+
+#dfrgeoswqd .gt_super {
+  font-size: 65%;
+}
+
+#dfrgeoswqd .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#dfrgeoswqd .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#dfrgeoswqd .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#dfrgeoswqd .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#dfrgeoswqd .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#dfrgeoswqd .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#dfrgeoswqd .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#dfrgeoswqd .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#dfrgeoswqd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+  <div id="dfrgeoswqd" class="reactable html-widget" style="width:auto;height:auto;"></div>
+  <script type="application/json" data-for="dfrgeoswqd">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"affiliation":["<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I172901346\">St Petersburg University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210119369\">Ural Branch of the Russian Academy of Sciences<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I54195498\">Kazan State Technological University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I130823665\">Ural Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I196355604\">National Research Tomsk State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I184139950\">Moscow State Institute of International Relations<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I99205534\">Yaroslav-the-Wise Novgorod State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I21203515\">Kazan Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210140902\">Volgograd State Technical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I263417816\">The Russian Presidential Academy of National Economy and Public Administration<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I3123529209\">Samara State Technical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210093577\">Samara State University of Social Sciences and Education<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I71305448\">Voronezh State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I91727514\">Novosibirsk State Technical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I118501908\">National Research University Higher School of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I126527374\">Peoples' Friendship University of Russia<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210113084\">North-West Institute of Management<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I30849647\">Tomsk Polytechnic University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210117518\">Dagestan State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210117676\">Saint Petersburg State University of Culture and Arts<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210143536\">Dagestan State Institute of National Economy<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210160647\">Russian University of Cooperation<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I212220629\">Peter the Great St. Petersburg Polytechnic University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210098167\">Institute of Sociology<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210102461\">Ural State University of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210123605\">Institute of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I78826914\">Moscow State Linguistic University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I111567634\">State University of Management<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I137534880\">Southern Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I188973947\">Novosibirsk State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210110806\">Institute of Management Business and Law<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I56490300\">Siberian State Aerospace University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I105056648\">Perm State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I210043505\">North-Caucasus Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210094909\">Surgut State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210105227\">Chuvash State Pedagogical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210109097\">Armavir State Pedagogical Academy<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210110371\">Russian Academy of Education<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I79563041\">N. I. Lobachevsky State University of Nizhny Novgorod<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I103031861\">Plekhanov Russian University of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I11954620\">Russian State Agrarian University - Moscow Timiryazev Agricultural Academy<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I120938084\">Belgorod National Research University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I157338126\">Moscow State Pedagogical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I19880235\">Lomonosov Moscow State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I211738395\">Financial University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I269199756\">Omsk State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I27238560\">Pacific National University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I2801368570\">Government of Russia<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I3019350493\">Moscow State Agroengineering University named after V.P. Goryachkin<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210115774\">National Training Foundation<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210119228\">Industrial University of Tyumen<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210126948\">Memorial<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210135186\">MIREA - Russian Technological University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210145588\">Institute of Economics and Industrial Engineering<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210151936\">North-Western State Medical University named after I.I. Mechnikov<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I7901131\">Ufa State Petroleum Technological University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I887846188\">National Research Nuclear University MEPhI<\/a>"],"publications":[5,2,1,5,4,4,3,5,2,3,2,1,1,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,2,1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1,1,1,1,1],"cited by":[27,19,13,11,10,9,9,8,8,7,7,7,7,7,6,6,5,4,4,4,4,4,3,3,3,3,3,2,2,2,2,2,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"columns":[{"id":"affiliation","name":"affiliation","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I172901346\">St Petersburg University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210119369\">Ural Branch of the Russian Academy of Sciences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I54195498\">Kazan State Technological University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I130823665\">Ural Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I196355604\">National Research Tomsk State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I184139950\">Moscow State Institute of International Relations<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I99205534\">Yaroslav-the-Wise Novgorod State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I21203515\">Kazan Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210140902\">Volgograd State Technical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I263417816\">The Russian Presidential Academy of National Economy and Public Administration<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I3123529209\">Samara State Technical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210093577\">Samara State University of Social Sciences and Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I71305448\">Voronezh State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I91727514\">Novosibirsk State Technical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I118501908\">National Research University Higher School of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I126527374\">Peoples’ Friendship University of Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210113084\">North-West Institute of Management<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I30849647\">Tomsk Polytechnic University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210117518\">Dagestan State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210117676\">Saint Petersburg State University of Culture and Arts<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210143536\">Dagestan State Institute of National Economy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210160647\">Russian University of Cooperation<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I212220629\">Peter the Great St. Petersburg Polytechnic University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210098167\">Institute of Sociology<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210102461\">Ural State University of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210123605\">Institute of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I78826914\">Moscow State Linguistic University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I111567634\">State University of Management<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I137534880\">Southern Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I188973947\">Novosibirsk State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210110806\">Institute of Management Business and Law<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I56490300\">Siberian State Aerospace University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I105056648\">Perm State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I210043505\">North-Caucasus Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210094909\">Surgut State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210105227\">Chuvash State Pedagogical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210109097\">Armavir State Pedagogical Academy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210110371\">Russian Academy of Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I79563041\">N. I. Lobachevsky State University of Nizhny Novgorod<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I103031861\">Plekhanov Russian University of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I11954620\">Russian State Agrarian University - Moscow Timiryazev Agricultural Academy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I120938084\">Belgorod National Research University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I157338126\">Moscow State Pedagogical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I19880235\">Lomonosov Moscow State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I211738395\">Financial University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I269199756\">Omsk State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I27238560\">Pacific National University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I2801368570\">Government of Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I3019350493\">Moscow State Agroengineering University named after V.P. Goryachkin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210115774\">National Training Foundation<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210119228\">Industrial University of Tyumen<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210126948\">Memorial<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210135186\">MIREA - Russian Technological University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210145588\">Institute of Economics and Industrial Engineering<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210151936\">North-Western State Medical University named after I.I. Mechnikov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I7901131\">Ufa State Petroleum Technological University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I887846188\">National Research Nuclear University MEPhI<\/a><\/span>"],"html":true,"align":"left"},{"id":"publications","name":"publications","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":120,"align":"right"},{"id":"cited by","name":"cited by","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":120,"align":"right"}],"defaultPageSize":3,"showPageSizeOptions":true,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"font-family":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif","fontSize":"16px"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"groupHeaderStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"cellStyle":{"fontWeight":"normal"}},"elementId":"dfrgeoswqd","dataKey":"6e7f1b4cacc02a3c0ad7553decdbaa50"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style"],"jsHooks":[]}</script>
+</div>
+</body>
+</html>

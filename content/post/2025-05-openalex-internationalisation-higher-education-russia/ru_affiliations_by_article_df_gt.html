@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/core-js/shim.min.js"></script>
+<script src="lib/react/react.min.js"></script>
+<script src="lib/react/react-dom.min.js"></script>
+<script src="lib/reactwidget/react-tools.js"></script>
+<script src="lib/htmlwidgets/htmlwidgets.js"></script>
+<link href="lib/reactable/reactable.css" rel="stylesheet" />
+<script src="lib/reactable-binding/reactable.js"></script>
+
+</head>
+<body>
+<div id="qndqqrjgeo" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  <style>#qndqqrjgeo table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#qndqqrjgeo thead, #qndqqrjgeo tbody, #qndqqrjgeo tfoot, #qndqqrjgeo tr, #qndqqrjgeo td, #qndqqrjgeo th {
+  border-style: none;
+}
+
+#qndqqrjgeo p {
+  margin: 0;
+  padding: 0;
+}
+
+#qndqqrjgeo .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#qndqqrjgeo .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qndqqrjgeo .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qndqqrjgeo .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qndqqrjgeo .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qndqqrjgeo .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qndqqrjgeo .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qndqqrjgeo .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qndqqrjgeo .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qndqqrjgeo .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#qndqqrjgeo .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qndqqrjgeo .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qndqqrjgeo .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qndqqrjgeo .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qndqqrjgeo .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qndqqrjgeo .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qndqqrjgeo .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qndqqrjgeo .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qndqqrjgeo .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qndqqrjgeo .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qndqqrjgeo .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qndqqrjgeo .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qndqqrjgeo .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qndqqrjgeo .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qndqqrjgeo .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qndqqrjgeo .gt_left {
+  text-align: left;
+}
+
+#qndqqrjgeo .gt_center {
+  text-align: center;
+}
+
+#qndqqrjgeo .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qndqqrjgeo .gt_font_normal {
+  font-weight: normal;
+}
+
+#qndqqrjgeo .gt_font_bold {
+  font-weight: bold;
+}
+
+#qndqqrjgeo .gt_font_italic {
+  font-style: italic;
+}
+
+#qndqqrjgeo .gt_super {
+  font-size: 65%;
+}
+
+#qndqqrjgeo .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#qndqqrjgeo .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qndqqrjgeo .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#qndqqrjgeo .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#qndqqrjgeo .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#qndqqrjgeo .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#qndqqrjgeo .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#qndqqrjgeo .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#qndqqrjgeo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+  <div id="qndqqrjgeo" class="reactable html-widget" style="width:auto;height:auto;"></div>
+  <script type="application/json" data-for="qndqqrjgeo">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"title":["<a href=\"https://openalex.org/W2998243963\">International academic mobility through the prism of soft power theory<\/a>","<a href=\"https://openalex.org/W2596392323\">Going Globally as a Russian Engineering University<\/a>","<a href=\"https://openalex.org/W2912945906\">IMPLEMENTING EMI AT A RUSSIAN UNIVERSITY: A STUDY OF CONTENT LECTURERS’ PERSPECTIVES<\/a>","<a href=\"https://openalex.org/W3184379855\">Fear of Brain Drain: Russian Academic Community on Internationalization of Education<\/a>","<a href=\"https://openalex.org/W2918980696\">Internationalization of schools in Russia<\/a>","<a href=\"https://openalex.org/W2883162115\">CROSS-CULTURAL COMMUNICATION COURSE AS A FORM OF INTERNATIONALISATION AT HOME WITHIN RUSSIAN HIGHER EDUCATION INSTITUTIONS<\/a>","<a href=\"https://openalex.org/W2947060146\">Internationalization of Higher Education: International Vector of the University Development Strategy<\/a>","<a href=\"https://openalex.org/W3190805132\">Student Mobility as a Form of Education Internationalization: A Systems Approach to Management<\/a>","<a href=\"https://openalex.org/W4283071963\">World-class Universities in Russia: A Contested Norm and its Implementation<\/a>","<a href=\"https://openalex.org/W4377192556\">Internationalization of Higher Education in Russia: in Search for Development<\/a>","<a href=\"https://openalex.org/W2790422135\">NEW FORMS OF UNIVERSITY COOPERATION: INTERNATIONAL NETWORKS OF UNIVERSITIES<\/a>","<a href=\"https://openalex.org/W2914065851\">Prospects of Development of Export Potential of Higher Education of the Russian Federation<\/a>","<a href=\"https://openalex.org/W2999538113\">Students’ International Academic Mobility in the Context of Internationalization of Higher Education (RUDN University Case)<\/a>","<a href=\"https://openalex.org/W3196622995\">Adjustment or Inclusion?<\/a>","<a href=\"https://openalex.org/W2903116778\">Internationalization of LIS Education<\/a>","<a href=\"https://openalex.org/W2141823291\">Features of Selecting and Structuring Foreign Language Teaching Content in Terms of International Component<\/a>","<a href=\"https://openalex.org/W2139197582\">Problems and Outlooks of International Integration of Higher Education<\/a>","<a href=\"https://openalex.org/W2899141767\">Export of Educational Services as the Most Important Factor of Competitiveness and Economic Development of the Country<\/a>","<a href=\"https://openalex.org/W4210255094\">From ‘candidates’ to ‘grandmasters’: internationalization strategies of universities<\/a>","<a href=\"https://openalex.org/W2025555098\">Supporting virtual internationalization of education by implementing and playing serious games<\/a>","<a href=\"https://openalex.org/W2793133357\">EMI MOOCS FOR UNIVERSITY LECTURERS<\/a>","<a href=\"https://openalex.org/W3037257456\">Implementation of European Educational Programs in Context of Kazakhstan’s Policy in Field of Higher Education (1995-2018)<\/a>","<a href=\"https://openalex.org/W3164690325\">The higher education system as the driving force of the country’s sustainable development<\/a>","<a href=\"https://openalex.org/W3184668769\">Pursuing goals of sustainable development and internationalization in higher education context<\/a>","<a href=\"https://openalex.org/W4309320692\">Challenges of Educational Migration at the Present Stage<\/a>","<a href=\"https://openalex.org/W2085187748\">Academic mobility as a key factor of quality assurance in tertiary education<\/a>","<a href=\"https://openalex.org/W2900169023\">Increasing Export of Higher Education Services through Internationalization, based on Development of Online Learning<\/a>","<a href=\"https://openalex.org/W2961379214\">Internationalization of Higher Education in China: Modern Trends<\/a>","<a href=\"https://openalex.org/W3133571340\">Higher Education Internationalization Priorities in the Republic of Belarus and the Export of Belarusian Education<\/a>","<a href=\"https://openalex.org/W3164827087\">Scientific / Educational communication and leadership ARWU versus MosIUR<\/a>","<a href=\"https://openalex.org/W3206932619\">Uzbekistan: New Milestones of Higher Education Internationalization<\/a>","<a href=\"https://openalex.org/W4206237913\">Local Content Policies in the Russian Higher Education Sector: Harming or Aiding Internationalization?<\/a>","<a href=\"https://openalex.org/W4327945664\">Managing academic mobility as a tool of «soft power» in contemporary China<\/a>","<a href=\"https://openalex.org/W2153797630\">The Requirements for Developing the Programs and Designing a Foreign Language Teaching Syllabus for the Students Following the Education Internationalization<\/a>","<a href=\"https://openalex.org/W3132906833\">Sociocultural adjustment of foreign students by means of interactive teaching methods in the context of internationalization of the University education<\/a>","<a href=\"https://openalex.org/W2980748054\">Ways to Improve the Competitiveness of Higher Education Programs<\/a>","<a href=\"https://openalex.org/W2995963942\">Risk Reduction Tools For Education Internationalization<\/a>","<a href=\"https://openalex.org/W2997643514\">SYNERGY OF MULTILINGUALISM AND MULTICULTURALISM FROM THE PERSPECTIVE OF INTERNATIONALIZATION OF HIGHER POFESSIONAL EDUCATION<\/a>","<a href=\"https://openalex.org/W3110433481\">Scientific and methodological conditions for adapting foreign experience of higher education internationalization<\/a>","<a href=\"https://openalex.org/W3114616880\">INTERNATIONALIZATION STRATEGY DEVELOPMENT: APPROACHES AND TOOLS<\/a>","<a href=\"https://openalex.org/W3171824849\">INSTITUTIONAL STRATEGIES TO INCREASE EMI QUANTITY AND QUALITY IN RUSSIAN HIGHER EDUCATION INSTITUTIONS: COMPARATIVE ANALYSIS<\/a>","<a href=\"https://openalex.org/W3196451896\">Internationalization of Education: La Peau de Сhagrin of the Russian Language<\/a>","<a href=\"https://openalex.org/W3216517300\">Urgent Issues Of Bilingual Training In The Context Of Global Education<\/a>","<a href=\"https://openalex.org/W3217171122\">Motivation Of Student Participation In University’s International Activities<\/a>","<a href=\"https://openalex.org/W4376649576\">RUDN graduate is a representative of the world elite: Upbringing aspect of the university’s activities<\/a>","<a href=\"https://openalex.org/W4387819772\">State Policy of the Russian Federation on attracting foreign students of 2008–2021<\/a>","<a href=\"https://openalex.org/W4390940440\">Educational and methodological enrichment of the learning process of foreign medical students<\/a>","<a href=\"https://openalex.org/W4390883317\">Teachers on the Move: Understanding the New Model of Virtual Mobility Through the Case Study of a Russian University<\/a>","<a href=\"https://openalex.org/W2756718351\">European Union and New Approach to Internationalization of Higher Education<\/a>","<a href=\"https://openalex.org/W1491976776\">Essential and Content-Related Characteristics of Higher Education Internationalization<\/a>","<a href=\"https://openalex.org/W2615746002\">INTEGRATION PROCESSES IN HIGHER PEDAGOGICAL EDUCATION AS A BROADCAST OF TIME<\/a>","<a href=\"https://openalex.org/W3112312477\">Theoretical aspects of higher education internationalization problem in the modern world<\/a>","<a href=\"https://openalex.org/W2948243931\">International Project in Higher Education: Influence of Chinese Culture<\/a>","<a href=\"https://openalex.org/W2951862274\">Japanese Universities’ Community in International Environment: Maneuvers or Heading Down?<\/a>","<a href=\"https://openalex.org/W3044837068\">EHEA INTERNATIONAL STUDENTS MOBILITY AND TRANSPARENCY<\/a>","<a href=\"https://openalex.org/W3091881260\">«ERASMUS+» PROJECTS AS A TOOL FOR THE DEVELOPMENT AND INTERNATIONALIZATION OF AGRICULTURAL EDUCATION<\/a>","<a href=\"https://openalex.org/W3092266734\">FOREIGN LANGUAGE TESTING CENTRES FOR INTERNATIONALIZATION ENHANCEMENT IN MEDICAL EDUCATION IN RUSSIA<\/a>","<a href=\"https://openalex.org/W3112638861\">Formation of an Innovative Educational Environment as a Factor of Students’ Competitiveness<\/a>","<a href=\"https://openalex.org/W4210489811\">FAR EASTERN UNIVERSITIES IN THE PERSPECTIVE OF INTERNATIONALIZATION<\/a>","<a href=\"https://openalex.org/W4210982346\">Internationalization of higher education: cooperation between Russia and China<\/a>","<a href=\"https://openalex.org/W3119548345\">The strategies for Russian higher education regionalization and internationalization<\/a>","<a href=\"https://openalex.org/W3159106214\">Development features of the Russian higher education system in present-day conditions<\/a>","<a href=\"https://openalex.org/W3167933091\">From Priority to Diversity: Prospect of Educational Cooperation for Chinese and Russian Regional Universities<\/a>","<a href=\"https://openalex.org/W3214800085\">Internationalization of the foreign language curriculum during the COVID-19 pandemic<\/a>","<a href=\"https://openalex.org/W4285142044\">Internationalization of higher education in times of crisis: search for the optimal concept<\/a>","<a href=\"https://openalex.org/W4285249667\">Strategic development of internationalization of higher education in Japan<\/a>","<a href=\"https://openalex.org/W4309852628\">Research of Educational Programs in the Trending Areas of Economics for University Integration to the International Educational Space: Case of the Ural Federal University named after the First President of Russia B.N. Yeltsin<\/a>","<a href=\"https://openalex.org/W4320027245\">Challenges and Opportunities in the International Higher Education “Post-Pandemic” Landscape<\/a>","<a href=\"https://openalex.org/W4320027295\">Putin’s War: Supporting International Students During Global Crises<\/a>","<a href=\"https://openalex.org/W4364366118\">Some aspects of international legal cooperation of states in the field of higher education<\/a>","<a href=\"https://openalex.org/W4385723917\">Implementation of the strategy of internationalization of higher education as a «soft power» tool of the state<\/a>","<a href=\"https://openalex.org/W4388455593\">Improving the international competitiveness of universities in the global digital space<\/a>","<a href=\"https://openalex.org/W4389194816\">World‐class universities cut off from the West: Russian higher education and the reversal of the internationalisation norm?<\/a>","<a href=\"https://openalex.org/W4390194017\">Internationalization of the activities of Russian universities in modern conditions<\/a>","<a href=\"https://openalex.org/W4405348105\">ABOUT THE NEED TO STUDY THE THEORETICAL FOUNDATIONS OF WIRELESS DATA TRANSMISSION IN A SCHOOL PHYSICS COURSE<\/a>"],"year":[2020,2015,2019,2021,2019,2018,2018,2021,2022,2023,2017,2018,2019,2021,2012,2014,2015,2018,2021,2012,2018,2020,2021,2021,2022,2015,2018,2019,2020,2021,2021,2021,2023,2015,2016,2019,2019,2019,2020,2020,2021,2021,2021,2021,2023,2023,2023,2024,2011,2015,2017,2018,2019,2019,2020,2020,2020,2020,2020,2020,2021,2021,2021,2021,2022,2022,2022,2022,2022,2023,2023,2023,2023,2023,2024],"journal":["<a href=\"https://openalex.org/S2737075480\">The Education and science journal<\/a>",null,"<a href=\"https://openalex.org/S2764408135\">Journal of Teaching English for Specific and Academic Purposes<\/a>","<a href=\"https://openalex.org/S50258942\">Journal of Studies in International Education<\/a>","<a href=\"https://openalex.org/S159002476\">Policy Futures in Education<\/a>","<a href=\"https://openalex.org/S4210176592\">SOCIETY INTEGRATION EDUCATION Proceedings of the International Scientific Conference<\/a>","<a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a>","<a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a>","<a href=\"https://openalex.org/S50258942\">Journal of Studies in International Education<\/a>","<a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a>","<a href=\"https://openalex.org/S2764932156\">RUDN Journal of Economics<\/a>","<a href=\"https://openalex.org/S4210183428\">Administrative Consulting<\/a>","<a href=\"https://openalex.org/S4210187162\">Vestnik RUDN International Relations<\/a>","<a href=\"https://openalex.org/S4210198367\">Journal of International Students<\/a>","<a href=\"https://openalex.org/S4210174423\">Bibliotekovedenie [Russian Journal of Library Science]<\/a>","<a href=\"https://openalex.org/S2765046590\">Asian Social Science<\/a>","<a href=\"https://openalex.org/S2764687317\">International Education Studies<\/a>","<a href=\"https://openalex.org/S4210183428\">Administrative Consulting<\/a>","<a href=\"https://openalex.org/S4210232624\">R-Economy<\/a>",null,"<a href=\"https://openalex.org/S2764408135\">Journal of Teaching English for Specific and Academic Purposes<\/a>","<a href=\"https://openalex.org/S4210197101\">Nauchnyi Dialog<\/a>","<a href=\"https://openalex.org/S4210186093\">E3S Web of Conferences<\/a>","<a href=\"https://openalex.org/S4210186093\">E3S Web of Conferences<\/a>","<a href=\"https://openalex.org/S4210232431\">University Management Practice and Analysis<\/a>","<a href=\"https://openalex.org/S4210189194\">IOP Conference Series Materials Science and Engineering<\/a>",null,"<a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a>","<a href=\"https://openalex.org/S4210196930\">Vestnik Tomskogo gosudarstvennogo universiteta<\/a>","<a href=\"https://openalex.org/S2736709357\">Revista on line de Política e Gestão Educacional<\/a>","<a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a>","<a href=\"https://openalex.org/S4210226328\">Voprosy Obrazovaniya/ Educational Studies Moscow<\/a>","<a href=\"https://openalex.org/S4210225429\">Vestnik Universiteta<\/a>","<a href=\"https://openalex.org/S2764499177\">Review of European Studies<\/a>","<a href=\"https://openalex.org/S4210210682\">Pedagogical Education in Russia<\/a>",null,"<a href=\"https://openalex.org/S2737918976\">Revista San Gregorio<\/a>","<a href=\"https://openalex.org/S2764408135\">Journal of Teaching English for Specific and Academic Purposes<\/a>","<a href=\"https://openalex.org/S4210211868\">Samara Journal of Science<\/a>","<a href=\"https://openalex.org/S4210230216\">PRIMO ASPECTU<\/a>","<a href=\"https://openalex.org/S2764408135\">Journal of Teaching English for Specific and Academic Purposes<\/a>","<a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a>","<a href=\"https://openalex.org/S4210220879\">The European Proceedings of Social &amp; Behavioural Sciences<\/a>","<a href=\"https://openalex.org/S4210220879\">The European Proceedings of Social &amp; Behavioural Sciences<\/a>","<a href=\"https://openalex.org/S4210192304\">Alma mater Vestnik Vysshey Shkoly<\/a>","<a href=\"https://openalex.org/S4210234977\">POWER AND ADMINISTRATION IN THE EAST OF RUSSIA<\/a>","<a href=\"https://openalex.org/S4210211228\">Vestnik of Samara University History pedagogics philology<\/a>","<a href=\"https://openalex.org/S4210222324\">Higher Education for the Future<\/a>","<a href=\"https://openalex.org/S2764746964\">RUDN Journal of Russian History<\/a>","<a href=\"https://openalex.org/S2764577278\">Journal of Sustainable Development<\/a>","<a href=\"https://openalex.org/S4210184139\">Paradigmata poznání<\/a>","<a href=\"https://openalex.org/S4210211868\">Samara Journal of Science<\/a>","<a href=\"https://openalex.org/S4210225434\">Journal of Research in Educational Sciences<\/a>","<a href=\"https://openalex.org/S4210187162\">Vestnik RUDN International Relations<\/a>","<a href=\"https://openalex.org/S4220651270\">Education and new developments<\/a>","<a href=\"https://openalex.org/S4210230216\">PRIMO ASPECTU<\/a>","<a href=\"https://openalex.org/S4210230216\">PRIMO ASPECTU<\/a>","<a href=\"https://openalex.org/S4210240559\">Общество социология психология педагогика<\/a>","<a href=\"https://openalex.org/S4210219692\">The Humanities and Social Studies in the Far East<\/a>","<a href=\"https://openalex.org/S4210210085\">The Humanities and Education<\/a>","<a href=\"https://openalex.org/S4210202797\">SHS Web of Conferences<\/a>","<a href=\"https://openalex.org/S4210202797\">SHS Web of Conferences<\/a>","<a href=\"https://openalex.org/S4210237075\">IZVESTIYA VUZOV SEVERO-KAVKAZSKII REGION SOCIAL SCIENCE<\/a>","<a href=\"https://openalex.org/S4210202797\">SHS Web of Conferences<\/a>","<a href=\"https://openalex.org/S4220651735\">Man and Education<\/a>","<a href=\"https://openalex.org/S4220651735\">Man and Education<\/a>","<a href=\"https://openalex.org/S2764636183\">Management of the personnel and intellectual resources in Russia<\/a>","<a href=\"https://openalex.org/S4387286875\">Critical Internationalization Studies Review<\/a>","<a href=\"https://openalex.org/S4387286875\">Critical Internationalization Studies Review<\/a>",null,"<a href=\"https://openalex.org/S4210183085\">Professional education in the modern world<\/a>","<a href=\"https://openalex.org/S4210225429\">Vestnik Universiteta<\/a>","<a href=\"https://openalex.org/S184445340\">Higher Education Quarterly<\/a>","<a href=\"https://openalex.org/S4210176877\">STATE AND MUNICIPAL MANAGEMENT SCHOLAR NOTES<\/a>",null],"cited by":[16,13,13,9,8,7,7,7,7,7,6,5,5,5,4,4,4,4,4,3,3,3,3,3,3,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"columns":[{"id":"title","name":"title","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/W2998243963\">International academic mobility through the prism of soft power theory<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2596392323\">Going Globally as a Russian Engineering University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2912945906\">IMPLEMENTING EMI AT A RUSSIAN UNIVERSITY: A STUDY OF CONTENT LECTURERS’ PERSPECTIVES<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3184379855\">Fear of Brain Drain: Russian Academic Community on Internationalization of Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">Internationalization of schools in Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2883162115\">CROSS-CULTURAL COMMUNICATION COURSE AS A FORM OF INTERNATIONALISATION AT HOME WITHIN RUSSIAN HIGHER EDUCATION INSTITUTIONS<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2947060146\">Internationalization of Higher Education: International Vector of the University Development Strategy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3190805132\">Student Mobility as a Form of Education Internationalization: A Systems Approach to Management<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4283071963\">World-class Universities in Russia: A Contested Norm and its Implementation<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4377192556\">Internationalization of Higher Education in Russia: in Search for Development<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2790422135\">NEW FORMS OF UNIVERSITY COOPERATION: INTERNATIONAL NETWORKS OF UNIVERSITIES<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2914065851\">Prospects of Development of Export Potential of Higher Education of the Russian Federation<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2999538113\">Students’ International Academic Mobility in the Context of Internationalization of Higher Education (RUDN University Case)<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3196622995\">Adjustment or Inclusion?<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2903116778\">Internationalization of LIS Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2141823291\">Features of Selecting and Structuring Foreign Language Teaching Content in Terms of International Component<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2139197582\">Problems and Outlooks of International Integration of Higher Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2899141767\">Export of Educational Services as the Most Important Factor of Competitiveness and Economic Development of the Country<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4210255094\">From ‘candidates’ to ‘grandmasters’: internationalization strategies of universities<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2025555098\">Supporting virtual internationalization of education by implementing and playing serious games<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2793133357\">EMI MOOCS FOR UNIVERSITY LECTURERS<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3037257456\">Implementation of European Educational Programs in Context of Kazakhstan’s Policy in Field of Higher Education (1995-2018)<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164690325\">The higher education system as the driving force of the country’s sustainable development<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3184668769\">Pursuing goals of sustainable development and internationalization in higher education context<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4309320692\">Challenges of Educational Migration at the Present Stage<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2085187748\">Academic mobility as a key factor of quality assurance in tertiary education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2900169023\">Increasing Export of Higher Education Services through Internationalization, based on Development of Online Learning<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2961379214\">Internationalization of Higher Education in China: Modern Trends<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3133571340\">Higher Education Internationalization Priorities in the Republic of Belarus and the Export of Belarusian Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">Scientific / Educational communication and leadership ARWU versus MosIUR<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3206932619\">Uzbekistan: New Milestones of Higher Education Internationalization<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4206237913\">Local Content Policies in the Russian Higher Education Sector: Harming or Aiding Internationalization?<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4327945664\">Managing academic mobility as a tool of «soft power» in contemporary China<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2153797630\">The Requirements for Developing the Programs and Designing a Foreign Language Teaching Syllabus for the Students Following the Education Internationalization<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3132906833\">Sociocultural adjustment of foreign students by means of interactive teaching methods in the context of internationalization of the University education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2980748054\">Ways to Improve the Competitiveness of Higher Education Programs<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2995963942\">Risk Reduction Tools For Education Internationalization<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2997643514\">SYNERGY OF MULTILINGUALISM AND MULTICULTURALISM FROM THE PERSPECTIVE OF INTERNATIONALIZATION OF HIGHER POFESSIONAL EDUCATION<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3110433481\">Scientific and methodological conditions for adapting foreign experience of higher education internationalization<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3114616880\">INTERNATIONALIZATION STRATEGY DEVELOPMENT: APPROACHES AND TOOLS<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3171824849\">INSTITUTIONAL STRATEGIES TO INCREASE EMI QUANTITY AND QUALITY IN RUSSIAN HIGHER EDUCATION INSTITUTIONS: COMPARATIVE ANALYSIS<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3196451896\">Internationalization of Education: La Peau de Сhagrin of the Russian Language<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3216517300\">Urgent Issues Of Bilingual Training In The Context Of Global Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3217171122\">Motivation Of Student Participation In University’s International Activities<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4376649576\">RUDN graduate is a representative of the world elite: Upbringing aspect of the university’s activities<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4387819772\">State Policy of the Russian Federation on attracting foreign students of 2008–2021<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4390940440\">Educational and methodological enrichment of the learning process of foreign medical students<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4390883317\">Teachers on the Move: Understanding the New Model of Virtual Mobility Through the Case Study of a Russian University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2756718351\">European Union and New Approach to Internationalization of Higher Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1491976776\">Essential and Content-Related Characteristics of Higher Education Internationalization<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2615746002\">INTEGRATION PROCESSES IN HIGHER PEDAGOGICAL EDUCATION AS A BROADCAST OF TIME<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3112312477\">Theoretical aspects of higher education internationalization problem in the modern world<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2948243931\">International Project in Higher Education: Influence of Chinese Culture<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2951862274\">Japanese Universities’ Community in International Environment: Maneuvers or Heading Down?<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3044837068\">EHEA INTERNATIONAL STUDENTS MOBILITY AND TRANSPARENCY<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3091881260\">«ERASMUS+» PROJECTS AS A TOOL FOR THE DEVELOPMENT AND INTERNATIONALIZATION OF AGRICULTURAL EDUCATION<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3092266734\">FOREIGN LANGUAGE TESTING CENTRES FOR INTERNATIONALIZATION ENHANCEMENT IN MEDICAL EDUCATION IN RUSSIA<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3112638861\">Formation of an Innovative Educational Environment as a Factor of Students’ Competitiveness<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4210489811\">FAR EASTERN UNIVERSITIES IN THE PERSPECTIVE OF INTERNATIONALIZATION<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4210982346\">Internationalization of higher education: cooperation between Russia and China<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3119548345\">The strategies for Russian higher education regionalization and internationalization<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3159106214\">Development features of the Russian higher education system in present-day conditions<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3167933091\">From Priority to Diversity: Prospect of Educational Cooperation for Chinese and Russian Regional Universities<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3214800085\">Internationalization of the foreign language curriculum during the COVID-19 pandemic<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4285142044\">Internationalization of higher education in times of crisis: search for the optimal concept<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4285249667\">Strategic development of internationalization of higher education in Japan<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4309852628\">Research of Educational Programs in the Trending Areas of Economics for University Integration to the International Educational Space: Case of the Ural Federal University named after the First President of Russia B.N. Yeltsin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4320027245\">Challenges and Opportunities in the International Higher Education “Post-Pandemic” Landscape<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4320027295\">Putin’s War: Supporting International Students During Global Crises<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4364366118\">Some aspects of international legal cooperation of states in the field of higher education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4385723917\">Implementation of the strategy of internationalization of higher education as a «soft power» tool of the state<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4388455593\">Improving the international competitiveness of universities in the global digital space<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4389194816\">World‐class universities cut off from the West: Russian higher education and the reversal of the internationalisation norm?<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4390194017\">Internationalization of the activities of Russian universities in modern conditions<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4405348105\">ABOUT THE NEED TO STUDY THE THEORETICAL FOUNDATIONS OF WIRELESS DATA TRANSMISSION IN A SCHOOL PHYSICS COURSE<\/a><\/span>"],"html":true,"align":"left"},{"id":"year","name":"year","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right"},{"id":"journal","name":"journal","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/S2737075480\">The Education and science journal<\/a><\/span>","NA","<span class='gt_from_md'><a href=\"https://openalex.org/S2764408135\">Journal of Teaching English for Specific and Academic Purposes<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S50258942\">Journal of Studies in International Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S159002476\">Policy Futures in Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210176592\">SOCIETY INTEGRATION EDUCATION Proceedings of the International Scientific Conference<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S50258942\">Journal of Studies in International Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2764932156\">RUDN Journal of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210183428\">Administrative Consulting<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210187162\">Vestnik RUDN International Relations<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210198367\">Journal of International Students<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210174423\">Bibliotekovedenie [Russian Journal of Library Science]<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2765046590\">Asian Social Science<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2764687317\">International Education Studies<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210183428\">Administrative Consulting<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210232624\">R-Economy<\/a><\/span>","NA","<span class='gt_from_md'><a href=\"https://openalex.org/S2764408135\">Journal of Teaching English for Specific and Academic Purposes<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210197101\">Nauchnyi Dialog<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210186093\">E3S Web of Conferences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210186093\">E3S Web of Conferences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210232431\">University Management Practice and Analysis<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210189194\">IOP Conference Series Materials Science and Engineering<\/a><\/span>","NA","<span class='gt_from_md'><a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210196930\">Vestnik Tomskogo gosudarstvennogo universiteta<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2736709357\">Revista on line de Política e Gestão Educacional<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210226328\">Voprosy Obrazovaniya/ Educational Studies Moscow<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210225429\">Vestnik Universiteta<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2764499177\">Review of European Studies<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210210682\">Pedagogical Education in Russia<\/a><\/span>","NA","<span class='gt_from_md'><a href=\"https://openalex.org/S2737918976\">Revista San Gregorio<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2764408135\">Journal of Teaching English for Specific and Academic Purposes<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210211868\">Samara Journal of Science<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210230216\">PRIMO ASPECTU<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2764408135\">Journal of Teaching English for Specific and Academic Purposes<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210168428\">Vysshee Obrazovanie v Rossii = Higher Education in Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210220879\">The European Proceedings of Social &amp; Behavioural Sciences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210220879\">The European Proceedings of Social &amp; Behavioural Sciences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210192304\">Alma mater Vestnik Vysshey Shkoly<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210234977\">POWER AND ADMINISTRATION IN THE EAST OF RUSSIA<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210211228\">Vestnik of Samara University History pedagogics philology<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210222324\">Higher Education for the Future<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2764746964\">RUDN Journal of Russian History<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2764577278\">Journal of Sustainable Development<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210184139\">Paradigmata poznání<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210211868\">Samara Journal of Science<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210225434\">Journal of Research in Educational Sciences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210187162\">Vestnik RUDN International Relations<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4220651270\">Education and new developments<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210230216\">PRIMO ASPECTU<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210230216\">PRIMO ASPECTU<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210240559\">Общество социология психология педагогика<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210219692\">The Humanities and Social Studies in the Far East<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210210085\">The Humanities and Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210202797\">SHS Web of Conferences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210202797\">SHS Web of Conferences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210237075\">IZVESTIYA VUZOV SEVERO-KAVKAZSKII REGION SOCIAL SCIENCE<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210202797\">SHS Web of Conferences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4220651735\">Man and Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4220651735\">Man and Education<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S2764636183\">Management of the personnel and intellectual resources in Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4387286875\">Critical Internationalization Studies Review<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4387286875\">Critical Internationalization Studies Review<\/a><\/span>","NA","<span class='gt_from_md'><a href=\"https://openalex.org/S4210183085\">Professional education in the modern world<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210225429\">Vestnik Universiteta<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S184445340\">Higher Education Quarterly<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/S4210176877\">STATE AND MUNICIPAL MANAGEMENT SCHOLAR NOTES<\/a><\/span>","NA"],"html":true,"align":"left"},{"id":"cited by","name":"cited by","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":120,"align":"right"}],"defaultPageSize":3,"showPageSizeOptions":true,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"font-family":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif","fontSize":"16px"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"groupHeaderStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"cellStyle":{"fontWeight":"normal"}},"elementId":"qndqqrjgeo","dataKey":"b9857ff5591fe5eb62feb8f90cc6498a"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style"],"jsHooks":[]}</script>
+</div>
+</body>
+</html>
