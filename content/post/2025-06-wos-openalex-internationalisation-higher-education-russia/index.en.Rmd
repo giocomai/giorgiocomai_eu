@@ -154,7 +154,8 @@ saveRDS(
   )  
 }
 
-ihe_wos_df <- readr::read_rds(file = ihe_wos_file)
+ihe_wos_df <- readr::read_rds(file = ihe_wos_file) |> 
+  dplyr::filter(published_year< 2025)
 
 
 ```

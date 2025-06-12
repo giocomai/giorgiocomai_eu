@@ -45,28 +45,28 @@ projects: []
 <li>have “Article” as <a href="https://webofscience.help.clarivate.com/en-us/Content/document-types.html">Document type</a></li>
 </ul>
 <p>These criteria reflect precisely the same criteria used in the previous analyses based on Scopus and OpenAlex.</p>
-<p>These queries return 3 307 unique publications.</p>
-<p>As we need to rely on DOIs to match these data with OpenAlex, we will need to drop all items that do not have a DOI, reducing the total to 2 927</p>
+<p>These queries return 3 244 unique publications.</p>
+<p>As we need to rely on DOIs to match these data with OpenAlex, we will need to drop all items that do not have a DOI, reducing the total to 2 864</p>
 <p>We can then query OpenAlex to retrieve all available information about this set of DOIs.</p>
 <p>A small number of these DOIs are not available on OpenAlex, reducing the total to 2 882. Manual parsing could possibly allow to reduce slightly the number of missing matches, but considering the relatively small number of missing articles, this analysis will proceed based on a fully automated and reproducible approach.</p>
 <p>OpenAlex would identify some of these items as something that is not a journal article (187 items in total), mostly categorising them as book chapters. It would also record the publication year before 2011 for 15 items. But for the purpose of this analysis, we will trust WoS and keep all items retrieved from WoS that match the above query, have a doi, and that doi corresponds to an item available on OpenAlex. The vast majority of items retrieved from WoS remain part of these analysis even accounting for data quality issues.</p>
-<div id="wlrdzaarkz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wlrdzaarkz table {
+<div id="iptcghcdxs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iptcghcdxs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wlrdzaarkz thead, #wlrdzaarkz tbody, #wlrdzaarkz tfoot, #wlrdzaarkz tr, #wlrdzaarkz td, #wlrdzaarkz th {
+#iptcghcdxs thead, #iptcghcdxs tbody, #iptcghcdxs tfoot, #iptcghcdxs tr, #iptcghcdxs td, #iptcghcdxs th {
   border-style: none;
 }
 
-#wlrdzaarkz p {
+#iptcghcdxs p {
   margin: 0;
   padding: 0;
 }
 
-#wlrdzaarkz .gt_table {
+#iptcghcdxs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -92,12 +92,12 @@ projects: []
   border-left-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_caption {
+#iptcghcdxs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wlrdzaarkz .gt_title {
+#iptcghcdxs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -109,7 +109,7 @@ projects: []
   border-bottom-width: 0;
 }
 
-#wlrdzaarkz .gt_subtitle {
+#iptcghcdxs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -121,7 +121,7 @@ projects: []
   border-top-width: 0;
 }
 
-#wlrdzaarkz .gt_heading {
+#iptcghcdxs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -133,13 +133,13 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_bottom_border {
+#iptcghcdxs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_col_headings {
+#iptcghcdxs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -154,7 +154,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_col_heading {
+#iptcghcdxs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -174,7 +174,7 @@ projects: []
   overflow-x: hidden;
 }
 
-#wlrdzaarkz .gt_column_spanner_outer {
+#iptcghcdxs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -186,15 +186,15 @@ projects: []
   padding-right: 4px;
 }
 
-#wlrdzaarkz .gt_column_spanner_outer:first-child {
+#iptcghcdxs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wlrdzaarkz .gt_column_spanner_outer:last-child {
+#iptcghcdxs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wlrdzaarkz .gt_column_spanner {
+#iptcghcdxs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -206,11 +206,11 @@ projects: []
   width: 100%;
 }
 
-#wlrdzaarkz .gt_spanner_row {
+#iptcghcdxs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wlrdzaarkz .gt_group_heading {
+#iptcghcdxs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -236,7 +236,7 @@ projects: []
   text-align: left;
 }
 
-#wlrdzaarkz .gt_empty_group_heading {
+#iptcghcdxs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -251,15 +251,15 @@ projects: []
   vertical-align: middle;
 }
 
-#wlrdzaarkz .gt_from_md > :first-child {
+#iptcghcdxs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wlrdzaarkz .gt_from_md > :last-child {
+#iptcghcdxs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wlrdzaarkz .gt_row {
+#iptcghcdxs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -278,7 +278,7 @@ projects: []
   overflow-x: hidden;
 }
 
-#wlrdzaarkz .gt_stub {
+#iptcghcdxs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -291,7 +291,7 @@ projects: []
   padding-right: 5px;
 }
 
-#wlrdzaarkz .gt_stub_row_group {
+#iptcghcdxs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -305,15 +305,15 @@ projects: []
   vertical-align: top;
 }
 
-#wlrdzaarkz .gt_row_group_first td {
+#iptcghcdxs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wlrdzaarkz .gt_row_group_first th {
+#iptcghcdxs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wlrdzaarkz .gt_summary_row {
+#iptcghcdxs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -323,16 +323,16 @@ projects: []
   padding-right: 5px;
 }
 
-#wlrdzaarkz .gt_first_summary_row {
+#iptcghcdxs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_first_summary_row.thick {
+#iptcghcdxs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wlrdzaarkz .gt_last_summary_row {
+#iptcghcdxs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -342,7 +342,7 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_grand_summary_row {
+#iptcghcdxs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -352,7 +352,7 @@ projects: []
   padding-right: 5px;
 }
 
-#wlrdzaarkz .gt_first_grand_summary_row {
+#iptcghcdxs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -362,7 +362,7 @@ projects: []
   border-top-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_last_grand_summary_row_top {
+#iptcghcdxs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -372,11 +372,11 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_striped {
+#iptcghcdxs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wlrdzaarkz .gt_table_body {
+#iptcghcdxs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -385,7 +385,7 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_footnotes {
+#iptcghcdxs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -399,7 +399,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_footnote {
+#iptcghcdxs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -408,7 +408,7 @@ projects: []
   padding-right: 5px;
 }
 
-#wlrdzaarkz .gt_sourcenotes {
+#iptcghcdxs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -422,7 +422,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#wlrdzaarkz .gt_sourcenote {
+#iptcghcdxs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -430,72 +430,72 @@ projects: []
   padding-right: 5px;
 }
 
-#wlrdzaarkz .gt_left {
+#iptcghcdxs .gt_left {
   text-align: left;
 }
 
-#wlrdzaarkz .gt_center {
+#iptcghcdxs .gt_center {
   text-align: center;
 }
 
-#wlrdzaarkz .gt_right {
+#iptcghcdxs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wlrdzaarkz .gt_font_normal {
+#iptcghcdxs .gt_font_normal {
   font-weight: normal;
 }
 
-#wlrdzaarkz .gt_font_bold {
+#iptcghcdxs .gt_font_bold {
   font-weight: bold;
 }
 
-#wlrdzaarkz .gt_font_italic {
+#iptcghcdxs .gt_font_italic {
   font-style: italic;
 }
 
-#wlrdzaarkz .gt_super {
+#iptcghcdxs .gt_super {
   font-size: 65%;
 }
 
-#wlrdzaarkz .gt_footnote_marks {
+#iptcghcdxs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wlrdzaarkz .gt_asterisk {
+#iptcghcdxs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wlrdzaarkz .gt_indent_1 {
+#iptcghcdxs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wlrdzaarkz .gt_indent_2 {
+#iptcghcdxs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wlrdzaarkz .gt_indent_3 {
+#iptcghcdxs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wlrdzaarkz .gt_indent_4 {
+#iptcghcdxs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wlrdzaarkz .gt_indent_5 {
+#iptcghcdxs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wlrdzaarkz .katex-display {
+#iptcghcdxs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wlrdzaarkz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#iptcghcdxs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -612,7 +612,7 @@ projects: []
 <td headers="stub_1_14 Total" class="gt_row gt_right">391</td>
 <td headers="stub_1_14 Russian affiliation share" class="gt_row gt_right">0.08%</td></tr>
     <tr><th id="stub_1_15" scope="row" class="gt_row gt_left gt_stub"></th>
-<td headers="stub_1_15 Publication year" class="gt_row gt_right">2025</td>
+<td headers="stub_1_15 Publication year" class="gt_row gt_right">NA</td>
 <td headers="stub_1_15 No Russian affiliation" class="gt_row gt_right">51</td>
 <td headers="stub_1_15 Russian affiliation" class="gt_row gt_right">0</td>
 <td headers="stub_1_15 Affiliation not available" class="gt_row gt_right">12</td>
@@ -660,23 +660,23 @@ projects: []
 
 </head>
 <body>
-<div id="enryhzxliy" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-  <style>#enryhzxliy table {
+<div id="fwspfljtcz" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  <style>#fwspfljtcz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#enryhzxliy thead, #enryhzxliy tbody, #enryhzxliy tfoot, #enryhzxliy tr, #enryhzxliy td, #enryhzxliy th {
+#fwspfljtcz thead, #fwspfljtcz tbody, #fwspfljtcz tfoot, #fwspfljtcz tr, #fwspfljtcz td, #fwspfljtcz th {
   border-style: none;
 }
 
-#enryhzxliy p {
+#fwspfljtcz p {
   margin: 0;
   padding: 0;
 }
 
-#enryhzxliy .gt_table {
+#fwspfljtcz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -702,12 +702,12 @@ projects: []
   border-left-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_caption {
+#fwspfljtcz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#enryhzxliy .gt_title {
+#fwspfljtcz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -719,7 +719,7 @@ projects: []
   border-bottom-width: 0;
 }
 
-#enryhzxliy .gt_subtitle {
+#fwspfljtcz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -731,7 +731,7 @@ projects: []
   border-top-width: 0;
 }
 
-#enryhzxliy .gt_heading {
+#fwspfljtcz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -743,13 +743,13 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_bottom_border {
+#fwspfljtcz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_col_headings {
+#fwspfljtcz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -764,7 +764,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_col_heading {
+#fwspfljtcz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -784,7 +784,7 @@ projects: []
   overflow-x: hidden;
 }
 
-#enryhzxliy .gt_column_spanner_outer {
+#fwspfljtcz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -796,15 +796,15 @@ projects: []
   padding-right: 4px;
 }
 
-#enryhzxliy .gt_column_spanner_outer:first-child {
+#fwspfljtcz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#enryhzxliy .gt_column_spanner_outer:last-child {
+#fwspfljtcz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#enryhzxliy .gt_column_spanner {
+#fwspfljtcz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -816,11 +816,11 @@ projects: []
   width: 100%;
 }
 
-#enryhzxliy .gt_spanner_row {
+#fwspfljtcz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#enryhzxliy .gt_group_heading {
+#fwspfljtcz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -846,7 +846,7 @@ projects: []
   text-align: left;
 }
 
-#enryhzxliy .gt_empty_group_heading {
+#fwspfljtcz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -861,15 +861,15 @@ projects: []
   vertical-align: middle;
 }
 
-#enryhzxliy .gt_from_md > :first-child {
+#fwspfljtcz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#enryhzxliy .gt_from_md > :last-child {
+#fwspfljtcz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#enryhzxliy .gt_row {
+#fwspfljtcz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -888,7 +888,7 @@ projects: []
   overflow-x: hidden;
 }
 
-#enryhzxliy .gt_stub {
+#fwspfljtcz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -901,7 +901,7 @@ projects: []
   padding-right: 5px;
 }
 
-#enryhzxliy .gt_stub_row_group {
+#fwspfljtcz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -915,15 +915,15 @@ projects: []
   vertical-align: top;
 }
 
-#enryhzxliy .gt_row_group_first td {
+#fwspfljtcz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#enryhzxliy .gt_row_group_first th {
+#fwspfljtcz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#enryhzxliy .gt_summary_row {
+#fwspfljtcz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -933,16 +933,16 @@ projects: []
   padding-right: 5px;
 }
 
-#enryhzxliy .gt_first_summary_row {
+#fwspfljtcz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_first_summary_row.thick {
+#fwspfljtcz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#enryhzxliy .gt_last_summary_row {
+#fwspfljtcz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -952,7 +952,7 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_grand_summary_row {
+#fwspfljtcz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -962,7 +962,7 @@ projects: []
   padding-right: 5px;
 }
 
-#enryhzxliy .gt_first_grand_summary_row {
+#fwspfljtcz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -972,7 +972,7 @@ projects: []
   border-top-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_last_grand_summary_row_top {
+#fwspfljtcz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -982,11 +982,11 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_striped {
+#fwspfljtcz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#enryhzxliy .gt_table_body {
+#fwspfljtcz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -995,7 +995,7 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_footnotes {
+#fwspfljtcz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1009,7 +1009,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_footnote {
+#fwspfljtcz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1018,7 +1018,7 @@ projects: []
   padding-right: 5px;
 }
 
-#enryhzxliy .gt_sourcenotes {
+#fwspfljtcz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1032,7 +1032,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#enryhzxliy .gt_sourcenote {
+#fwspfljtcz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1040,77 +1040,77 @@ projects: []
   padding-right: 5px;
 }
 
-#enryhzxliy .gt_left {
+#fwspfljtcz .gt_left {
   text-align: left;
 }
 
-#enryhzxliy .gt_center {
+#fwspfljtcz .gt_center {
   text-align: center;
 }
 
-#enryhzxliy .gt_right {
+#fwspfljtcz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#enryhzxliy .gt_font_normal {
+#fwspfljtcz .gt_font_normal {
   font-weight: normal;
 }
 
-#enryhzxliy .gt_font_bold {
+#fwspfljtcz .gt_font_bold {
   font-weight: bold;
 }
 
-#enryhzxliy .gt_font_italic {
+#fwspfljtcz .gt_font_italic {
   font-style: italic;
 }
 
-#enryhzxliy .gt_super {
+#fwspfljtcz .gt_super {
   font-size: 65%;
 }
 
-#enryhzxliy .gt_footnote_marks {
+#fwspfljtcz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#enryhzxliy .gt_asterisk {
+#fwspfljtcz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#enryhzxliy .gt_indent_1 {
+#fwspfljtcz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#enryhzxliy .gt_indent_2 {
+#fwspfljtcz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#enryhzxliy .gt_indent_3 {
+#fwspfljtcz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#enryhzxliy .gt_indent_4 {
+#fwspfljtcz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#enryhzxliy .gt_indent_5 {
+#fwspfljtcz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#enryhzxliy .katex-display {
+#fwspfljtcz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#enryhzxliy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fwspfljtcz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-  <div id="enryhzxliy" class="reactable html-widget" style="width:auto;height:auto;"></div>
-  <script type="application/json" data-for="enryhzxliy">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"author":["<a href=\"https://openalex.org/authors/A5040320690\">Andrey Baykov<\/a>","<a href=\"https://openalex.org/authors/A5059809712\">Anne Crowley‐Vigneau<\/a>","<a href=\"https://openalex.org/authors/A5083471788\">Kseniya E. Kovalenko<\/a>","<a href=\"https://openalex.org/authors/A5101430404\">Elena Belyaeva<\/a>","<a href=\"https://openalex.org/authors/A5076164660\">Natalia Volkova<\/a>","<a href=\"https://openalex.org/authors/A5066798008\">E. S. Anichkin<\/a>","<a href=\"https://openalex.org/authors/A5005758478\">А. И. Горылев<\/a>","<a href=\"https://openalex.org/authors/A5065691056\">Maria Yudkevich<\/a>","<a href=\"https://openalex.org/authors/A5052685450\">Simon Marginson<\/a>","<a href=\"https://openalex.org/authors/A5006859457\">Галина Валентиновна Телегина<\/a>","<a href=\"https://openalex.org/authors/A5035646011\">Irina B. Stukalova<\/a>","<a href=\"https://openalex.org/authors/A5076394833\">Anatoly Shishkin<\/a>","<a href=\"https://openalex.org/authors/A5109030262\">Anastasia Stukalova<\/a>","<a href=\"https://openalex.org/authors/A5061746954\">Natalya L. Antonova<\/a>","<a href=\"https://openalex.org/authors/A5112509734\">Anastasia D. Sushchenko<\/a>","<a href=\"https://openalex.org/authors/A5015596933\">Natalia G. Popova<\/a>","<a href=\"https://openalex.org/authors/A5065146998\">Yelena Kalyuzhnova<\/a>","<a href=\"https://openalex.org/authors/A5086944778\">Irina Petrovskaya<\/a>","<a href=\"https://openalex.org/authors/A5080852245\">Sergei Shaposhnikov<\/a>","<a href=\"https://openalex.org/authors/A5109331154\">Richard West<\/a>","<a href=\"https://openalex.org/authors/A5066081089\">Elena Frumina<\/a>","<a href=\"https://openalex.org/authors/A5033809637\">Aleksei A. Nabokikh<\/a>","<a href=\"https://openalex.org/authors/A5082608717\">Alexandra V. Ryattel<\/a>","<a href=\"https://openalex.org/authors/A5040199943\">Marina A. Sanovich<\/a>","<a href=\"https://openalex.org/authors/A5028026992\">Svetlana Lapteva<\/a>","<a href=\"https://openalex.org/authors/A5111197745\">Еkaterina Antyukhova<\/a>","<a href=\"https://openalex.org/authors/A5111495164\">Lyudmila Kuznetsova<\/a>","<a href=\"https://openalex.org/authors/A5013289295\">И. А. Истомин<\/a>","<a href=\"https://openalex.org/authors/A5013502699\">Oleg Mikhailovich Tolmachev<\/a>","<a href=\"https://openalex.org/authors/A5089739542\">Leonid Lvovich Starodumov<\/a>","<a href=\"https://openalex.org/authors/A5036684115\">Н. Несова<\/a>","<a href=\"https://openalex.org/authors/A5052511181\">Natalia Dmitrievna Kotovchikhina<\/a>","<a href=\"https://openalex.org/authors/A5048161587\">Ramazan Magomedovich Magomedov<\/a>","<a href=\"https://openalex.org/authors/A5089352014\">Natalia Vasilievna Chicherina<\/a>","<a href=\"https://openalex.org/authors/A5035646091\">Svetlana Yurievna Strelkova<\/a>","<a href=\"https://openalex.org/authors/A5041714741\">D. O. Teplyakov<\/a>","<a href=\"https://openalex.org/authors/A5066262113\">O. A. Teplyakova<\/a>","<a href=\"https://openalex.org/authors/A5036915767\">D. G. Sandler<\/a>","<a href=\"https://openalex.org/authors/A5015428742\">Dmitry Gladyrev<\/a>","<a href=\"https://openalex.org/authors/A5108696697\">Riyaz Gataullovoch Minzaripov<\/a>","<a href=\"https://openalex.org/authors/A5066189412\">Anastasia V. Fakhrutdinova<\/a>","<a href=\"https://openalex.org/authors/A5039716735\">Nataliia Nikolaevna Abakumova<\/a>","<a href=\"https://openalex.org/authors/A5112645081\">Irina Vasilyevna Terentyev<\/a>","<a href=\"https://openalex.org/authors/A5058625552\">Tamara Kuprina<\/a>","<a href=\"https://openalex.org/authors/A5017582942\">А. П. Бекетова<\/a>","<a href=\"https://openalex.org/authors/A5112682172\">Ирина Александровна Антощук<\/a>","<a href=\"https://openalex.org/authors/A5016774395\">Mikhail N. Pevzner<\/a>","<a href=\"https://openalex.org/authors/A5053802035\">А. Г. Ширин<\/a>","<a href=\"https://openalex.org/authors/A5032208398\">Natalia Shaydorova<\/a>","<a href=\"https://openalex.org/authors/A5078840745\">Anatoliy A. Kolesov<\/a>","<a href=\"https://openalex.org/authors/A5005711337\">Mohammed Aboelenein<\/a>","<a href=\"https://openalex.org/authors/A5013064625\">Daria Salnikova<\/a>","<a href=\"https://openalex.org/authors/A5071810913\">Tatiana Karabchuk<\/a>","<a href=\"https://openalex.org/authors/A5047326513\">Aizhan Shomotova<\/a>","<a href=\"https://openalex.org/authors/A5007265720\">Д. М. Ковба<\/a>","<a href=\"https://openalex.org/authors/A5068061520\">E. G. Gribovod<\/a>","<a href=\"https://openalex.org/authors/A5027818172\">Sergey M. Yun<\/a>","<a href=\"https://openalex.org/authors/A5001449124\">Maria S. Plakhotnik<\/a>","<a href=\"https://openalex.org/authors/A5000562666\">Nataliya Yakovenko<\/a>","<a href=\"https://openalex.org/authors/A5045028698\">Yu. A. Afonin<\/a>","<a href=\"https://openalex.org/authors/A5108736449\">Viktor Voronin<\/a>","<a href=\"https://openalex.org/authors/A5070987216\">Oksana A. Gavrilyuk<\/a>","<a href=\"https://openalex.org/authors/A5109400731\">Irina Markovina<\/a>","<a href=\"https://openalex.org/authors/A5022565872\">Jonathan McFarland<\/a>","<a href=\"https://openalex.org/authors/A5112556513\">V. I. Zagvyazinskiy<\/a>","<a href=\"https://openalex.org/authors/A5032644628\">L. M. Volosnikova<\/a>","<a href=\"https://openalex.org/authors/A5107097921\">E. A. Kukuyev<\/a>","<a href=\"https://openalex.org/authors/A5032867203\">I.V. Patrusheva<\/a>","<a href=\"https://openalex.org/authors/A5019367154\">Sergey Ryazantsev<\/a>","<a href=\"https://openalex.org/authors/A5109534912\">Tamara Rostovskayа<\/a>","<a href=\"https://openalex.org/authors/A5059680745\">Nikita Ryazantsev<\/a>","<a href=\"https://openalex.org/authors/A5055765475\">Лариса Дериглазова<\/a>","<a href=\"https://openalex.org/authors/A5074585638\">Tatyana Dobrova<\/a>","<a href=\"https://openalex.org/authors/A5071843842\">Svetlana Rubtsova<\/a>","<a href=\"https://openalex.org/authors/A5045232849\">Maria Y. Kopylovskaya<\/a>","<a href=\"https://openalex.org/authors/A5047566352\">О. Н. Богатырева<\/a>","<a href=\"https://openalex.org/authors/A5052725446\">E. V. Shukusheva<\/a>","<a href=\"https://openalex.org/authors/A5110794534\">Fons van de Vijver<\/a>","<a href=\"https://openalex.org/authors/A5038665229\">I. D. Nizamov<\/a>","<a href=\"https://openalex.org/authors/A5016585714\">Ramis R. Nasibullov<\/a>","<a href=\"https://openalex.org/authors/A5028956057\">Minnenur Galaguzova<\/a>","<a href=\"https://openalex.org/authors/A5025433182\">Anastasia Vladimirovna Shvetsova<\/a>","<a href=\"https://openalex.org/authors/A5040441409\">Yana S. Vysotskaya<\/a>","<a href=\"https://openalex.org/authors/A5074119944\">Tatiana Salimova<\/a>","<a href=\"https://openalex.org/authors/A5089580142\">И. Иванова<\/a>","<a href=\"https://openalex.org/authors/A5112306820\">Е А Сысоева<\/a>","<a href=\"https://openalex.org/authors/A5002815416\">Е. В. Калинина<\/a>","<a href=\"https://openalex.org/authors/A5004216924\">Anna Smolentseva<\/a>","<a href=\"https://openalex.org/authors/A5057407723\">Anna V. Zinchenko<\/a>","<a href=\"https://openalex.org/authors/A5110503975\">Maxim Yu. Kim<\/a>","<a href=\"https://openalex.org/authors/A5012809412\">Evgeny F. Troitskiy<\/a>","<a href=\"https://openalex.org/authors/A5036646519\">Dan Zhao<\/a>","<a href=\"https://openalex.org/authors/A5039946226\">Pavel Gavrilov<\/a>","<a href=\"https://openalex.org/authors/A5023570099\">Azamat Х. Luev<\/a>","<a href=\"https://openalex.org/authors/A5073897435\">Yakov A. Aslanov<\/a>","<a href=\"https://openalex.org/authors/A5023638535\">Ekaterina V. Kartashevich<\/a>","<a href=\"https://openalex.org/authors/A5103058956\">Е. А. Макарова<\/a>","<a href=\"https://openalex.org/authors/A5054367641\">Elena L. Makarova<\/a>","<a href=\"https://openalex.org/authors/A5102753588\">Irina A. Egorova<\/a>","<a href=\"https://openalex.org/authors/A5003412933\">Nina M. Volovskaya<\/a>","<a href=\"https://openalex.org/authors/A5108751290\">Lydia Plyusnina<\/a>","<a href=\"https://openalex.org/authors/A5087392486\">Екатерина Колдунова<\/a>"],"affiliation":["Moscow State Institute of International Relations","Moscow State Institute of International Relations","Altai State University","St Petersburg University","National Research University Higher School of Economics","Altai State University","N. I. Lobachevsky State University of Nizhny Novgorod; Saratov State University; Yaroslav-the-Wise Novgorod State University","National Research University Higher School of Economics","National Research University Higher School of Economics","University of Tyumen","Plekhanov Russian University of Economics","Plekhanov Russian University of Economics","Plekhanov Russian University of Economics","Ural Federal University","Ural Federal University","Ural Branch of the Russian Academy of Sciences","Moscow State Institute of International Relations","Lomonosov Moscow State University","Lomonosov Moscow State University","National University of Science and Technology","National University of Science and Technology","Vyatka State University","Vyatka State University","Vyatka State University","Vyatka State University","Moscow State Institute of International Relations","St Petersburg University","Moscow State Institute of International Relations","Moscow Region State University; Bauman Moscow State Technical University","Sochi State University","Peoples' Friendship University of Russia","Moscow State University of Technologies and Management named after K.G. Razumovskiy","Financial University","Peter the Great St. Petersburg Polytechnic University","Peter the Great St. Petersburg Polytechnic University","University of Tyumen","University of Tyumen","Ural Federal University","Ural Federal University","Kazan Federal University","Kazan Federal University","National Research Tomsk State University","Kazan Federal University","Ural Federal University","Ural Federal University","St Petersburg University","Yaroslav-the-Wise Novgorod State University","Yaroslav-the-Wise Novgorod State University","Yaroslav-the-Wise Novgorod State University","National Research University Higher School of Economics","National Research University Higher School of Economics","National Research University Higher School of Economics","National Research University Higher School of Economics","National Research University Higher School of Economics","Ural Branch of the Russian Academy of Sciences","Ural Branch of the Russian Academy of Sciences","National Research Tomsk State University","National Research University Higher School of Economics","Voronezh State University","Lomonosov Moscow State University","Samara State University of Economics","Krasnoyarsk State Medical University","Sechenov University","Sechenov University","University of Tyumen","University of Tyumen","University of Tyumen","University of Tyumen","Moscow State Institute of International Relations","Moscow State Technological University","Institute of Sociology","National Research Tomsk State University","St Petersburg University","St Petersburg University","St Petersburg University","Ural Federal University","Ural Federal University","National Research University Higher School of Economics","Kazan Federal University","Kazan Federal University","Blagoveschensk State Pedagogical University","Ural Federal University","Ural Federal University","National Research Mordovia State University","National Research Mordovia State University","National Research Mordovia State University","N. I. Lobachevsky State University of Nizhny Novgorod","National Research University Higher School of Economics","Tomsk Polytechnic University; National Research Tomsk State University","Tomsk State University of Control Systems and Radio-Electronics","National Research Tomsk State University","Southern Federal University","Southern Federal University","North-Caucasus Federal University","Southern Federal University","Southern Federal University","Don State Technical University","Southern Federal University","Taganrog Institute of Management and Economics","Novosibirsk State University of Economics and Management","Institute of Sociology; Novosibirsk State University of Economics and Management","Moscow State Institute of International Relations"],"items":[5,4,3,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"cited by (WoS)":[12,12,3,9,5,2,1,48,45,20,13,13,13,12,12,12,12,11,11,9,9,7,7,7,7,6,6,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"cited by (OpenAlex)":[16,15,4,16,7,3,0,76,60,33,34,34,34,24,24,24,15,18,18,16,16,11,11,11,11,13,13,6,5,5,5,5,5,10,10,6,6,6,6,2,2,2,2,5,5,8,8,8,8,5,3,3,3,3,16,16,2,2,5,5,5,0,0,0,7,7,7,7,7,7,7,0,1,1,1,3,3,4,0,0,1,1,1,5,5,5,0,0,5,0,0,1,1,1,1,1,2,2,2,0,0,1],"works":["<a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a>","<a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a>","<a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>; <a href=\"https://openalex.org/W3014167476\">W3014167476<\/a>","<a href=\"https://openalex.org/W2793133357\">W2793133357<\/a>; <a href=\"https://openalex.org/W2912945906\">W2912945906<\/a>","<a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>; <a href=\"https://openalex.org/W3196622995\">W3196622995<\/a>","<a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>","<a href=\"https://openalex.org/W3214428420\">W3214428420<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W933871197\">W933871197<\/a>","<a href=\"https://openalex.org/W3157988227\">W3157988227<\/a>","<a href=\"https://openalex.org/W2150097343\">W2150097343<\/a>","<a href=\"https://openalex.org/W1127500079\">W1127500079<\/a>","<a href=\"https://openalex.org/W1127500079\">W1127500079<\/a>","<a href=\"https://openalex.org/W1127500079\">W1127500079<\/a>","<a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>","<a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>","<a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>","<a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>","<a href=\"https://openalex.org/W3015784306\">W3015784306<\/a>","<a href=\"https://openalex.org/W3015784306\">W3015784306<\/a>","<a href=\"https://openalex.org/W1921543650\">W1921543650<\/a>","<a href=\"https://openalex.org/W1921543650\">W1921543650<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W2890250287\">W2890250287<\/a>","<a href=\"https://openalex.org/W2912945906\">W2912945906<\/a>","<a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>; <a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W4316037982\">W4316037982<\/a>","<a href=\"https://openalex.org/W4316037982\">W4316037982<\/a>","<a href=\"https://openalex.org/W2797683626\">W2797683626<\/a>","<a href=\"https://openalex.org/W2797683626\">W2797683626<\/a>","<a href=\"https://openalex.org/W3089114396\">W3089114396<\/a>","<a href=\"https://openalex.org/W3089114396\">W3089114396<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W2913302515\">W2913302515<\/a>","<a href=\"https://openalex.org/W2913302515\">W2913302515<\/a>","<a href=\"https://openalex.org/W2928397659\">W2928397659<\/a>","<a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>","<a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>","<a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>","<a href=\"https://openalex.org/W3196622995\">W3196622995<\/a>","<a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W2998243963\">W2998243963<\/a>","<a href=\"https://openalex.org/W2998243963\">W2998243963<\/a>","<a href=\"https://openalex.org/W3133571340\">W3133571340<\/a>","<a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>","<a href=\"https://openalex.org/W4307719949\">W4307719949<\/a>","<a href=\"https://openalex.org/W2997643514\">W2997643514<\/a>","<a href=\"https://openalex.org/W2997643514\">W2997643514<\/a>","<a href=\"https://openalex.org/W2997643514\">W2997643514<\/a>","<a href=\"https://openalex.org/W3037257456\">W3037257456<\/a>","<a href=\"https://openalex.org/W3037257456\">W3037257456<\/a>","<a href=\"https://openalex.org/W3159305760\">W3159305760<\/a>","<a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W4399284330\">W4399284330<\/a>","<a href=\"https://openalex.org/W4399284330\">W4399284330<\/a>","<a href=\"https://openalex.org/W3176232077\">W3176232077<\/a>","<a href=\"https://openalex.org/W4200577327\">W4200577327<\/a>","<a href=\"https://openalex.org/W4200577327\">W4200577327<\/a>","<a href=\"https://openalex.org/W4200577327\">W4200577327<\/a>","<a href=\"https://openalex.org/W3214428420\">W3214428420<\/a>","<a href=\"https://openalex.org/W3174037697\">W3174037697<\/a>","<a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>; <a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>","<a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>","<a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>","<a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>; <a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>","<a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>"]},"columns":[{"id":"author","name":"author","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5040320690\">Andrey Baykov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5059809712\">Anne Crowley‐Vigneau<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5083471788\">Kseniya E. Kovalenko<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5101430404\">Elena Belyaeva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5076164660\">Natalia Volkova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5066798008\">E. S. Anichkin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5005758478\">А. И. Горылев<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5065691056\">Maria Yudkevich<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5052685450\">Simon Marginson<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5006859457\">Галина Валентиновна Телегина<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5035646011\">Irina B. Stukalova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5076394833\">Anatoly Shishkin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5109030262\">Anastasia Stukalova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5061746954\">Natalya L. Antonova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112509734\">Anastasia D. Sushchenko<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5015596933\">Natalia G. Popova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5065146998\">Yelena Kalyuzhnova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5086944778\">Irina Petrovskaya<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5080852245\">Sergei Shaposhnikov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5109331154\">Richard West<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5066081089\">Elena Frumina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5033809637\">Aleksei A. Nabokikh<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5082608717\">Alexandra V. Ryattel<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5040199943\">Marina A. Sanovich<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5028026992\">Svetlana Lapteva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5111197745\">Еkaterina Antyukhova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5111495164\">Lyudmila Kuznetsova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5013289295\">И. А. Истомин<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5013502699\">Oleg Mikhailovich Tolmachev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5089739542\">Leonid Lvovich Starodumov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5036684115\">Н. Несова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5052511181\">Natalia Dmitrievna Kotovchikhina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5048161587\">Ramazan Magomedovich Magomedov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5089352014\">Natalia Vasilievna Chicherina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5035646091\">Svetlana Yurievna Strelkova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5041714741\">D. O. Teplyakov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5066262113\">O. A. Teplyakova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5036915767\">D. G. Sandler<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5015428742\">Dmitry Gladyrev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5108696697\">Riyaz Gataullovoch Minzaripov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5066189412\">Anastasia V. Fakhrutdinova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5039716735\">Nataliia Nikolaevna Abakumova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112645081\">Irina Vasilyevna Terentyev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5058625552\">Tamara Kuprina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5017582942\">А. П. Бекетова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112682172\">Ирина Александровна Антощук<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5016774395\">Mikhail N. Pevzner<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5053802035\">А. Г. Ширин<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5032208398\">Natalia Shaydorova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5078840745\">Anatoliy A. Kolesov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5005711337\">Mohammed Aboelenein<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5013064625\">Daria Salnikova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5071810913\">Tatiana Karabchuk<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5047326513\">Aizhan Shomotova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5007265720\">Д. М. Ковба<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5068061520\">E. G. Gribovod<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5027818172\">Sergey M. Yun<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5001449124\">Maria S. Plakhotnik<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5000562666\">Nataliya Yakovenko<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5045028698\">Yu. A. Afonin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5108736449\">Viktor Voronin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5070987216\">Oksana A. Gavrilyuk<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5109400731\">Irina Markovina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5022565872\">Jonathan McFarland<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112556513\">V. I. Zagvyazinskiy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5032644628\">L. M. Volosnikova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5107097921\">E. A. Kukuyev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5032867203\">I.V. Patrusheva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5019367154\">Sergey Ryazantsev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5109534912\">Tamara Rostovskayа<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5059680745\">Nikita Ryazantsev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5055765475\">Лариса Дериглазова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5074585638\">Tatyana Dobrova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5071843842\">Svetlana Rubtsova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5045232849\">Maria Y. Kopylovskaya<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5047566352\">О. Н. Богатырева<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5052725446\">E. V. Shukusheva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5110794534\">Fons van de Vijver<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5038665229\">I. D. Nizamov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5016585714\">Ramis R. Nasibullov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5028956057\">Minnenur Galaguzova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5025433182\">Anastasia Vladimirovna Shvetsova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5040441409\">Yana S. Vysotskaya<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5074119944\">Tatiana Salimova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5089580142\">И. Иванова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112306820\">Е А Сысоева<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5002815416\">Е. В. Калинина<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5004216924\">Anna Smolentseva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5057407723\">Anna V. Zinchenko<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5110503975\">Maxim Yu. Kim<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5012809412\">Evgeny F. Troitskiy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5036646519\">Dan Zhao<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5039946226\">Pavel Gavrilov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5023570099\">Azamat Х. Luev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5073897435\">Yakov A. Aslanov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5023638535\">Ekaterina V. Kartashevich<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5103058956\">Е. А. Макарова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5054367641\">Elena L. Makarova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5102753588\">Irina A. Egorova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5003412933\">Nina M. Volovskaya<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5108751290\">Lydia Plyusnina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5087392486\">Екатерина Колдунова<\/a><\/span>"],"html":true,"align":"left"},{"id":"affiliation","name":"affiliation","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":150,"align":"left"},{"id":"items","name":"items","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":55,"align":"right"},{"id":"cited by (WoS)","name":"cited by (WoS)","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":100,"align":"right"},{"id":"cited by (OpenAlex)","name":"cited by (OpenAlex)","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":110,"align":"right"},{"id":"works","name":"works","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>; <a href=\"https://openalex.org/W3014167476\">W3014167476<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2793133357\">W2793133357<\/a>; <a href=\"https://openalex.org/W2912945906\">W2912945906<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>; <a href=\"https://openalex.org/W3196622995\">W3196622995<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3214428420\">W3214428420<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W933871197\">W933871197<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3157988227\">W3157988227<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2150097343\">W2150097343<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1127500079\">W1127500079<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1127500079\">W1127500079<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1127500079\">W1127500079<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3005184604\">W3005184604<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3005184604\">W3005184604<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3005184604\">W3005184604<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4206237913\">W4206237913<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3015784306\">W3015784306<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3015784306\">W3015784306<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1921543650\">W1921543650<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1921543650\">W1921543650<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2890250287\">W2890250287<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2912945906\">W2912945906<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3200589657\">W3200589657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>; <a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4316037982\">W4316037982<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4316037982\">W4316037982<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2797683626\">W2797683626<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2797683626\">W2797683626<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3089114396\">W3089114396<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3089114396\">W3089114396<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2913302515\">W2913302515<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2913302515\">W2913302515<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2928397659\">W2928397659<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">W2918980696<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">W2918980696<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">W2918980696<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3196622995\">W3196622995<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2998243963\">W2998243963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2998243963\">W2998243963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3133571340\">W3133571340<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165946074\">W3165946074<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4307719949\">W4307719949<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2997643514\">W2997643514<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2997643514\">W2997643514<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2997643514\">W2997643514<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3037257456\">W3037257456<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3037257456\">W3037257456<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3159305760\">W3159305760<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4399284330\">W4399284330<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4399284330\">W4399284330<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3176232077\">W3176232077<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4200577327\">W4200577327<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4200577327\">W4200577327<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4200577327\">W4200577327<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3214428420\">W3214428420<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3174037697\">W3174037697<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>; <a href=\"https://openalex.org/W4253468041\">W4253468041<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2724793034\">W2724793034<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2724793034\">W2724793034<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3171030777\">W3171030777<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>; <a href=\"https://openalex.org/W3171030777\">W3171030777<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3215481495\">W3215481495<\/a><\/span>"],"html":true,"align":"left"}],"defaultPageSize":3,"showPageSizeOptions":true,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"font-family":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif","fontSize":"16px"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"groupHeaderStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"cellStyle":{"fontWeight":"normal"}},"elementId":"enryhzxliy","dataKey":"aaf4703458b08f5c2252ba79f5aa4273"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style"],"jsHooks":[]}</script>
+  <div id="fwspfljtcz" class="reactable html-widget" style="width:auto;height:auto;"></div>
+  <script type="application/json" data-for="fwspfljtcz">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"author":["<a href=\"https://openalex.org/authors/A5040320690\">Andrey Baykov<\/a>","<a href=\"https://openalex.org/authors/A5059809712\">Anne Crowley‐Vigneau<\/a>","<a href=\"https://openalex.org/authors/A5083471788\">Kseniya E. Kovalenko<\/a>","<a href=\"https://openalex.org/authors/A5101430404\">Elena Belyaeva<\/a>","<a href=\"https://openalex.org/authors/A5076164660\">Natalia Volkova<\/a>","<a href=\"https://openalex.org/authors/A5066798008\">E. S. Anichkin<\/a>","<a href=\"https://openalex.org/authors/A5005758478\">А. И. Горылев<\/a>","<a href=\"https://openalex.org/authors/A5065691056\">Maria Yudkevich<\/a>","<a href=\"https://openalex.org/authors/A5052685450\">Simon Marginson<\/a>","<a href=\"https://openalex.org/authors/A5006859457\">Галина Валентиновна Телегина<\/a>","<a href=\"https://openalex.org/authors/A5035646011\">Irina B. Stukalova<\/a>","<a href=\"https://openalex.org/authors/A5076394833\">Anatoly Shishkin<\/a>","<a href=\"https://openalex.org/authors/A5109030262\">Anastasia Stukalova<\/a>","<a href=\"https://openalex.org/authors/A5061746954\">Natalya L. Antonova<\/a>","<a href=\"https://openalex.org/authors/A5112509734\">Anastasia D. Sushchenko<\/a>","<a href=\"https://openalex.org/authors/A5015596933\">Natalia G. Popova<\/a>","<a href=\"https://openalex.org/authors/A5065146998\">Yelena Kalyuzhnova<\/a>","<a href=\"https://openalex.org/authors/A5086944778\">Irina Petrovskaya<\/a>","<a href=\"https://openalex.org/authors/A5080852245\">Sergei Shaposhnikov<\/a>","<a href=\"https://openalex.org/authors/A5109331154\">Richard West<\/a>","<a href=\"https://openalex.org/authors/A5066081089\">Elena Frumina<\/a>","<a href=\"https://openalex.org/authors/A5033809637\">Aleksei A. Nabokikh<\/a>","<a href=\"https://openalex.org/authors/A5082608717\">Alexandra V. Ryattel<\/a>","<a href=\"https://openalex.org/authors/A5040199943\">Marina A. Sanovich<\/a>","<a href=\"https://openalex.org/authors/A5028026992\">Svetlana Lapteva<\/a>","<a href=\"https://openalex.org/authors/A5111197745\">Еkaterina Antyukhova<\/a>","<a href=\"https://openalex.org/authors/A5111495164\">Lyudmila Kuznetsova<\/a>","<a href=\"https://openalex.org/authors/A5013289295\">И. А. Истомин<\/a>","<a href=\"https://openalex.org/authors/A5013502699\">Oleg Mikhailovich Tolmachev<\/a>","<a href=\"https://openalex.org/authors/A5089739542\">Leonid Lvovich Starodumov<\/a>","<a href=\"https://openalex.org/authors/A5036684115\">Н. Несова<\/a>","<a href=\"https://openalex.org/authors/A5052511181\">Natalia Dmitrievna Kotovchikhina<\/a>","<a href=\"https://openalex.org/authors/A5048161587\">Ramazan Magomedovich Magomedov<\/a>","<a href=\"https://openalex.org/authors/A5089352014\">Natalia Vasilievna Chicherina<\/a>","<a href=\"https://openalex.org/authors/A5035646091\">Svetlana Yurievna Strelkova<\/a>","<a href=\"https://openalex.org/authors/A5041714741\">D. O. Teplyakov<\/a>","<a href=\"https://openalex.org/authors/A5066262113\">O. A. Teplyakova<\/a>","<a href=\"https://openalex.org/authors/A5036915767\">D. G. Sandler<\/a>","<a href=\"https://openalex.org/authors/A5015428742\">Dmitry Gladyrev<\/a>","<a href=\"https://openalex.org/authors/A5108696697\">Riyaz Gataullovoch Minzaripov<\/a>","<a href=\"https://openalex.org/authors/A5066189412\">Anastasia V. Fakhrutdinova<\/a>","<a href=\"https://openalex.org/authors/A5039716735\">Nataliia Nikolaevna Abakumova<\/a>","<a href=\"https://openalex.org/authors/A5112645081\">Irina Vasilyevna Terentyev<\/a>","<a href=\"https://openalex.org/authors/A5058625552\">Tamara Kuprina<\/a>","<a href=\"https://openalex.org/authors/A5017582942\">А. П. Бекетова<\/a>","<a href=\"https://openalex.org/authors/A5112682172\">Ирина Александровна Антощук<\/a>","<a href=\"https://openalex.org/authors/A5016774395\">Mikhail N. Pevzner<\/a>","<a href=\"https://openalex.org/authors/A5053802035\">А. Г. Ширин<\/a>","<a href=\"https://openalex.org/authors/A5032208398\">Natalia Shaydorova<\/a>","<a href=\"https://openalex.org/authors/A5078840745\">Anatoliy A. Kolesov<\/a>","<a href=\"https://openalex.org/authors/A5005711337\">Mohammed Aboelenein<\/a>","<a href=\"https://openalex.org/authors/A5013064625\">Daria Salnikova<\/a>","<a href=\"https://openalex.org/authors/A5071810913\">Tatiana Karabchuk<\/a>","<a href=\"https://openalex.org/authors/A5047326513\">Aizhan Shomotova<\/a>","<a href=\"https://openalex.org/authors/A5007265720\">Д. М. Ковба<\/a>","<a href=\"https://openalex.org/authors/A5068061520\">E. G. Gribovod<\/a>","<a href=\"https://openalex.org/authors/A5027818172\">Sergey M. Yun<\/a>","<a href=\"https://openalex.org/authors/A5001449124\">Maria S. Plakhotnik<\/a>","<a href=\"https://openalex.org/authors/A5000562666\">Nataliya Yakovenko<\/a>","<a href=\"https://openalex.org/authors/A5045028698\">Yu. A. Afonin<\/a>","<a href=\"https://openalex.org/authors/A5108736449\">Viktor Voronin<\/a>","<a href=\"https://openalex.org/authors/A5070987216\">Oksana A. Gavrilyuk<\/a>","<a href=\"https://openalex.org/authors/A5109400731\">Irina Markovina<\/a>","<a href=\"https://openalex.org/authors/A5022565872\">Jonathan McFarland<\/a>","<a href=\"https://openalex.org/authors/A5112556513\">V. I. Zagvyazinskiy<\/a>","<a href=\"https://openalex.org/authors/A5032644628\">L. M. Volosnikova<\/a>","<a href=\"https://openalex.org/authors/A5107097921\">E. A. Kukuyev<\/a>","<a href=\"https://openalex.org/authors/A5032867203\">I.V. Patrusheva<\/a>","<a href=\"https://openalex.org/authors/A5019367154\">Sergey Ryazantsev<\/a>","<a href=\"https://openalex.org/authors/A5109534912\">Tamara Rostovskayа<\/a>","<a href=\"https://openalex.org/authors/A5059680745\">Nikita Ryazantsev<\/a>","<a href=\"https://openalex.org/authors/A5055765475\">Лариса Дериглазова<\/a>","<a href=\"https://openalex.org/authors/A5074585638\">Tatyana Dobrova<\/a>","<a href=\"https://openalex.org/authors/A5071843842\">Svetlana Rubtsova<\/a>","<a href=\"https://openalex.org/authors/A5045232849\">Maria Y. Kopylovskaya<\/a>","<a href=\"https://openalex.org/authors/A5047566352\">О. Н. Богатырева<\/a>","<a href=\"https://openalex.org/authors/A5052725446\">E. V. Shukusheva<\/a>","<a href=\"https://openalex.org/authors/A5110794534\">Fons van de Vijver<\/a>","<a href=\"https://openalex.org/authors/A5038665229\">I. D. Nizamov<\/a>","<a href=\"https://openalex.org/authors/A5016585714\">Ramis R. Nasibullov<\/a>","<a href=\"https://openalex.org/authors/A5028956057\">Minnenur Galaguzova<\/a>","<a href=\"https://openalex.org/authors/A5025433182\">Anastasia Vladimirovna Shvetsova<\/a>","<a href=\"https://openalex.org/authors/A5040441409\">Yana S. Vysotskaya<\/a>","<a href=\"https://openalex.org/authors/A5074119944\">Tatiana Salimova<\/a>","<a href=\"https://openalex.org/authors/A5089580142\">И. Иванова<\/a>","<a href=\"https://openalex.org/authors/A5112306820\">Е А Сысоева<\/a>","<a href=\"https://openalex.org/authors/A5002815416\">Е. В. Калинина<\/a>","<a href=\"https://openalex.org/authors/A5004216924\">Anna Smolentseva<\/a>","<a href=\"https://openalex.org/authors/A5057407723\">Anna V. Zinchenko<\/a>","<a href=\"https://openalex.org/authors/A5110503975\">Maxim Yu. Kim<\/a>","<a href=\"https://openalex.org/authors/A5012809412\">Evgeny F. Troitskiy<\/a>","<a href=\"https://openalex.org/authors/A5036646519\">Dan Zhao<\/a>","<a href=\"https://openalex.org/authors/A5039946226\">Pavel Gavrilov<\/a>","<a href=\"https://openalex.org/authors/A5023570099\">Azamat Х. Luev<\/a>","<a href=\"https://openalex.org/authors/A5073897435\">Yakov A. Aslanov<\/a>","<a href=\"https://openalex.org/authors/A5023638535\">Ekaterina V. Kartashevich<\/a>","<a href=\"https://openalex.org/authors/A5103058956\">Е. А. Макарова<\/a>","<a href=\"https://openalex.org/authors/A5054367641\">Elena L. Makarova<\/a>","<a href=\"https://openalex.org/authors/A5102753588\">Irina A. Egorova<\/a>","<a href=\"https://openalex.org/authors/A5003412933\">Nina M. Volovskaya<\/a>","<a href=\"https://openalex.org/authors/A5108751290\">Lydia Plyusnina<\/a>","<a href=\"https://openalex.org/authors/A5087392486\">Екатерина Колдунова<\/a>"],"affiliation":["Moscow State Institute of International Relations","Moscow State Institute of International Relations","Altai State University","St Petersburg University","National Research University Higher School of Economics","Altai State University","N. I. Lobachevsky State University of Nizhny Novgorod; Saratov State University; Yaroslav-the-Wise Novgorod State University","National Research University Higher School of Economics","National Research University Higher School of Economics","University of Tyumen","Plekhanov Russian University of Economics","Plekhanov Russian University of Economics","Plekhanov Russian University of Economics","Ural Federal University","Ural Federal University","Ural Branch of the Russian Academy of Sciences","Moscow State Institute of International Relations","Lomonosov Moscow State University","Lomonosov Moscow State University","National University of Science and Technology","National University of Science and Technology","Vyatka State University","Vyatka State University","Vyatka State University","Vyatka State University","Moscow State Institute of International Relations","St Petersburg University","Moscow State Institute of International Relations","Moscow Region State University; Bauman Moscow State Technical University","Sochi State University","Peoples' Friendship University of Russia","Moscow State University of Technologies and Management named after K.G. Razumovskiy","Financial University","Peter the Great St. Petersburg Polytechnic University","Peter the Great St. Petersburg Polytechnic University","University of Tyumen","University of Tyumen","Ural Federal University","Ural Federal University","Kazan Federal University","Kazan Federal University","National Research Tomsk State University","Kazan Federal University","Ural Federal University","Ural Federal University","St Petersburg University","Yaroslav-the-Wise Novgorod State University","Yaroslav-the-Wise Novgorod State University","Yaroslav-the-Wise Novgorod State University","National Research University Higher School of Economics","National Research University Higher School of Economics","National Research University Higher School of Economics","National Research University Higher School of Economics","National Research University Higher School of Economics","Ural Branch of the Russian Academy of Sciences","Ural Branch of the Russian Academy of Sciences","National Research Tomsk State University","National Research University Higher School of Economics","Voronezh State University","Lomonosov Moscow State University","Samara State University of Economics","Krasnoyarsk State Medical University","Sechenov University","Sechenov University","University of Tyumen","University of Tyumen","University of Tyumen","University of Tyumen","Moscow State Institute of International Relations","Moscow State Technological University","Institute of Sociology","National Research Tomsk State University","St Petersburg University","St Petersburg University","St Petersburg University","Ural Federal University","Ural Federal University","National Research University Higher School of Economics","Kazan Federal University","Kazan Federal University","Blagoveschensk State Pedagogical University","Ural Federal University","Ural Federal University","National Research Mordovia State University","National Research Mordovia State University","National Research Mordovia State University","N. I. Lobachevsky State University of Nizhny Novgorod","National Research University Higher School of Economics","Tomsk Polytechnic University; National Research Tomsk State University","Tomsk State University of Control Systems and Radio-Electronics","National Research Tomsk State University","Southern Federal University","Southern Federal University","North-Caucasus Federal University","Southern Federal University","Southern Federal University","Don State Technical University","Southern Federal University","Taganrog Institute of Management and Economics","Novosibirsk State University of Economics and Management","Institute of Sociology; Novosibirsk State University of Economics and Management","Moscow State Institute of International Relations"],"items":[5,4,3,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"cited by (WoS)":[12,12,3,9,5,2,1,48,45,20,13,13,13,12,12,12,12,11,11,9,9,7,7,7,7,6,6,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"cited by (OpenAlex)":[16,15,4,16,7,3,0,76,60,33,34,34,34,24,24,24,15,18,18,16,16,11,11,11,11,13,13,6,5,5,5,5,5,10,10,6,6,6,6,2,2,2,2,5,5,8,8,8,8,5,3,3,3,3,16,16,2,2,5,5,5,0,0,0,7,7,7,7,7,7,7,0,1,1,1,3,3,4,0,0,1,1,1,5,5,5,0,0,5,0,0,1,1,1,1,1,2,2,2,0,0,1],"works":["<a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a>","<a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a>","<a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>; <a href=\"https://openalex.org/W3014167476\">W3014167476<\/a>","<a href=\"https://openalex.org/W2793133357\">W2793133357<\/a>; <a href=\"https://openalex.org/W2912945906\">W2912945906<\/a>","<a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>; <a href=\"https://openalex.org/W3196622995\">W3196622995<\/a>","<a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>","<a href=\"https://openalex.org/W3214428420\">W3214428420<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W933871197\">W933871197<\/a>","<a href=\"https://openalex.org/W3157988227\">W3157988227<\/a>","<a href=\"https://openalex.org/W2150097343\">W2150097343<\/a>","<a href=\"https://openalex.org/W1127500079\">W1127500079<\/a>","<a href=\"https://openalex.org/W1127500079\">W1127500079<\/a>","<a href=\"https://openalex.org/W1127500079\">W1127500079<\/a>","<a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>","<a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>","<a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>","<a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>","<a href=\"https://openalex.org/W3015784306\">W3015784306<\/a>","<a href=\"https://openalex.org/W3015784306\">W3015784306<\/a>","<a href=\"https://openalex.org/W1921543650\">W1921543650<\/a>","<a href=\"https://openalex.org/W1921543650\">W1921543650<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W2890250287\">W2890250287<\/a>","<a href=\"https://openalex.org/W2912945906\">W2912945906<\/a>","<a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>; <a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W4316037982\">W4316037982<\/a>","<a href=\"https://openalex.org/W4316037982\">W4316037982<\/a>","<a href=\"https://openalex.org/W2797683626\">W2797683626<\/a>","<a href=\"https://openalex.org/W2797683626\">W2797683626<\/a>","<a href=\"https://openalex.org/W3089114396\">W3089114396<\/a>","<a href=\"https://openalex.org/W3089114396\">W3089114396<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W2913302515\">W2913302515<\/a>","<a href=\"https://openalex.org/W2913302515\">W2913302515<\/a>","<a href=\"https://openalex.org/W2928397659\">W2928397659<\/a>","<a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>","<a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>","<a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>","<a href=\"https://openalex.org/W3196622995\">W3196622995<\/a>","<a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W2998243963\">W2998243963<\/a>","<a href=\"https://openalex.org/W2998243963\">W2998243963<\/a>","<a href=\"https://openalex.org/W3133571340\">W3133571340<\/a>","<a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>","<a href=\"https://openalex.org/W4307719949\">W4307719949<\/a>","<a href=\"https://openalex.org/W2997643514\">W2997643514<\/a>","<a href=\"https://openalex.org/W2997643514\">W2997643514<\/a>","<a href=\"https://openalex.org/W2997643514\">W2997643514<\/a>","<a href=\"https://openalex.org/W3037257456\">W3037257456<\/a>","<a href=\"https://openalex.org/W3037257456\">W3037257456<\/a>","<a href=\"https://openalex.org/W3159305760\">W3159305760<\/a>","<a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W4399284330\">W4399284330<\/a>","<a href=\"https://openalex.org/W4399284330\">W4399284330<\/a>","<a href=\"https://openalex.org/W3176232077\">W3176232077<\/a>","<a href=\"https://openalex.org/W4200577327\">W4200577327<\/a>","<a href=\"https://openalex.org/W4200577327\">W4200577327<\/a>","<a href=\"https://openalex.org/W4200577327\">W4200577327<\/a>","<a href=\"https://openalex.org/W3214428420\">W3214428420<\/a>","<a href=\"https://openalex.org/W3174037697\">W3174037697<\/a>","<a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>; <a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>","<a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>","<a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>","<a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>; <a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>","<a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>"]},"columns":[{"id":"author","name":"author","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5040320690\">Andrey Baykov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5059809712\">Anne Crowley‐Vigneau<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5083471788\">Kseniya E. Kovalenko<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5101430404\">Elena Belyaeva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5076164660\">Natalia Volkova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5066798008\">E. S. Anichkin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5005758478\">А. И. Горылев<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5065691056\">Maria Yudkevich<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5052685450\">Simon Marginson<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5006859457\">Галина Валентиновна Телегина<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5035646011\">Irina B. Stukalova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5076394833\">Anatoly Shishkin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5109030262\">Anastasia Stukalova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5061746954\">Natalya L. Antonova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112509734\">Anastasia D. Sushchenko<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5015596933\">Natalia G. Popova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5065146998\">Yelena Kalyuzhnova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5086944778\">Irina Petrovskaya<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5080852245\">Sergei Shaposhnikov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5109331154\">Richard West<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5066081089\">Elena Frumina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5033809637\">Aleksei A. Nabokikh<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5082608717\">Alexandra V. Ryattel<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5040199943\">Marina A. Sanovich<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5028026992\">Svetlana Lapteva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5111197745\">Еkaterina Antyukhova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5111495164\">Lyudmila Kuznetsova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5013289295\">И. А. Истомин<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5013502699\">Oleg Mikhailovich Tolmachev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5089739542\">Leonid Lvovich Starodumov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5036684115\">Н. Несова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5052511181\">Natalia Dmitrievna Kotovchikhina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5048161587\">Ramazan Magomedovich Magomedov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5089352014\">Natalia Vasilievna Chicherina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5035646091\">Svetlana Yurievna Strelkova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5041714741\">D. O. Teplyakov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5066262113\">O. A. Teplyakova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5036915767\">D. G. Sandler<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5015428742\">Dmitry Gladyrev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5108696697\">Riyaz Gataullovoch Minzaripov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5066189412\">Anastasia V. Fakhrutdinova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5039716735\">Nataliia Nikolaevna Abakumova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112645081\">Irina Vasilyevna Terentyev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5058625552\">Tamara Kuprina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5017582942\">А. П. Бекетова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112682172\">Ирина Александровна Антощук<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5016774395\">Mikhail N. Pevzner<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5053802035\">А. Г. Ширин<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5032208398\">Natalia Shaydorova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5078840745\">Anatoliy A. Kolesov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5005711337\">Mohammed Aboelenein<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5013064625\">Daria Salnikova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5071810913\">Tatiana Karabchuk<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5047326513\">Aizhan Shomotova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5007265720\">Д. М. Ковба<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5068061520\">E. G. Gribovod<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5027818172\">Sergey M. Yun<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5001449124\">Maria S. Plakhotnik<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5000562666\">Nataliya Yakovenko<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5045028698\">Yu. A. Afonin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5108736449\">Viktor Voronin<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5070987216\">Oksana A. Gavrilyuk<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5109400731\">Irina Markovina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5022565872\">Jonathan McFarland<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112556513\">V. I. Zagvyazinskiy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5032644628\">L. M. Volosnikova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5107097921\">E. A. Kukuyev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5032867203\">I.V. Patrusheva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5019367154\">Sergey Ryazantsev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5109534912\">Tamara Rostovskayа<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5059680745\">Nikita Ryazantsev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5055765475\">Лариса Дериглазова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5074585638\">Tatyana Dobrova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5071843842\">Svetlana Rubtsova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5045232849\">Maria Y. Kopylovskaya<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5047566352\">О. Н. Богатырева<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5052725446\">E. V. Shukusheva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5110794534\">Fons van de Vijver<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5038665229\">I. D. Nizamov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5016585714\">Ramis R. Nasibullov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5028956057\">Minnenur Galaguzova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5025433182\">Anastasia Vladimirovna Shvetsova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5040441409\">Yana S. Vysotskaya<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5074119944\">Tatiana Salimova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5089580142\">И. Иванова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5112306820\">Е А Сысоева<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5002815416\">Е. В. Калинина<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5004216924\">Anna Smolentseva<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5057407723\">Anna V. Zinchenko<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5110503975\">Maxim Yu. Kim<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5012809412\">Evgeny F. Troitskiy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5036646519\">Dan Zhao<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5039946226\">Pavel Gavrilov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5023570099\">Azamat Х. Luev<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5073897435\">Yakov A. Aslanov<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5023638535\">Ekaterina V. Kartashevich<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5103058956\">Е. А. Макарова<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5054367641\">Elena L. Makarova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5102753588\">Irina A. Egorova<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5003412933\">Nina M. Volovskaya<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5108751290\">Lydia Plyusnina<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/authors/A5087392486\">Екатерина Колдунова<\/a><\/span>"],"html":true,"align":"left"},{"id":"affiliation","name":"affiliation","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":150,"align":"left"},{"id":"items","name":"items","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":55,"align":"right"},{"id":"cited by (WoS)","name":"cited by (WoS)","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":100,"align":"right"},{"id":"cited by (OpenAlex)","name":"cited by (OpenAlex)","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":110,"align":"right"},{"id":"works","name":"works","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>; <a href=\"https://openalex.org/W3014167476\">W3014167476<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2793133357\">W2793133357<\/a>; <a href=\"https://openalex.org/W2912945906\">W2912945906<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>; <a href=\"https://openalex.org/W3196622995\">W3196622995<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3214428420\">W3214428420<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W933871197\">W933871197<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3157988227\">W3157988227<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2150097343\">W2150097343<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1127500079\">W1127500079<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1127500079\">W1127500079<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1127500079\">W1127500079<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3005184604\">W3005184604<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3005184604\">W3005184604<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3005184604\">W3005184604<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4206237913\">W4206237913<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3015784306\">W3015784306<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3015784306\">W3015784306<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1921543650\">W1921543650<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1921543650\">W1921543650<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2890250287\">W2890250287<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2912945906\">W2912945906<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3200589657\">W3200589657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>; <a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4316037982\">W4316037982<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4316037982\">W4316037982<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2797683626\">W2797683626<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2797683626\">W2797683626<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3089114396\">W3089114396<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3089114396\">W3089114396<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2913302515\">W2913302515<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2913302515\">W2913302515<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2928397659\">W2928397659<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">W2918980696<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">W2918980696<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">W2918980696<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3196622995\">W3196622995<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2998243963\">W2998243963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2998243963\">W2998243963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3133571340\">W3133571340<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165946074\">W3165946074<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4307719949\">W4307719949<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2997643514\">W2997643514<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2997643514\">W2997643514<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2997643514\">W2997643514<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3037257456\">W3037257456<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3037257456\">W3037257456<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3159305760\">W3159305760<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4399284330\">W4399284330<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4399284330\">W4399284330<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3176232077\">W3176232077<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4200577327\">W4200577327<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4200577327\">W4200577327<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4200577327\">W4200577327<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3214428420\">W3214428420<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3174037697\">W3174037697<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>; <a href=\"https://openalex.org/W4253468041\">W4253468041<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2724793034\">W2724793034<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2724793034\">W2724793034<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3171030777\">W3171030777<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>; <a href=\"https://openalex.org/W3171030777\">W3171030777<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3215481495\">W3215481495<\/a><\/span>"],"html":true,"align":"left"}],"defaultPageSize":3,"showPageSizeOptions":true,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"font-family":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif","fontSize":"16px"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"groupHeaderStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"cellStyle":{"fontWeight":"normal"}},"elementId":"fwspfljtcz","dataKey":"aaf4703458b08f5c2252ba79f5aa4273"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style"],"jsHooks":[]}</script>
 </div>
 </body>
 </html>
@@ -1133,23 +1133,23 @@ projects: []
 
 </head>
 <body>
-<div id="rmkigabvif" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-  <style>#rmkigabvif table {
+<div id="nlaxvcxete" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  <style>#nlaxvcxete table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rmkigabvif thead, #rmkigabvif tbody, #rmkigabvif tfoot, #rmkigabvif tr, #rmkigabvif td, #rmkigabvif th {
+#nlaxvcxete thead, #nlaxvcxete tbody, #nlaxvcxete tfoot, #nlaxvcxete tr, #nlaxvcxete td, #nlaxvcxete th {
   border-style: none;
 }
 
-#rmkigabvif p {
+#nlaxvcxete p {
   margin: 0;
   padding: 0;
 }
 
-#rmkigabvif .gt_table {
+#nlaxvcxete .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1175,12 +1175,12 @@ projects: []
   border-left-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_caption {
+#nlaxvcxete .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rmkigabvif .gt_title {
+#nlaxvcxete .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1192,7 +1192,7 @@ projects: []
   border-bottom-width: 0;
 }
 
-#rmkigabvif .gt_subtitle {
+#nlaxvcxete .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1204,7 +1204,7 @@ projects: []
   border-top-width: 0;
 }
 
-#rmkigabvif .gt_heading {
+#nlaxvcxete .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1216,13 +1216,13 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_bottom_border {
+#nlaxvcxete .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_col_headings {
+#nlaxvcxete .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1237,7 +1237,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_col_heading {
+#nlaxvcxete .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1257,7 +1257,7 @@ projects: []
   overflow-x: hidden;
 }
 
-#rmkigabvif .gt_column_spanner_outer {
+#nlaxvcxete .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1269,15 +1269,15 @@ projects: []
   padding-right: 4px;
 }
 
-#rmkigabvif .gt_column_spanner_outer:first-child {
+#nlaxvcxete .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rmkigabvif .gt_column_spanner_outer:last-child {
+#nlaxvcxete .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rmkigabvif .gt_column_spanner {
+#nlaxvcxete .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1289,11 +1289,11 @@ projects: []
   width: 100%;
 }
 
-#rmkigabvif .gt_spanner_row {
+#nlaxvcxete .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rmkigabvif .gt_group_heading {
+#nlaxvcxete .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1319,7 +1319,7 @@ projects: []
   text-align: left;
 }
 
-#rmkigabvif .gt_empty_group_heading {
+#nlaxvcxete .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1334,15 +1334,15 @@ projects: []
   vertical-align: middle;
 }
 
-#rmkigabvif .gt_from_md > :first-child {
+#nlaxvcxete .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rmkigabvif .gt_from_md > :last-child {
+#nlaxvcxete .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rmkigabvif .gt_row {
+#nlaxvcxete .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1361,7 +1361,7 @@ projects: []
   overflow-x: hidden;
 }
 
-#rmkigabvif .gt_stub {
+#nlaxvcxete .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1374,7 +1374,7 @@ projects: []
   padding-right: 5px;
 }
 
-#rmkigabvif .gt_stub_row_group {
+#nlaxvcxete .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1388,15 +1388,15 @@ projects: []
   vertical-align: top;
 }
 
-#rmkigabvif .gt_row_group_first td {
+#nlaxvcxete .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rmkigabvif .gt_row_group_first th {
+#nlaxvcxete .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rmkigabvif .gt_summary_row {
+#nlaxvcxete .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1406,16 +1406,16 @@ projects: []
   padding-right: 5px;
 }
 
-#rmkigabvif .gt_first_summary_row {
+#nlaxvcxete .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_first_summary_row.thick {
+#nlaxvcxete .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rmkigabvif .gt_last_summary_row {
+#nlaxvcxete .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1425,7 +1425,7 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_grand_summary_row {
+#nlaxvcxete .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1435,7 +1435,7 @@ projects: []
   padding-right: 5px;
 }
 
-#rmkigabvif .gt_first_grand_summary_row {
+#nlaxvcxete .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1445,7 +1445,7 @@ projects: []
   border-top-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_last_grand_summary_row_top {
+#nlaxvcxete .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1455,11 +1455,11 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_striped {
+#nlaxvcxete .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rmkigabvif .gt_table_body {
+#nlaxvcxete .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1468,7 +1468,7 @@ projects: []
   border-bottom-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_footnotes {
+#nlaxvcxete .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1482,7 +1482,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_footnote {
+#nlaxvcxete .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1491,7 +1491,7 @@ projects: []
   padding-right: 5px;
 }
 
-#rmkigabvif .gt_sourcenotes {
+#nlaxvcxete .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1505,7 +1505,7 @@ projects: []
   border-right-color: #D3D3D3;
 }
 
-#rmkigabvif .gt_sourcenote {
+#nlaxvcxete .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1513,77 +1513,77 @@ projects: []
   padding-right: 5px;
 }
 
-#rmkigabvif .gt_left {
+#nlaxvcxete .gt_left {
   text-align: left;
 }
 
-#rmkigabvif .gt_center {
+#nlaxvcxete .gt_center {
   text-align: center;
 }
 
-#rmkigabvif .gt_right {
+#nlaxvcxete .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rmkigabvif .gt_font_normal {
+#nlaxvcxete .gt_font_normal {
   font-weight: normal;
 }
 
-#rmkigabvif .gt_font_bold {
+#nlaxvcxete .gt_font_bold {
   font-weight: bold;
 }
 
-#rmkigabvif .gt_font_italic {
+#nlaxvcxete .gt_font_italic {
   font-style: italic;
 }
 
-#rmkigabvif .gt_super {
+#nlaxvcxete .gt_super {
   font-size: 65%;
 }
 
-#rmkigabvif .gt_footnote_marks {
+#nlaxvcxete .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rmkigabvif .gt_asterisk {
+#nlaxvcxete .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rmkigabvif .gt_indent_1 {
+#nlaxvcxete .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rmkigabvif .gt_indent_2 {
+#nlaxvcxete .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rmkigabvif .gt_indent_3 {
+#nlaxvcxete .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rmkigabvif .gt_indent_4 {
+#nlaxvcxete .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rmkigabvif .gt_indent_5 {
+#nlaxvcxete .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rmkigabvif .katex-display {
+#nlaxvcxete .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rmkigabvif div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nlaxvcxete div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-  <div id="rmkigabvif" class="reactable html-widget" style="width:auto;height:auto;"></div>
-  <script type="application/json" data-for="rmkigabvif">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"affiliation":["<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I118501908\">National Research University Higher School of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I3020440027\">University of Tyumen<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I130823665\">Ural Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I184139950\">Moscow State Institute of International Relations<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210119369\">Ural Branch of the Russian Academy of Sciences<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I103031861\">Plekhanov Russian University of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I172901346\">St Petersburg University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I19880235\">Lomonosov Moscow State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I12003341\">National University of Science and Technology<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I196355604\">National Research Tomsk State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210103655\">Vyatka State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I126527374\">Peoples' Friendship University of Russia<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I177537411\">Bauman Moscow State Technical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I211738395\">Financial University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I21203515\">Kazan Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I212220629\">Peter the Great St. Petersburg Polytechnic University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210107108\">Moscow Region State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210145242\">Moscow State University of Technologies and Management named after K.G. Razumovskiy<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210147110\">Sochi State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I99205534\">Yaroslav-the-Wise Novgorod State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I163137577\">Altai State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I125219893\">Saratov State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I17877952\">Sechenov University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I2801681975\">Moscow State Technological University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210090231\">Krasnoyarsk State Medical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210098167\">Institute of Sociology<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210118545\">Blagoveschensk State Pedagogical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210126748\">Samara State University of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I71305448\">Voronezh State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I114376631\">Tomsk State University of Control Systems and Radio-Electronics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I137534880\">Southern Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I210043505\">North-Caucasus Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I294094635\">National Research Mordovia State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I30849647\">Tomsk Polytechnic University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210097717\">Don State Technical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210131478\">Novosibirsk State University of Economics and Management<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210137733\">Taganrog Institute of Management and Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I79563041\">N. I. Lobachevsky State University of Nizhny Novgorod<\/a>"],"items":[7,3,6,7,2,1,4,2,1,5,1,1,1,1,2,1,1,1,1,2,3,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,1],"cited by (WoS)":[102,25,21,19,14,13,13,12,9,7,7,5,5,5,5,5,5,5,5,4,3,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0],"cited by (OpenAlex)":[150,46,40,36,40,34,25,23,16,9,11,5,5,5,2,10,5,5,5,8,4,0,0,7,0,7,1,5,5,0,3,1,5,5,2,0,2,0],"works":["<a href=\"https://openalex.org/W3157988227\">W3157988227<\/a>; <a href=\"https://openalex.org/W3174037697\">W3174037697<\/a>; <a href=\"https://openalex.org/W933871197\">W933871197<\/a>; <a href=\"https://openalex.org/W3159305760\">W3159305760<\/a>; <a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>; <a href=\"https://openalex.org/W3196622995\">W3196622995<\/a>; <a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W2150097343\">W2150097343<\/a>; <a href=\"https://openalex.org/W2797683626\">W2797683626<\/a>; <a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W2913302515\">W2913302515<\/a>; <a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>; <a href=\"https://openalex.org/W3176232077\">W3176232077<\/a>; <a href=\"https://openalex.org/W3037257456\">W3037257456<\/a>; <a href=\"https://openalex.org/W3089114396\">W3089114396<\/a>; <a href=\"https://openalex.org/W4399284330\">W4399284330<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>; <a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W2890250287\">W2890250287<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a>","<a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>; <a href=\"https://openalex.org/W2998243963\">W2998243963<\/a>","<a href=\"https://openalex.org/W1127500079\">W1127500079<\/a>","<a href=\"https://openalex.org/W2793133357\">W2793133357<\/a>; <a href=\"https://openalex.org/W2912945906\">W2912945906<\/a>; <a href=\"https://openalex.org/W2928397659\">W2928397659<\/a>; <a href=\"https://openalex.org/W2997643514\">W2997643514<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>; <a href=\"https://openalex.org/W3015784306\">W3015784306<\/a>","<a href=\"https://openalex.org/W1921543650\">W1921543650<\/a>","<a href=\"https://openalex.org/W4307719949\">W4307719949<\/a>; <a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>; <a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>; <a href=\"https://openalex.org/W3133571340\">W3133571340<\/a>; <a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W4316037982\">W4316037982<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>; <a href=\"https://openalex.org/W3014167476\">W3014167476<\/a>","<a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>; <a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>","<a href=\"https://openalex.org/W4399284330\">W4399284330<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>; <a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4200577327\">W4200577327<\/a>","<a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3214428420\">W3214428420<\/a>"]},"columns":[{"id":"affiliation","name":"affiliation","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I118501908\">National Research University Higher School of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I3020440027\">University of Tyumen<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I130823665\">Ural Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I184139950\">Moscow State Institute of International Relations<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210119369\">Ural Branch of the Russian Academy of Sciences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I103031861\">Plekhanov Russian University of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I172901346\">St Petersburg University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I19880235\">Lomonosov Moscow State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I12003341\">National University of Science and Technology<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I196355604\">National Research Tomsk State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210103655\">Vyatka State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I126527374\">Peoples’ Friendship University of Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I177537411\">Bauman Moscow State Technical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I211738395\">Financial University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I21203515\">Kazan Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I212220629\">Peter the Great St. Petersburg Polytechnic University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210107108\">Moscow Region State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210145242\">Moscow State University of Technologies and Management named after K.G. Razumovskiy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210147110\">Sochi State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I99205534\">Yaroslav-the-Wise Novgorod State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I163137577\">Altai State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I125219893\">Saratov State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I17877952\">Sechenov University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I2801681975\">Moscow State Technological University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210090231\">Krasnoyarsk State Medical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210098167\">Institute of Sociology<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210118545\">Blagoveschensk State Pedagogical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210126748\">Samara State University of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I71305448\">Voronezh State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I114376631\">Tomsk State University of Control Systems and Radio-Electronics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I137534880\">Southern Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I210043505\">North-Caucasus Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I294094635\">National Research Mordovia State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I30849647\">Tomsk Polytechnic University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210097717\">Don State Technical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210131478\">Novosibirsk State University of Economics and Management<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210137733\">Taganrog Institute of Management and Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I79563041\">N. I. Lobachevsky State University of Nizhny Novgorod<\/a><\/span>"],"html":true,"width":200,"align":"left"},{"id":"items","name":"items","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":55,"align":"right"},{"id":"cited by (WoS)","name":"cited by (WoS)","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":100,"align":"right"},{"id":"cited by (OpenAlex)","name":"cited by (OpenAlex)","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":110,"align":"right"},{"id":"works","name":"works","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/W3157988227\">W3157988227<\/a>; <a href=\"https://openalex.org/W3174037697\">W3174037697<\/a>; <a href=\"https://openalex.org/W933871197\">W933871197<\/a>; <a href=\"https://openalex.org/W3159305760\">W3159305760<\/a>; <a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>; <a href=\"https://openalex.org/W3196622995\">W3196622995<\/a>; <a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2150097343\">W2150097343<\/a>; <a href=\"https://openalex.org/W2797683626\">W2797683626<\/a>; <a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2913302515\">W2913302515<\/a>; <a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>; <a href=\"https://openalex.org/W3176232077\">W3176232077<\/a>; <a href=\"https://openalex.org/W3037257456\">W3037257456<\/a>; <a href=\"https://openalex.org/W3089114396\">W3089114396<\/a>; <a href=\"https://openalex.org/W4399284330\">W4399284330<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>; <a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W2890250287\">W2890250287<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>; <a href=\"https://openalex.org/W2998243963\">W2998243963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1127500079\">W1127500079<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2793133357\">W2793133357<\/a>; <a href=\"https://openalex.org/W2912945906\">W2912945906<\/a>; <a href=\"https://openalex.org/W2928397659\">W2928397659<\/a>; <a href=\"https://openalex.org/W2997643514\">W2997643514<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>; <a href=\"https://openalex.org/W3015784306\">W3015784306<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1921543650\">W1921543650<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4307719949\">W4307719949<\/a>; <a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>; <a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>; <a href=\"https://openalex.org/W3133571340\">W3133571340<\/a>; <a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4316037982\">W4316037982<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>; <a href=\"https://openalex.org/W3014167476\">W3014167476<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>; <a href=\"https://openalex.org/W3171030777\">W3171030777<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4399284330\">W4399284330<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2724793034\">W2724793034<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>; <a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4200577327\">W4200577327<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4253468041\">W4253468041<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3171030777\">W3171030777<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3214428420\">W3214428420<\/a><\/span>"],"html":true,"align":"left"}],"defaultPageSize":3,"showPageSizeOptions":true,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"font-family":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif","fontSize":"16px"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"groupHeaderStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"cellStyle":{"fontWeight":"normal"}},"elementId":"rmkigabvif","dataKey":"dbb4d250c4aa3906f970a313090a1ead"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style"],"jsHooks":[]}</script>
+  <div id="nlaxvcxete" class="reactable html-widget" style="width:auto;height:auto;"></div>
+  <script type="application/json" data-for="nlaxvcxete">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"affiliation":["<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I118501908\">National Research University Higher School of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I3020440027\">University of Tyumen<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I130823665\">Ural Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I184139950\">Moscow State Institute of International Relations<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210119369\">Ural Branch of the Russian Academy of Sciences<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I103031861\">Plekhanov Russian University of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I172901346\">St Petersburg University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I19880235\">Lomonosov Moscow State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I12003341\">National University of Science and Technology<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I196355604\">National Research Tomsk State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210103655\">Vyatka State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I126527374\">Peoples' Friendship University of Russia<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I177537411\">Bauman Moscow State Technical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I211738395\">Financial University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I21203515\">Kazan Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I212220629\">Peter the Great St. Petersburg Polytechnic University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210107108\">Moscow Region State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210145242\">Moscow State University of Technologies and Management named after K.G. Razumovskiy<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210147110\">Sochi State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I99205534\">Yaroslav-the-Wise Novgorod State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I163137577\">Altai State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I125219893\">Saratov State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I17877952\">Sechenov University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I2801681975\">Moscow State Technological University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210090231\">Krasnoyarsk State Medical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210098167\">Institute of Sociology<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210118545\">Blagoveschensk State Pedagogical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210126748\">Samara State University of Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I71305448\">Voronezh State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I114376631\">Tomsk State University of Control Systems and Radio-Electronics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I137534880\">Southern Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I210043505\">North-Caucasus Federal University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I294094635\">National Research Mordovia State University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I30849647\">Tomsk Polytechnic University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210097717\">Don State Technical University<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210131478\">Novosibirsk State University of Economics and Management<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210137733\">Taganrog Institute of Management and Economics<\/a>","<a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I79563041\">N. I. Lobachevsky State University of Nizhny Novgorod<\/a>"],"items":[7,3,6,7,2,1,4,2,1,5,1,1,1,1,2,1,1,1,1,2,3,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,1],"cited by (WoS)":[102,25,21,19,14,13,13,12,9,7,7,5,5,5,5,5,5,5,5,4,3,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0],"cited by (OpenAlex)":[150,46,40,36,40,34,25,23,16,9,11,5,5,5,2,10,5,5,5,8,4,0,0,7,0,7,1,5,5,0,3,1,5,5,2,0,2,0],"works":["<a href=\"https://openalex.org/W3157988227\">W3157988227<\/a>; <a href=\"https://openalex.org/W3174037697\">W3174037697<\/a>; <a href=\"https://openalex.org/W933871197\">W933871197<\/a>; <a href=\"https://openalex.org/W3159305760\">W3159305760<\/a>; <a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>; <a href=\"https://openalex.org/W3196622995\">W3196622995<\/a>; <a href=\"https://openalex.org/W4313562657\">W4313562657<\/a>","<a href=\"https://openalex.org/W2150097343\">W2150097343<\/a>; <a href=\"https://openalex.org/W2797683626\">W2797683626<\/a>; <a href=\"https://openalex.org/W3048896412\">W3048896412<\/a>","<a href=\"https://openalex.org/W2913302515\">W2913302515<\/a>; <a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>; <a href=\"https://openalex.org/W3176232077\">W3176232077<\/a>; <a href=\"https://openalex.org/W3037257456\">W3037257456<\/a>; <a href=\"https://openalex.org/W3089114396\">W3089114396<\/a>; <a href=\"https://openalex.org/W4399284330\">W4399284330<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>; <a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W2890250287\">W2890250287<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a>","<a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>; <a href=\"https://openalex.org/W2998243963\">W2998243963<\/a>","<a href=\"https://openalex.org/W1127500079\">W1127500079<\/a>","<a href=\"https://openalex.org/W2793133357\">W2793133357<\/a>; <a href=\"https://openalex.org/W2912945906\">W2912945906<\/a>; <a href=\"https://openalex.org/W2928397659\">W2928397659<\/a>; <a href=\"https://openalex.org/W2997643514\">W2997643514<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>; <a href=\"https://openalex.org/W3015784306\">W3015784306<\/a>","<a href=\"https://openalex.org/W1921543650\">W1921543650<\/a>","<a href=\"https://openalex.org/W4307719949\">W4307719949<\/a>; <a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>; <a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>; <a href=\"https://openalex.org/W3133571340\">W3133571340<\/a>; <a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>","<a href=\"https://openalex.org/W3009800351\">W3009800351<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W4316037982\">W4316037982<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W3186557293\">W3186557293<\/a>","<a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>; <a href=\"https://openalex.org/W3014167476\">W3014167476<\/a>","<a href=\"https://openalex.org/W3165463769\">W3165463769<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>","<a href=\"https://openalex.org/W2993711455\">W2993711455<\/a>","<a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>; <a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>","<a href=\"https://openalex.org/W4399284330\">W4399284330<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>","<a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>; <a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>","<a href=\"https://openalex.org/W4200577327\">W4200577327<\/a>","<a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3171030777\">W3171030777<\/a>","<a href=\"https://openalex.org/W3156225492\">W3156225492<\/a>","<a href=\"https://openalex.org/W3214428420\">W3214428420<\/a>"]},"columns":[{"id":"affiliation","name":"affiliation","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I118501908\">National Research University Higher School of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I3020440027\">University of Tyumen<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I130823665\">Ural Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I184139950\">Moscow State Institute of International Relations<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210119369\">Ural Branch of the Russian Academy of Sciences<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I103031861\">Plekhanov Russian University of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I172901346\">St Petersburg University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I19880235\">Lomonosov Moscow State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I12003341\">National University of Science and Technology<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I196355604\">National Research Tomsk State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210103655\">Vyatka State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I126527374\">Peoples’ Friendship University of Russia<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I177537411\">Bauman Moscow State Technical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I211738395\">Financial University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I21203515\">Kazan Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I212220629\">Peter the Great St. Petersburg Polytechnic University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210107108\">Moscow Region State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210145242\">Moscow State University of Technologies and Management named after K.G. Razumovskiy<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210147110\">Sochi State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I99205534\">Yaroslav-the-Wise Novgorod State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I163137577\">Altai State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I125219893\">Saratov State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I17877952\">Sechenov University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I2801681975\">Moscow State Technological University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210090231\">Krasnoyarsk State Medical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210098167\">Institute of Sociology<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210118545\">Blagoveschensk State Pedagogical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210126748\">Samara State University of Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I71305448\">Voronezh State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I114376631\">Tomsk State University of Control Systems and Radio-Electronics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I137534880\">Southern Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I210043505\">North-Caucasus Federal University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I294094635\">National Research Mordovia State University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I30849647\">Tomsk Polytechnic University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210097717\">Don State Technical University<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210131478\">Novosibirsk State University of Economics and Management<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I4210137733\">Taganrog Institute of Management and Economics<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/works?filter=concepts.id:c2778011250,publication_year:2011-2024,type:types/article,authorships.institutions.lineage:I79563041\">N. I. Lobachevsky State University of Nizhny Novgorod<\/a><\/span>"],"html":true,"width":200,"align":"left"},{"id":"items","name":"items","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":55,"align":"right"},{"id":"cited by (WoS)","name":"cited by (WoS)","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":100,"align":"right"},{"id":"cited by (OpenAlex)","name":"cited by (OpenAlex)","type":"numeric","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"width":110,"align":"right"},{"id":"works","name":"works","type":"character","na":"NA","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["<span class='gt_from_md'><a href=\"https://openalex.org/W3157988227\">W3157988227<\/a>; <a href=\"https://openalex.org/W3174037697\">W3174037697<\/a>; <a href=\"https://openalex.org/W933871197\">W933871197<\/a>; <a href=\"https://openalex.org/W3159305760\">W3159305760<\/a>; <a href=\"https://openalex.org/W3165946074\">W3165946074<\/a>; <a href=\"https://openalex.org/W3196622995\">W3196622995<\/a>; <a href=\"https://openalex.org/W4313562657\">W4313562657<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2150097343\">W2150097343<\/a>; <a href=\"https://openalex.org/W2797683626\">W2797683626<\/a>; <a href=\"https://openalex.org/W3048896412\">W3048896412<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2913302515\">W2913302515<\/a>; <a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>; <a href=\"https://openalex.org/W3176232077\">W3176232077<\/a>; <a href=\"https://openalex.org/W3037257456\">W3037257456<\/a>; <a href=\"https://openalex.org/W3089114396\">W3089114396<\/a>; <a href=\"https://openalex.org/W4399284330\">W4399284330<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>; <a href=\"https://openalex.org/W4389194816\">W4389194816<\/a>; <a href=\"https://openalex.org/W2890250287\">W2890250287<\/a>; <a href=\"https://openalex.org/W3200589657\">W3200589657<\/a>; <a href=\"https://openalex.org/W3215481495\">W3215481495<\/a>; <a href=\"https://openalex.org/W4206237913\">W4206237913<\/a>; <a href=\"https://openalex.org/W4283071963\">W4283071963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3005184604\">W3005184604<\/a>; <a href=\"https://openalex.org/W2998243963\">W2998243963<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1127500079\">W1127500079<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2793133357\">W2793133357<\/a>; <a href=\"https://openalex.org/W2912945906\">W2912945906<\/a>; <a href=\"https://openalex.org/W2928397659\">W2928397659<\/a>; <a href=\"https://openalex.org/W2997643514\">W2997643514<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a>; <a href=\"https://openalex.org/W3015784306\">W3015784306<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W1921543650\">W1921543650<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4307719949\">W4307719949<\/a>; <a href=\"https://openalex.org/W4253468041\">W4253468041<\/a>; <a href=\"https://openalex.org/W2724793034\">W2724793034<\/a>; <a href=\"https://openalex.org/W3133571340\">W3133571340<\/a>; <a href=\"https://openalex.org/W3164827087\">W3164827087<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3009800351\">W3009800351<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3164827087\">W3164827087<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4316037982\">W4316037982<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3186557293\">W3186557293<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2918980696\">W2918980696<\/a>; <a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2896378813\">W2896378813<\/a>; <a href=\"https://openalex.org/W2931401133\">W2931401133<\/a>; <a href=\"https://openalex.org/W3014167476\">W3014167476<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3165463769\">W3165463769<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2993711455\">W2993711455<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3104147942\">W3104147942<\/a>; <a href=\"https://openalex.org/W3171030777\">W3171030777<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4399284330\">W4399284330<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2979473714\">W2979473714<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W2724793034\">W2724793034<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a>; <a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4312226988\">W4312226988<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4200577327\">W4200577327<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W4253468041\">W4253468041<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3171030777\">W3171030777<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3156225492\">W3156225492<\/a><\/span>","<span class='gt_from_md'><a href=\"https://openalex.org/W3214428420\">W3214428420<\/a><\/span>"],"html":true,"align":"left"}],"defaultPageSize":3,"showPageSizeOptions":true,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"font-family":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif","fontSize":"16px"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"groupHeaderStyle":{"fontWeight":"normal","backgroundColor":"transparent","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"},"cellStyle":{"fontWeight":"normal"}},"elementId":"nlaxvcxete","dataKey":"dbb4d250c4aa3906f970a313090a1ead"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style"],"jsHooks":[]}</script>
 </div>
 </body>
 </html>
