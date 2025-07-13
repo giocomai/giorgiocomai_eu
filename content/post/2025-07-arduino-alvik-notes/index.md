@@ -109,3 +109,19 @@ https://docs.arduino.cc/micropython/first-steps/install-guide/
 
 Available on the GitHub repo, compiled as a package for Debian, but not for Fedora; can be built from source:
 https://github.com/arduino/lab-micropython-installer
+
+## Utilities
+
+### Check battery status
+
+```
+from arduino_alvik import ArduinoAlvik
+from time import sleep_ms
+import sys
+
+alvik = ArduinoAlvik()
+alvik.begin()
+
+alvik.print_status()
+
+```
