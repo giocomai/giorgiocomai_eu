@@ -59,16 +59,14 @@ user_groups:
 --- 
 
 
-I am senior researcher and data analyst at [OBCT/CCI](https://www.balcanicaucaso.org/), and lecturer at the University of Trento (2024/2025). 
+I am senior researcher and data analyst at [OBCT](https://www.balcanicaucaso.org/) / [CCI](https://www.cci.tn.it/). 
 
-I am currently working on a research project dedicated to text as data (and data in the text): find out more on [tadadit.xyz](https://tadadit.xyz/).
+I have been working on a research project dedicated to text as data (and data in the text): find out more on [tadadit.xyz](https://tadadit.xyz/).
 
-For a long time, I have been conducting research on post-Soviet affairs, focusing in particular on de facto states. I have been visiting Russia and other post-Soviet countries since 2000, and I speak fluently Russian and Romanian. I am a member of the board of directors of Asiac, the Italian Association for the study of Central Asia and the Caucasus.
+For a long time, I have been conducting research on post-Soviet affairs, focusing in particular on de facto states. I have been visiting Russia and other post-Soviet countries since 2000, and I speak fluently Russian and Romanian. I am a member of the board of directors of [Asiac](https://www.asiac.net/), the Italian Association for the study of Central Asia and the Caucasus. I have been lecturer at the University of Trento and at Dublin City University.
 
-In recent years, I have increasingly been working on structured approaches for analysing online sources in conflict studies and international relations, data collection methods, and related ethical issues.
-
-I have also been working as a data analyst and consultant, crunching data at the European Data Journalism Network ([EDJNet](https://europeandatajournalism.eu/)), writing code and developing [packages in the R programming language](https://github.com/giocomai/), and working on data visualisation and geographic data analysis.
+In recent years, I have increasingly been working on structured approaches for analysing online sources in conflict studies and international relations, data collection methods, and related ethical issues. I have also been working as a data analyst and consultant, crunching data at the European Data Journalism Network ([EDJNet](https://europeandatajournalism.eu/)), writing code and developing [packages in the R programming language](https://github.com/giocomai/), and working on data visualisation and geographic data analysis.
 
 I occasionally post on my data visualisation blog: [`the codebase`](https://codebase.giorgiocomai.eu/).
 
-Find me micro-blogging in the Fediverse <a rel="me" href="https://mastodon.social/@giocomai">@giocomai@mastodon.social</a>.
+Find me micro-blogging <a rel="me" href="https://mastodon.social/@giocomai">@giocomai@mastodon.social</a>.
