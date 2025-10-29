@@ -49,7 +49,7 @@ library(kableExtra)
 
 ## A preliminary note
 
-This research note [https://doi.org/10.5281/zenodo.15722612](https://doi.org/10.5281/zenodo.15722612) relies on a combination of Clarivate's Web of Science (henceforth, WoS) and [OpenAlex](https://openalex.org/) to address the same question previously explored based on [Scopus](../2025-02-02-scopus-internationalisation-higher-education-russia/) (see also as a pdf stored on Zenodo with a stable DOI ([10.5281/zenodo.14791245](https://doi.org/10.5281/zenodo.14791245)) - or [OpenAlex alone](../2025-05-openalex-internationalisation-higher-education-russia/). 
+This research note (DOI: [10.5281/zenodo.15722612](https://doi.org/10.5281/zenodo.15722612)) relies on a combination of Clarivate's Web of Science (henceforth, WoS) and [OpenAlex](https://openalex.org/) to address the same question previously explored based on [Scopus](../2025-02-02-scopus-internationalisation-higher-education-russia/) (DOI: [10.5281/zenodo.14791245](https://doi.org/10.5281/zenodo.14791245)) - or [OpenAlex alone](../2025-05-openalex-internationalisation-higher-education-russia/) (DOI: [10.5281/zenodo.15722295](https://doi.org/10.5281/zenodo.15722295)). 
 
 
 ## Objective of this research note
