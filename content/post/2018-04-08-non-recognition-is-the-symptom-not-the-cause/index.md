@@ -50,7 +50,7 @@ As, quite clearly, software development is not my main occupation, this package 
 
 Unsurprisingly, I am not completely satisfied with my dissertation, and I already look rather critically at some of its parts. With a smile, I blame all shortcomings to my becoming a parent in the early stages of this research. More seriously, I believe that becoming a parent has fundamentally changed my approach to research. Among other things, it led to less fieldwork, probably less readings, and of course less sleeping, but it also gave me unusually lengthy stretches of time for thinking freely, which I think had a positive impact on my research.
 
-[Together with this post, [I am publishing online a brief excerpt from my thesis](./2018-04-08-how-i-got-to-study-some-of-things-i-study-and-personal-reasons-that-partly-explain-why-i-studied-them-the-way-i-did/) where I explain some of the reasons that brought me to study post-Soviet de facto states, and partly determined some of the methodological choices of my PhD research.]
+[Together with this post, [I am publishing online a brief excerpt from my thesis](../2018-04-08-how-i-got-to-study-some-of-things-i-study-and-personal-reasons-that-partly-explain-why-i-studied-them-the-way-i-did/) where I explain some of the reasons that brought me to study post-Soviet de facto states, and partly determined some of the methodological choices of my PhD research.]
 
 Again, the thesis is available in its full glory, with pictures and plenty of coloured graphs [from this link](http://doras.dcu.ie/22159/). Overall, I do believe it represents an original contribution to the literature on post-Soviet de facto states, theoretically, empirically, and methodologically.
 
