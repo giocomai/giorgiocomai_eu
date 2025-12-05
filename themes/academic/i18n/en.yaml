@@ -172,6 +172,10 @@
 - id: pub_patent
   translation: Patent
 
+- id: pub_dataset
+  translation: Dataset
+  
+  
 # Project details
 
 - id: open_project_site
