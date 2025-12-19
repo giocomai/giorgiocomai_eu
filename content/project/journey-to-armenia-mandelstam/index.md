@@ -33,7 +33,7 @@ If you're not familiar with the story of Osip and Nadezhda Mandelstam, before he
 
 In his lifetime Mandelstam published several collections of poetry, prose, memoirs and literary essays. Fascinated by Italy, he chose Dante to expose his own poetics, dedicating his famous *Conversation* to the Tuscan poet.
 
-In 1933 he wrote the* Stalin* *Epigram,* apoem strongly critical of the dictator and the communist regime. The poem led to his arrest, deportation and sentencing to hard labour in a Siberian gulag where he died, probably towards the end of 1938.
+In 1933 he wrote the *Stalin Epigram*, a poem strongly critical of the dictator and the communist regime. The poem led to his arrest, deportation and sentencing to hard labour in a Siberian gulag where he died, probably towards the end of 1938.
 
 Following the sentence by the soviet authorities, his work disappeared from public circulation. His wife **Nadezhda Mandelstam** (Saratov 1899 -- Moscow 1980), who escaped arrest, managed to conceal numerous texts and, not trusting paper, preserved most of Osip's poems by memorising them.
 
