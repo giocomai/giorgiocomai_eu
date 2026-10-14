@@ -61,9 +61,9 @@ user_groups:
 
 I am senior researcher and data analyst at [OBCT](https://www.balcanicaucaso.org/) / [CCI](https://www.cci.tn.it/). 
 
-I have been working on a research project dedicated to text as data (and data in the text): find out more on [tadadit.xyz](https://tadadit.xyz/).
+Find out more about my work on text as data (and data in the text) on [tadadit.xyz](https://tadadit.xyz/).
 
-For a long time, I have been conducting research on post-Soviet affairs, focusing in particular on de facto states. I have been visiting Russia and other post-Soviet countries since 2000, and I speak fluently Russian and Romanian. I am a member of the board of directors of [Asiac](https://www.asiac.net/), the Italian Association for the study of Central Asia and the Caucasus. I have been lecturer at the University of Trento and at Dublin City University.
+For a long time, I have been conducting research on dynamics in post-Soviet spaces, focusing in particular on de facto states. I have been visiting Russia and other post-Soviet countries since 2000, and I speak fluently Russian and Romanian. I am a member of the board of directors of [Asiac](https://www.asiac.net/), the Italian Association for the study of Central Asia and the Caucasus. I have been lecturer at the University of Trento and at Dublin City University.
 
 In recent years, I have increasingly been working on structured approaches for analysing online sources in conflict studies and international relations, data collection methods, and related ethical issues. I have also been working as a data analyst and consultant, crunching data at the European Data Journalism Network ([EDJNet](https://europeandatajournalism.eu/)), writing code and developing [packages in the R programming language](https://github.com/giocomai/), and working on data visualisation and geographic data analysis.
 
