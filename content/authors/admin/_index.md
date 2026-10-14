@@ -25,8 +25,10 @@ interests:
 
 name: Giorgio Comai
 organizations:
-- name: OBCT/CCI
+- name: OBCT
   url: "https://balcanicaucaso.org"
+- name: CCI
+  url: "https://www.cci.tn.it/"
 - name: EDJNet
   url: "https://europeandatajournalism.eu/"
 role: Researcher, data analyst
